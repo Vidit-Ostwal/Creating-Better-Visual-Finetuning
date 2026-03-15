@@ -1,8 +1,8 @@
 ---
 title: Dual Model Playground
-emoji: hf
-colorFrom: cyan
-colorTo: blue
+emoji: 🤗
+colorFrom: blue
+colorTo: purple
 sdk: gradio
 sdk_version: 5.22.0
 app_file: app.py
@@ -40,10 +40,10 @@ If you use a gated or private model, set `HF_TOKEN` first.
 
 ## Runtime notes
 
-- The app uses `transformers` and downloads model weights locally on first run.
-- Models are cached in memory after loading.
-- If both entries in `models.json` use the same model ID, the weights are loaded once and reused.
-- `Qwen/Qwen2.5-7B-Instruct` generally needs a machine with substantial RAM or a GPU-enabled Space to run well.
+* The app uses `transformers` and downloads model weights locally on first run.
+* Models are cached in memory after loading.
+* If both entries in `models.json` use the same model ID, the weights are loaded once and reused.
+* `Qwen/Qwen2.5-7B-Instruct` generally needs a machine with substantial RAM or a GPU-enabled Space to run well.
 
 ## Deploy
 
