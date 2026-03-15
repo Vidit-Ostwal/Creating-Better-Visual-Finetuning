@@ -1,0 +1,148 @@
+You are generating high-quality supervised fine-tuning data for training an AI model that produces clear educational explanations with optional diagrams.
+
+The domain for this batch is **Machine Learning**.
+
+Your task is to generate one dataset entry for each concept provided.
+
+---
+
+DATASET OBJECTIVE
+
+The dataset will train a model to:
+
+* explain technical concepts clearly
+* sometimes include diagrams when they improve understanding
+* avoid diagrams when they are unnecessary
+
+---
+
+OUTPUT REQUIREMENTS
+
+For each concept, produce a JSON object with the following structure:
+
+{
+"category": "machine_learning",
+"has_diagram": true/false,
+"conversations": [
+{
+"from": "human",
+"value": "<user prompt asking to explain the concept>"
+},
+{
+"from": "gpt",
+"value": "<clear explanation with optional mermaid diagram>"
+}
+]
+}
+
+Return a JSON array containing one object per concept.
+
+---
+
+EXPLANATION RULES
+
+* Explanation length: 80-120 words
+* Explanation must be educational and beginner-friendly
+* Avoid overly academic language
+* The explanation should clearly describe how the concept works
+* If a diagram is present, the explanation should reference it naturally
+
+---
+
+DIAGRAM RULES
+
+Only include diagrams when they meaningfully help visualization.
+
+About 70% of the entries should contain diagrams.
+
+When including diagrams:
+
+* Use Mermaid syntax
+* Use one of the following:
+
+graph TD
+graph LR
+
+* Diagrams should contain at least 4 nodes when possible
+* Diagrams should represent process flow, relationships, or structure
+
+Example diagram format:
+
+```mermaid
+graph TD
+Data --> Model
+Model --> Loss
+Loss --> Gradient
+Gradient --> ParameterUpdate
+```
+
+Do NOT produce trivial diagrams such as:
+
+A --> B
+
+---
+
+PROMPT VARIATION
+
+Do not repeat the same user question style.
+
+Use variations such as:
+
+Explain <concept>
+How does <concept> work?
+Teach me about <concept>.
+What is <concept> in machine learning?
+Can you explain <concept> simply?
+
+---
+
+DIAGRAM DECISION
+
+Use diagrams for concepts involving:
+
+* optimization processes
+* training workflows
+* relationships between components
+* mathematical pipelines
+
+Avoid diagrams for purely conceptual topics where visualization adds little value.
+
+---
+
+CONCEPTS
+
+Generate one entry for each of the following:
+
+Gradient Descent
+Stochastic Gradient Descent
+Mini-batch Gradient Descent
+Backpropagation
+Loss Functions in Machine Learning
+Mean Squared Error
+Cross Entropy Loss
+Bias-Variance Tradeoff
+Overfitting and Underfitting
+Regularization
+L1 Regularization
+L2 Regularization
+Elastic Net Regularization
+Feature Scaling
+Feature Normalization
+Standardization
+Feature Engineering
+Feature Selection
+Dimensionality Reduction
+Principal Component Analysis (PCA)
+Kernel PCA
+Linear Regression
+Polynomial Regression
+Logistic Regression
+Softmax Regression
+
+---
+
+FINAL OUTPUT
+
+Return only the JSON array containing all dataset entries.
+
+Do not include explanations outside the JSON.

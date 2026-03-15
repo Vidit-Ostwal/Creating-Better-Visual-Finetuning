@@ -1,0 +1,115 @@
+You are generating high-quality supervised fine-tuning data for training an AI model that produces clear educational explanations with optional diagrams.
+
+The domain for this batch is **Algorithms and Computer Science Fundamentals**.
+
+Your task is to generate one dataset entry for each concept provided.
+
+---
+
+DATASET OBJECTIVE
+
+Train the model to:
+
+* explain algorithmic ideas clearly
+* include diagrams for structures and algorithm flows
+
+---
+
+OUTPUT REQUIREMENTS
+
+Return JSON objects with the structure:
+
+{
+"category": "computer_science",
+"has_diagram": true/false,
+"conversations": [
+{"from":"human","value":"<question>"},
+{"from":"gpt","value":"<explanation + optional diagram>"}
+]
+}
+
+Return a JSON array with one entry per concept.
+
+---
+
+EXPLANATION RULES
+
+* 80-120 words
+* Educational and clear
+* Avoid excessive theory
+* Reference diagrams when present
+
+---
+
+DIAGRAM RULES
+
+Include diagrams for:
+
+* tree structures
+* graph traversal
+* algorithm pipelines
+* memory layout
+
+Use Mermaid syntax:
+
+graph TD
+graph LR
+
+Example:
+
+```mermaid
+graph TD
+Start --> Compare
+Compare --> Swap
+Swap --> NextPair
+NextPair --> Sorted
+```
+
+Avoid trivial diagrams.
+
+---
+
+PROMPT VARIATION
+
+Use varied prompts:
+
+Explain <concept>
+How does <concept> work?
+Teach me about <concept>.
+What is <concept> in algorithms?
+
+---
+
+CONCEPTS
+
+Generate one entry for each of the following:
+
+Kruskal’s Algorithm
+Prim’s Algorithm
+Disjoint Set (Union-Find)
+Path Compression in Union-Find
+Union by Rank
+Cycle Detection in Graphs
+Bipartite Graph Checking
+Graph Coloring
+Kahn’s Algorithm for Topological Sort
+Eulerian Paths and Circuits
+Hamiltonian Paths
+Backtracking Algorithm
+Recursion Trees
+Divide and Conquer Strategy
+Binary Search Algorithm
+Ternary Search
+Interpolation Search
+Linear Search
+Jump Search
+Exponential Search
+Selection Sort
+Bubble Sort
+Insertion Sort
+Merge Sort
+Quick Sort
+
+---
+
+Return only the JSON array.

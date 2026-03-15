@@ -1,0 +1,352 @@
+[
+    {
+    "category": "chemistry",
+    "has_diagram": false,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain reaction order in chemical kinetics."
+    },
+    {
+    "from": "gpt",
+    "value": "Reaction order describes how the rate of a chemical reaction depends on the concentration of reactants. It tells us how sensitive the reaction speed is to changes in concentration. For example, in a first-order reaction, doubling the concentration of the reactant doubles the reaction rate. In a second-order reaction, doubling the concentration makes the rate four times faster. The overall reaction order is the sum of the exponents in the rate law equation. Reaction order is usually determined experimentally rather than from the balanced chemical equation."
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "How does collision theory explain chemical reactions?"
+    },
+    {
+    "from": "gpt",
+    "value": "Collision theory explains how chemical reactions occur by focusing on collisions between particles. For a reaction to happen, reactant molecules must collide with enough energy and in the correct orientation. This energy requirement is called activation energy. If particles collide too slowly or in the wrong direction, the reaction will not occur. Increasing temperature or concentration increases the number of effective collisions, making reactions happen faster.\n\n```mermaid\ngraph LR\nReactantParticles --> MolecularCollision\nMolecularCollision --> OrientationCheck\nOrientationCheck -->|Correct| ReactionOccurs\nOrientationCheck -->|Incorrect| NoReaction\nReactionOccurs --> Products\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain the effect of temperature on reaction rate."
+    },
+    {
+    "from": "gpt",
+    "value": "Temperature strongly affects how fast chemical reactions occur. When temperature increases, molecules move faster and collide more frequently. More importantly, a larger fraction of molecules gain enough energy to overcome the activation energy barrier required for the reaction. Because of this, reactions usually proceed faster at higher temperatures. Even a small temperature increase can significantly speed up reactions because the number of successful collisions rises quickly.\n\n```mermaid\ngraph LR\nLowTemperature --> SlowMolecules\nSlowMolecules --> FewCollisions\nHighTemperature --> FastMolecules\nFastMolecules --> MoreCollisions\nMoreCollisions --> MoreSuccessfulReactions\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "How do catalysts affect reaction rates?"
+    },
+    {
+    "from": "gpt",
+    "value": "Catalysts speed up chemical reactions without being consumed in the process. They work by providing an alternative reaction pathway that requires less activation energy than the uncatalyzed reaction. Because the energy barrier is lower, more molecules can successfully react during collisions. Catalysts do not change the final products or the equilibrium position of the reaction—they only help the reaction reach equilibrium faster.\n\n```mermaid\ngraph LR\nReactants --> HighEnergyPath\nHighEnergyPath --> Products\nReactants --> CatalystPath\nCatalystPath --> LowerActivationEnergy\nLowerActivationEnergy --> Products\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Teach me about reaction mechanism intermediates."
+    },
+    {
+    "from": "gpt",
+    "value": "Reaction intermediates are temporary species formed during a multi-step chemical reaction. They appear in one step of the mechanism and are consumed in a later step, so they do not appear in the overall balanced equation. Intermediates help chemists understand how a reaction progresses from reactants to products through several smaller steps. These species are often unstable and exist only briefly.\n\n```mermaid\ngraph LR\nReactants --> Step1\nStep1 --> Intermediate\nIntermediate --> Step2\nStep2 --> AnotherIntermediate\nAnotherIntermediate --> FinalStep\nFinalStep --> Products\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "What are organic functional groups?"
+    },
+    {
+    "from": "gpt",
+    "value": "Functional groups are specific groups of atoms within organic molecules that determine how the molecule behaves chemically. These groups give compounds characteristic reactions and properties. For example, alcohols contain an –OH group, carboxylic acids contain –COOH, and amines contain –NH₂. Even if the carbon chain changes, the functional group largely controls the molecule’s chemical behavior.\n\n```mermaid\ngraph TD\nOrganicMolecule --> CarbonSkeleton\nCarbonSkeleton --> FunctionalGroup\nFunctionalGroup --> AlcoholGroup\nFunctionalGroup --> CarboxylGroup\nFunctionalGroup --> AmineGroup\nFunctionalGroup --> CarbonylGroup\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain alkane molecular structure."
+    },
+    {
+    "from": "gpt",
+    "value": "Alkanes are simple hydrocarbons made only of carbon and hydrogen atoms connected by single bonds. Each carbon atom forms four bonds arranged in a tetrahedral shape. Because only single bonds are present, alkanes are considered saturated hydrocarbons. Their general formula is CnH2n+2. Examples include methane, ethane, and propane. These molecules are relatively stable and commonly found in fuels.\n\n```mermaid\ngraph TD\nCarbonAtom --> FourSingleBonds\nFourSingleBonds --> HydrogenAtoms\nCarbonAtom --> CarbonChain\nCarbonChain --> AlkaneMolecule\nAlkaneMolecule --> SaturatedHydrocarbon\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "What is the molecular structure of alkenes?"
+    },
+    {
+    "from": "gpt",
+    "value": "Alkenes are hydrocarbons that contain at least one carbon–carbon double bond. This double bond consists of one sigma bond and one pi bond. Because of the double bond, the carbon atoms involved are arranged in a planar shape and cannot freely rotate. The general formula for alkenes is CnH2n. The presence of the double bond makes alkenes more reactive than alkanes.\n\n```mermaid\ngraph LR\nCarbon1 --> DoubleBond\nDoubleBond --> Carbon2\nCarbon1 --> HydrogenAtoms\nCarbon2 --> HydrogenAtoms\nDoubleBond --> PiBond\nDoubleBond --> SigmaBond\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain the molecular structure of alkynes."
+    },
+    {
+    "from": "gpt",
+    "value": "Alkynes are hydrocarbons containing a carbon–carbon triple bond. This bond consists of one sigma bond and two pi bonds. The carbon atoms involved in the triple bond form a linear arrangement with a bond angle of 180 degrees. Alkynes follow the general formula CnH2n−2 and are typically more reactive than alkanes. A common example is acetylene.\n\n```mermaid\ngraph LR\nCarbon1 --> TripleBond\nTripleBond --> Carbon2\nTripleBond --> SigmaBond\nTripleBond --> PiBond1\nTripleBond --> PiBond2\nCarbon1 --> HydrogenAtoms\nCarbon2 --> HydrogenAtoms\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain the aromatic ring structure."
+    },
+    {
+    "from": "gpt",
+    "value": "An aromatic ring is a cyclic structure of carbon atoms with alternating double and single bonds. The most common example is benzene. In aromatic compounds, electrons are delocalized across the ring, meaning they are shared by all the atoms rather than fixed in specific bonds. This electron delocalization makes aromatic molecules unusually stable compared to many other organic compounds.\n\n```mermaid\ngraph LR\nCarbon1 --> Carbon2\nCarbon2 --> Carbon3\nCarbon3 --> Carbon4\nCarbon4 --> Carbon5\nCarbon5 --> Carbon6\nCarbon6 --> Carbon1\nCarbonRing --> DelocalizedElectrons\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": false,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "What is structural isomerism?"
+    },
+    {
+    "from": "gpt",
+    "value": "Structural isomerism occurs when molecules have the same molecular formula but different arrangements of atoms. Even though the number of atoms is identical, the way they are connected changes the molecule’s structure and properties. For example, butane and isobutane both have the formula C4H10 but differ in how their carbon atoms are arranged. These structural differences can lead to different boiling points, reactivity, and physical properties."
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "What is geometric isomerism (cis/trans)?"
+    },
+    {
+    "from": "gpt",
+    "value": "Geometric isomerism occurs when molecules have the same atoms but differ in the spatial arrangement around a double bond or ring. In cis isomers, similar groups are on the same side of the double bond, while in trans isomers they are on opposite sides. Because rotation around double bonds is restricted, these arrangements remain fixed and produce molecules with different physical and chemical properties.\n\n```mermaid\ngraph LR\nDoubleBond --> CarbonA\nDoubleBond --> CarbonB\nCarbonA --> Group1\nCarbonA --> Group2\nCarbonB --> Group3\nCarbonB --> Group4\nGroup1 -->|SameSide| CisIsomer\nGroup1 -->|OppositeSide| TransIsomer\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain optical isomerism and chirality."
+    },
+    {
+    "from": "gpt",
+    "value": "Optical isomerism occurs when molecules exist as mirror images that cannot be superimposed on each other. This happens when a carbon atom is attached to four different groups, forming a chiral center. The two mirror-image molecules rotate polarized light in opposite directions. Although their chemical formulas are the same, their spatial arrangement differs, which can affect biological activity.\n\n```mermaid\ngraph TD\nChiralCarbon --> GroupA\nChiralCarbon --> GroupB\nChiralCarbon --> GroupC\nChiralCarbon --> GroupD\nChiralCarbon --> MirrorImage1\nChiralCarbon --> MirrorImage2\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": false,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Teach me about enantiomers and mirror images."
+    },
+    {
+    "from": "gpt",
+    "value": "Enantiomers are pairs of molecules that are mirror images of each other but cannot be perfectly superimposed. They usually arise from chiral centers where a carbon atom is attached to four different substituents. Even though enantiomers share the same molecular formula and connectivity, their spatial orientation differs. This difference can be important in biological systems because enzymes and receptors may interact with one enantiomer differently than the other."
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "What are Newman projections?"
+    },
+    {
+    "from": "gpt",
+    "value": "Newman projections are diagrams used in organic chemistry to visualize the spatial arrangement of atoms around a carbon–carbon single bond. In this view, the observer looks directly along the bond axis. The front carbon is shown as a point and the back carbon as a circle. This representation helps chemists compare different conformations, such as staggered or eclipsed arrangements.\n\n```mermaid\ngraph TD\nFrontCarbon --> Hydrogen1\nFrontCarbon --> Hydrogen2\nFrontCarbon --> Hydrogen3\nBackCarbon --> Hydrogen4\nBackCarbon --> Hydrogen5\nBackCarbon --> Hydrogen6\nFrontCarbon --> CarbonBond\nCarbonBond --> BackCarbon\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": false,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain conformational isomers."
+    },
+    {
+    "from": "gpt",
+    "value": "Conformational isomers are different spatial arrangements of a molecule that result from rotation around single bonds. Unlike structural isomers, the atoms remain connected in the same order. The molecule simply rotates into different shapes called conformations. These forms can interconvert easily at room temperature. A common example occurs in ethane, where staggered and eclipsed conformations appear as the carbon–carbon bond rotates."
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "How does rotation around single bonds work in molecules?"
+    },
+    {
+    "from": "gpt",
+    "value": "Single bonds between carbon atoms allow rotation because they involve only a sigma bond. As atoms rotate around the bond axis, the relative positions of attached atoms change, producing different conformations. Some arrangements are more stable than others due to repulsion between atoms. For example, staggered conformations are usually more stable than eclipsed ones because atoms are spaced farther apart.\n\n```mermaid\ngraph LR\nCarbonA --> SigmaBond\nSigmaBond --> CarbonB\nCarbonA --> Substituent1\nCarbonA --> Substituent2\nCarbonB --> Substituent3\nCarbonB --> Substituent4\nSigmaBond --> Rotation\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": false,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "What are nucleophiles and electrophiles?"
+    },
+    {
+    "from": "gpt",
+    "value": "Nucleophiles and electrophiles are key players in many organic reactions. A nucleophile is a species that donates a pair of electrons to form a chemical bond. It is often negatively charged or has lone electron pairs. An electrophile is an electron-deficient species that accepts electrons. Reactions occur when nucleophiles attack electrophiles, forming new chemical bonds. This electron-pair movement drives many organic reaction mechanisms."
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain nucleophilic substitution SN1."
+    },
+    {
+    "from": "gpt",
+    "value": "SN1 reactions are nucleophilic substitution reactions that occur in two steps. First, the leaving group departs, forming a carbocation intermediate. Then a nucleophile attacks this positively charged carbon. Because the first step determines the reaction rate, SN1 reactions depend mainly on the concentration of the substrate. These reactions often occur in tertiary carbons where carbocations are more stable.\n\n```mermaid\ngraph LR\nSubstrate --> LeavingGroupLeaves\nLeavingGroupLeaves --> Carbocation\nCarbocation --> NucleophileAttack\nNucleophileAttack --> Product\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "How does the SN2 nucleophilic substitution mechanism work?"
+    },
+    {
+    "from": "gpt",
+    "value": "SN2 reactions occur in a single concerted step where the nucleophile attacks the carbon atom at the same time the leaving group departs. The nucleophile approaches from the opposite side of the leaving group, causing the molecule’s configuration to invert. Because both species participate in the rate-determining step, the reaction rate depends on both nucleophile and substrate concentrations.\n\n```mermaid\ngraph LR\nNucleophile --> BacksideAttack\nBacksideAttack --> CarbonCenter\nCarbonCenter --> LeavingGroup\nBacksideAttack --> TransitionState\nTransitionState --> ProductFormation\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain elimination reaction E1."
+    },
+    {
+    "from": "gpt",
+    "value": "E1 elimination reactions occur in two steps. First, the leaving group departs from the molecule, forming a carbocation intermediate. In the second step, a base removes a hydrogen atom from a neighboring carbon. This leads to the formation of a double bond between the two carbons. E1 reactions often compete with SN1 reactions because both involve carbocation intermediates.\n\n```mermaid\ngraph LR\nSubstrate --> LeavingGroupDeparture\nLeavingGroupDeparture --> CarbocationIntermediate\nCarbocationIntermediate --> BaseRemovesHydrogen\nBaseRemovesHydrogen --> DoubleBondFormation\nDoubleBondFormation --> AlkeneProduct\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "How does the E2 elimination reaction work?"
+    },
+    {
+    "from": "gpt",
+    "value": "E2 reactions occur in a single step where a base removes a hydrogen atom while the leaving group leaves at the same time. This simultaneous process forms a carbon–carbon double bond. Because everything happens in one step, the reaction rate depends on both the substrate and the base. The hydrogen and leaving group must also be positioned opposite each other for the reaction to occur efficiently.\n\n```mermaid\ngraph LR\nBase --> RemoveHydrogen\nRemoveHydrogen --> CarbonBond\nCarbonBond --> LeavingGroupLeaves\nLeavingGroupLeaves --> DoubleBondFormed\nDoubleBondFormed --> AlkeneProduct\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain electrophilic addition to alkenes."
+    },
+    {
+    "from": "gpt",
+    "value": "Electrophilic addition occurs when an electrophile reacts with the double bond of an alkene. The electrons in the double bond attract the electrophile, which forms a new bond with one carbon atom. This usually produces a carbocation intermediate. A nucleophile then attacks the carbocation, forming the final product. This reaction breaks the double bond and adds new atoms across the carbon atoms.\n\n```mermaid\ngraph LR\nAlkeneDoubleBond --> ElectrophileAttack\nElectrophileAttack --> CarbocationIntermediate\nCarbocationIntermediate --> NucleophileAttack\nNucleophileAttack --> AdditionProduct\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Explain how carbocations form in reactions."
+    },
+    {
+    "from": "gpt",
+    "value": "Carbocations are positively charged carbon atoms formed when a carbon loses a bonding electron pair. This often occurs when a leaving group departs during a reaction. Carbocations are highly reactive because the carbon atom has only six electrons instead of eight. Their stability depends on the surrounding carbon groups, with tertiary carbocations usually being the most stable.\n\n```mermaid\ngraph LR\nSubstrate --> LeavingGroupDeparture\nLeavingGroupDeparture --> ElectronPairLeaves\nElectronPairLeaves --> CarbocationFormed\nCarbocationFormed --> NucleophileAttack\n```"
+    }
+    ]
+    },
+    {
+    "category": "chemistry",
+    "has_diagram": true,
+    "conversations": [
+    {
+    "from": "human",
+    "value": "Teach me about free radical reactions."
+    },
+    {
+    "from": "gpt",
+    "value": "Free radical reactions involve highly reactive atoms or molecules that contain an unpaired electron. These reactions often occur in chain processes with three main stages: initiation, propagation, and termination. During initiation, radicals are generated, often by heat or light. In propagation, radicals react with stable molecules to produce new radicals. Finally, radicals combine in the termination step to form stable products.\n\n```mermaid\ngraph LR\nInitiation --> RadicalFormation\nRadicalFormation --> PropagationStep\nPropagationStep --> NewRadicals\nNewRadicals --> FurtherReactions\nFurtherReactions --> Termination\nTermination --> StableProducts\n```"
+    }
+    ]
+    }
+    ]

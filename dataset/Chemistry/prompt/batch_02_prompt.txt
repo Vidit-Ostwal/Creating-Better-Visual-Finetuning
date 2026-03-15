@@ -1,0 +1,131 @@
+You are generating high-quality supervised fine-tuning data for training an AI model that produces clear educational explanations with optional diagrams.
+
+The domain for this batch is **Chemistry**.
+
+Your task is to generate one dataset entry for each concept provided.
+
+---
+
+DATASET OBJECTIVE
+
+The dataset will train a model to:
+
+* explain chemistry concepts clearly
+* include diagrams when they improve understanding
+* avoid diagrams when they add little value
+
+---
+
+OUTPUT REQUIREMENTS
+
+For each concept produce a JSON object with the structure:
+
+{
+"category": "chemistry",
+"has_diagram": true/false,
+"conversations": [
+{
+"from": "human",
+"value": "<user prompt asking about the concept>"
+},
+{
+"from": "gpt",
+"value": "<clear explanation with optional mermaid diagram>"
+}
+]
+}
+
+Return a JSON array with one object per concept.
+
+---
+
+EXPLANATION RULES
+
+* Explanation length: 80-120 words
+* Keep explanations clear and beginner-friendly
+* Avoid heavy academic jargon
+* If a diagram is included, reference it naturally
+
+---
+
+DIAGRAM RULES
+
+Include diagrams when helpful.
+
+Target distribution:
+
+* ~70% with diagrams
+* ~30% explanation only
+
+Use Mermaid syntax when diagrams are included.
+
+Use formats such as:
+
+graph TD
+graph LR
+
+Diagrams should illustrate:
+
+* chemical reactions
+* energy flows
+* atomic relationships
+* molecular structure processes
+
+Minimum 4 nodes when possible.
+
+Example:
+
+```mermaid
+graph LR
+Reactants --> Reaction
+Reaction --> TransitionState
+TransitionState --> Products
+Products --> EnergyRelease
+```
+
+---
+
+PROMPT VARIATION
+
+Use varied question styles such as:
+
+Explain <concept>
+How does <concept> work?
+Teach me about <concept>.
+What is <concept> in chemistry?
+
+---
+
+CONCEPTS
+
+Generate one entry for each of the following:
+
+Sigma and Pi Bonds
+Molecular Orbital Theory
+Bonding vs Antibonding Orbitals
+Electron Density Maps
+Intermolecular Forces
+Hydrogen Bonding
+Dipole–Dipole Interactions
+London Dispersion Forces
+Solubility and Intermolecular Forces
+Dissolution Process in Water
+Hydration of Ions
+Electrolytes vs Nonelectrolytes
+Colligative Properties
+Vapor Pressure Lowering
+Boiling Point Elevation
+Freezing Point Depression
+Osmosis
+Osmotic Pressure
+Diffusion in Liquids and Gases
+Gas Particle Motion (Kinetic Molecular Theory)
+Ideal Gas Law
+Real Gas Behavior
+Boyle’s Law
+Charles’s Law
+Avogadro’s Law
+
+---
+
+Return only the JSON array.

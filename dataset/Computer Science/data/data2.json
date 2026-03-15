@@ -1,0 +1,202 @@
+[
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Hash Functions."},
+    {"from":"gpt","value":"A hash function converts input data (called a key) into a fixed-size integer called a hash value. This value determines the index where the data is stored in a hash table. The main goal of a hash function is to distribute keys evenly across the table to allow fast insert, search, and delete operations. Ideally, the function should minimize collisions, where multiple keys map to the same index. A good hash function is deterministic, fast to compute, and spreads values uniformly across the available indices."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Collision Resolution using Chaining work?"},
+    {"from":"gpt","value":"Collision resolution using chaining handles hash collisions by storing multiple elements at the same index using a linked list or similar structure. When two keys produce the same hash value, the new key is appended to the chain at that index instead of replacing the existing value. Searching involves hashing the key to locate the bucket, then scanning the chain for the exact key. This approach keeps the hash table flexible and prevents overwriting existing entries.\n\n```mermaid\ngraph TD\nIndex0 --> A\nIndex1 --> B --> C --> D\nIndex2 --> E\nIndex3 --> F\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Collision Resolution using Open Addressing?"},
+    {"from":"gpt","value":"Open addressing resolves hash collisions by finding another empty slot within the hash table instead of storing multiple values at the same index. When a collision occurs, the algorithm probes other indices according to a defined sequence until an empty slot is found. All elements remain stored directly inside the table, so searching must follow the same probing sequence used during insertion. This approach avoids additional memory structures but requires careful probing strategies to maintain efficiency.\n\n```mermaid\ngraph LR\nHashIndex --> Collision\nCollision --> Probe1\nProbe1 --> Probe2\nProbe2 --> EmptySlot\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Linear Probing."},
+    {"from":"gpt","value":"Linear probing is a collision resolution strategy used in open addressing hash tables. When a collision occurs, the algorithm checks the next sequential slot in the table until an empty position is found. The probing continues in a linear sequence such as index+1, index+2, and so on. While simple to implement, linear probing can lead to clustering, where groups of filled slots form and increase search time. Searches follow the same probing pattern used during insertion.\n\n```mermaid\ngraph LR\nHashIndex --> Check1\nCheck1 --> Check2\nCheck2 --> Check3\nCheck3 --> Insert\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Quadratic Probing."},
+    {"from":"gpt","value":"Quadratic probing is an open addressing method used to resolve collisions in hash tables. Instead of checking consecutive slots like linear probing, it uses a quadratic function to determine the next position. If a collision occurs at index h, the algorithm checks h+1², h+2², h+3², and so on. This spreads entries more evenly across the table and reduces clustering compared to linear probing. However, careful table sizing is needed to ensure all slots can eventually be reached.\n\n```mermaid\ngraph LR\nHashIndex --> hPlus1Sq\nhPlus1Sq --> hPlus4\nhPlus4 --> hPlus9\nhPlus9 --> Insert\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Double Hashing?"}, 
+    {"from":"gpt","value":"Double hashing is a collision resolution technique in open addressing that uses a second hash function to determine the probing step size. When a collision occurs at index h1(key), the algorithm computes another value using h2(key) to determine how far to move for the next probe. The next index becomes h1(key) + i * h2(key). This reduces clustering and distributes elements more uniformly compared to linear or quadratic probing.\n\n```mermaid\ngraph LR\nHash1 --> Collision\nCollision --> Hash2Step\nHash2Step --> NextProbe\nNextProbe --> Insert\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Dynamic Arrays."},
+    {"from":"gpt","value":"A dynamic array is an array that automatically resizes when it becomes full. Unlike fixed-size arrays, it can grow by allocating a new larger block of memory and copying existing elements into it. Most implementations double the capacity when resizing to maintain efficient performance. This allows dynamic arrays to support fast random access like normal arrays while still handling growing datasets. Operations such as appending elements are usually constant time on average, though resizing occasionally makes individual insertions more expensive."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is a Sparse Array in computer science?"}, 
+    {"from":"gpt","value":"A sparse array is a data structure used when most elements of an array are empty or contain zero values. Instead of storing every position, sparse arrays store only the non-zero or meaningful elements along with their indices. This saves memory and improves efficiency when working with very large datasets that contain mostly empty entries. Sparse arrays are commonly implemented using hash maps, dictionaries, or lists of index-value pairs, allowing quick lookup and reduced storage requirements."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Adjacency Matrix Representation."},
+    {"from":"gpt","value":"An adjacency matrix represents a graph using a two-dimensional matrix where rows and columns correspond to vertices. If an edge exists between two vertices, the matrix cell contains 1 (or the weight of the edge). Otherwise, it contains 0. This structure allows constant-time edge lookup but can consume large amounts of memory for sparse graphs because all possible vertex pairs must be stored.\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nC --> D\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Adjacency List Representation."},
+    {"from":"gpt","value":"An adjacency list represents a graph by storing a list of neighbors for each vertex. Instead of using a full matrix, each node keeps a list containing the vertices it connects to. This approach is memory-efficient for sparse graphs because it only stores existing edges. Traversal algorithms such as BFS and DFS work efficiently with adjacency lists since they can quickly iterate through each node’s neighbors.\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nC --> E\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is a Directed Graph?"}, 
+    {"from":"gpt","value":"A directed graph, also called a digraph, is a graph where edges have a specific direction. This means a connection from node A to node B does not imply a connection from B to A. Directed graphs are used to represent relationships such as web links, task dependencies, or data flow. Algorithms often treat incoming and outgoing edges separately when processing directed graphs.\n\n```mermaid\ngraph LR\nA --> B\nB --> C\nC --> D\nD --> B\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Undirected Graphs."},
+    {"from":"gpt","value":"An undirected graph is a graph where edges have no direction. If vertex A is connected to vertex B, the connection automatically works both ways. These graphs are commonly used to represent mutual relationships such as friendships, road networks, or communication links. Traversal algorithms treat edges symmetrically since movement between connected vertices is possible in either direction.\n\n```mermaid\ngraph LR\nA --- B\nA --- C\nB --- D\nC --- D\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Weighted Graphs."},
+    {"from":"gpt","value":"A weighted graph is a graph where edges carry numerical values called weights. These weights may represent distances, costs, or travel times between nodes. Algorithms such as Dijkstra’s or Bellman-Ford use these weights to compute optimal paths. Weighted graphs are widely used in navigation systems, network routing, and resource optimization problems.\n\n```mermaid\ngraph LR\nA --5--> B\nA --2--> C\nC --4--> D\nB --3--> D\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Graph Traversal?"}, 
+    {"from":"gpt","value":"Graph traversal refers to the process of visiting all vertices in a graph in a systematic way. Since graphs can contain cycles and complex connections, traversal algorithms ensure each vertex is processed without repetition. Two of the most common traversal methods are Breadth First Search (BFS) and Depth First Search (DFS). Traversal is useful for tasks such as path finding, connectivity analysis, and graph exploration. Efficient traversal requires tracking visited nodes to avoid infinite loops in cyclic graphs."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Breadth First Search."},
+    {"from":"gpt","value":"Breadth First Search (BFS) explores a graph level by level starting from a source node. It first visits all immediate neighbors of the start node before moving to the next level. BFS uses a queue to maintain the order of nodes to visit. This approach guarantees the shortest path in an unweighted graph. BFS is commonly used in pathfinding, social network analysis, and shortest path discovery.\n\n```mermaid\ngraph TD\nStart --> A\nStart --> B\nA --> C\nB --> D\nC --> E\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Depth First Search."},
+    {"from":"gpt","value":"Depth First Search (DFS) explores a graph by moving as deep as possible along each branch before backtracking. Starting from a source node, the algorithm visits a neighbor, then continues exploring deeper nodes recursively or using a stack. DFS is useful for tasks such as cycle detection, path discovery, and topological sorting. It processes nodes in a depth-oriented manner rather than level by level.\n\n```mermaid\ngraph TD\nStart --> A\nA --> B\nB --> C\nC --> D\nStart --> E\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Topological Sorting."},
+    {"from":"gpt","value":"Topological sorting orders the vertices of a directed acyclic graph (DAG) so that every directed edge goes from an earlier vertex to a later one. This ordering is useful for scheduling tasks with dependencies. For example, a task must be completed before another can begin. Algorithms like Kahn’s algorithm or DFS-based approaches can compute this ordering efficiently.\n\n```mermaid\ngraph LR\nA --> C\nB --> C\nC --> D\nD --> E\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Strongly Connected Components."},
+    {"from":"gpt","value":"Strongly connected components (SCCs) are groups of vertices in a directed graph where every vertex can reach every other vertex in the same group. In other words, there exists a path from each node to every other node within the component. Identifying SCCs helps simplify complex graphs and is useful in compiler design, dependency analysis, and network connectivity studies. Algorithms such as Kosaraju’s and Tarjan’s efficiently compute SCCs."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Kosaraju’s Algorithm."},
+    {"from":"gpt","value":"Kosaraju’s algorithm finds strongly connected components in a directed graph using two depth-first searches. First, DFS is performed on the original graph to compute a finishing order of vertices. Next, all edges of the graph are reversed to create a transposed graph. Finally, DFS is run again in the order of decreasing finishing times. Each DFS tree formed in this second pass represents one strongly connected component."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Tarjan’s Algorithm?"}, 
+    {"from":"gpt","value":"Tarjan’s algorithm identifies strongly connected components in a directed graph using a single depth-first search. It assigns each vertex a discovery index and tracks the smallest reachable index using a low-link value. Vertices are stored on a stack during exploration. When a vertex’s discovery index equals its low-link value, it indicates the root of a strongly connected component, and nodes are popped from the stack to form that component."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Dijkstra’s Shortest Path Algorithm."},
+    {"from":"gpt","value":"Dijkstra’s algorithm finds the shortest path from a source node to all other nodes in a weighted graph with non-negative edge weights. It maintains a priority queue of nodes based on their current shortest distance from the source. The algorithm repeatedly selects the closest unvisited node and updates distances to its neighbors. Over time, the shortest paths to all reachable nodes are finalized. Dijkstra’s algorithm is widely used in routing, navigation systems, and network optimization."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain the Bellman-Ford Algorithm."},
+    {"from":"gpt","value":"The Bellman-Ford algorithm computes shortest paths from a single source node in a weighted graph. Unlike Dijkstra’s algorithm, it can handle negative edge weights. The algorithm repeatedly relaxes all edges in the graph, updating distance estimates until no shorter paths are found. If a distance can still be reduced after V-1 iterations, a negative cycle exists in the graph. Bellman-Ford is useful in routing protocols and networks where negative weights may appear."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about Floyd-Warshall Algorithm."},
+    {"from":"gpt","value":"The Floyd-Warshall algorithm computes shortest paths between every pair of vertices in a weighted graph. It uses dynamic programming to progressively improve distance estimates by considering intermediate vertices. For each pair of nodes (i, j), the algorithm checks whether passing through another vertex k provides a shorter path. This method works for graphs with positive or negative weights but not negative cycles. Floyd-Warshall is commonly used in network routing and distance matrix calculations."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain A* Search Algorithm."},
+    {"from":"gpt","value":"A* search is a pathfinding algorithm used to find the shortest path between nodes while guiding the search toward the goal. It combines the actual distance traveled so far with a heuristic estimate of the remaining distance. The algorithm selects nodes with the smallest estimated total cost. By using heuristics, A* explores fewer nodes than uninformed algorithms like Dijkstra’s. It is widely used in robotics, navigation systems, and game AI for efficient pathfinding."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What are Minimum Spanning Trees?"}, 
+    {"from":"gpt","value":"A minimum spanning tree (MST) is a subset of edges in a connected weighted graph that connects all vertices with the smallest possible total edge weight. The resulting structure forms a tree, meaning it contains no cycles. Algorithms such as Kruskal’s and Prim’s are commonly used to compute MSTs. These trees are useful for designing efficient networks like communication lines or electrical grids.\n\n```mermaid\ngraph LR\nA --1--> B\nA --3--> C\nB --2--> D\nC --4--> D\n```"}
+    ]
+    }
+    ]

@@ -1,0 +1,200 @@
+Newton's First Law
+Newton's Second Law
+Newton's Third Law
+Free Body Diagrams
+Types of Forces
+Friction Force
+Static vs Kinetic Friction
+Tension in a Rope
+Normal Force
+Gravitational Force
+Universal Law of Gravitation
+Gravitational Field
+Weight vs Mass
+Projectile Motion
+Horizontal Projectile Motion
+Circular Motion
+Centripetal Force
+Centrifugal Effect
+Momentum
+Conservation of Momentum
+Elastic Collisions
+Inelastic Collisions
+Impulse
+Work Done by a Force
+Kinetic Energy
+Gravitational Potential Energy
+Elastic Potential Energy
+Conservation of Energy
+Power in Mechanical Systems
+Mechanical Advantage
+Simple Machines
+Lever Systems
+Pulley Systems
+Inclined Plane Mechanics
+Center of Mass
+Torque
+Rotational Motion
+Angular Velocity
+Angular Acceleration
+Moment of Inertia
+Rolling Motion
+Rotational Kinetic Energy
+Equilibrium of Forces
+Translational Equilibrium
+Rotational Equilibrium
+Stability and Balance
+Hooke's Law
+Simple Harmonic Motion
+Mass-Spring Oscillator
+Pendulum Motion
+Damped Oscillations
+Resonance
+Wave Motion
+Transverse Waves
+Longitudinal Waves
+Wave Speed
+Wavelength and Frequency
+Wave Reflection
+Wave Refraction
+Wave Diffraction
+Wave Interference
+Constructive Interference
+Destructive Interference
+Standing Waves
+Nodes and Antinodes
+Sound Waves
+Speed of Sound
+Doppler Effect
+Beats in Sound Waves
+Loudness and Intensity of Sound
+Pitch and Frequency
+Echo and Reverberation
+Light as an Electromagnetic Wave
+Electromagnetic Spectrum
+Reflection of Light
+Law of Reflection
+Refraction of Light
+Snell's Law
+Total Internal Reflection
+Optical Fibers
+Dispersion of Light
+Formation of Rainbows
+Diffraction of Light
+Interference of Light
+Young's Double Slit Experiment
+Polarization of Light
+Image Formation by Plane Mirrors
+Image Formation by Concave Mirrors
+Image Formation by Convex Mirrors
+Mirror Equation
+Ray Diagrams for Mirrors
+Refraction through Glass Slab
+Image Formation by Convex Lens
+Image Formation by Concave Lens
+Lens Equation
+Ray Diagrams for Lenses
+Optical Instruments
+Microscope Principle
+Telescope Principle
+Human Eye Structure
+Defects of Vision
+Electric Charge
+Coulomb's Law
+Electric Field
+Electric Field Lines
+Electric Potential
+Electric Potential Energy
+Potential Difference
+Capacitance
+Parallel Plate Capacitor
+Capacitors in Series
+Capacitors in Parallel
+Electric Current
+Drift Velocity of Charges
+Ohm's Law
+Resistance in Conductors
+Resistivity
+Temperature Dependence of Resistance
+Electrical Power
+Electrical Energy Consumption
+Series Circuits
+Parallel Circuits
+Kirchhoff's Current Law
+Kirchhoff's Voltage Law
+Wheatstone Bridge
+Magnetic Fields
+Magnetic Field Lines
+Magnetic Field Around a Current-Carrying Wire
+Magnetic Field of a Solenoid
+Magnetic Force on a Moving Charge
+Lorentz Force
+Force on a Current-Carrying Conductor
+Electric Motor Principle
+Electromagnetic Induction
+Faraday's Law of Induction
+Lenz's Law
+Induced Current
+AC Generator
+Transformer Principle
+Alternating Current
+RMS Voltage and Current
+Heating Effect of Current
+Joule's Law of Heating
+Thermal Expansion
+Linear Expansion of Solids
+Expansion of Liquids
+Expansion of Gases
+Temperature and Heat
+Heat Transfer by Conduction
+Heat Transfer by Convection
+Heat Transfer by Radiation
+Specific Heat Capacity
+Latent Heat
+Phase Changes of Matter
+Melting and Freezing
+Evaporation and Boiling
+Gas Laws
+Boyle's Law
+Charles's Law
+Ideal Gas Law
+Kinetic Theory of Gases
+Pressure in Fluids
+Pascal's Principle
+Hydraulic Machines
+Archimedes' Principle
+Buoyancy
+Fluid Flow
+Bernoulli's Principle
+Streamlines in Fluid Flow
+Surface Tension
+Capillary Action
+Blackbody Radiation
+Photoelectric Effect
+Wave-Particle Duality
+Atomic Models
+Rutherford Scattering Experiment
+Bohr Model of the Atom
+Energy Levels in Atoms
+Emission Spectra
+Absorption Spectra
+Nuclear Structure
+Radioactive Decay
+Alpha Decay
+Beta Decay
+Gamma Radiation
+Half-Life of Radioactive Materials
+Nuclear Fission
+Nuclear Fusion
+Mass-Energy Equivalence
+Particle Accelerators
+Cosmic Rays
+Conservation of Charge
+Conservation of Mass-Energy
+Electromagnetic Waves in Vacuum
+Polarization by Reflection
+Total Internal Reflection in Prisms
+Laser Light
+Fiber Optic Communication
+Geostationary Satellites
+Orbital Motion of Satellites

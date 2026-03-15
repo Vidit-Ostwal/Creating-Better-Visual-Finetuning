@@ -1,0 +1,200 @@
+Gradient Descent
+Stochastic Gradient Descent
+Mini-batch Gradient Descent
+Backpropagation
+Loss Functions in Machine Learning
+Mean Squared Error
+Cross Entropy Loss
+Bias-Variance Tradeoff
+Overfitting and Underfitting
+Regularization
+L1 Regularization
+L2 Regularization
+Elastic Net Regularization
+Feature Scaling
+Feature Normalization
+Standardization
+Feature Engineering
+Feature Selection
+Dimensionality Reduction
+Principal Component Analysis (PCA)
+Kernel PCA
+Linear Regression
+Polynomial Regression
+Logistic Regression
+Softmax Regression
+Support Vector Machines
+Kernel Trick
+Decision Trees
+Random Forests
+Gradient Boosting
+AdaBoost
+XGBoost Architecture
+LightGBM Architecture
+CatBoost Architecture
+K-Nearest Neighbors Algorithm
+K-Means Clustering
+Hierarchical Clustering
+Agglomerative Clustering
+DBSCAN Clustering
+Gaussian Mixture Models
+Expectation Maximization Algorithm
+Naive Bayes Classifier
+Bayesian Networks
+Hidden Markov Models
+Markov Chains
+Maximum Likelihood Estimation
+Maximum A Posteriori Estimation
+Probability Distributions in ML
+Confusion Matrix
+Precision and Recall
+F1 Score
+ROC Curve
+AUC Score
+Train Validation Test Split
+K-Fold Cross Validation
+Stratified Cross Validation
+Hyperparameter Tuning
+Grid Search
+Random Search
+Bayesian Optimization
+Early Stopping
+Learning Rate Scheduling
+Learning Rate Warmup
+Momentum Optimization
+Nesterov Momentum
+Adam Optimizer
+RMSProp Optimizer
+Adagrad Optimizer
+Weight Initialization
+Xavier Initialization
+He Initialization
+Activation Functions
+Sigmoid Activation
+Tanh Activation
+ReLU Activation
+Leaky ReLU
+ELU Activation
+GELU Activation
+Softmax Activation
+Neural Network Forward Pass
+Neural Network Computational Graph
+Feedforward Neural Networks
+Multi-Layer Perceptron
+Universal Approximation Theorem
+Dropout Regularization
+Batch Normalization
+Layer Normalization
+Group Normalization
+Residual Connections
+Skip Connections
+Deep Residual Networks (ResNet)
+DenseNet Architecture
+Convolutional Neural Networks
+Convolution Operation in CNNs
+Padding in Convolutions
+Stride in Convolutions
+Pooling Layers
+Max Pooling
+Average Pooling
+Global Average Pooling
+Receptive Field in CNNs
+Feature Maps in CNNs
+Image Classification Pipeline
+Transfer Learning
+Fine-Tuning Pretrained Models
+Self-Supervised Learning
+Semi-Supervised Learning
+Contrastive Learning
+Siamese Networks
+Triplet Loss
+Metric Learning
+Embedding Spaces
+Autoencoders
+Variational Autoencoders
+Denoising Autoencoders
+Sparse Autoencoders
+Recurrent Neural Networks
+Vanishing Gradient Problem
+Exploding Gradient Problem
+Long Short-Term Memory Networks
+Gated Recurrent Units
+Sequence-to-Sequence Models
+Encoder-Decoder Architecture
+Attention Mechanism
+Bahdanau Attention
+Luong Attention
+Self-Attention
+Scaled Dot Product Attention
+Multi-Head Attention
+Transformer Architecture
+Positional Encoding
+Transformer Encoder Block
+Transformer Decoder Block
+Vision Transformer Architecture
+Tokenization in NLP Models
+Embedding Layers
+Positional Embeddings
+Masked Language Modeling
+Causal Language Modeling
+Generative Adversarial Networks
+GAN Generator and Discriminator
+GAN Training Dynamics
+Wasserstein GAN
+Conditional GAN
+CycleGAN Architecture
+Diffusion Models
+Forward Diffusion Process
+Reverse Diffusion Process
+Score-Based Generative Models
+Reinforcement Learning Framework
+Markov Decision Process
+Policy Gradient Methods
+Q-Learning
+Deep Q Networks
+Actor-Critic Methods
+Proximal Policy Optimization
+Reward Function Design
+Exploration vs Exploitation
+Experience Replay
+Curriculum Learning
+Knowledge Distillation
+Model Pruning
+Quantization in Neural Networks
+Model Compression
+Ensemble Learning
+Bagging
+Boosting
+Stacking Ensembles
+Out-of-Bag Error
+Calibration of Probabilities
+Platt Scaling
+Isotonic Regression Calibration
+Class Imbalance Handling
+SMOTE Oversampling
+Data Augmentation
+Image Augmentation Techniques
+Mixup Training
+CutMix Augmentation
+Label Smoothing
+Gradient Clipping
+Distributed Training of Neural Networks
+Data Parallelism
+Model Parallelism
+Parameter Server Architecture
+Federated Learning
+Online Learning
+Incremental Learning
+Catastrophic Forgetting
+Continual Learning
+Multi-Task Learning
+Meta-Learning
+Few-Shot Learning
+Zero-Shot Learning
+Domain Adaptation
+Domain Generalization
+Adversarial Examples
+Adversarial Training
+Explainable AI Methods
+SHAP Feature Attribution
+LIME Model Explanation

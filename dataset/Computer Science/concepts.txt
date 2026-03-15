@@ -1,0 +1,200 @@
+Arrays
+Linked Lists
+Doubly Linked Lists
+Circular Linked Lists
+Stacks
+Queues
+Deques
+Priority Queues
+Binary Trees
+Binary Search Trees
+AVL Trees
+Red-Black Trees
+B-Trees
+B+ Trees
+Trie (Prefix Tree)
+Suffix Trees
+Suffix Arrays
+Segment Trees
+Fenwick Trees (Binary Indexed Trees)
+Heaps
+Min Heaps
+Max Heaps
+Fibonacci Heaps
+Pairing Heaps
+Hash Tables
+Hash Functions
+Collision Resolution (Chaining)
+Collision Resolution (Open Addressing)
+Linear Probing
+Quadratic Probing
+Double Hashing
+Dynamic Arrays
+Sparse Arrays
+Adjacency Matrix Representation
+Adjacency List Representation
+Directed Graphs
+Undirected Graphs
+Weighted Graphs
+Graph Traversal
+Breadth First Search
+Depth First Search
+Topological Sorting
+Strongly Connected Components
+Kosaraju’s Algorithm
+Tarjan’s Algorithm
+Dijkstra’s Shortest Path Algorithm
+Bellman-Ford Algorithm
+Floyd-Warshall Algorithm
+A* Search Algorithm
+Minimum Spanning Trees
+Kruskal’s Algorithm
+Prim’s Algorithm
+Disjoint Set (Union-Find)
+Path Compression in Union-Find
+Union by Rank
+Cycle Detection in Graphs
+Bipartite Graph Checking
+Graph Coloring
+Kahn’s Algorithm for Topological Sort
+Eulerian Paths and Circuits
+Hamiltonian Paths
+Backtracking Algorithm
+Recursion Trees
+Divide and Conquer Strategy
+Binary Search Algorithm
+Ternary Search
+Interpolation Search
+Linear Search
+Jump Search
+Exponential Search
+Selection Sort
+Bubble Sort
+Insertion Sort
+Merge Sort
+Quick Sort
+Heap Sort
+Counting Sort
+Radix Sort
+Bucket Sort
+Tim Sort
+Shell Sort
+Bitonic Sort
+Sorting Networks
+Stable vs Unstable Sorting
+In-Place Sorting Algorithms
+External Sorting
+Time Complexity Analysis
+Space Complexity Analysis
+Big O Notation
+Big Omega Notation
+Big Theta Notation
+Amortized Analysis
+Dynamic Programming
+Memoization
+Tabulation in Dynamic Programming
+Longest Common Subsequence
+Longest Increasing Subsequence
+Edit Distance Algorithm
+Knapsack Problem (0/1)
+Unbounded Knapsack Problem
+Coin Change Problem
+Matrix Chain Multiplication
+Optimal Binary Search Trees
+Catalan Numbers in Tree Counting
+Greedy Algorithms
+Activity Selection Problem
+Huffman Coding
+Fractional Knapsack
+Job Scheduling with Deadlines
+Interval Scheduling
+Minimum Coin Change (Greedy)
+Sliding Window Technique
+Two Pointer Technique
+Prefix Sum Arrays
+Difference Arrays
+Kadane’s Algorithm
+Sweep Line Algorithm
+Bit Manipulation Techniques
+Bit Masks
+Subset Generation Using Bitmasking
+Gray Code Generation
+Fast Exponentiation (Binary Exponentiation)
+Euclidean Algorithm for GCD
+Extended Euclidean Algorithm
+Modular Arithmetic
+Modular Exponentiation
+Sieve of Eratosthenes
+Prime Factorization Algorithms
+Rolling Hash
+Rabin-Karp String Matching
+Knuth-Morris-Pratt (KMP) Algorithm
+Z Algorithm for Pattern Matching
+Boyer-Moore String Search
+Aho-Corasick Algorithm
+Suffix Automaton
+Longest Palindromic Substring (Manacher’s Algorithm)
+Trie-based Autocomplete
+String Hashing
+Polynomial Rolling Hash
+LRU Cache Implementation
+LFU Cache Implementation
+Cache Replacement Algorithms
+Memory Stack vs Heap Allocation
+Call Stack in Recursion
+Garbage Collection Algorithms
+Reference Counting
+Mark-and-Sweep Garbage Collection
+Generational Garbage Collection
+Page Replacement Algorithms
+Least Recently Used (LRU)
+Least Frequently Used (LFU)
+First-In-First-Out (FIFO) Page Replacement
+Optimal Page Replacement
+Deadlock Detection Algorithms
+Banker’s Algorithm
+Process Scheduling Algorithms
+Round Robin Scheduling
+Shortest Job First Scheduling
+Priority Scheduling
+Multilevel Queue Scheduling
+Multilevel Feedback Queue Scheduling
+Producer-Consumer Problem
+Dining Philosophers Problem
+Mutual Exclusion Algorithms
+Peterson’s Algorithm
+Lamport’s Bakery Algorithm
+MapReduce Computational Model
+Parallel Prefix Sum (Scan Algorithm)
+Work Stealing Scheduling
+Load Balancing Algorithms
+Consistent Hashing
+Bloom Filters
+Counting Bloom Filters
+HyperLogLog Algorithm
+Skip Lists
+Treaps
+Order Statistic Trees
+Range Minimum Query (RMQ)
+Sparse Table Data Structure
+Heavy-Light Decomposition
+Centroid Decomposition
+Binary Lifting Technique
+Lowest Common Ancestor (LCA)
+Euler Tour Technique
+Tree Traversals (Preorder)
+Tree Traversals (Inorder)
+Tree Traversals (Postorder)
+Level Order Traversal
+Threaded Binary Trees
+Expression Trees
+Abstract Syntax Trees
+Finite State Machines
+Deterministic Finite Automata
+Nondeterministic Finite Automata
+Pushdown Automata
+Turing Machines
+Register Machines
+Computational Complexity Classes (P vs NP)
+Reduction Between Problems
+Branch and Bound Algorithm

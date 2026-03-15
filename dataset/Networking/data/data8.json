@@ -1,0 +1,164 @@
+[
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Distributed Task Coordination."},
+    {"from":"gpt","value":"Distributed task coordination ensures that multiple machines in a distributed system work together to complete tasks without conflicts. A coordinator service assigns tasks to workers and tracks progress. Workers request tasks, execute them, and report results back. Coordination services like schedulers or distributed queues help prevent duplicate execution and ensure reliability. This design improves scalability because tasks are distributed across many nodes while maintaining order and consistency.\n\n```mermaid\ngraph LR\nCoordinator --> Worker1\nCoordinator --> Worker2\nCoordinator --> Worker3\nWorker1 --> Result\nWorker2 --> Result\nWorker3 --> Result\nResult --> Coordinator\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Cluster Heartbeat Monitoring work?"},
+    {"from":"gpt","value":"Cluster heartbeat monitoring is used to check whether nodes in a distributed cluster are still alive. Each node periodically sends small \"heartbeat\" messages to other nodes or to a monitoring service. If a node stops sending heartbeats for a certain time, the system assumes it has failed and triggers recovery actions such as failover or task reassignment. This mechanism helps distributed systems detect failures quickly and maintain high availability.\n\n```mermaid\ngraph LR\nNodeA --> Heartbeat\nNodeB --> Heartbeat\nNodeC --> Heartbeat\nHeartbeat --> Monitor\nMonitor --> FailureDetection\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Quorum-Based Leader Election."},
+    {"from":"gpt","value":"Quorum-based leader election is used in distributed systems to safely select a leader node. Each node votes during the election process, and a candidate becomes the leader only if it receives votes from a majority (quorum) of nodes. This prevents multiple leaders from existing at the same time. Systems like Raft and Paxos use quorum rules to maintain consistency. If the leader fails, a new election occurs and another node gathers enough votes to take control.\n\n```mermaid\ngraph LR\nNode1 --> Vote\nNode2 --> Vote\nNode3 --> Vote\nVote --> Candidate\nCandidate --> Leader\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is the Split-Brain Problem in distributed systems?"},
+    {"from":"gpt","value":"The split-brain problem occurs when a distributed cluster becomes divided into two or more groups that cannot communicate with each other. Each group may believe it is the main cluster and may elect its own leader. This can lead to conflicting updates and data inconsistencies. To prevent this, systems use quorum rules, fencing mechanisms, or consensus protocols to ensure that only one partition continues operating as the primary system.\n\n```mermaid\ngraph LR\nCluster --> PartitionA\nCluster --> PartitionB\nPartitionA --> LeaderA\nPartitionB --> LeaderB\nLeaderA --> Conflict\nLeaderB --> Conflict\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Network Partition Handling."},
+    {"from":"gpt","value":"Network partition handling refers to how distributed systems respond when communication between nodes is disrupted. A partition divides the network into separate groups that cannot exchange messages. Systems must decide whether to continue operating or stop to avoid inconsistencies. Many systems follow CAP theorem trade-offs: they may prioritize availability or consistency. Techniques like quorum voting and consensus protocols help determine which partition can continue serving requests safely.\n\n```mermaid\ngraph LR\nNodeA ---X--- NodeB\nNodeA --> Partition1\nNodeB --> Partition2\nPartition1 --> Requests\nPartition2 --> Requests\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Self-Healing Distributed Systems."},
+    {"from":"gpt","value":"Self-healing distributed systems automatically detect failures and recover without manual intervention. Monitoring components watch nodes, services, and network health. When a failure occurs, the system may restart services, reroute traffic, or replace failed nodes. Container orchestration platforms like Kubernetes use health checks and controllers to maintain desired system state. This automation improves reliability and reduces downtime because the system continuously repairs itself.\n\n```mermaid\ngraph LR\nMonitor --> DetectFailure\nDetectFailure --> Controller\nController --> RestartService\nController --> ReplaceNode\nRestartService --> System\nReplaceNode --> System\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Auto-Scaling Architecture work?"},{"from":"gpt","value":"Auto-scaling architecture automatically adjusts the number of servers handling traffic based on demand. A monitoring system tracks metrics like CPU usage, request rate, or latency. When demand increases, new instances are launched behind a load balancer. When traffic decreases, unnecessary instances are removed to save resources. This design helps systems handle sudden spikes in traffic while maintaining performance and cost efficiency.\n\n```mermaid\ngraph LR\nUsers --> LoadBalancer\nLoadBalancer --> Server1\nLoadBalancer --> Server2\nMonitor --> AutoScaler\nAutoScaler --> AddServer\nAutoScaler --> RemoveServer\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Horizontal vs Vertical Scaling."},{"from":"gpt","value":"Scaling helps systems handle more workload. Vertical scaling increases the power of a single server by adding more CPU, memory, or storage. Horizontal scaling adds more servers and distributes traffic among them using a load balancer. Horizontal scaling is common in distributed systems because it improves fault tolerance and can grow almost infinitely. Vertical scaling is simpler but limited by hardware capacity.\n\n```mermaid\ngraph TD\nVerticalScaling --> BiggerServer\nHorizontalScaling --> LoadBalancer\nLoadBalancer --> Server1\nLoadBalancer --> Server2\nLoadBalancer --> Server3\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What are Distributed Failover Mechanisms?"},{"from":"gpt","value":"Distributed failover mechanisms allow a system to automatically switch to backup resources when a primary component fails. Monitoring systems continuously check service health. If a node becomes unavailable, traffic is redirected to standby nodes or replicas. This ensures that users experience minimal disruption even during failures. Failover strategies are commonly used in database clusters, load-balanced services, and cloud infrastructures.\n\n```mermaid\ngraph LR\nClient --> Primary\nPrimary --> Failure\nFailure --> Failover\nFailover --> BackupNode\nBackupNode --> Response\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Active-Active Replication."},{"from":"gpt","value":"Active-active replication is a distributed architecture where multiple servers handle traffic simultaneously. Each server processes requests and keeps data synchronized with the others. Load balancers distribute user requests across all active nodes. If one server fails, others continue serving traffic without interruption. This approach improves performance and availability but requires careful data synchronization to avoid conflicts.\n\n```mermaid\ngraph LR\nUsers --> LoadBalancer\nLoadBalancer --> NodeA\nLoadBalancer --> NodeB\nNodeA <--> NodeB\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Active-Passive Failover."},{"from":"gpt","value":"Active-passive failover is a system design where one server actively handles traffic while another standby server waits in reserve. The passive server continuously receives replicated data from the active server so it can take over quickly if the primary fails. Monitoring systems detect failures and automatically redirect traffic to the standby node. This design is simpler than active-active systems and ensures high availability with predictable failover behavior.\n\n```mermaid\ngraph LR\nClient --> ActiveServer\nActiveServer --> Replication\nReplication --> PassiveServer\nActiveServer --> Failure\nFailure --> PassiveServer\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Disaster Recovery Architecture."},{"from":"gpt","value":"Disaster recovery architecture ensures that systems can recover from major failures such as data center outages or natural disasters. Data and services are replicated to a secondary region or backup site. If the primary environment becomes unavailable, traffic is redirected to the recovery site. Regular backups and replication keep the backup environment synchronized. This design protects data and minimizes downtime during catastrophic events.\n\n```mermaid\ngraph LR\nPrimaryDC --> Replication\nReplication --> BackupDC\nUsers --> PrimaryDC\nPrimaryDC --> Failure\nFailure --> BackupDC\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Blue-Green Deployment Architecture?"},{"from":"gpt","value":"Blue-green deployment is a release strategy that uses two identical production environments called Blue and Green. One environment runs the current version of the application while the other hosts the new version. After testing the new version, traffic is switched to the updated environment using a load balancer or routing change. If issues occur, traffic can quickly switch back to the previous version.\n\n```mermaid\ngraph LR\nUsers --> LoadBalancer\nLoadBalancer --> BlueEnv\nLoadBalancer --> GreenEnv\nGreenEnv --> NewVersion\nBlueEnv --> OldVersion\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does a Canary Deployment Strategy work?"},{"from":"gpt","value":"Canary deployment gradually releases a new version of an application to a small subset of users before rolling it out to everyone. This allows engineers to monitor performance, errors, and user feedback in a controlled way. If the new version works correctly, more users are directed to it until the rollout is complete. If problems appear, the rollout can be stopped quickly.\n\n```mermaid\ngraph LR\nUsers --> Router\nRouter --> OldVersion\nRouter --> CanaryVersion\nCanaryVersion --> Monitor\nMonitor --> Decision\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Rolling Deployment Strategy."},{"from":"gpt","value":"Rolling deployment updates application instances gradually instead of replacing them all at once. A small group of servers is updated with the new version while the rest continue serving traffic. Once those instances are stable, additional servers are updated until the rollout is complete. This strategy reduces downtime and allows continuous service availability during updates.\n\n```mermaid\ngraph LR\nUsers --> LoadBalancer\nLoadBalancer --> ServerOld\nLoadBalancer --> ServerNew\nServerOld --> Update\nUpdate --> ServerNew\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What are Distributed Feature Flag Systems?"},{"from":"gpt","value":"Distributed feature flag systems allow developers to enable or disable application features dynamically without redeploying code. A centralized configuration service stores feature flags. Applications running across multiple servers query the flag service to determine whether a feature should be active. This enables gradual rollouts, A/B testing, and quick feature rollback if problems occur.\n\n```mermaid\ngraph LR\nAppServer1 --> FeatureService\nAppServer2 --> FeatureService\nAppServer3 --> FeatureService\nFeatureService --> FlagConfig\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Edge Caching Architecture."},{"from":"gpt","value":"Edge caching stores frequently accessed content closer to users using distributed edge servers, often located in content delivery networks (CDNs). When a user requests content, the request is routed to the nearest edge server instead of the origin server. If the content is cached there, it is served immediately, reducing latency and network traffic. If not, the edge server fetches it from the origin and stores it for future requests.\n\n```mermaid\ngraph LR\nUser --> EdgeCache\nEdgeCache --> OriginServer\nEdgeCache --> Response\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Hierarchical Caching Systems."},{"from":"gpt","value":"Hierarchical caching uses multiple levels of caches arranged from closest to users to deeper infrastructure layers. Requests first check the nearest cache layer, such as a browser or edge cache. If the data is not found, the request moves to a higher-level cache or the origin server. This layered approach reduces load on backend systems and improves response times by serving data from the closest available cache.\n\n```mermaid\ngraph TD\nUser --> BrowserCache\nBrowserCache --> EdgeCache\nEdgeCache --> RegionalCache\nRegionalCache --> OriginServer\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Network Packet Encapsulation."},{"from":"gpt","value":"Network packet encapsulation is the process of wrapping data with protocol-specific headers as it moves through network layers. Each layer adds its own header containing routing, addressing, or transport information. For example, application data is wrapped in a TCP segment, which is then placed inside an IP packet and finally inside a network frame. Encapsulation allows different networking layers to operate independently.\n\n```mermaid\ngraph TD\nApplicationData --> TCPHeader\nTCPHeader --> IPHeader\nIPHeader --> EthernetFrame\nEthernetFrame --> NetworkTransmission\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Tunneling Protocol Architecture."},{"from":"gpt","value":"Tunneling protocols allow one network protocol to be transmitted within another protocol. This is often used to securely send traffic across networks or to connect private networks over the internet. The original packet is encapsulated inside another packet and sent through a tunnel. At the destination, the outer packet is removed and the original data is delivered.\n\n```mermaid\ngraph LR\nClient --> TunnelEncapsulation\nTunnelEncapsulation --> Internet\nInternet --> TunnelDecapsulation\nTunnelDecapsulation --> Destination\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Overlay Routing."},{"from":"gpt","value":"Overlay routing is a networking technique where a virtual network is built on top of an existing physical network. Nodes in the overlay network communicate using logical connections that may pass through multiple physical routers. Overlay networks are often used in peer-to-peer systems, VPNs, and distributed applications. They allow custom routing behavior without modifying the underlying infrastructure.\n\n```mermaid\ngraph LR\nNodeA --> OverlayRouter\nOverlayRouter --> NodeB\nOverlayRouter --> NodeC\nNodeC --> NodeD\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Distributed Authentication Architecture."},{"from":"gpt","value":"Distributed authentication architecture separates identity verification from application services. A central authentication service validates user credentials and issues tokens. Applications across the system trust this token to verify identity without repeatedly asking for credentials. This design improves scalability and security because authentication logic is centralized while services remain independent.\n\n```mermaid\ngraph LR\nUser --> AuthService\nAuthService --> Token\nToken --> AppServer1\nToken --> AppServer2\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does OAuth Authorization Flow work?"},{"from":"gpt","value":"OAuth authorization allows users to grant applications limited access to their data without sharing passwords. The user is redirected to an authorization server to log in and approve access. The server then provides the application with an access token. The application uses this token to request resources from an API. This separation improves security and allows controlled access to protected resources.\n\n```mermaid\ngraph LR\nUser --> AuthorizationServer\nAuthorizationServer --> AccessToken\nAccessToken --> ClientApp\nClientApp --> ResourceServer\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Single Sign-On (SSO) Architecture."},{"from":"gpt","value":"Single Sign-On (SSO) allows users to log in once and access multiple applications without re-entering credentials. An identity provider authenticates the user and issues a token or session. When the user accesses other applications, those services verify the token with the identity provider instead of asking for login again. This improves user convenience and centralizes authentication management.\n\n```mermaid\ngraph LR\nUser --> IdentityProvider\nIdentityProvider --> AuthToken\nAuthToken --> App1\nAuthToken --> App2\nAuthToken --> App3\n```"}]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Federated Identity Architecture?"},{"from":"gpt","value":"Federated identity architecture allows users from one organization to access services in another organization using their existing credentials. Instead of creating new accounts, the service trusts an external identity provider to authenticate the user. The identity provider sends authentication assertions to the service provider. This approach is common in enterprise systems and cloud services where organizations collaborate securely.\n\n```mermaid\ngraph LR\nUser --> IdentityProvider\nIdentityProvider --> Assertion\nAssertion --> ServiceProvider\nServiceProvider --> AccessGranted\n```"}]
+    }
+    ]

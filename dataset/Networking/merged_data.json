@@ -1,0 +1,2452 @@
+[
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain OSI Model."
+      },
+      {
+        "from": "gpt",
+        "value": "The OSI (Open Systems Interconnection) Model is a conceptual framework used to understand how data moves across a network. It divides communication into seven layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application. Each layer performs a specific role, such as transmitting bits, routing packets, or managing sessions. By separating responsibilities, the OSI model helps engineers design interoperable networking systems and troubleshoot issues. Data moves down the layers at the sender, travels across the network, and moves up the layers at the receiver.\n\n```mermaid\ngraph TD\nApplication --> Presentation\nPresentation --> Session\nSession --> Transport\nTransport --> Network\nNetwork --> DataLink\nDataLink --> Physical\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is TCP/IP Model in networking?"
+      },
+      {
+        "from": "gpt",
+        "value": "The TCP/IP Model describes how internet communication works by organizing networking functions into four layers: Application, Transport, Internet, and Network Access. The Application layer handles user-facing protocols like HTTP and DNS. The Transport layer manages communication between hosts using TCP or UDP. The Internet layer routes packets using IP, while the Network Access layer deals with physical data transmission. Data flows from the application down through the layers, gets transmitted across the network, and is reconstructed on the receiving system.\n\n```mermaid\ngraph TD\nApplication --> Transport\nTransport --> Internet\nInternet --> NetworkAccess\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does TCP Three-Way Handshake work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The TCP Three-Way Handshake establishes a reliable connection between a client and server before data transfer begins. First, the client sends a SYN (synchronize) message to request a connection. The server replies with SYN-ACK, acknowledging the request and indicating readiness. Finally, the client sends an ACK message confirming the connection. After this three-step exchange, both sides agree on sequence numbers and communication can begin reliably. This process ensures both systems are synchronized and ready for data transmission.\n\n```mermaid\ngraph LR\nClient -->|SYN| Server\nServer -->|SYN-ACK| Client\nClient -->|ACK| Server\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about TCP Connection Termination."
+      },
+      {
+        "from": "gpt",
+        "value": "TCP Connection Termination closes an established TCP connection using a four-step process. When a client finishes sending data, it sends a FIN (finish) message. The server acknowledges with ACK. When the server is also ready to close the connection, it sends its own FIN message. Finally, the client sends an ACK confirming the closure. This orderly shutdown ensures that all remaining data is delivered before the connection ends and prevents abrupt disconnections.\n\n```mermaid\ngraph LR\nClient -->|FIN| Server\nServer -->|ACK| Client\nServer -->|FIN| Client\nClient -->|ACK| Server\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain UDP Communication Model."
+      },
+      {
+        "from": "gpt",
+        "value": "UDP (User Datagram Protocol) is a lightweight transport protocol that sends messages called datagrams without establishing a connection. Unlike TCP, UDP does not guarantee delivery, ordering, or duplication protection. This makes it faster and useful for real-time applications like video streaming, gaming, and voice calls where speed is more important than reliability. The sender simply transmits packets directly to the receiver without performing handshakes or acknowledgments.\n\n```mermaid\ngraph LR\nSender --> Datagram1\nSender --> Datagram2\nSender --> Datagram3\nDatagram1 --> Receiver\nDatagram2 --> Receiver\nDatagram3 --> Receiver\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Client-Server Architecture?"
+      },
+      {
+        "from": "gpt",
+        "value": "Client-Server Architecture is a computing model where multiple clients request services from a centralized server. The client sends requests such as fetching data or performing actions, and the server processes these requests and returns responses. This architecture allows centralized management of data and resources. Web applications commonly use this model where browsers act as clients and web servers handle requests, database queries, and business logic.\n\n```mermaid\ngraph LR\nClient1 --> Server\nClient2 --> Server\nClient3 --> Server\nServer --> Database\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Peer-to-Peer Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Peer-to-Peer (P2P) Architecture is a distributed networking model where each node acts as both a client and a server. Instead of relying on a central server, peers communicate directly with each other to share data or services. This approach improves scalability and fault tolerance because workloads are distributed across many nodes. P2P networks are commonly used in file-sharing systems and blockchain networks where participants exchange information directly.\n\n```mermaid\ngraph LR\nPeer1 <--> Peer2\nPeer2 <--> Peer3\nPeer3 <--> Peer1\nPeer1 <--> Peer4\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Load Balancing work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Load balancing distributes incoming network traffic across multiple servers to improve performance and reliability. A load balancer sits between clients and backend servers. When a request arrives, the load balancer forwards it to one of several available servers using algorithms such as round robin or least connections. This prevents any single server from becoming overloaded and ensures high availability. If one server fails, traffic can be redirected to others.\n\n```mermaid\ngraph LR\nClient --> LoadBalancer\nLoadBalancer --> Server1\nLoadBalancer --> Server2\nLoadBalancer --> Server3\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does DNS Resolution Process work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The DNS Resolution Process converts human-readable domain names into IP addresses. When a user enters a website URL, the browser sends a query to a DNS resolver. If the address is not cached, the resolver queries root servers, then top-level domain servers, and finally authoritative DNS servers. The authoritative server returns the correct IP address. The resolver sends this address back to the client, allowing the browser to connect to the correct web server.\n\n```mermaid\ngraph LR\nClient --> Resolver\nResolver --> RootDNS\nRootDNS --> TLDServer\nTLDServer --> AuthoritativeDNS\nAuthoritativeDNS --> Resolver\nResolver --> Client\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the DHCP Lease Process."
+      },
+      {
+        "from": "gpt",
+        "value": "The DHCP Lease Process automatically assigns IP addresses to devices joining a network. It follows a four-step process called DORA: Discover, Offer, Request, and Acknowledge. First, the client broadcasts a DHCP Discover message to find available servers. The server responds with a DHCP Offer containing an IP address. The client sends a Request to accept the offer, and the server replies with an Acknowledge confirming the lease. The device can then use the assigned IP address for communication.\n\n```mermaid\ngraph LR\nClient -->|Discover| DHCPServer\nDHCPServer -->|Offer| Client\nClient -->|Request| DHCPServer\nDHCPServer -->|Acknowledge| Client\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain ARP Resolution."
+      },
+      {
+        "from": "gpt",
+        "value": "ARP (Address Resolution Protocol) maps an IP address to a device's MAC address within a local network. When a device wants to communicate with another device on the same network, it sends an ARP broadcast asking which device owns a specific IP address. The device with that IP responds with its MAC address. The sender stores this mapping in an ARP cache and uses the MAC address to deliver Ethernet frames on the local network.\n\n```mermaid\ngraph LR\nHostA -->|ARP Request: Who has IP?| Broadcast\nHostB -->|ARP Reply: My MAC| HostA\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is NAT (Network Address Translation)?"
+      },
+      {
+        "from": "gpt",
+        "value": "Network Address Translation (NAT) allows multiple devices in a private network to share a single public IP address when accessing the internet. A router performing NAT replaces the private source IP address of outgoing packets with its public IP address and tracks the mapping in a translation table. When responses return, the router uses the table to forward packets to the correct internal device. NAT helps conserve public IP addresses and adds a basic layer of network isolation.\n\n```mermaid\ngraph LR\nDevice1 --> RouterNAT\nDevice2 --> RouterNAT\nRouterNAT --> Internet\nInternet --> RouterNAT\nRouterNAT --> Device1\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Fat-Tree Data Center Topology."
+      },
+      {
+        "from": "gpt",
+        "value": "Fat-tree topology is a network architecture used in large data centers to provide high bandwidth and fault tolerance. Instead of having a single central core, the network uses multiple layers of switches where bandwidth increases as traffic moves upward. Servers connect to edge switches, which connect to aggregation switches, which then connect to core switches. This structure prevents bottlenecks and allows many servers to communicate simultaneously. It also supports equal-cost multi-path routing so traffic can take multiple routes.\n\n```mermaid\ngraph TD\nServer1 --> Edge1\nServer2 --> Edge1\nEdge1 --> Agg1\nEdge1 --> Agg2\nAgg1 --> Core1\nAgg2 --> Core1\nCore1 --> Agg3\nAgg3 --> Edge2\nEdge2 --> Server3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Spine-Leaf Network Architecture work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Spine-leaf architecture is a modern data center network design that ensures predictable latency and high bandwidth. The network has two layers: leaf switches and spine switches. Servers connect to leaf switches, and each leaf switch connects to every spine switch. This creates many equal paths between devices and reduces congestion. When a server sends traffic to another server, the packet travels from a leaf switch to a spine switch and then to another leaf switch. This design supports large-scale cloud infrastructure.\n\n```mermaid\ngraph LR\nServer1 --> Leaf1\nServer2 --> Leaf2\nLeaf1 --> Spine1\nLeaf1 --> Spine2\nLeaf2 --> Spine1\nLeaf2 --> Spine2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Packet Switching in networking?"
+      },
+      {
+        "from": "gpt",
+        "value": "Packet switching is a communication method where data is divided into small units called packets before being transmitted over a network. Each packet contains part of the data and routing information. Routers forward packets independently based on network conditions. Packets may take different paths to reach the destination, where they are reassembled into the original message. This approach improves efficiency and allows networks like the internet to share resources among many users.\n\n```mermaid\ngraph LR\nSender --> Packet1\nSender --> Packet2\nPacket1 --> RouterA\nPacket2 --> RouterB\nRouterA --> Receiver\nRouterB --> Receiver\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Circuit Switching."
+      },
+      {
+        "from": "gpt",
+        "value": "Circuit switching is a communication method where a dedicated connection is established between two devices before data transmission begins. The entire path remains reserved for the duration of the communication. Traditional telephone networks use this approach. When a call starts, switches create a continuous circuit between the caller and receiver. Because the connection is exclusive, data arrives in order and without interruption. However, network resources remain reserved even if no data is being sent, making it less efficient than packet switching for modern networks."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Network Routing Process work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The network routing process determines how packets travel from a source device to a destination across multiple networks. Routers maintain routing tables that store information about possible paths. When a packet arrives, the router checks the destination address and forwards the packet to the next best router according to the table. Routing protocols update these tables dynamically based on network changes. This process allows large networks like the internet to deliver packets efficiently across many interconnected routers.\n\n```mermaid\ngraph LR\nClient --> Router1\nRouter1 --> Router2\nRouter2 --> Router3\nRouter3 --> Server\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Distance Vector Routing."
+      },
+      {
+        "from": "gpt",
+        "value": "Distance vector routing is a routing method where each router shares its routing table with neighboring routers. The table contains information about the distance to each network destination and the next hop to reach it. Routers periodically exchange updates and adjust their routes based on the shortest path information received from neighbors. Over time, the network converges to consistent routing paths. Protocols like RIP use this approach to determine efficient routes in smaller networks.\n\n```mermaid\ngraph LR\nRouterA <--> RouterB\nRouterB <--> RouterC\nRouterA --> Network1\nRouterC --> Network2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Link State Routing?"
+      },
+      {
+        "from": "gpt",
+        "value": "Link state routing is a routing technique where routers build a full map of the network before calculating paths. Each router sends link-state advertisements that describe its connections to neighboring routers. These updates are shared with all routers in the network. Using this information, every router constructs the same network topology map and applies algorithms like Dijkstra\u2019s algorithm to compute the shortest paths. This approach provides faster convergence and more accurate routing compared to distance vector methods.\n\n```mermaid\ngraph LR\nRouterA --> RouterB\nRouterB --> RouterC\nRouterA --> RouterC\nRouterC --> Network\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the OSPF Routing Process."
+      },
+      {
+        "from": "gpt",
+        "value": "OSPF (Open Shortest Path First) is a link-state routing protocol used in large IP networks. Routers using OSPF exchange link-state advertisements to describe their connections and network costs. Each router collects these advertisements and builds a link-state database representing the network topology. Using this map, routers calculate the shortest path to each destination using the shortest path first algorithm. The resulting routes are placed into the routing table, allowing efficient packet forwarding across the network.\n\n```mermaid\ngraph LR\nRouter1 --> Router2\nRouter2 --> Router3\nRouter1 --> Router3\nRouter3 --> Network\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does BGP Route Propagation work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Border Gateway Protocol (BGP) is used to exchange routing information between autonomous systems on the internet. Each network advertises the routes it can reach to neighboring networks. Routers evaluate multiple route advertisements based on policies, path length, and network preferences. After selecting the best route, the router propagates that route to other neighbors. This process allows internet service providers and large networks to coordinate traffic routing globally.\n\n```mermaid\ngraph LR\nAS1 --> AS2\nAS2 --> AS3\nAS3 --> AS4\nAS2 --> AS4\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain TCP Congestion Control."
+      },
+      {
+        "from": "gpt",
+        "value": "TCP congestion control prevents network overload by adjusting the rate at which data is sent. The sender starts with a small congestion window and gradually increases the amount of data transmitted. If packet loss or delay occurs, TCP interprets this as congestion and reduces the sending rate. Algorithms such as slow start, congestion avoidance, and fast recovery help manage the flow of packets. This dynamic adjustment helps maintain network stability while maximizing throughput between communicating devices."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Sliding Window Protocol?"
+      },
+      {
+        "from": "gpt",
+        "value": "The sliding window protocol is used in reliable data transmission to control the number of packets sent before receiving acknowledgments. The sender maintains a window that represents how many packets can be transmitted without waiting. As acknowledgments arrive, the window moves forward, allowing new packets to be sent. This mechanism improves network efficiency by keeping the link busy while ensuring that lost packets can be detected and retransmitted.\n\n```mermaid\ngraph LR\nSender --> Packet1\nSender --> Packet2\nSender --> Packet3\nReceiver --> ACK1\nReceiver --> ACK2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Selective Repeat ARQ."
+      },
+      {
+        "from": "gpt",
+        "value": "Selective Repeat ARQ is an error control protocol that allows the receiver to request retransmission of only the lost or corrupted packets. Each packet has a sequence number and is acknowledged individually. The receiver can store packets that arrive out of order and wait for missing ones to be retransmitted. This improves efficiency compared to protocols that retransmit multiple packets unnecessarily. It is commonly used in reliable communication systems where bandwidth efficiency is important.\n\n```mermaid\ngraph LR\nSender --> Packet1\nSender --> Packet2\nSender --> Packet3\nPacket2 -. lost .-> Receiver\nReceiver --> ACK1\nReceiver --> NACK2\nSender --> Packet2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Go-Back-N Protocol work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Go-Back-N is a reliable data transfer protocol that allows the sender to transmit multiple packets before receiving acknowledgments. Packets are sent sequentially with increasing sequence numbers. If the receiver detects a missing packet, it discards all later packets and sends an acknowledgment for the last correctly received packet. The sender then retransmits the missing packet and all subsequent packets. This ensures reliable and ordered delivery of data across the network.\n\n```mermaid\ngraph LR\nSender --> P1\nSender --> P2\nSender --> P3\nP2 -. lost .-> Receiver\nReceiver --> ACK1\nSender --> P2\nSender --> P3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Reliable Data Transfer Protocol?"
+      },
+      {
+        "from": "gpt",
+        "value": "A reliable data transfer protocol ensures that data sent between two devices arrives correctly and in order. It uses mechanisms such as sequence numbers, acknowledgments, retransmissions, and checksums to detect errors and recover lost packets. If a packet is lost or corrupted during transmission, the sender retransmits it after receiving a negative acknowledgment or after a timeout. Protocols like TCP implement reliable data transfer to guarantee accurate communication over unreliable networks."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Network Flow Control."
+      },
+      {
+        "from": "gpt",
+        "value": "Network flow control manages the rate of data transmission between a sender and receiver to prevent overwhelming the receiver. If a sender transmits data too quickly, the receiver\u2019s buffer may overflow. Flow control mechanisms ensure the sender only transmits data at a rate the receiver can handle. Techniques such as sliding window protocols and receiver window advertisements allow the receiver to signal how much data it can process. This coordination keeps communication efficient and prevents packet loss due to buffer overflow."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Distributed Consensus."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed consensus is the process by which multiple nodes in a distributed system agree on a single value or decision. This is essential for maintaining consistency when systems operate across multiple machines. Nodes exchange messages to propose values and confirm agreement. Consensus algorithms ensure that even if some nodes fail or messages are delayed, the system eventually reaches agreement. This mechanism is used in databases, blockchains, and distributed coordination services.\n\n```mermaid\ngraph LR\nNode1 --> Node2\nNode2 --> Node3\nNode3 --> Node1\nNode1 --> Decision\nNode2 --> Decision\nNode3 --> Decision\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Paxos Consensus Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "Paxos is a distributed consensus algorithm that ensures multiple nodes agree on a single value even in the presence of failures. The protocol uses three roles: proposers, acceptors, and learners. A proposer suggests a value, acceptors vote on proposals, and learners observe the chosen value. Through multiple rounds of proposals and acknowledgments, the system guarantees that only one value is eventually accepted by the majority. Paxos is widely used in distributed systems requiring strong consistency.\n\n```mermaid\ngraph LR\nProposer --> Acceptor1\nProposer --> Acceptor2\nAcceptor1 --> Learner\nAcceptor2 --> Learner\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Raft Consensus Algorithm work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Raft is a distributed consensus algorithm designed to be easier to understand than Paxos. It organizes nodes into leaders and followers. The leader handles client requests and replicates log entries to follower nodes. Followers acknowledge these entries, and once a majority confirm them, the entry is committed. If the leader fails, the followers start an election to choose a new leader. This process ensures consistent data replication across distributed systems.\n\n```mermaid\ngraph LR\nLeader --> Follower1\nLeader --> Follower2\nLeader --> Follower3\nFollower1 --> ACK\nFollower2 --> ACK\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Leader Election in Distributed Systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Leader election is a process used in distributed systems to select one node to coordinate activities among multiple nodes. The leader is responsible for managing tasks such as log replication, coordination, or decision-making. Nodes exchange messages to determine which node becomes the leader based on predefined rules or timeouts. If the leader fails, the system runs the election process again to choose a new leader. This ensures the system continues operating reliably.\n\n```mermaid\ngraph LR\nNode1 --> Election\nNode2 --> Election\nNode3 --> Election\nElection --> Leader\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Locking."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed locking ensures that only one node in a distributed system can access a shared resource at a time. When a node wants to use the resource, it first requests a lock from a coordination service such as a distributed lock manager. If the lock is granted, the node performs its operation and then releases the lock. Other nodes must wait until the lock becomes available. This prevents race conditions and ensures consistency when multiple nodes interact with shared resources.\n\n```mermaid\ngraph LR\nNode1 --> LockService\nNode2 --> LockService\nLockService --> Node1\nNode1 --> Resource\nNode1 --> ReleaseLock\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Transactions."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed transactions coordinate operations across multiple databases or services to ensure all changes occur together. If one part of the transaction fails, the entire transaction must be rolled back to maintain data consistency. Systems use coordination protocols to manage communication between participating nodes. Each node prepares the change, confirms readiness, and then commits the update. This guarantees atomic behavior across distributed components even when they operate on different machines."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Two-Phase Commit Protocol work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Two-phase commit (2PC) is a protocol used to ensure consistent distributed transactions across multiple nodes. In the first phase, the coordinator asks all participating nodes if they can commit the transaction. Each participant responds with a vote to commit or abort. In the second phase, if all nodes agree, the coordinator sends a commit message; otherwise, it sends an abort message. This ensures that all nodes reach the same decision.\n\n```mermaid\ngraph LR\nCoordinator --> Node1\nCoordinator --> Node2\nNode1 --> Vote\nNode2 --> Vote\nCoordinator --> Commit\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Three-Phase Commit Protocol."
+      },
+      {
+        "from": "gpt",
+        "value": "Three-phase commit (3PC) extends the two-phase commit protocol to reduce the risk of blocking during failures. It adds an extra step between the prepare and commit phases. First, nodes vote on whether they can commit the transaction. Then the coordinator sends a pre-commit message indicating that commit is likely. Finally, the coordinator sends the final commit instruction. This extra phase helps participants avoid indefinite waiting if the coordinator fails.\n\n```mermaid\ngraph TD\nCoordinator --> Prepare\nPrepare --> PreCommit\nPreCommit --> Commit\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the CAP Theorem?"
+      },
+      {
+        "from": "gpt",
+        "value": "The CAP theorem states that a distributed system can guarantee only two of the following three properties at the same time: consistency, availability, and partition tolerance. Consistency means all nodes see the same data at the same time. Availability ensures that every request receives a response. Partition tolerance means the system continues operating despite network failures between nodes. Because network partitions are unavoidable in distributed systems, designers must choose trade-offs between strong consistency and high availability."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Eventual Consistency."
+      },
+      {
+        "from": "gpt",
+        "value": "Eventual consistency is a consistency model used in distributed systems where updates to data may not appear immediately across all nodes. Instead, changes propagate gradually through the system. Over time, if no new updates occur, all replicas converge to the same value. This model allows systems to remain highly available and scalable because nodes can respond to requests without waiting for global synchronization. Many large distributed databases use eventual consistency to handle high volumes of traffic efficiently."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Strong Consistency Model."
+      },
+      {
+        "from": "gpt",
+        "value": "The Strong Consistency Model ensures that every client always reads the most recent write in a distributed system. After a value is written to a database, any subsequent read from any node will return that updated value. This behavior makes the system appear as if there is only a single copy of the data. Strong consistency is commonly used in financial systems and databases where accuracy is critical. However, it often requires coordination between nodes, which can increase latency and reduce availability during network partitions."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Key-Value Store Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "A Distributed Key-Value Store stores data as simple key-value pairs across multiple machines. Each node manages a subset of the data, allowing the system to scale horizontally. A client sends requests to a coordinator node, which determines which node stores the requested key. The system may also replicate data to improve reliability and availability.\n\n```mermaid\ngraph LR\nClient --> Coordinator\nCoordinator --> Node1\nCoordinator --> Node2\nCoordinator --> Node3\nNode1 --> Storage1\nNode2 --> Storage2\nNode3 --> Storage3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Consistent Hashing work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Consistent Hashing is a technique used to distribute data across servers while minimizing data movement when nodes join or leave the system. Both servers and keys are mapped onto a circular hash space. Each key is assigned to the first server encountered when moving clockwise around the circle. This approach allows the system to scale efficiently and rebalance data with minimal disruption.\n\n```mermaid\ngraph TD\nKey1 --> NodeA\nKey2 --> NodeB\nKey3 --> NodeC\nNodeA --> HashRing\nNodeB --> HashRing\nNodeC --> HashRing\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Distributed Hash Tables (DHT)."
+      },
+      {
+        "from": "gpt",
+        "value": "A Distributed Hash Table (DHT) is a decentralized system that stores key-value pairs across many nodes without a central coordinator. Each node is responsible for a portion of the key space. When a node receives a request for a key, it routes the request to the node responsible for that key using a lookup algorithm. DHTs are used in peer-to-peer systems because they allow efficient data lookup and scalable storage.\n\n```mermaid\ngraph LR\nClient --> NodeA\nNodeA --> NodeB\nNodeB --> NodeC\nNodeC --> ResponsibleNode\nResponsibleNode --> Value\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Gossip Protocol in distributed systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Gossip Protocol is a communication method where nodes randomly exchange information with other nodes to spread updates across a distributed system. Each node periodically shares its known state with a few peers, and those peers propagate the information further. This process continues until most nodes receive the update. Gossip protocols are efficient, fault tolerant, and scalable for cluster membership or configuration updates.\n\n```mermaid\ngraph LR\nNodeA --> NodeB\nNodeA --> NodeC\nNodeB --> NodeD\nNodeC --> NodeE\nNodeD --> NodeF\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Failure Detection in Distributed Systems."
+      },
+      {
+        "from": "gpt",
+        "value": "Failure detection helps distributed systems identify when nodes become unavailable due to crashes or network issues. Systems often use periodic checks such as heartbeats or timeouts to determine node health. If a node stops responding within a certain time window, other nodes mark it as failed and redirect work to healthy nodes. Effective failure detection improves reliability and enables automatic recovery.\n\n```mermaid\ngraph LR\nNodeA --> Heartbeat\nHeartbeat --> NodeB\nHeartbeat --> NodeC\nNodeB --> FailureDetector\nNodeC --> FailureDetector\nFailureDetector --> Alert\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Heartbeat Mechanism in networking?"
+      },
+      {
+        "from": "gpt",
+        "value": "A heartbeat mechanism is a simple method used in distributed systems to confirm that nodes are still alive. Nodes periodically send small signals called heartbeats to a monitoring node or to each other. If the heartbeat messages stop arriving within a specific time interval, the system assumes that the node has failed. This mechanism allows the system to quickly detect failures and redistribute workloads.\n\n```mermaid\ngraph LR\nNodeA --> HeartbeatSignal\nHeartbeatSignal --> Monitor\nMonitor --> StatusCheck\nStatusCheck --> Alive\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Logging System."
+      },
+      {
+        "from": "gpt",
+        "value": "A Distributed Logging System collects and aggregates logs from multiple services running across different machines. Each application generates logs locally and sends them to a centralized logging service. The logs are stored, indexed, and analyzed for debugging and monitoring. This architecture helps engineers understand system behavior and diagnose issues across many components.\n\n```mermaid\ngraph LR\nServiceA --> LogAgent\nServiceB --> LogAgent\nServiceC --> LogAgent\nLogAgent --> LogCollector\nLogCollector --> LogStorage\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Distributed Tracing Architecture work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed tracing tracks requests as they travel across multiple services in a distributed system. Each service adds trace information to the request, such as timing data and service identifiers. These traces are collected by a tracing backend, allowing engineers to visualize request paths and identify performance bottlenecks. Distributed tracing is useful for debugging microservices architectures.\n\n```mermaid\ngraph LR\nClient --> ServiceA\nServiceA --> ServiceB\nServiceB --> ServiceC\nServiceC --> TraceCollector\nTraceCollector --> TraceStorage\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Message Queue Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "A Message Queue Architecture allows systems to communicate asynchronously by sending messages through a queue. Producers send messages to the queue, and consumers retrieve and process them later. This decouples services, improves scalability, and prevents systems from being overwhelmed by sudden traffic spikes.\n\n```mermaid\ngraph LR\nProducer --> MessageQueue\nMessageQueue --> Consumer1\nMessageQueue --> Consumer2\nMessageQueue --> Consumer3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Publish-Subscribe Messaging Pattern?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Publish-Subscribe (Pub/Sub) pattern allows producers to send messages without knowing who will receive them. Producers publish messages to a topic, and subscribers that are interested in that topic receive the messages. A message broker manages the distribution of messages. This pattern enables scalable event-driven systems where multiple consumers react to the same event.\n\n```mermaid\ngraph LR\nPublisher --> Topic\nTopic --> SubscriberA\nTopic --> SubscriberB\nTopic --> SubscriberC\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Event Streaming Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Event streaming architecture continuously captures and processes streams of events generated by applications or devices. Producers publish events to a streaming platform, and consumers process those events in real time. The events are stored in an append-only log so they can be replayed later. This architecture enables real-time analytics and reactive applications.\n\n```mermaid\ngraph LR\nProducer --> EventStream\nEventStream --> ConsumerA\nEventStream --> ConsumerB\nEventStream --> Storage\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Kafka Log Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Kafka uses a distributed log architecture where messages are stored in ordered sequences called logs. Producers append messages to a topic partition, and consumers read messages sequentially from that log. Each message has an offset that tracks its position. Because the log is persistent, consumers can replay messages for processing or recovery.\n\n```mermaid\ngraph LR\nProducer --> PartitionLog\nPartitionLog --> Consumer1\nPartitionLog --> Consumer2\nPartitionLog --> OffsetTracker\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Message Broker Architecture?"
+      },
+      {
+        "from": "gpt",
+        "value": "Message Broker Architecture uses an intermediary service to manage communication between producers and consumers. Instead of sending messages directly, producers send messages to the broker. The broker stores, routes, and delivers messages to the appropriate consumers. This approach decouples systems, improves scalability, and enables reliable delivery. Message brokers also support features such as message persistence, filtering, and retry mechanisms. Examples include RabbitMQ and Apache Kafka."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Exactly-Once Delivery Semantics."
+      },
+      {
+        "from": "gpt",
+        "value": "Exactly-once delivery semantics guarantee that a message is processed exactly one time, even in the presence of retries or failures. Distributed systems achieve this using techniques like idempotent producers, transaction logs, and deduplication mechanisms. When a consumer processes a message, the system records that operation to prevent duplicates. Although exactly-once delivery provides strong guarantees, it can increase system complexity and processing overhead."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does At-Least-Once Delivery Semantics work?"
+      },
+      {
+        "from": "gpt",
+        "value": "At-least-once delivery ensures that a message will be delivered one or more times. If a failure occurs before the system confirms successful processing, the message may be resent. This guarantees that no messages are lost, but consumers must handle potential duplicates. Systems often rely on idempotent operations so that processing the same message multiple times does not cause errors."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is At-Most-Once Delivery Semantics?"
+      },
+      {
+        "from": "gpt",
+        "value": "At-most-once delivery semantics guarantee that each message is delivered zero or one time. If a failure occurs before the message reaches the consumer, the message may be lost. However, duplicates will never occur. This model is simple and efficient because it avoids retries and deduplication logic. It is commonly used in systems where occasional data loss is acceptable but duplicate processing must be avoided."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Task Queue."
+      },
+      {
+        "from": "gpt",
+        "value": "A Distributed Task Queue distributes background jobs across multiple worker machines. Producers submit tasks to the queue, and worker nodes retrieve tasks and execute them. This design allows the system to process tasks in parallel and scale horizontally as demand grows. Task queues are commonly used for background processing such as email delivery or data processing.\n\n```mermaid\ngraph LR\nProducer --> TaskQueue\nTaskQueue --> Worker1\nTaskQueue --> Worker2\nTaskQueue --> Worker3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Work Queue Pattern."
+      },
+      {
+        "from": "gpt",
+        "value": "The Work Queue pattern distributes tasks among multiple workers so that large workloads can be processed efficiently. Tasks are placed in a queue, and each worker pulls a task when it becomes available. This prevents any single worker from being overloaded and improves throughput by enabling parallel processing.\n\n```mermaid\ngraph LR\nProducer --> WorkQueue\nWorkQueue --> WorkerA\nWorkQueue --> WorkerB\nWorkQueue --> WorkerC\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Pipeline Processing Pattern."
+      },
+      {
+        "from": "gpt",
+        "value": "The Pipeline Processing pattern divides a complex task into multiple sequential stages. Each stage performs a specific processing step and passes the result to the next stage. This allows different stages to run concurrently, improving throughput and modularity in distributed systems.\n\n```mermaid\ngraph LR\nInput --> Stage1\nStage1 --> Stage2\nStage2 --> Stage3\nStage3 --> Output\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about the MapReduce Processing Model."
+      },
+      {
+        "from": "gpt",
+        "value": "MapReduce is a distributed data processing model used to analyze large datasets across many machines. In the Map phase, data is divided into chunks and processed in parallel to produce intermediate key-value pairs. In the Reduce phase, the system aggregates and processes those intermediate results to produce the final output.\n\n```mermaid\ngraph TD\nInputData --> MapWorkers\nMapWorkers --> IntermediateData\nIntermediateData --> ReduceWorkers\nReduceWorkers --> FinalOutput\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed File System Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "A Distributed File System stores files across multiple machines while presenting them as a single unified system. Files are divided into blocks and distributed across storage nodes. A metadata service keeps track of where each block is stored. This design improves scalability, reliability, and fault tolerance.\n\n```mermaid\ngraph LR\nClient --> MetadataServer\nMetadataServer --> DataNode1\nMetadataServer --> DataNode2\nMetadataServer --> DataNode3\nDataNode1 --> BlockStorage\nDataNode2 --> BlockStorage\nDataNode3 --> BlockStorage\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does HDFS Architecture work?"
+      },
+      {
+        "from": "gpt",
+        "value": "HDFS (Hadoop Distributed File System) is designed to store large datasets across clusters of machines. It uses a NameNode to manage metadata and DataNodes to store actual file blocks. Files are split into blocks and replicated across multiple DataNodes for reliability. Clients communicate with the NameNode to locate blocks and then directly access the DataNodes.\n\n```mermaid\ngraph LR\nClient --> NameNode\nNameNode --> DataNode1\nNameNode --> DataNode2\nNameNode --> DataNode3\nDataNode1 --> Block1\nDataNode2 --> Block2\nDataNode3 --> Block3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Object Storage Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Object storage stores data as objects rather than files or blocks. Each object includes the data, metadata, and a unique identifier. Objects are stored across distributed storage nodes and accessed using APIs. This architecture is highly scalable and commonly used for cloud storage systems such as backups and media storage.\n\n```mermaid\ngraph LR\nClient --> API\nAPI --> ObjectStore\nObjectStore --> StorageNode1\nObjectStore --> StorageNode2\nObjectStore --> StorageNode3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Replication in Distributed Systems."
+      },
+      {
+        "from": "gpt",
+        "value": "Replication in distributed systems means storing multiple copies of data across different machines. When a client writes data, the system replicates it to other nodes to improve reliability and availability. If one node fails, other replicas can continue serving requests. Replication strategies include leader-follower replication and multi-leader replication.\n\n```mermaid\ngraph LR\nClient --> Leader\nLeader --> Replica1\nLeader --> Replica2\nReplica1 --> Clients\nReplica2 --> Clients\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Leader-Follower Replication."
+      },
+      {
+        "from": "gpt",
+        "value": "Leader-Follower Replication is a data replication strategy where one node acts as the leader and handles all write operations. The leader then replicates those updates to follower nodes. Followers usually serve read requests and maintain copies of the leader\u2019s data. This architecture improves scalability for reads while keeping writes consistent through a single authority. If the leader fails, a follower can be promoted to become the new leader. This model is commonly used in databases like PostgreSQL and MySQL.\n\n```mermaid\ngraph LR\nClient --> Leader\nLeader --> Follower1\nLeader --> Follower2\nFollower1 --> ClientRead\nFollower2 --> ClientRead\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Multi-Leader Replication work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Multi-Leader Replication allows multiple nodes to accept write operations. Each leader processes local writes and then propagates the changes to other leaders. This setup improves availability and reduces latency in geographically distributed systems. However, it introduces the challenge of conflict resolution when different leaders update the same data simultaneously. Systems use timestamps, version vectors, or application rules to resolve these conflicts. Multi-leader replication is useful in distributed applications that require regional write capability.\n\n```mermaid\ngraph LR\nClient1 --> LeaderA\nClient2 --> LeaderB\nLeaderA <--> LeaderB\nLeaderA --> ReplicaA\nLeaderB --> ReplicaB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Quorum-Based Replication in distributed systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Quorum-Based Replication ensures consistency by requiring a majority of nodes to participate in read or write operations. Instead of contacting every replica, the system requires a minimum number of responses called a quorum. For example, if there are five replicas, a write may require three acknowledgments before success. This guarantees that read and write sets overlap, ensuring the latest data is returned. Quorum systems balance availability and consistency and are widely used in distributed databases like Cassandra and Dynamo-style systems.\n\n```mermaid\ngraph LR\nClient --> Coordinator\nCoordinator --> Node1\nCoordinator --> Node2\nCoordinator --> Node3\nNode1 --> Ack\nNode2 --> Ack\nNode3 --> Ack\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Read Repair Mechanism."
+      },
+      {
+        "from": "gpt",
+        "value": "Read Repair is a consistency technique used in distributed databases. When a client reads data, the system queries multiple replicas and compares their responses. If differences are detected, the system updates the outdated replicas with the most recent version. This repair happens during the read operation itself. The advantage is that inconsistencies gradually disappear as reads occur. It helps maintain eventual consistency without requiring heavy background synchronization tasks.\n\n```mermaid\ngraph LR\nClient --> Coordinator\nCoordinator --> Replica1\nCoordinator --> Replica2\nReplica1 --> DataV2\nReplica2 --> DataV1\nCoordinator --> Repair\nRepair --> Replica2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Anti-Entropy Synchronization."
+      },
+      {
+        "from": "gpt",
+        "value": "Anti-Entropy Synchronization is a background process used to ensure replicas eventually converge to the same data. Nodes periodically compare their datasets using structures such as Merkle trees or hashes. If differences are detected, the system exchanges missing or outdated data between replicas. This method ensures long-term consistency even if updates were missed due to temporary network failures. Anti-entropy is commonly used in distributed databases to repair inconsistencies without blocking normal read or write operations.\n\n```mermaid\ngraph LR\nNodeA --> Compare\nNodeB --> Compare\nCompare --> Differences\nDifferences --> SyncA\nDifferences --> SyncB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Sharding in Distributed Databases?"
+      },
+      {
+        "from": "gpt",
+        "value": "Sharding is a technique used to distribute large datasets across multiple database servers. Instead of storing all data in one machine, the system splits the dataset into smaller pieces called shards. Each shard holds a subset of the data based on a sharding key such as user ID or geographic region. This approach improves scalability because queries can be processed across multiple servers simultaneously. Sharding helps systems handle massive workloads and large volumes of data efficiently.\n\n```mermaid\ngraph LR\nClient --> Router\nRouter --> Shard1\nRouter --> Shard2\nRouter --> Shard3\nShard1 --> DB1\nShard2 --> DB2\nShard3 --> DB3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Cache Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed Cache Architecture stores frequently accessed data across multiple cache servers instead of a single machine. Applications check the cache before querying the main database. If the data exists in the cache, the system returns it quickly, reducing database load and improving performance. The cache cluster distributes data across nodes using hashing or partitioning. If one node fails, others can still serve requests. Systems like Redis Cluster and Memcached commonly implement distributed caching for high-scale applications.\n\n```mermaid\ngraph LR\nClient --> CacheCluster\nCacheCluster --> CacheNode1\nCacheCluster --> CacheNode2\nCacheCluster --> CacheNode3\nCacheCluster --> Database\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Cache Aside Pattern work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Cache Aside Pattern is a caching strategy where the application controls interactions with the cache. When the application needs data, it first checks the cache. If the data is found, it returns immediately. If not, the application retrieves the data from the database and then stores it in the cache for future requests. This approach keeps the cache lightweight and ensures that only frequently used data is cached. It is widely used in distributed systems to improve performance.\n\n```mermaid\ngraph LR\nClient --> App\nApp --> Cache\nCache --> Hit\nCache --> Miss\nMiss --> Database\nDatabase --> Cache\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Circuit Breaker Pattern in distributed systems."
+      },
+      {
+        "from": "gpt",
+        "value": "The Circuit Breaker Pattern protects distributed systems from repeated failures when calling unreliable services. When a service repeatedly fails, the circuit breaker opens and stops further requests from reaching that service. Instead of waiting for timeouts, the system quickly returns an error or fallback response. After a cooldown period, the circuit breaker allows limited requests to test if the service has recovered. This pattern improves system resilience and prevents cascading failures across microservices.\n\n```mermaid\ngraph LR\nClient --> ServiceA\nServiceA --> CircuitBreaker\nCircuitBreaker --> ServiceB\nCircuitBreaker --> Fallback\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Service Mesh Architecture?"
+      },
+      {
+        "from": "gpt",
+        "value": "Service Mesh Architecture manages communication between microservices using a dedicated infrastructure layer. Instead of embedding networking logic inside each service, the mesh handles tasks such as traffic routing, retries, security, and observability. Each service communicates through a sidecar proxy that intercepts network traffic. A central control plane configures and monitors these proxies. This architecture simplifies service development while improving reliability and security in distributed applications.\n\n```mermaid\ngraph LR\nServiceA --> SidecarA\nSidecarA --> SidecarB\nSidecarB --> ServiceB\nControlPlane --> SidecarA\nControlPlane --> SidecarB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Sidecar Proxy Pattern."
+      },
+      {
+        "from": "gpt",
+        "value": "The Sidecar Proxy Pattern attaches a helper proxy container to each service instance. This proxy runs alongside the application and handles network communication tasks such as routing, encryption, retries, and monitoring. Because the proxy intercepts all inbound and outbound traffic, services can focus on business logic instead of networking concerns. Sidecar proxies are widely used in service meshes like Istio, where every microservice has a proxy managing communication with other services.\n\n```mermaid\ngraph LR\nServiceA --> SidecarA\nSidecarA --> Network\nNetwork --> SidecarB\nSidecarB --> ServiceB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Kubernetes Networking Model?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Kubernetes networking model defines how containers communicate inside a cluster. Every pod receives its own IP address and can communicate directly with other pods without network address translation. Kubernetes networking ensures that pods across different nodes can reach each other using standard networking protocols. Services provide stable virtual IPs that route traffic to groups of pods. This model simplifies application communication and allows distributed workloads to scale easily across multiple nodes.\n\n```mermaid\ngraph LR\nPodA --> PodB\nPodB --> PodC\nService --> PodA\nService --> PodB\nNode1 --> Node2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Kubernetes Service Discovery work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Kubernetes Service Discovery allows applications to locate other services running inside a cluster. Instead of hardcoding IP addresses, services are registered with the Kubernetes API and assigned stable DNS names. When a pod needs to communicate with another service, it simply uses the service name. Kubernetes automatically routes the request to one of the available pods behind that service. This abstraction makes distributed applications easier to manage as pods can scale or restart without breaking connectivity.\n\n```mermaid\ngraph LR\nClientPod --> DNS\nDNS --> ServiceName\nServiceName --> Pod1\nServiceName --> Pod2\nServiceName --> Pod3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Kubernetes Ingress Flow."
+      },
+      {
+        "from": "gpt",
+        "value": "Kubernetes Ingress manages external access to services running inside a cluster, typically HTTP or HTTPS. It acts as a gateway that routes incoming requests to the correct internal service based on rules like domain names or URL paths. Instead of exposing each service individually, the Ingress controller receives requests and forwards them to backend services within the cluster. This improves scalability and simplifies traffic management.\n\n```mermaid\ngraph LR\nUser --> Ingress\nIngress --> IngressController\nIngressController --> Service\nService --> Pod\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Container Networking Interface (CNI) work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Container Networking Interface (CNI) is a standard used by container orchestration systems like Kubernetes to configure networking for containers. When a container starts, the container runtime calls a CNI plugin. The plugin assigns an IP address to the container and connects it to the cluster network so it can communicate with other containers and services. CNI plugins handle tasks such as routing, network isolation, and connectivity across nodes.\n\n```mermaid\ngraph TD\nContainerRuntime --> CNIPlugin\nCNIPlugin --> AssignIP\nAssignIP --> ConfigureRouting\nConfigureRouting --> ClusterNetwork\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Overlay Network in Containers."
+      },
+      {
+        "from": "gpt",
+        "value": "An overlay network allows containers running on different physical hosts to communicate as if they are on the same local network. It creates a virtual network layer on top of the existing infrastructure using tunneling protocols. Each container receives a virtual IP address, and the overlay network encapsulates packets so they can travel across the underlying network. This abstraction enables distributed container systems like Kubernetes or Docker Swarm to manage connectivity easily across multiple machines.\n\n```mermaid\ngraph LR\nContainerA --> OverlayNetwork\nOverlayNetwork --> PhysicalNetwork\nPhysicalNetwork --> OverlayNetwork\nOverlayNetwork --> ContainerB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Software Defined Networking (SDN)?"
+      },
+      {
+        "from": "gpt",
+        "value": "Software Defined Networking separates the network control logic from the physical devices that forward traffic. Instead of each switch making independent decisions, a centralized SDN controller manages routing rules and policies. The controller communicates with switches using protocols such as OpenFlow. This architecture allows administrators to program the network dynamically, automate configuration, and optimize traffic flows across the infrastructure.\n\n```mermaid\ngraph TD\nController --> Switch1\nController --> Switch2\nController --> Switch3\nSwitch1 --> DataFlow\nSwitch2 --> DataFlow\nSwitch3 --> DataFlow\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Network Function Virtualization (NFV)."
+      },
+      {
+        "from": "gpt",
+        "value": "Network Function Virtualization replaces specialized networking hardware with software running on standard servers. Functions such as firewalls, load balancers, and routers are implemented as virtual network functions (VNFs). These VNFs can be deployed, scaled, or updated quickly without installing new physical equipment. NFV improves flexibility and reduces infrastructure costs while enabling faster deployment of network services.\n\n```mermaid\ngraph LR\nUserTraffic --> VirtualRouter\nVirtualRouter --> VirtualFirewall\nVirtualFirewall --> VirtualLoadBalancer\nVirtualLoadBalancer --> ApplicationServers\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Control Plane vs Data Plane."
+      },
+      {
+        "from": "gpt",
+        "value": "In networking systems, the control plane and data plane perform different responsibilities. The control plane decides how traffic should move through the network by computing routes, policies, and forwarding rules. The data plane actually moves the packets according to those rules. For example, in routers or SDN switches, the control plane programs the forwarding tables, while the data plane processes packets at high speed using those tables.\n\n```mermaid\ngraph TD\nControlPlane --> RoutingDecision\nRoutingDecision --> ForwardingRules\nForwardingRules --> DataPlane\nDataPlane --> PacketForwarding\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does OpenFlow Architecture work?"
+      },
+      {
+        "from": "gpt",
+        "value": "OpenFlow is a protocol used in Software Defined Networking that allows a central controller to communicate with network switches. The controller installs rules in the switch's flow table, which defines how packets should be handled. When a packet arrives, the switch checks the flow table. If a rule matches, the packet is forwarded according to that rule. If no rule exists, the switch sends the packet information to the controller for instructions.\n\n```mermaid\ngraph TD\nPacket --> Switch\nSwitch --> FlowTable\nFlowTable --> ForwardPacket\nFlowTable --> Controller\nController --> InstallRule\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Virtual Private Network (VPN)."
+      },
+      {
+        "from": "gpt",
+        "value": "A Virtual Private Network creates a secure connection between a user and a remote network over the public internet. The VPN client encrypts traffic and sends it through a secure tunnel to a VPN server. The server decrypts the traffic and forwards it to the destination network. This process protects sensitive data and hides the user's real network location.\n\n```mermaid\ngraph LR\nUserDevice --> EncryptedTunnel\nEncryptedTunnel --> VPNServer\nVPNServer --> InternetResource\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain IPsec Tunnel Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "IPsec tunnel architecture provides secure communication between two networks by encrypting IP packets. In tunnel mode, the original packet is fully encrypted and encapsulated inside a new IP packet before being sent across the internet. The receiving gateway decrypts the packet and forwards it to the destination device. This method is commonly used in site-to-site VPNs.\n\n```mermaid\ngraph LR\nLocalNetwork --> GatewayA\nGatewayA --> EncryptedTunnel\nEncryptedTunnel --> GatewayB\nGatewayB --> RemoteNetwork\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does TLS Encryption Flow work?"
+      },
+      {
+        "from": "gpt",
+        "value": "TLS protects data transmitted between a client and a server by establishing an encrypted session. During the TLS handshake, the client and server exchange supported encryption methods, verify the server\u2019s certificate, and generate shared session keys. Once the handshake finishes, all application data is encrypted using those keys. This prevents attackers from reading or modifying the data while it travels across the network.\n\n```mermaid\ngraph LR\nClient --> TLSHandshake\nTLSHandshake --> CertificateVerification\nCertificateVerification --> SessionKeyExchange\nSessionKeyExchange --> EncryptedData\nEncryptedData --> Server\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Public Key Infrastructure (PKI)."
+      },
+      {
+        "from": "gpt",
+        "value": "Public Key Infrastructure is a system that manages digital certificates and cryptographic keys used for secure communication. It ensures that users can trust the identity of servers and services. A certificate authority issues certificates that bind a public key to an entity such as a website. Clients verify these certificates before establishing encrypted connections, allowing secure authentication and data protection.\n\n```mermaid\ngraph TD\nCertificateAuthority --> IssueCertificate\nIssueCertificate --> Server\nClient --> VerifyCertificate\nVerifyCertificate --> SecureConnection\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Certificate Authority Trust Model."
+      },
+      {
+        "from": "gpt",
+        "value": "The certificate authority trust model is used to verify identities on the internet. Certificate Authorities (CAs) issue digital certificates that confirm the identity of websites or services. Browsers and operating systems maintain a list of trusted root CAs. When a client connects to a server, it checks whether the server's certificate was issued by a trusted CA. If the certificate chain is valid, the connection proceeds securely.\n\n```mermaid\ngraph TD\nRootCA --> IntermediateCA\nIntermediateCA --> ServerCertificate\nClient --> ValidateChain\nValidateChain --> TrustedConnection\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Firewall Packet Filtering?"
+      },
+      {
+        "from": "gpt",
+        "value": "Firewall packet filtering is a security mechanism that examines individual network packets and decides whether to allow or block them based on predefined rules. These rules typically inspect information such as source IP address, destination IP address, port numbers, and protocol type. If a packet matches an allowed rule, it passes through the firewall. Otherwise, it is dropped to prevent unauthorized access.\n\n```mermaid\ngraph LR\nIncomingPacket --> Firewall\nFirewall --> RuleCheck\nRuleCheck --> Allow\nRuleCheck --> Drop\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Stateful Firewall Operation."
+      },
+      {
+        "from": "gpt",
+        "value": "A stateful firewall tracks the state of active network connections and makes filtering decisions based on that context. Instead of evaluating packets independently, it maintains a table of ongoing sessions. When a new connection is established, the firewall records it. Subsequent packets belonging to that session are allowed automatically, while unrelated packets are blocked. This improves security while allowing legitimate responses.\n\n```mermaid\ngraph TD\nClient --> Firewall\nFirewall --> ConnectionTable\nConnectionTable --> ValidateSession\nValidateSession --> AllowPacket\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Intrusion Detection System (IDS) Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "An Intrusion Detection System monitors network traffic to detect suspicious activities or known attack patterns. It analyzes packets using signature databases or anomaly detection methods. When suspicious behavior is detected, the IDS generates alerts for administrators but does not block traffic directly. IDS systems are typically placed at key monitoring points within the network to observe large volumes of traffic.\n\n```mermaid\ngraph LR\nNetworkTraffic --> IDS\nIDS --> PacketAnalysis\nPacketAnalysis --> AlertSystem\nAlertSystem --> SecurityTeam\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Intrusion Prevention System (IPS) Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "An Intrusion Prevention System extends intrusion detection by actively blocking malicious traffic. It inspects packets in real time and compares them with attack signatures or anomaly patterns. When the IPS identifies harmful traffic, it can drop packets, reset connections, or quarantine devices. Because it sits directly in the traffic path, it both detects and prevents attacks before they reach internal systems.\n\n```mermaid\ngraph LR\nIncomingTraffic --> IPS\nIPS --> ThreatAnalysis\nThreatAnalysis --> AllowTraffic\nThreatAnalysis --> BlockAttack\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Zero Trust Network Architecture?"
+      },
+      {
+        "from": "gpt",
+        "value": "Zero Trust Network Architecture assumes that no device or user should be automatically trusted, even inside the network. Every access request must be verified using authentication, authorization, and security policies. Systems continuously validate identity, device health, and permissions before granting access to resources. This model reduces the risk of internal breaches and limits lateral movement within the network.\n\n```mermaid\ngraph TD\nUser --> IdentityVerification\nIdentityVerification --> PolicyCheck\nPolicyCheck --> ResourceAccess\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Network Segmentation."
+      },
+      {
+        "from": "gpt",
+        "value": "Network segmentation divides a large network into smaller, isolated segments. Each segment contains specific systems or services and communicates through controlled gateways or firewalls. This separation improves security because attackers who compromise one segment cannot easily move to others. It also improves network management and performance by limiting broadcast traffic and applying different security policies to each segment.\n\n```mermaid\ngraph TD\nGateway --> SegmentA\nGateway --> SegmentB\nGateway --> SegmentC\nSegmentA --> Servers\nSegmentB --> Databases\nSegmentC --> Applications\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about VLAN Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "A Virtual Local Area Network allows network administrators to divide a physical network into multiple logical networks. Devices in the same VLAN can communicate as if they are on the same switch, even if they are physically separated. VLAN tags are added to Ethernet frames so switches know which VLAN the traffic belongs to. This improves network organization, security, and traffic isolation.\n\n```mermaid\ngraph TD\nSwitch --> VLAN10\nSwitch --> VLAN20\nVLAN10 --> DevicesA\nVLAN20 --> DevicesB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain VXLAN Overlay Networks."
+      },
+      {
+        "from": "gpt",
+        "value": "VXLAN is an overlay networking technology used in data centers to extend Layer 2 networks across Layer 3 infrastructure. It encapsulates Ethernet frames inside UDP packets so they can travel across IP networks. Each VXLAN network is identified by a VXLAN Network Identifier (VNI). This allows large numbers of isolated virtual networks to exist across distributed infrastructure.\n\n```mermaid\ngraph LR\nVM1 --> VXLANEncapsulation\nVXLANEncapsulation --> IPNetwork\nIPNetwork --> VXLANDecapsulation\nVXLANDecapsulation --> VM2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Multi-Tier Web Application Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Multi-tier web architecture separates an application into layers that handle different responsibilities. A typical setup includes a presentation layer (web servers), an application layer (business logic), and a data layer (databases). This separation improves scalability, security, and maintainability. Each tier can scale independently depending on demand.\n\n```mermaid\ngraph LR\nClient --> WebTier\nWebTier --> ApplicationTier\nApplicationTier --> DatabaseTier\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain N-Tier Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "N-tier architecture extends the concept of multi-tier systems by dividing an application into multiple specialized layers. Each layer handles a specific responsibility, such as presentation, authentication, business logic, caching, or data storage. These layers communicate through defined interfaces. This modular design improves scalability and allows developers to update or scale individual components without affecting the entire system.\n\n```mermaid\ngraph LR\nClient --> PresentationLayer\nPresentationLayer --> ServiceLayer\nServiceLayer --> BusinessLogic\nBusinessLogic --> DataLayer\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Reverse Proxy Load Balancing."
+      },
+      {
+        "from": "gpt",
+        "value": "A reverse proxy load balancer sits between clients and backend servers to distribute incoming requests. Clients send requests to the proxy, which selects a backend server based on algorithms such as round-robin or least connections. This improves performance, reliability, and scalability by preventing any single server from being overloaded.\n\n```mermaid\ngraph LR\nClient --> ReverseProxy\nReverseProxy --> Server1\nReverseProxy --> Server2\nReverseProxy --> Server3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain DNS Load Balancing."
+      },
+      {
+        "from": "gpt",
+        "value": "DNS load balancing distributes traffic across multiple servers by returning different IP addresses for the same domain name. When a client queries DNS, the server may rotate through a list of available server addresses. This approach spreads requests across infrastructure and improves service availability, especially for globally distributed applications.\n\n```mermaid\ngraph LR\nClient --> DNS\nDNS --> ServerA\nDNS --> ServerB\nDNS --> ServerC\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Anycast Routing."
+      },
+      {
+        "from": "gpt",
+        "value": "Anycast routing allows multiple servers in different geographic locations to share the same IP address. Network routing protocols direct users to the nearest or most efficient server based on network distance. This improves performance and reliability because traffic automatically shifts to another location if one server becomes unavailable.\n\n```mermaid\ngraph TD\nUser --> Router\nRouter --> NearestServer\nRouter --> BackupServer\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Geo-Distributed Systems."
+      },
+      {
+        "from": "gpt",
+        "value": "Geo-distributed systems are distributed computing systems where components are deployed across multiple geographic regions or data centers. This design improves reliability, availability, and performance by placing services closer to users worldwide. If one region fails, others can continue serving requests. However, these systems must handle challenges like network latency, replication consistency, and data synchronization across locations. Geo-distributed systems are commonly used by large web platforms and cloud services.\n\n```mermaid\ngraph LR\nUser_US --> DC_US\nUser_EU --> DC_EU\nUser_ASIA --> DC_ASIA\nDC_US <--> DC_EU\nDC_EU <--> DC_ASIA\nDC_US <--> DC_ASIA\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Global Server Load Balancing work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Global Server Load Balancing (GSLB) distributes user traffic across multiple geographically separated data centers. Instead of sending all requests to one server cluster, DNS or routing mechanisms direct users to the closest or healthiest data center. This reduces latency, improves availability, and provides failover if a data center becomes unavailable. Health checks continuously monitor server status so traffic is only routed to active systems.\n\n```mermaid\ngraph LR\nUser --> DNS\nDNS --> DC1\nDNS --> DC2\nDNS --> DC3\nDC1 --> Servers1\nDC2 --> Servers2\nDC3 --> Servers3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Distributed Monitoring Systems."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed monitoring systems collect and analyze performance data from many machines across a distributed environment. Agents running on each node gather metrics such as CPU usage, memory usage, request latency, and error rates. These metrics are sent to centralized or federated monitoring servers for aggregation, alerting, and visualization. This helps operators detect failures, performance issues, or unusual patterns across large clusters.\n\n```mermaid\ngraph LR\nNode1 --> MetricsCollector\nNode2 --> MetricsCollector\nNode3 --> MetricsCollector\nMetricsCollector --> MonitoringServer\nMonitoringServer --> Dashboard\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Metrics Collection Architecture?"
+      },
+      {
+        "from": "gpt",
+        "value": "Metrics collection architecture defines how performance data is gathered, transported, stored, and visualized in distributed systems. Each service or node runs a metrics exporter or agent that records operational data like request counts or resource usage. A collector gathers these metrics from many nodes and stores them in a time-series database. Monitoring tools then query this database to generate dashboards and alerts.\n\n```mermaid\ngraph LR\nService1 --> Exporter\nService2 --> Exporter\nExporter --> Collector\nCollector --> TimeSeriesDB\nTimeSeriesDB --> Dashboard\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Log Aggregation Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Log aggregation architecture collects logs from many servers and stores them in a centralized system for analysis. Each application writes logs describing events such as errors, requests, or system activity. Log agents running on servers send these logs to a central pipeline where they are parsed, indexed, and stored. Engineers can then search logs to debug problems, monitor behavior, and analyze system performance across distributed services.\n\n```mermaid\ngraph LR\nApp1 --> LogAgent\nApp2 --> LogAgent\nApp3 --> LogAgent\nLogAgent --> LogPipeline\nLogPipeline --> LogStorage\nLogStorage --> SearchDashboard\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Time Synchronization."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed time synchronization ensures that clocks on different machines in a distributed system remain closely aligned. Accurate time is important for logging events, coordinating tasks, and maintaining data consistency. Because each machine\u2019s hardware clock can drift over time, synchronization protocols periodically adjust clocks using reference servers. Systems exchange timestamps and compute offsets to keep clocks aligned within milliseconds.\n\n```mermaid\ngraph LR\nTimeServer --> Node1\nTimeServer --> Node2\nTimeServer --> Node3\nNode1 <--> Node2\nNode2 <--> Node3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Network Time Protocol (NTP)?"
+      },
+      {
+        "from": "gpt",
+        "value": "Network Time Protocol (NTP) is a widely used protocol that synchronizes clocks across computers on a network. It works by allowing client machines to periodically request the current time from NTP servers. The protocol measures network delays and calculates an offset to adjust the client\u2019s clock accurately. NTP organizes servers into hierarchical layers called strata, where higher-level servers obtain time from reference clocks.\n\n```mermaid\ngraph TD\nReferenceClock --> NTP_Server_Stratum1\nNTP_Server_Stratum1 --> NTP_Server_Stratum2\nNTP_Server_Stratum2 --> Client1\nNTP_Server_Stratum2 --> Client2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Logical Clocks in Distributed Systems."
+      },
+      {
+        "from": "gpt",
+        "value": "Logical clocks are mechanisms used in distributed systems to order events without relying on synchronized physical clocks. Since machines may have different local times, logical clocks assign timestamps based on the sequence of events and message exchanges. When a process sends a message, it includes its logical timestamp. The receiving process updates its own clock to maintain causal ordering. This helps track dependencies between events.\n\n```mermaid\ngraph LR\nProcessA -->|message t=5| ProcessB\nProcessB -->|update clock| EventB\nProcessA --> EventA\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Lamport Clocks."
+      },
+      {
+        "from": "gpt",
+        "value": "Lamport clocks are a type of logical clock used to order events in distributed systems. Each process maintains a counter that increases whenever an event occurs locally. When a process sends a message, it includes its current counter value. The receiving process sets its counter to the maximum of its own value and the received value, then increments it. This ensures that causally related events receive ordered timestamps. Lamport clocks help detect event ordering across distributed nodes but cannot identify concurrent events precisely."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Vector Clocks in distributed systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Vector clocks extend logical clocks to track causal relationships between events more precisely. Each process maintains a vector containing a counter for every process in the system. When an event occurs locally, the process increments its own counter. When sending messages, it includes the entire vector. The receiver merges vectors by taking the maximum value for each position. This allows systems to determine whether events happened before, after, or concurrently with each other."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Distributed Snapshot Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "A distributed snapshot algorithm captures the global state of a distributed system without stopping its execution. The algorithm records the local state of each process and the messages in transit between processes. This snapshot helps analyze system behavior, detect deadlocks, or recover from failures. Special marker messages are used to coordinate when processes record their state while normal communication continues.\n\n```mermaid\ngraph LR\nP1 --> P2\nP2 --> P3\nP3 --> P1\nP1 -->|marker| P2\nP2 -->|marker| P3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about the Chandy-Lamport Snapshot Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "The Chandy-Lamport algorithm records a consistent global state in a distributed system without stopping processes. One process starts the snapshot by recording its state and sending marker messages to other processes. When a process receives a marker for the first time, it records its own state and forwards markers along its outgoing channels. Messages received before the marker are considered part of the channel state. This technique enables debugging and checkpointing.\n\n```mermaid\ngraph LR\nP1 -->|marker| P2\nP2 -->|marker| P3\nP3 -->|marker| P1\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Deadlock Detection."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed deadlock detection identifies situations where processes across multiple machines wait indefinitely for resources held by each other. In distributed systems, no single node has complete knowledge of resource allocation, so detection requires exchanging information between nodes. Systems build a global wait-for graph representing which processes are waiting for resources. If a cycle appears in this graph, a deadlock exists. Detection algorithms periodically collect and analyze this information to identify and resolve deadlocks."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Distributed Mutual Exclusion?"
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed mutual exclusion ensures that only one process at a time can access a shared resource in a distributed system. Unlike single-machine locks, coordination must happen through message exchanges between nodes. Processes request access to a critical section and other nodes grant permission based on a protocol. This prevents conflicts such as multiple processes modifying the same data simultaneously. Algorithms like Ricart\u2013Agrawala or token-based approaches implement distributed mutual exclusion."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Token Ring Mutual Exclusion."
+      },
+      {
+        "from": "gpt",
+        "value": "Token Ring mutual exclusion is a distributed algorithm that controls access to a shared resource using a circulating token. Processes are arranged in a logical ring. Only the process holding the token is allowed to enter the critical section. After finishing its work, the process passes the token to the next node in the ring. This guarantees that only one process accesses the shared resource at a time.\n\n```mermaid\ngraph LR\nP1 --> P2\nP2 --> P3\nP3 --> P4\nP4 --> P1\nP2 -->|token| CriticalSection\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Ricart\u2013Agrawala Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "The Ricart\u2013Agrawala algorithm is a distributed mutual exclusion method that uses message passing to control access to a shared resource. When a process wants to enter the critical section, it sends a request message to all other processes. Each process replies with permission unless it is currently using the resource or has a higher-priority request. Once the requesting process receives permission from all nodes, it enters the critical section. This algorithm ensures fairness and avoids centralized coordination."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Bully Algorithm for leader election?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Bully algorithm is a leader election protocol used in distributed systems to choose a coordinator among nodes. Each node has a unique identifier, and the node with the highest ID becomes the leader. If a node detects that the leader has failed, it sends election messages to nodes with higher IDs. If none respond, it declares itself the leader. Otherwise, a higher-ID node takes over the election process until a leader is chosen."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Ring-Based Leader Election."
+      },
+      {
+        "from": "gpt",
+        "value": "Ring-based leader election selects a coordinator among distributed processes arranged in a logical ring. Each process sends an election message containing its identifier to the next node. As the message travels around the ring, nodes compare identifiers and keep the highest value. When the message returns to the initiating process, the node with the highest identifier becomes the leader. This approach avoids centralized control.\n\n```mermaid\ngraph LR\nP1 --> P2\nP2 --> P3\nP3 --> P4\nP4 --> P1\nP1 -->|election message| P2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Barrier Synchronization."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed barrier synchronization ensures that all processes in a distributed system reach a specific point before any process continues execution. This is commonly used in parallel computing stages. Each node signals when it reaches the barrier. Once the coordinator confirms that all nodes have arrived, it releases them to proceed to the next phase. This guarantees consistent progress across tasks.\n\n```mermaid\ngraph TD\nNode1 --> Barrier\nNode2 --> Barrier\nNode3 --> Barrier\nBarrier --> Continue\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the MapReduce Shuffle Phase."
+      },
+      {
+        "from": "gpt",
+        "value": "The shuffle phase in MapReduce transfers intermediate data from mapper tasks to reducer tasks. After processing input data, each mapper outputs key-value pairs. These pairs are grouped by key and redistributed across reducers so that all values associated with the same key reach the same reducer. This network-intensive step prepares data for the final reduce computation.\n\n```mermaid\ngraph LR\nMapper1 --> Shuffle\nMapper2 --> Shuffle\nMapper3 --> Shuffle\nShuffle --> Reducer1\nShuffle --> Reducer2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Data Locality in distributed systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Data locality refers to running computation close to where data is stored in distributed systems. Instead of transferring large datasets across the network to a compute node, the system schedules tasks on machines that already store the required data blocks. This reduces network traffic, improves performance, and speeds up large-scale data processing. Systems like Hadoop and Spark heavily rely on data locality when scheduling tasks."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Job Scheduling."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed job scheduling assigns computing tasks across multiple machines in a cluster. A scheduler receives job requests and determines where each task should run based on available resources, priorities, and system policies. The scheduler may consider factors such as CPU availability, memory usage, and data location. This approach helps balance workloads across the cluster and ensures efficient resource utilization."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Cluster Resource Management."
+      },
+      {
+        "from": "gpt",
+        "value": "Cluster resource management coordinates how computing resources like CPU, memory, and storage are allocated across many machines in a cluster. A central management system tracks available resources and distributes them among applications or jobs. It ensures that workloads run efficiently while preventing any single application from consuming excessive resources. Resource managers also monitor system health and enforce scheduling policies."
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Kubernetes Scheduler Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "The Kubernetes scheduler is responsible for assigning newly created pods to nodes in a cluster. When a pod is created, it enters a scheduling queue. The scheduler evaluates cluster nodes based on resource availability, policies, and constraints such as affinity or taints. After selecting the most suitable node, the pod is bound to that node and the container runtime starts the workload.\n\n```mermaid\ngraph LR\nPodRequest --> Scheduler\nScheduler --> Node1\nScheduler --> Node2\nScheduler --> Node3\nNode1 --> RunningPod\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Service-Oriented Architecture (SOA)?"
+      },
+      {
+        "from": "gpt",
+        "value": "Service-Oriented Architecture (SOA) is a design approach where applications are built as independent services that communicate over a network. Each service performs a specific business function and exposes an interface that other services can use. Services communicate through standardized protocols like HTTP or messaging systems. This modular structure allows systems to scale, evolve independently, and integrate across different platforms.\n\n```mermaid\ngraph LR\nClient --> ServiceA\nClient --> ServiceB\nServiceA --> Database\nServiceB --> Database\nServiceA <--> ServiceB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Event-Driven Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Event-Driven Architecture (EDA) is a distributed system design where services communicate by producing and reacting to events. Instead of calling each other directly, components publish events such as \"OrderCreated\" to an event broker. Other services subscribe and react independently. This decouples services, improves scalability, and enables asynchronous processing. Systems like payment, shipping, and notifications can all react to the same event without tightly coupling services. Event brokers like Kafka or RabbitMQ often manage event distribution and persistence.\n\n```mermaid\ngraph LR\nProducer --> EventBroker\nEventBroker --> ServiceA\nEventBroker --> ServiceB\nEventBroker --> ServiceC\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Saga Pattern for Distributed Transactions work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Saga pattern manages distributed transactions across multiple services without using a global database transaction. Instead of locking resources, the process is broken into a sequence of local transactions. Each service completes its step and emits an event to trigger the next service. If a step fails, compensating transactions undo the previous steps. This approach improves scalability and avoids long-running locks in distributed systems.\n\n```mermaid\ngraph LR\nOrderService --> PaymentService\nPaymentService --> InventoryService\nInventoryService --> ShippingService\nShippingService --> Complete\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about CQRS (Command Query Responsibility Segregation)."
+      },
+      {
+        "from": "gpt",
+        "value": "CQRS separates system operations into two responsibilities: commands (writes) and queries (reads). Instead of one model handling both tasks, the system uses separate services or data models. Commands update the state of the system, while queries read optimized data for fast responses. This separation improves scalability because read traffic can be scaled independently from writes. CQRS is often used with event-driven systems and event sourcing.\n\n```mermaid\ngraph LR\nClient --> CommandService\nCommandService --> WriteDB\nClient --> QueryService\nQueryService --> ReadDB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Event Sourcing Architecture in distributed systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Event sourcing stores system state as a sequence of events instead of storing only the latest state. Every change is recorded as an event such as \"OrderPlaced\" or \"ItemAdded.\" The current state can be reconstructed by replaying these events. This approach provides a complete history of system changes and enables auditing or rebuilding state after failures. Event sourcing often works with event streaming systems and CQRS.\n\n```mermaid\ngraph LR\nCommand --> EventStore\nEventStore --> EventStream\nEventStream --> StateRebuild\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain a Data Streaming Pipeline."
+      },
+      {
+        "from": "gpt",
+        "value": "A data streaming pipeline continuously moves and processes data in real time as it is generated. Instead of waiting for batch jobs, events are ingested, processed, and delivered instantly. Data sources like sensors or applications produce events, which are processed by stream processors and delivered to storage or analytics systems. This architecture enables real-time dashboards, monitoring, and recommendations.\n\n```mermaid\ngraph LR\nDataSource --> StreamBroker\nStreamBroker --> StreamProcessor\nStreamProcessor --> Storage\nStreamProcessor --> Dashboard\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Distributed Stream Processing work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed stream processing analyzes and transforms data streams across multiple machines in real time. Incoming data is divided across nodes so each node processes a portion of the stream. This parallel processing allows systems to handle large volumes of real-time data efficiently. Frameworks such as Apache Flink or Spark Streaming distribute tasks and coordinate processing across clusters.\n\n```mermaid\ngraph LR\nStreamSource --> Partition\nPartition --> Worker1\nPartition --> Worker2\nPartition --> Worker3\nWorker1 --> Output\nWorker2 --> Output\nWorker3 --> Output\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Windowed Stream Processing."
+      },
+      {
+        "from": "gpt",
+        "value": "Windowed stream processing groups continuous data streams into time-based or count-based windows for analysis. Because streams are infinite, systems cannot compute aggregates on the entire dataset. Instead, windows divide the stream into segments such as every 10 seconds or every 100 events. Operations like averages, sums, or counts are then computed within each window. This approach enables real-time analytics such as monitoring traffic spikes or system performance.\n\n```mermaid\ngraph LR\nStream --> Window1\nStream --> Window2\nStream --> Window3\nWindow1 --> Aggregation\nWindow2 --> Aggregation\nWindow3 --> Aggregation\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Backpressure in streaming systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Backpressure occurs when a downstream service cannot process incoming data as fast as it arrives. Without control, queues can grow indefinitely and overload the system. Backpressure mechanisms allow slower consumers to signal upstream producers to slow down or pause sending data. This keeps the system stable and prevents memory exhaustion. Many streaming frameworks automatically implement backpressure to balance processing speed across components.\n\n```mermaid\ngraph LR\nProducer --> Queue\nQueue --> Consumer\nConsumer -.Slow Processing.-> Producer\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Graph Processing."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed graph processing analyzes large graphs across multiple machines. Graphs represent relationships such as social networks or recommendation systems. Because graphs can contain billions of nodes and edges, they are partitioned across a cluster. Each node processes part of the graph while exchanging messages with other nodes when edges cross partitions. Systems like Pregel or GraphX coordinate these computations using iterative processing steps.\n\n```mermaid\ngraph LR\nPartition1 --> Worker1\nPartition2 --> Worker2\nPartition3 --> Worker3\nWorker1 <--> Worker2\nWorker2 <--> Worker3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Network Broadcast Communication."
+      },
+      {
+        "from": "gpt",
+        "value": "Broadcast communication sends a message from one sender to every node in a network. The sender transmits a single packet, and the network infrastructure distributes it to all connected devices. Broadcast is useful for discovery protocols and announcements, but it can cause congestion if overused. Many networks limit broadcast traffic to specific segments to avoid overwhelming devices.\n\n```mermaid\ngraph LR\nSender --> Node1\nSender --> Node2\nSender --> Node3\nSender --> Node4\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Multicast Communication in networking?"
+      },
+      {
+        "from": "gpt",
+        "value": "Multicast communication allows one sender to transmit data to a specific group of receivers instead of everyone on the network. Nodes interested in the data join a multicast group, and routers replicate packets only for those members. This approach reduces network traffic compared to broadcasting while still supporting group communication. Multicast is commonly used in video streaming, conferencing, and real-time data distribution.\n\n```mermaid\ngraph LR\nSender --> Router\nRouter --> Receiver1\nRouter --> Receiver2\nRouter --> Receiver3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Unicast Communication in networking?"
+      },
+      {
+        "from": "gpt",
+        "value": "Unicast communication is the most common network communication model where one sender transmits data directly to one receiver. Each packet travels from the source address to a specific destination address. This approach is used for typical web requests, database queries, and email communication. Because it targets a single destination, unicast traffic scales linearly with the number of recipients.\n\n```mermaid\ngraph LR\nClient --> Server\nServer --> Client\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Reliable Multicast Protocol."
+      },
+      {
+        "from": "gpt",
+        "value": "Reliable multicast ensures that messages sent to multiple receivers arrive correctly and in order. Standard multicast does not guarantee delivery, so reliable protocols add mechanisms such as acknowledgments, retransmissions, and sequence numbers. Receivers notify the sender if packets are missing, allowing the sender to resend them. This approach ensures consistency across distributed systems such as stock market feeds or replicated data systems.\n\n```mermaid\ngraph LR\nSender --> Receiver1\nSender --> Receiver2\nReceiver1 --> Ack\nReceiver2 --> Ack\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Overlay Networks."
+      },
+      {
+        "from": "gpt",
+        "value": "An overlay network is a virtual network built on top of an existing physical network. Nodes in the overlay are connected logically rather than physically. Messages travel through the underlying internet but follow the overlay's routing rules. Overlay networks enable systems like peer-to-peer networks, VPNs, and distributed hash tables. They allow developers to implement custom routing, discovery, and communication mechanisms.\n\n```mermaid\ngraph LR\nNodeA --- NodeB\nNodeB --- NodeC\nNodeC --- NodeD\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Peer Discovery in P2P networks?"
+      },
+      {
+        "from": "gpt",
+        "value": "Peer discovery is the process by which nodes in a peer-to-peer network locate and connect to other peers. Since there is no central server, new nodes must find existing participants to join the network. Discovery can happen using bootstrap nodes, trackers, or distributed hash tables. Once peers are found, nodes exchange information about additional peers to expand the network.\n\n```mermaid\ngraph LR\nNewPeer --> BootstrapNode\nBootstrapNode --> Peer1\nBootstrapNode --> Peer2\nPeer1 --> Peer3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the BitTorrent Protocol Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "BitTorrent is a peer-to-peer protocol for distributing large files efficiently. Instead of downloading from a single server, users download pieces of the file from multiple peers simultaneously. Each participant acts as both a downloader and uploader, improving scalability. A tracker or distributed hash table helps peers find each other. As peers exchange pieces, the entire swarm collaboratively reconstructs the file.\n\n```mermaid\ngraph LR\nPeer1 <--> Peer2\nPeer2 <--> Peer3\nPeer3 <--> Peer4\nPeer1 <--> Peer4\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Tracker-Based P2P Networks."
+      },
+      {
+        "from": "gpt",
+        "value": "Tracker-based peer-to-peer networks use a central tracker server to coordinate peers. The tracker does not store the shared files but maintains a list of nodes currently participating in the network. When a peer joins, it asks the tracker for other peers sharing the same resource. The peers then connect directly to exchange data. This approach simplifies discovery but introduces a dependency on the tracker.\n\n```mermaid\ngraph LR\nPeer --> Tracker\nTracker --> PeerList\nPeer --> PeerA\nPeer --> PeerB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Gossip-Based Membership Protocol."
+      },
+      {
+        "from": "gpt",
+        "value": "A gossip-based membership protocol spreads information about nodes in a distributed system using random peer communication. Each node periodically shares membership updates with a few randomly selected peers. Those peers repeat the process, gradually spreading information across the cluster. This approach is scalable and fault tolerant because it avoids centralized coordination and adapts quickly when nodes join or leave.\n\n```mermaid\ngraph LR\nNode1 --> Node2\nNode2 --> Node3\nNode3 --> Node4\nNode4 --> Node1\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Distributed Membership Service?"
+      },
+      {
+        "from": "gpt",
+        "value": "A distributed membership service keeps track of which nodes are currently active in a distributed system. It allows services to detect when nodes join, leave, or fail. This information helps systems perform load balancing, leader election, and fault recovery. Membership services often rely on heartbeat signals or gossip protocols to maintain accurate cluster state.\n\n```mermaid\ngraph LR\nNode1 --> MembershipService\nNode2 --> MembershipService\nMembershipService --> ClusterState\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Service Registry Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "A service registry stores the locations of running services so other services can discover them dynamically. In microservice systems, services frequently start, stop, or scale, making static addresses unreliable. When a service starts, it registers its network location with the registry. Clients query the registry to find available instances before making requests. This enables flexible and scalable service communication.\n\n```mermaid\ngraph LR\nServiceA --> Registry\nServiceB --> Registry\nClient --> Registry\nRegistry --> ServiceA\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain ZooKeeper Coordination Service."
+      },
+      {
+        "from": "gpt",
+        "value": "ZooKeeper is a distributed coordination service used to manage configuration, synchronization, and leader election in distributed systems. Applications store small pieces of shared state in ZooKeeper nodes called znodes. Clients watch these nodes for updates, allowing systems to react when changes occur. ZooKeeper ensures consistency across replicas using consensus protocols and is commonly used in systems like Kafka and Hadoop.\n\n```mermaid\ngraph LR\nClient1 --> ZooKeeper\nClient2 --> ZooKeeper\nZooKeeper --> ClusterState\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Configuration Management."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed configuration management stores application settings in a centralized system accessible by multiple services. Instead of embedding configuration values in code, services fetch them dynamically from a configuration server. When configuration changes, services can update automatically without redeploying. This approach simplifies system management and ensures consistent settings across distributed applications.\n\n```mermaid\ngraph LR\nConfigServer --> ServiceA\nConfigServer --> ServiceB\nConfigServer --> ServiceC\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Leader Lease Mechanism?"
+      },
+      {
+        "from": "gpt",
+        "value": "A leader lease mechanism ensures that only one node acts as the leader in a distributed system for a limited time. The leader obtains a lease from a coordination service and must renew it periodically. If the leader fails or the lease expires, another node can acquire leadership. This prevents multiple leaders from operating simultaneously and helps maintain system consistency.\n\n```mermaid\ngraph LR\nNode1 --> LeaseService\nLeaseService --> Leader\nLeader --> RenewLease\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain a Distributed Watch or Notification System."
+      },
+      {
+        "from": "gpt",
+        "value": "A distributed watch or notification system allows clients to monitor changes in shared state and receive alerts when updates occur. Instead of constantly polling for changes, clients register watchers with the system. When a data value changes, the system automatically notifies subscribed clients. This approach improves efficiency and enables reactive system designs.\n\n```mermaid\ngraph LR\nClient1 --> WatchService\nClient2 --> WatchService\nWatchService --> NotifyClients\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Barrier Coordination."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed barrier coordination synchronizes multiple nodes so they reach a specific point before continuing execution. Each participant signals when it has reached the barrier. The system waits until all nodes arrive, then releases them simultaneously. This technique is useful in parallel processing and distributed algorithms where tasks must proceed in stages.\n\n```mermaid\ngraph LR\nNode1 --> Barrier\nNode2 --> Barrier\nNode3 --> Barrier\nBarrier --> Continue\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Task Coordination."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed task coordination ensures that multiple machines in a distributed system work together to complete tasks without conflicts. A coordinator service assigns tasks to workers and tracks progress. Workers request tasks, execute them, and report results back. Coordination services like schedulers or distributed queues help prevent duplicate execution and ensure reliability. This design improves scalability because tasks are distributed across many nodes while maintaining order and consistency.\n\n```mermaid\ngraph LR\nCoordinator --> Worker1\nCoordinator --> Worker2\nCoordinator --> Worker3\nWorker1 --> Result\nWorker2 --> Result\nWorker3 --> Result\nResult --> Coordinator\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Cluster Heartbeat Monitoring work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Cluster heartbeat monitoring is used to check whether nodes in a distributed cluster are still alive. Each node periodically sends small \"heartbeat\" messages to other nodes or to a monitoring service. If a node stops sending heartbeats for a certain time, the system assumes it has failed and triggers recovery actions such as failover or task reassignment. This mechanism helps distributed systems detect failures quickly and maintain high availability.\n\n```mermaid\ngraph LR\nNodeA --> Heartbeat\nNodeB --> Heartbeat\nNodeC --> Heartbeat\nHeartbeat --> Monitor\nMonitor --> FailureDetection\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Quorum-Based Leader Election."
+      },
+      {
+        "from": "gpt",
+        "value": "Quorum-based leader election is used in distributed systems to safely select a leader node. Each node votes during the election process, and a candidate becomes the leader only if it receives votes from a majority (quorum) of nodes. This prevents multiple leaders from existing at the same time. Systems like Raft and Paxos use quorum rules to maintain consistency. If the leader fails, a new election occurs and another node gathers enough votes to take control.\n\n```mermaid\ngraph LR\nNode1 --> Vote\nNode2 --> Vote\nNode3 --> Vote\nVote --> Candidate\nCandidate --> Leader\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Split-Brain Problem in distributed systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "The split-brain problem occurs when a distributed cluster becomes divided into two or more groups that cannot communicate with each other. Each group may believe it is the main cluster and may elect its own leader. This can lead to conflicting updates and data inconsistencies. To prevent this, systems use quorum rules, fencing mechanisms, or consensus protocols to ensure that only one partition continues operating as the primary system.\n\n```mermaid\ngraph LR\nCluster --> PartitionA\nCluster --> PartitionB\nPartitionA --> LeaderA\nPartitionB --> LeaderB\nLeaderA --> Conflict\nLeaderB --> Conflict\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Network Partition Handling."
+      },
+      {
+        "from": "gpt",
+        "value": "Network partition handling refers to how distributed systems respond when communication between nodes is disrupted. A partition divides the network into separate groups that cannot exchange messages. Systems must decide whether to continue operating or stop to avoid inconsistencies. Many systems follow CAP theorem trade-offs: they may prioritize availability or consistency. Techniques like quorum voting and consensus protocols help determine which partition can continue serving requests safely.\n\n```mermaid\ngraph LR\nNodeA ---X--- NodeB\nNodeA --> Partition1\nNodeB --> Partition2\nPartition1 --> Requests\nPartition2 --> Requests\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Self-Healing Distributed Systems."
+      },
+      {
+        "from": "gpt",
+        "value": "Self-healing distributed systems automatically detect failures and recover without manual intervention. Monitoring components watch nodes, services, and network health. When a failure occurs, the system may restart services, reroute traffic, or replace failed nodes. Container orchestration platforms like Kubernetes use health checks and controllers to maintain desired system state. This automation improves reliability and reduces downtime because the system continuously repairs itself.\n\n```mermaid\ngraph LR\nMonitor --> DetectFailure\nDetectFailure --> Controller\nController --> RestartService\nController --> ReplaceNode\nRestartService --> System\nReplaceNode --> System\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Auto-Scaling Architecture work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Auto-scaling architecture automatically adjusts the number of servers handling traffic based on demand. A monitoring system tracks metrics like CPU usage, request rate, or latency. When demand increases, new instances are launched behind a load balancer. When traffic decreases, unnecessary instances are removed to save resources. This design helps systems handle sudden spikes in traffic while maintaining performance and cost efficiency.\n\n```mermaid\ngraph LR\nUsers --> LoadBalancer\nLoadBalancer --> Server1\nLoadBalancer --> Server2\nMonitor --> AutoScaler\nAutoScaler --> AddServer\nAutoScaler --> RemoveServer\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Horizontal vs Vertical Scaling."
+      },
+      {
+        "from": "gpt",
+        "value": "Scaling helps systems handle more workload. Vertical scaling increases the power of a single server by adding more CPU, memory, or storage. Horizontal scaling adds more servers and distributes traffic among them using a load balancer. Horizontal scaling is common in distributed systems because it improves fault tolerance and can grow almost infinitely. Vertical scaling is simpler but limited by hardware capacity.\n\n```mermaid\ngraph TD\nVerticalScaling --> BiggerServer\nHorizontalScaling --> LoadBalancer\nLoadBalancer --> Server1\nLoadBalancer --> Server2\nLoadBalancer --> Server3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Distributed Failover Mechanisms?"
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed failover mechanisms allow a system to automatically switch to backup resources when a primary component fails. Monitoring systems continuously check service health. If a node becomes unavailable, traffic is redirected to standby nodes or replicas. This ensures that users experience minimal disruption even during failures. Failover strategies are commonly used in database clusters, load-balanced services, and cloud infrastructures.\n\n```mermaid\ngraph LR\nClient --> Primary\nPrimary --> Failure\nFailure --> Failover\nFailover --> BackupNode\nBackupNode --> Response\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Active-Active Replication."
+      },
+      {
+        "from": "gpt",
+        "value": "Active-active replication is a distributed architecture where multiple servers handle traffic simultaneously. Each server processes requests and keeps data synchronized with the others. Load balancers distribute user requests across all active nodes. If one server fails, others continue serving traffic without interruption. This approach improves performance and availability but requires careful data synchronization to avoid conflicts.\n\n```mermaid\ngraph LR\nUsers --> LoadBalancer\nLoadBalancer --> NodeA\nLoadBalancer --> NodeB\nNodeA <--> NodeB\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Active-Passive Failover."
+      },
+      {
+        "from": "gpt",
+        "value": "Active-passive failover is a system design where one server actively handles traffic while another standby server waits in reserve. The passive server continuously receives replicated data from the active server so it can take over quickly if the primary fails. Monitoring systems detect failures and automatically redirect traffic to the standby node. This design is simpler than active-active systems and ensures high availability with predictable failover behavior.\n\n```mermaid\ngraph LR\nClient --> ActiveServer\nActiveServer --> Replication\nReplication --> PassiveServer\nActiveServer --> Failure\nFailure --> PassiveServer\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Disaster Recovery Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Disaster recovery architecture ensures that systems can recover from major failures such as data center outages or natural disasters. Data and services are replicated to a secondary region or backup site. If the primary environment becomes unavailable, traffic is redirected to the recovery site. Regular backups and replication keep the backup environment synchronized. This design protects data and minimizes downtime during catastrophic events.\n\n```mermaid\ngraph LR\nPrimaryDC --> Replication\nReplication --> BackupDC\nUsers --> PrimaryDC\nPrimaryDC --> Failure\nFailure --> BackupDC\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Blue-Green Deployment Architecture?"
+      },
+      {
+        "from": "gpt",
+        "value": "Blue-green deployment is a release strategy that uses two identical production environments called Blue and Green. One environment runs the current version of the application while the other hosts the new version. After testing the new version, traffic is switched to the updated environment using a load balancer or routing change. If issues occur, traffic can quickly switch back to the previous version.\n\n```mermaid\ngraph LR\nUsers --> LoadBalancer\nLoadBalancer --> BlueEnv\nLoadBalancer --> GreenEnv\nGreenEnv --> NewVersion\nBlueEnv --> OldVersion\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does a Canary Deployment Strategy work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Canary deployment gradually releases a new version of an application to a small subset of users before rolling it out to everyone. This allows engineers to monitor performance, errors, and user feedback in a controlled way. If the new version works correctly, more users are directed to it until the rollout is complete. If problems appear, the rollout can be stopped quickly.\n\n```mermaid\ngraph LR\nUsers --> Router\nRouter --> OldVersion\nRouter --> CanaryVersion\nCanaryVersion --> Monitor\nMonitor --> Decision\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Rolling Deployment Strategy."
+      },
+      {
+        "from": "gpt",
+        "value": "Rolling deployment updates application instances gradually instead of replacing them all at once. A small group of servers is updated with the new version while the rest continue serving traffic. Once those instances are stable, additional servers are updated until the rollout is complete. This strategy reduces downtime and allows continuous service availability during updates.\n\n```mermaid\ngraph LR\nUsers --> LoadBalancer\nLoadBalancer --> ServerOld\nLoadBalancer --> ServerNew\nServerOld --> Update\nUpdate --> ServerNew\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Distributed Feature Flag Systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed feature flag systems allow developers to enable or disable application features dynamically without redeploying code. A centralized configuration service stores feature flags. Applications running across multiple servers query the flag service to determine whether a feature should be active. This enables gradual rollouts, A/B testing, and quick feature rollback if problems occur.\n\n```mermaid\ngraph LR\nAppServer1 --> FeatureService\nAppServer2 --> FeatureService\nAppServer3 --> FeatureService\nFeatureService --> FlagConfig\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Edge Caching Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Edge caching stores frequently accessed content closer to users using distributed edge servers, often located in content delivery networks (CDNs). When a user requests content, the request is routed to the nearest edge server instead of the origin server. If the content is cached there, it is served immediately, reducing latency and network traffic. If not, the edge server fetches it from the origin and stores it for future requests.\n\n```mermaid\ngraph LR\nUser --> EdgeCache\nEdgeCache --> OriginServer\nEdgeCache --> Response\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Hierarchical Caching Systems."
+      },
+      {
+        "from": "gpt",
+        "value": "Hierarchical caching uses multiple levels of caches arranged from closest to users to deeper infrastructure layers. Requests first check the nearest cache layer, such as a browser or edge cache. If the data is not found, the request moves to a higher-level cache or the origin server. This layered approach reduces load on backend systems and improves response times by serving data from the closest available cache.\n\n```mermaid\ngraph TD\nUser --> BrowserCache\nBrowserCache --> EdgeCache\nEdgeCache --> RegionalCache\nRegionalCache --> OriginServer\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Network Packet Encapsulation."
+      },
+      {
+        "from": "gpt",
+        "value": "Network packet encapsulation is the process of wrapping data with protocol-specific headers as it moves through network layers. Each layer adds its own header containing routing, addressing, or transport information. For example, application data is wrapped in a TCP segment, which is then placed inside an IP packet and finally inside a network frame. Encapsulation allows different networking layers to operate independently.\n\n```mermaid\ngraph TD\nApplicationData --> TCPHeader\nTCPHeader --> IPHeader\nIPHeader --> EthernetFrame\nEthernetFrame --> NetworkTransmission\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Tunneling Protocol Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Tunneling protocols allow one network protocol to be transmitted within another protocol. This is often used to securely send traffic across networks or to connect private networks over the internet. The original packet is encapsulated inside another packet and sent through a tunnel. At the destination, the outer packet is removed and the original data is delivered.\n\n```mermaid\ngraph LR\nClient --> TunnelEncapsulation\nTunnelEncapsulation --> Internet\nInternet --> TunnelDecapsulation\nTunnelDecapsulation --> Destination\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Overlay Routing."
+      },
+      {
+        "from": "gpt",
+        "value": "Overlay routing is a networking technique where a virtual network is built on top of an existing physical network. Nodes in the overlay network communicate using logical connections that may pass through multiple physical routers. Overlay networks are often used in peer-to-peer systems, VPNs, and distributed applications. They allow custom routing behavior without modifying the underlying infrastructure.\n\n```mermaid\ngraph LR\nNodeA --> OverlayRouter\nOverlayRouter --> NodeB\nOverlayRouter --> NodeC\nNodeC --> NodeD\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Distributed Authentication Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Distributed authentication architecture separates identity verification from application services. A central authentication service validates user credentials and issues tokens. Applications across the system trust this token to verify identity without repeatedly asking for credentials. This design improves scalability and security because authentication logic is centralized while services remain independent.\n\n```mermaid\ngraph LR\nUser --> AuthService\nAuthService --> Token\nToken --> AppServer1\nToken --> AppServer2\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does OAuth Authorization Flow work?"
+      },
+      {
+        "from": "gpt",
+        "value": "OAuth authorization allows users to grant applications limited access to their data without sharing passwords. The user is redirected to an authorization server to log in and approve access. The server then provides the application with an access token. The application uses this token to request resources from an API. This separation improves security and allows controlled access to protected resources.\n\n```mermaid\ngraph LR\nUser --> AuthorizationServer\nAuthorizationServer --> AccessToken\nAccessToken --> ClientApp\nClientApp --> ResourceServer\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Single Sign-On (SSO) Architecture."
+      },
+      {
+        "from": "gpt",
+        "value": "Single Sign-On (SSO) allows users to log in once and access multiple applications without re-entering credentials. An identity provider authenticates the user and issues a token or session. When the user accesses other applications, those services verify the token with the identity provider instead of asking for login again. This improves user convenience and centralizes authentication management.\n\n```mermaid\ngraph LR\nUser --> IdentityProvider\nIdentityProvider --> AuthToken\nAuthToken --> App1\nAuthToken --> App2\nAuthToken --> App3\n```"
+      }
+    ]
+  },
+  {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Federated Identity Architecture?"
+      },
+      {
+        "from": "gpt",
+        "value": "Federated identity architecture allows users from one organization to access services in another organization using their existing credentials. Instead of creating new accounts, the service trusts an external identity provider to authenticate the user. The identity provider sends authentication assertions to the service provider. This approach is common in enterprise systems and cloud services where organizations collaborate securely.\n\n```mermaid\ngraph LR\nUser --> IdentityProvider\nIdentityProvider --> Assertion\nAssertion --> ServiceProvider\nServiceProvider --> AccessGranted\n```"
+      }
+    ]
+  }
+]

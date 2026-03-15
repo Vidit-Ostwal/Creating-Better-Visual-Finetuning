@@ -1,0 +1,202 @@
+[
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Modular Exponentiation."},
+    {"from":"gpt","value":"Modular exponentiation computes \\(a^b \\mod m\\) efficiently without calculating the large value \\(a^b\\) directly. The common technique is **Exponentiation by Squaring**. Instead of multiplying \\(a\\) repeatedly, the exponent is halved each step. If the exponent is even, square the base; if odd, multiply the result by the base once. After every multiplication the modulus is applied to keep numbers small. This reduces the time complexity from O(b) to O(log b). Modular exponentiation is widely used in cryptography algorithms such as RSA, where handling extremely large powers efficiently is essential."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does the Sieve of Eratosthenes work?"},
+    {"from":"gpt","value":"The **Sieve of Eratosthenes** efficiently finds all prime numbers up to a given limit N. It works by iteratively marking multiples of each prime number as composite. First, assume all numbers from 2 to N are prime. Start with 2 and mark all its multiples as non-prime. Move to the next unmarked number (which must be prime) and repeat. Continue until the square root of N. The remaining unmarked numbers are primes. This algorithm runs in roughly O(n log log n) time and is widely used for generating primes in number theory problems.\n\n```mermaid\ngraph TD\nStart[Numbers 2..N] --> PickPrime\nPickPrime --> MarkMultiples\nMarkMultiples --> NextUnmarked\nNextUnmarked --> PickPrime\nPickPrime --> Done[Remaining numbers are prime]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about Prime Factorization Algorithms."},
+    {"from":"gpt","value":"Prime factorization algorithms break a number into its prime components. The simplest method is **trial division**, which repeatedly divides the number by primes starting from 2. More advanced methods include **Pollard’s Rho** and **Fermat’s factorization**, which work efficiently for large numbers. The idea is to identify smaller divisors until the remaining quotient is prime. For example, factoring 84 yields 2 × 2 × 3 × 7. Efficient factorization is important in cryptography and computational number theory because the difficulty of factoring very large integers forms the basis of several encryption systems."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Rolling Hash."},
+    {"from":"gpt","value":"A **rolling hash** is a hashing technique where the hash value of a sequence can be updated efficiently when the window moves forward. Instead of recomputing the entire hash, the algorithm subtracts the contribution of the outgoing character and adds the new character’s contribution. This allows updates in constant time. Rolling hashes are commonly used in string algorithms such as Rabin-Karp pattern matching and plagiarism detection. Because hash values represent substrings compactly, comparisons between large strings can be performed quickly using integer operations rather than character-by-character comparisons."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Rabin-Karp string matching?"},
+    {"from":"gpt","value":"The **Rabin-Karp algorithm** searches for a pattern within a text using hashing. It computes a hash for the pattern and for each substring of the text with the same length. Using a rolling hash, the hash value is updated as the window moves forward. If the pattern hash matches the substring hash, a direct string comparison confirms the match. This approach makes average-case matching efficient, especially when searching for multiple patterns or performing plagiarism detection.\n\n```mermaid\ngraph LR\nTextWindow --> ComputeHash\nComputeHash --> CompareHash\nCompareHash -->|Match| Verify\nCompareHash -->|No Match| SlideWindow\nSlideWindow --> ComputeHash\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Knuth-Morris-Pratt (KMP) algorithm."},
+    {"from":"gpt","value":"The **Knuth-Morris-Pratt (KMP)** algorithm finds a pattern in a text without rechecking characters unnecessarily. It preprocesses the pattern to create a **Longest Prefix Suffix (LPS)** array. This array indicates where to continue matching after a mismatch. When characters differ, KMP shifts the pattern based on the LPS value instead of restarting from the beginning. This avoids redundant comparisons and guarantees O(n) time complexity for searching.\n\n```mermaid\ngraph TD\nBuildLPS --> StartMatching\nStartMatching --> MatchCharacters\nMatchCharacters -->|Mismatch| UseLPS\nUseLPS --> ContinueMatch\nContinueMatch --> MatchCharacters\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about the Z Algorithm for pattern matching."},
+    {"from":"gpt","value":"The **Z algorithm** is used in string matching to find occurrences of a pattern within a text. It constructs a Z-array where each value represents the length of the longest substring starting at that position that matches the prefix of the string. To search for a pattern, the algorithm concatenates the pattern, a separator, and the text. The Z-array is then computed. Whenever a Z value equals the pattern length, a match is found. The algorithm runs in linear time O(n) and avoids redundant comparisons by maintaining a sliding window of matched segments."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Boyer-Moore string search."},
+    {"from":"gpt","value":"The **Boyer-Moore algorithm** is a highly efficient string searching method that compares the pattern to the text from right to left. When a mismatch occurs, it uses heuristic rules such as the **bad character rule** and **good suffix rule** to skip large sections of the text. Instead of shifting by one character each time, the algorithm can jump multiple positions ahead. This makes it extremely fast for long patterns in large texts. In practice, Boyer-Moore often performs sublinear time searches because many characters are skipped during comparisons."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is the Aho-Corasick algorithm?"},
+    {"from":"gpt","value":"The **Aho-Corasick algorithm** searches for multiple patterns simultaneously in a text. It builds a trie from all patterns and augments it with failure links, similar to the KMP idea. While scanning the text, the algorithm transitions through trie nodes and follows failure links when mismatches occur. This allows detection of all patterns in linear time relative to the text length.\n\n```mermaid\ngraph TD\nBuildTrie --> AddFailureLinks\nAddFailureLinks --> ScanText\nScanText --> MatchFound\nScanText --> FollowFailure\nFollowFailure --> ScanText\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain what a Suffix Automaton is."},
+    {"from":"gpt","value":"A **suffix automaton** is a compressed automaton that represents all substrings of a given string. It is built incrementally as characters are processed, creating states that correspond to sets of substrings with the same end positions. Each transition represents extending substrings by a character. The structure is compact, containing at most 2n−1 states for a string of length n. Suffix automata are powerful for solving problems like counting distinct substrings, finding longest common substrings, or performing substring queries efficiently in linear time."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"How does Manacher’s Algorithm find the longest palindromic substring?"},
+    {"from":"gpt","value":"**Manacher’s Algorithm** finds the longest palindromic substring in linear time O(n). The string is transformed by inserting separators between characters to treat odd and even length palindromes uniformly. The algorithm maintains a center and right boundary of the current palindrome. Using symmetry around the center, it avoids rechecking characters that are already known to match. Each position stores the radius of the palindrome centered there. By expanding around centers only when necessary, the algorithm efficiently computes the longest palindromic substring without repeated comparisons."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Trie-based autocomplete?"},
+    {"from":"gpt","value":"A **Trie-based autocomplete system** uses a prefix tree (trie) to store words character by character. Each node represents a prefix and may mark the end of a valid word. When a user types a prefix, the system navigates the trie to that prefix node and then explores its subtree to suggest possible completions. Because each character corresponds to one tree level, searching by prefix takes O(length of prefix) time. This structure is widely used in search engines and keyboards.\n\n```mermaid\ngraph TD\nRoot --> c\nc --> a\nc --> o\na --> t\nc --> r\nr --> e\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain string hashing."},
+    {"from":"gpt","value":"**String hashing** converts a string into a numerical value using a deterministic formula. Each character contributes to the hash using positional weights, typically powers of a base number. This allows quick comparison between strings: if two hashes differ, the strings are definitely different. Hashing is commonly used in substring comparison, duplicate detection, and pattern matching algorithms. Because collisions are possible, large mod values are often used to reduce the chance that two different strings produce the same hash value."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Polynomial Rolling Hash?"},
+    {"from":"gpt","value":"A **polynomial rolling hash** represents a string as a polynomial where each character is multiplied by a power of a chosen base. For example, the hash may be computed as the sum of character values multiplied by increasing powers of a base modulo a large number. This structure allows efficient substring hashing because prefix hashes can be reused. With precomputed powers, substring hashes can be calculated in constant time. Polynomial rolling hashes are commonly used in algorithms like Rabin-Karp and in competitive programming for fast substring comparisons."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain how an LRU Cache implementation works."},
+    {"from":"gpt","value":"An **LRU (Least Recently Used) cache** stores recently accessed items while discarding the least recently used ones when capacity is exceeded. A typical implementation combines a **hash map** for fast lookups and a **doubly linked list** to track usage order. When an item is accessed, it moves to the front of the list. When the cache is full, the item at the tail (least recently used) is removed.\n\n```mermaid\ngraph LR\nAccessItem --> MoveToFront\nMoveToFront --> CacheUpdated\nCacheFull --> EvictTail\nEvictTail --> InsertNew\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"How does an LFU Cache implementation work?"},
+    {"from":"gpt","value":"An **LFU (Least Frequently Used) cache** removes the item that has been accessed the fewest times. Each cache entry tracks a frequency counter that increases whenever the item is used. When the cache reaches capacity, the entry with the lowest frequency is evicted. Efficient implementations use hash maps combined with frequency-based linked lists to update counts and maintain order quickly. LFU caches are useful when frequently accessed items should remain in memory for long periods, even if they were not recently accessed."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about cache replacement algorithms."},
+    {"from":"gpt","value":"Cache replacement algorithms determine which data should be removed when the cache is full. Common strategies include **LRU (Least Recently Used)**, **LFU (Least Frequently Used)**, and **FIFO (First In First Out)**. Each strategy balances memory efficiency and performance differently. LRU removes items that haven't been used recently, assuming they are less likely to be needed again. LFU focuses on access frequency, while FIFO removes the oldest entries regardless of usage. These algorithms are widely used in operating systems, databases, and web caching systems."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain memory stack vs heap allocation."},
+    {"from":"gpt","value":"Programs use two main memory regions: **stack** and **heap**. The stack stores function calls, local variables, and return addresses in a last-in-first-out order. Memory is automatically managed when functions start and end. The heap stores dynamically allocated memory that persists until explicitly freed or garbage collected. Heap allocation is more flexible but slower than stack allocation. Understanding the difference helps developers manage memory efficiently and avoid leaks.\n\n```mermaid\ngraph TD\nProgramMemory --> Stack\nProgramMemory --> Heap\nStack --> LocalVariables\nStack --> FunctionCalls\nHeap --> DynamicObjects\nHeap --> LongLivedData\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is the call stack in recursion?"},
+    {"from":"gpt","value":"The **call stack** tracks active function calls during program execution. In recursion, each function call pushes a new stack frame containing parameters, local variables, and the return address. When the function finishes, its frame is popped from the stack and control returns to the previous call. This structure allows recursive algorithms such as factorial or tree traversal to work correctly. However, deep recursion can cause stack overflow if too many frames accumulate.\n\n```mermaid\ngraph TD\nCall1 --> Call2\nCall2 --> Call3\nCall3 --> Return3\nReturn3 --> Return2\nReturn2 --> Return1\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain garbage collection algorithms."},
+    {"from":"gpt","value":"Garbage collection algorithms automatically reclaim memory that is no longer in use by a program. Instead of manually freeing memory, the runtime system identifies objects that cannot be reached from active references. These unreachable objects are considered garbage and are removed to free space. Different strategies exist, such as reference counting and mark-and-sweep. Garbage collection helps prevent memory leaks and dangling pointers but can introduce overhead during program execution."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is reference counting in garbage collection?"},
+    {"from":"gpt","value":"**Reference counting** is a garbage collection technique where each object tracks how many references point to it. When a new reference is created, the count increases; when a reference is removed, the count decreases. If the count reaches zero, the object is no longer reachable and can be safely deallocated. This method is simple and provides immediate memory reclamation. However, it struggles with cyclic references, where two objects reference each other and never reach zero even though they are no longer used."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Mark-and-Sweep garbage collection algorithm."},
+    {"from":"gpt","value":"The **mark-and-sweep** garbage collection algorithm identifies unused objects in two phases. In the **mark phase**, the system starts from root references and marks all reachable objects. In the **sweep phase**, memory is scanned and any unmarked objects are deleted. This approach effectively handles cyclic references and reclaims unused memory automatically.\n\n```mermaid\ngraph TD\nStart --> MarkReachable\nMarkReachable --> TraverseObjects\nTraverseObjects --> SweepPhase\nSweepPhase --> FreeUnmarked\nFreeUnmarked --> MemoryReclaimed\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about generational garbage collection."},
+    {"from":"gpt","value":"**Generational garbage collection** is based on the observation that most objects die young. Memory is divided into generations, typically a young generation and an old generation. New objects are allocated in the young generation, where garbage collection runs frequently and quickly. Objects that survive multiple cycles are promoted to the old generation. Since long-lived objects are less likely to become garbage, the system scans them less often. This design significantly improves performance in languages like Java and Python."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain page replacement algorithms."},
+    {"from":"gpt","value":"Page replacement algorithms decide which memory page should be removed when physical memory is full and a new page must be loaded from disk. Common strategies include **FIFO**, **LRU**, and **Optimal replacement**. FIFO removes the oldest page, LRU removes the least recently used page, and the optimal algorithm removes the page that will not be used for the longest time in the future. These algorithms help operating systems manage virtual memory efficiently and reduce costly disk accesses."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Least Recently Used (LRU) in operating systems?"},
+    {"from":"gpt","value":"**Least Recently Used (LRU)** is a page replacement strategy that removes the page that has not been accessed for the longest time. The idea is that recently used pages are more likely to be used again soon. Operating systems track page usage order using timestamps or data structures like stacks and linked lists. When memory becomes full, the page that was used least recently is evicted. LRU approximates optimal page replacement in many practical workloads and is widely used in caching and memory management systems."}
+    ]
+    }
+    ]

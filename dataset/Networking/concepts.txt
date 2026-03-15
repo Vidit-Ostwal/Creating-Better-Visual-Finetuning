@@ -1,0 +1,200 @@
+OSI Model
+TCP/IP Model
+TCP Three-Way Handshake
+TCP Connection Termination
+UDP Communication Model
+Client-Server Architecture
+Peer-to-Peer Architecture
+Load Balancing
+DNS Resolution Process
+DHCP Lease Process
+ARP Resolution
+NAT (Network Address Translation)
+HTTP Request-Response Cycle
+HTTPS TLS Handshake
+WebSocket Communication Flow
+REST API Architecture
+Microservices Architecture
+Monolithic vs Microservices Architecture
+API Gateway Architecture
+Service Discovery in Microservices
+Reverse Proxy Architecture
+Forward Proxy Architecture
+CDN Content Delivery Flow
+Edge Computing Architecture
+Data Center Network Topology
+Fat-Tree Data Center Topology
+Spine-Leaf Network Architecture
+Packet Switching
+Circuit Switching
+Network Routing Process
+Distance Vector Routing
+Link State Routing
+OSPF Routing Process
+BGP Route Propagation
+TCP Congestion Control
+Sliding Window Protocol
+Selective Repeat ARQ
+Go-Back-N Protocol
+Reliable Data Transfer Protocol
+Network Flow Control
+Distributed Consensus
+Paxos Consensus Algorithm
+Raft Consensus Algorithm
+Leader Election in Distributed Systems
+Distributed Locking
+Distributed Transactions
+Two-Phase Commit Protocol
+Three-Phase Commit Protocol
+CAP Theorem
+Eventual Consistency
+Strong Consistency Model
+Distributed Key-Value Store Architecture
+Consistent Hashing
+Distributed Hash Tables (DHT)
+Gossip Protocol
+Failure Detection in Distributed Systems
+Heartbeat Mechanism
+Distributed Logging System
+Distributed Tracing Architecture
+Message Queue Architecture
+Publish-Subscribe Messaging Pattern
+Event Streaming Architecture
+Kafka Log Architecture
+Message Broker Architecture
+Exactly-Once Delivery Semantics
+At-Least-Once Delivery Semantics
+At-Most-Once Delivery Semantics
+Distributed Task Queue
+Work Queue Pattern
+Pipeline Processing Pattern
+MapReduce Processing Model
+Distributed File System Architecture
+HDFS Architecture
+Object Storage Architecture
+Replication in Distributed Systems
+Leader-Follower Replication
+Multi-Leader Replication
+Quorum-Based Replication
+Read Repair Mechanism
+Anti-Entropy Synchronization
+Sharding in Distributed Databases
+Partitioning Strategies
+Data Replication Topologies
+Distributed Cache Architecture
+Cache Aside Pattern
+Write-Through Cache
+Write-Back Cache
+Distributed Session Management
+Circuit Breaker Pattern
+Bulkhead Pattern
+Retry Pattern in Distributed Systems
+Rate Limiting Architecture
+Token Bucket Algorithm
+Leaky Bucket Algorithm
+Distributed Rate Limiting
+Service Mesh Architecture
+Sidecar Proxy Pattern
+Envoy Proxy Architecture
+Kubernetes Networking Model
+Kubernetes Service Discovery
+Kubernetes Ingress Flow
+Container Networking Interface (CNI)
+Overlay Network in Containers
+Software Defined Networking (SDN)
+Network Function Virtualization (NFV)
+Control Plane vs Data Plane
+OpenFlow Architecture
+Virtual Private Network (VPN)
+IPsec Tunnel Architecture
+TLS Encryption Flow
+Public Key Infrastructure (PKI)
+Certificate Authority Trust Model
+Firewall Packet Filtering
+Stateful Firewall Operation
+Intrusion Detection System (IDS) Architecture
+Intrusion Prevention System (IPS) Architecture
+Zero Trust Network Architecture
+Network Segmentation
+VLAN Architecture
+VXLAN Overlay Networks
+Multi-Tier Web Application Architecture
+N-Tier Architecture
+Reverse Proxy Load Balancing
+DNS Load Balancing
+Anycast Routing
+Geo-Distributed Systems
+Global Server Load Balancing
+Distributed Monitoring Systems
+Metrics Collection Architecture
+Log Aggregation Architecture
+Distributed Time Synchronization
+Network Time Protocol (NTP)
+Logical Clocks in Distributed Systems
+Lamport Clocks
+Vector Clocks
+Distributed Snapshot Algorithm
+Chandy-Lamport Snapshot Algorithm
+Distributed Deadlock Detection
+Distributed Mutual Exclusion
+Token Ring Mutual Exclusion
+Ricart–Agrawala Algorithm
+Bully Algorithm for Leader Election
+Ring-Based Leader Election
+Distributed Barrier Synchronization
+MapReduce Shuffle Phase
+Data Locality in Distributed Systems
+Distributed Job Scheduling
+Cluster Resource Management
+Kubernetes Scheduler Architecture
+Service-Oriented Architecture (SOA)
+Event-Driven Architecture
+Saga Pattern for Distributed Transactions
+CQRS (Command Query Responsibility Segregation)
+Event Sourcing Architecture
+Data Streaming Pipeline
+Distributed Stream Processing
+Windowed Stream Processing
+Backpressure in Streaming Systems
+Distributed Graph Processing
+Network Broadcast Communication
+Multicast Communication
+Unicast Communication
+Reliable Multicast Protocol
+Overlay Networks
+Peer Discovery in P2P Networks
+BitTorrent Protocol Architecture
+Tracker-Based P2P Networks
+Gossip-Based Membership Protocol
+Distributed Membership Service
+Service Registry Architecture
+ZooKeeper Coordination Service
+Distributed Configuration Management
+Leader Lease Mechanism
+Distributed Watch/Notification System
+Distributed Barrier Coordination
+Distributed Task Coordination
+Cluster Heartbeat Monitoring
+Quorum-Based Leader Election
+Split-Brain Problem in Distributed Systems
+Network Partition Handling
+Self-Healing Distributed Systems
+Auto-Scaling Architecture
+Horizontal vs Vertical Scaling
+Distributed Failover Mechanisms
+Active-Active Replication
+Active-Passive Failover
+Disaster Recovery Architecture
+Blue-Green Deployment Architecture
+Canary Deployment Strategy
+Rolling Deployment Strategy
+Distributed Feature Flag Systems
+Edge Caching Architecture
+Hierarchical Caching Systems
+Network Packet Encapsulation
+Tunneling Protocol Architecture
+Overlay Routing
+Distributed Authentication Architecture
+OAuth Authorization Flow
+Single Sign-On (SSO) Architecture
+Federated Identity Architecture

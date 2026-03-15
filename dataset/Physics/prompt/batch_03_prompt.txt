@@ -1,0 +1,109 @@
+You are generating high-quality supervised fine-tuning data for training an AI model that produces clear educational explanations with optional diagrams.
+
+The domain for this batch is **Physics**.
+
+Your task is to generate one dataset entry for each concept provided.
+
+---
+
+DATASET OBJECTIVE
+
+Train the model to:
+
+* explain physical processes clearly
+* use diagrams to visualize systems and forces
+
+---
+
+OUTPUT FORMAT
+
+{
+"category": "physics",
+"has_diagram": true/false,
+"conversations": [
+{"from":"human","value":"<question>"},
+{"from":"gpt","value":"<explanation + optional diagram>"}
+]
+}
+
+Return a JSON array containing one entry per concept.
+
+---
+
+EXPLANATION RULES
+
+* 80-120 words
+* Simple and educational
+* Explain the physical intuition
+
+---
+
+DIAGRAM RULES
+
+Include diagrams for:
+
+* force interactions
+* motion systems
+* energy transfers
+* wave behavior
+
+Use Mermaid syntax.
+
+Example:
+
+```mermaid
+graph LR
+Force --> Acceleration
+Acceleration --> Velocity
+Velocity --> Motion
+Motion --> Displacement
+```
+
+Avoid trivial diagrams.
+
+---
+
+PROMPT VARIATION
+
+Use varied prompts:
+
+Explain <concept>
+How does <concept> work?
+Teach me about <concept>.
+What is <concept> in physics?
+
+---
+
+CONCEPTS
+
+Generate one entry for each of the following:
+
+Damped Oscillations
+Resonance
+Wave Motion
+Transverse Waves
+Longitudinal Waves
+Wave Speed
+Wavelength and Frequency
+Wave Reflection
+Wave Refraction
+Wave Diffraction
+Wave Interference
+Constructive Interference
+Destructive Interference
+Standing Waves
+Nodes and Antinodes
+Sound Waves
+Speed of Sound
+Doppler Effect
+Beats in Sound Waves
+Loudness and Intensity of Sound
+Pitch and Frequency
+Echo and Reverberation
+Light as an Electromagnetic Wave
+Electromagnetic Spectrum
+Reflection of Light
+
+---
+
+Return only the JSON array.

@@ -1,0 +1,106 @@
+[
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Leader-Follower Replication."},
+    {"from":"gpt","value":"Leader-Follower Replication is a data replication strategy where one node acts as the leader and handles all write operations. The leader then replicates those updates to follower nodes. Followers usually serve read requests and maintain copies of the leader’s data. This architecture improves scalability for reads while keeping writes consistent through a single authority. If the leader fails, a follower can be promoted to become the new leader. This model is commonly used in databases like PostgreSQL and MySQL.\n\n```mermaid\ngraph LR\nClient --> Leader\nLeader --> Follower1\nLeader --> Follower2\nFollower1 --> ClientRead\nFollower2 --> ClientRead\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Multi-Leader Replication work?"},
+    {"from":"gpt","value":"Multi-Leader Replication allows multiple nodes to accept write operations. Each leader processes local writes and then propagates the changes to other leaders. This setup improves availability and reduces latency in geographically distributed systems. However, it introduces the challenge of conflict resolution when different leaders update the same data simultaneously. Systems use timestamps, version vectors, or application rules to resolve these conflicts. Multi-leader replication is useful in distributed applications that require regional write capability.\n\n```mermaid\ngraph LR\nClient1 --> LeaderA\nClient2 --> LeaderB\nLeaderA <--> LeaderB\nLeaderA --> ReplicaA\nLeaderB --> ReplicaB\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Quorum-Based Replication in distributed systems?"},
+    {"from":"gpt","value":"Quorum-Based Replication ensures consistency by requiring a majority of nodes to participate in read or write operations. Instead of contacting every replica, the system requires a minimum number of responses called a quorum. For example, if there are five replicas, a write may require three acknowledgments before success. This guarantees that read and write sets overlap, ensuring the latest data is returned. Quorum systems balance availability and consistency and are widely used in distributed databases like Cassandra and Dynamo-style systems.\n\n```mermaid\ngraph LR\nClient --> Coordinator\nCoordinator --> Node1\nCoordinator --> Node2\nCoordinator --> Node3\nNode1 --> Ack\nNode2 --> Ack\nNode3 --> Ack\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Read Repair Mechanism."},
+    {"from":"gpt","value":"Read Repair is a consistency technique used in distributed databases. When a client reads data, the system queries multiple replicas and compares their responses. If differences are detected, the system updates the outdated replicas with the most recent version. This repair happens during the read operation itself. The advantage is that inconsistencies gradually disappear as reads occur. It helps maintain eventual consistency without requiring heavy background synchronization tasks.\n\n```mermaid\ngraph LR\nClient --> Coordinator\nCoordinator --> Replica1\nCoordinator --> Replica2\nReplica1 --> DataV2\nReplica2 --> DataV1\nCoordinator --> Repair\nRepair --> Replica2\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Anti-Entropy Synchronization."},
+    {"from":"gpt","value":"Anti-Entropy Synchronization is a background process used to ensure replicas eventually converge to the same data. Nodes periodically compare their datasets using structures such as Merkle trees or hashes. If differences are detected, the system exchanges missing or outdated data between replicas. This method ensures long-term consistency even if updates were missed due to temporary network failures. Anti-entropy is commonly used in distributed databases to repair inconsistencies without blocking normal read or write operations.\n\n```mermaid\ngraph LR\nNodeA --> Compare\nNodeB --> Compare\nCompare --> Differences\nDifferences --> SyncA\nDifferences --> SyncB\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Sharding in Distributed Databases?"},
+    {"from":"gpt","value":"Sharding is a technique used to distribute large datasets across multiple database servers. Instead of storing all data in one machine, the system splits the dataset into smaller pieces called shards. Each shard holds a subset of the data based on a sharding key such as user ID or geographic region. This approach improves scalability because queries can be processed across multiple servers simultaneously. Sharding helps systems handle massive workloads and large volumes of data efficiently.\n\n```mermaid\ngraph LR\nClient --> Router\nRouter --> Shard1\nRouter --> Shard2\nRouter --> Shard3\nShard1 --> DB1\nShard2 --> DB2\nShard3 --> DB3\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Distributed Cache Architecture."},
+    {"from":"gpt","value":"Distributed Cache Architecture stores frequently accessed data across multiple cache servers instead of a single machine. Applications check the cache before querying the main database. If the data exists in the cache, the system returns it quickly, reducing database load and improving performance. The cache cluster distributes data across nodes using hashing or partitioning. If one node fails, others can still serve requests. Systems like Redis Cluster and Memcached commonly implement distributed caching for high-scale applications.\n\n```mermaid\ngraph LR\nClient --> CacheCluster\nCacheCluster --> CacheNode1\nCacheCluster --> CacheNode2\nCacheCluster --> CacheNode3\nCacheCluster --> Database\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does the Cache Aside Pattern work?"}, 
+    {"from":"gpt","value":"The Cache Aside Pattern is a caching strategy where the application controls interactions with the cache. When the application needs data, it first checks the cache. If the data is found, it returns immediately. If not, the application retrieves the data from the database and then stores it in the cache for future requests. This approach keeps the cache lightweight and ensures that only frequently used data is cached. It is widely used in distributed systems to improve performance.\n\n```mermaid\ngraph LR\nClient --> App\nApp --> Cache\nCache --> Hit\nCache --> Miss\nMiss --> Database\nDatabase --> Cache\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Circuit Breaker Pattern in distributed systems."},
+    {"from":"gpt","value":"The Circuit Breaker Pattern protects distributed systems from repeated failures when calling unreliable services. When a service repeatedly fails, the circuit breaker opens and stops further requests from reaching that service. Instead of waiting for timeouts, the system quickly returns an error or fallback response. After a cooldown period, the circuit breaker allows limited requests to test if the service has recovered. This pattern improves system resilience and prevents cascading failures across microservices.\n\n```mermaid\ngraph LR\nClient --> ServiceA\nServiceA --> CircuitBreaker\nCircuitBreaker --> ServiceB\nCircuitBreaker --> Fallback\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Service Mesh Architecture?"}, 
+    {"from":"gpt","value":"Service Mesh Architecture manages communication between microservices using a dedicated infrastructure layer. Instead of embedding networking logic inside each service, the mesh handles tasks such as traffic routing, retries, security, and observability. Each service communicates through a sidecar proxy that intercepts network traffic. A central control plane configures and monitors these proxies. This architecture simplifies service development while improving reliability and security in distributed applications.\n\n```mermaid\ngraph LR\nServiceA --> SidecarA\nSidecarA --> SidecarB\nSidecarB --> ServiceB\nControlPlane --> SidecarA\nControlPlane --> SidecarB\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Sidecar Proxy Pattern."},
+    {"from":"gpt","value":"The Sidecar Proxy Pattern attaches a helper proxy container to each service instance. This proxy runs alongside the application and handles network communication tasks such as routing, encryption, retries, and monitoring. Because the proxy intercepts all inbound and outbound traffic, services can focus on business logic instead of networking concerns. Sidecar proxies are widely used in service meshes like Istio, where every microservice has a proxy managing communication with other services.\n\n```mermaid\ngraph LR\nServiceA --> SidecarA\nSidecarA --> Network\nNetwork --> SidecarB\nSidecarB --> ServiceB\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is the Kubernetes Networking Model?"}, 
+    {"from":"gpt","value":"The Kubernetes networking model defines how containers communicate inside a cluster. Every pod receives its own IP address and can communicate directly with other pods without network address translation. Kubernetes networking ensures that pods across different nodes can reach each other using standard networking protocols. Services provide stable virtual IPs that route traffic to groups of pods. This model simplifies application communication and allows distributed workloads to scale easily across multiple nodes.\n\n```mermaid\ngraph LR\nPodA --> PodB\nPodB --> PodC\nService --> PodA\nService --> PodB\nNode1 --> Node2\n```"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Kubernetes Service Discovery work?"}, 
+    {"from":"gpt","value":"Kubernetes Service Discovery allows applications to locate other services running inside a cluster. Instead of hardcoding IP addresses, services are registered with the Kubernetes API and assigned stable DNS names. When a pod needs to communicate with another service, it simply uses the service name. Kubernetes automatically routes the request to one of the available pods behind that service. This abstraction makes distributed applications easier to manage as pods can scale or restart without breaking connectivity.\n\n```mermaid\ngraph LR\nClientPod --> DNS\nDNS --> ServiceName\nServiceName --> Pod1\nServiceName --> Pod2\nServiceName --> Pod3\n```"}
+    ]
+    }
+    ]

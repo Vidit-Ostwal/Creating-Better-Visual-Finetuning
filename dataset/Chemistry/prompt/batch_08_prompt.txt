@@ -1,0 +1,131 @@
+You are generating high-quality supervised fine-tuning data for training an AI model that produces clear educational explanations with optional diagrams.
+
+The domain for this batch is **Chemistry**.
+
+Your task is to generate one dataset entry for each concept provided.
+
+---
+
+DATASET OBJECTIVE
+
+The dataset will train a model to:
+
+* explain chemistry concepts clearly
+* include diagrams when they improve understanding
+* avoid diagrams when they add little value
+
+---
+
+OUTPUT REQUIREMENTS
+
+For each concept produce a JSON object with the structure:
+
+{
+"category": "chemistry",
+"has_diagram": true/false,
+"conversations": [
+{
+"from": "human",
+"value": "<user prompt asking about the concept>"
+},
+{
+"from": "gpt",
+"value": "<clear explanation with optional mermaid diagram>"
+}
+]
+}
+
+Return a JSON array with one object per concept.
+
+---
+
+EXPLANATION RULES
+
+* Explanation length: 80-120 words
+* Keep explanations clear and beginner-friendly
+* Avoid heavy academic jargon
+* If a diagram is included, reference it naturally
+
+---
+
+DIAGRAM RULES
+
+Include diagrams when helpful.
+
+Target distribution:
+
+* ~70% with diagrams
+* ~30% explanation only
+
+Use Mermaid syntax when diagrams are included.
+
+Use formats such as:
+
+graph TD
+graph LR
+
+Diagrams should illustrate:
+
+* chemical reactions
+* energy flows
+* atomic relationships
+* molecular structure processes
+
+Minimum 4 nodes when possible.
+
+Example:
+
+```mermaid
+graph LR
+Reactants --> Reaction
+Reaction --> TransitionState
+TransitionState --> Products
+Products --> EnergyRelease
+```
+
+---
+
+PROMPT VARIATION
+
+Use varied question styles such as:
+
+Explain <concept>
+How does <concept> work?
+Teach me about <concept>.
+What is <concept> in chemistry?
+
+---
+
+CONCEPTS
+
+Generate one entry for each of the following:
+
+Colloids and Suspensions
+Emulsion Formation
+Chromatography Separation Process
+Distillation Process
+Fractional Distillation
+Filtration and Separation
+Crystallization Process
+Spectroscopy Principles
+Absorption Spectra
+Infrared Spectroscopy Vibrations
+UV–Visible Spectroscopy
+NMR Molecular Structure Analysis
+Mass Spectrometry Fragmentation
+Flame Test Emission Colors
+Electron Transitions in Atoms
+Atomic Emission Spectra
+Photoelectric Effect in Atoms
+Chemical Bond Energy vs Bond Length
+Molecular Collision Orientation
+Reaction Pathway Diagrams
+Energy Changes in Bond Formation
+Proton Transfer Reactions
+Electron Pair Donation in Bonds
+Orbital Overlap in Bond Formation
+Charge Distribution in Molecules
+
+---
+
+Return only the JSON array.

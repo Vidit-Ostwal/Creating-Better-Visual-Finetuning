@@ -1,0 +1,200 @@
+Atomic Structure
+Electron Configuration
+Orbital Shapes (s, p, d, f)
+Aufbau Principle
+Pauli Exclusion Principle
+Hund’s Rule
+Periodic Table Organization
+Periodic Trends (Atomic Radius, Ionization Energy, Electronegativity)
+Ion Formation
+Isotopes and Atomic Mass
+Ionic Bonding
+Covalent Bonding
+Polar Covalent Bonding
+Metallic Bonding
+Lewis Dot Structures
+Octet Rule
+Exceptions to the Octet Rule
+Formal Charge
+Resonance Structures
+Bond Order
+Valence Shell Electron Pair Repulsion (VSEPR) Theory
+Molecular Geometry
+Bond Angles in Molecules
+Molecular Polarity
+Hybridization (sp, sp2, sp3)
+Sigma and Pi Bonds
+Molecular Orbital Theory
+Bonding vs Antibonding Orbitals
+Electron Density Maps
+Intermolecular Forces
+Hydrogen Bonding
+Dipole–Dipole Interactions
+London Dispersion Forces
+Solubility and Intermolecular Forces
+Dissolution Process in Water
+Hydration of Ions
+Electrolytes vs Nonelectrolytes
+Colligative Properties
+Vapor Pressure Lowering
+Boiling Point Elevation
+Freezing Point Depression
+Osmosis
+Osmotic Pressure
+Diffusion in Liquids and Gases
+Gas Particle Motion (Kinetic Molecular Theory)
+Ideal Gas Law
+Real Gas Behavior
+Boyle’s Law
+Charles’s Law
+Avogadro’s Law
+Gas Mixtures and Dalton’s Law
+Effusion and Graham’s Law
+Phase Changes of Matter
+Phase Diagrams
+Heating Curve of Water
+Cooling Curve
+Crystal Lattice Structures
+Unit Cells in Crystals
+Amorphous vs Crystalline Solids
+Metallic Crystal Structures
+Ionic Crystal Structures
+Covalent Network Solids
+Thermodynamics System and Surroundings
+First Law of Thermodynamics
+Enthalpy Change (ΔH)
+Energy Level Diagrams
+Exothermic Reactions
+Endothermic Reactions
+Hess’s Law
+Bond Energy Diagrams
+Entropy (ΔS)
+Gibbs Free Energy (ΔG)
+Spontaneous vs Nonspontaneous Reactions
+Reaction Energy Profile
+Activation Energy
+Transition State Theory
+Reaction Mechanism Steps
+Catalysts and Reaction Pathways
+Potential Energy Surface
+Reaction Coordinate Diagrams
+Chemical Equilibrium
+Dynamic Equilibrium
+Equilibrium Constant (K)
+Le Chatelier’s Principle
+Equilibrium Shifts
+Reaction Quotient (Q)
+Acid–Base Theory (Arrhenius)
+Acid–Base Theory (Bronsted–Lowry)
+Acid–Base Theory (Lewis)
+Conjugate Acid–Base Pairs
+Strong vs Weak Acids
+Strong vs Weak Bases
+pH Scale
+Acid Dissociation Constant (Ka)
+Base Dissociation Constant (Kb)
+pKa and Acid Strength
+Buffer Solutions
+Titration Curves
+Acid–Base Neutralization Reactions
+Polyprotic Acids
+Solubility Equilibrium
+Solubility Product Constant (Ksp)
+Precipitation Reactions
+Common Ion Effect
+Complex Ion Formation
+Coordination Compounds
+Ligand–Metal Bonding
+Coordination Geometry
+Crystal Field Splitting
+Crystal Field Theory
+Color in Transition Metal Complexes
+Oxidation States
+Redox Reactions
+Oxidation Number Changes
+Electrochemical Cells
+Galvanic Cells
+Electrolytic Cells
+Standard Electrode Potentials
+Cell Potential and Free Energy
+Corrosion and Redox Processes
+Electrolysis of Water
+Faraday’s Laws of Electrolysis
+Reaction Rate and Concentration
+Reaction Rate Laws
+Rate Constant and Temperature
+Reaction Order
+Collision Theory
+Effect of Temperature on Reaction Rate
+Effect of Catalysts on Reaction Rate
+Reaction Mechanism Intermediates
+Organic Functional Groups
+Alkane Molecular Structure
+Alkene Molecular Structure
+Alkyne Molecular Structure
+Aromatic Ring Structure
+Structural Isomerism
+Geometric Isomerism (cis/trans)
+Optical Isomerism (Chirality)
+Enantiomers and Mirror Images
+Newman Projections
+Conformational Isomers
+Rotation Around Single Bonds
+Nucleophiles and Electrophiles
+Nucleophilic Substitution (SN1)
+Nucleophilic Substitution (SN2)
+Elimination Reactions (E1)
+Elimination Reactions (E2)
+Electrophilic Addition to Alkenes
+Carbocation Formation
+Free Radical Reactions
+Polymerization Reactions
+Addition Polymerization
+Condensation Polymerization
+Polymer Chain Structures
+Biopolymer Structures
+Protein Primary Structure
+Protein Folding
+DNA Double Helix Structure
+Hydrogen Bonding in DNA
+Enzyme–Substrate Binding
+Catalytic Cycle of Enzymes
+Reaction Coordinate in Enzyme Catalysis
+Photosynthesis Light Reactions
+Photosynthesis Calvin Cycle
+ATP Structure and Energy Storage
+Electron Transport Chain
+Combustion Reactions
+Hydrocarbon Combustion Mechanism
+Atmospheric Ozone Formation
+Greenhouse Gas Molecular Absorption
+Water Molecular Geometry
+Hydrogen Bond Network in Water
+Hydrophobic vs Hydrophilic Interactions
+Micelle Formation
+Surfactant Molecular Structure
+Colloids and Suspensions
+Emulsion Formation
+Chromatography Separation Process
+Distillation Process
+Fractional Distillation
+Filtration and Separation
+Crystallization Process
+Spectroscopy Principles
+Absorption Spectra
+Infrared Spectroscopy Vibrations
+UV–Visible Spectroscopy
+NMR Molecular Structure Analysis
+Mass Spectrometry Fragmentation
+Flame Test Emission Colors
+Electron Transitions in Atoms
+Atomic Emission Spectra
+Photoelectric Effect in Atoms
+Chemical Bond Energy vs Bond Length
+Molecular Collision Orientation
+Reaction Pathway Diagrams
+Energy Changes in Bond Formation
+Proton Transfer Reactions
+Electron Pair Donation in Bonds
+Orbital Overlap in Bond Formation
+Charge Distribution in Molecules

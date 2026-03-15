@@ -1,0 +1,200 @@
+[
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Heap Sort."},
+    {"from":"gpt","value":"Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure. First, the input array is converted into a max heap where the largest element is always at the root. The algorithm repeatedly swaps the root with the last element of the heap and reduces the heap size. After each swap, the heap property is restored using heapify. This continues until all elements are sorted. Heap Sort runs in O(n log n) time and sorts in-place without requiring extra memory.\n\n```mermaid\ngraph TD\nA[Build Max Heap] --> B[Swap Root with Last Element]\nB --> C[Reduce Heap Size]\nC --> D[Heapify Root]\nD --> B\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"How does Counting Sort work?"},
+    {"from":"gpt","value":"Counting Sort is a non-comparison sorting algorithm that works well when the range of input values is limited. Instead of comparing elements, it counts how many times each value appears. A counting array stores these frequencies. Then cumulative counts are calculated to determine the correct position of each element in the sorted output. Finally, elements are placed in their correct positions based on these counts. Counting Sort runs in O(n + k) time, where k is the range of values, and it is commonly used as a subroutine in other algorithms like Radix Sort."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Radix Sort."},
+    {"from":"gpt","value":"Radix Sort is a non-comparison sorting algorithm that sorts numbers digit by digit, starting from the least significant digit or most significant digit. It uses a stable sorting method such as Counting Sort for each digit position. The algorithm groups numbers based on the current digit and processes all digits sequentially until the entire number is sorted. Radix Sort works efficiently when numbers have a fixed number of digits and runs in O(d(n + k)) time, where d is the number of digits.\n\n```mermaid\ngraph TD\nA[Input Numbers] --> B[Sort by Units Digit]\nB --> C[Sort by Tens Digit]\nC --> D[Sort by Hundreds Digit]\nD --> E[Sorted Output]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Bucket Sort."},
+    {"from":"gpt","value":"Bucket Sort distributes elements into several buckets based on their value ranges. Each bucket holds values that fall within a specific interval. After distribution, each bucket is sorted individually, usually using another algorithm such as insertion sort. Finally, the sorted buckets are concatenated to produce the final sorted list. Bucket Sort performs well when the input values are uniformly distributed and can achieve near O(n) average complexity.\n\n```mermaid\ngraph TD\nA[Input Array] --> B[Distribute into Buckets]\nB --> C[Sort Each Bucket]\nC --> D[Merge Buckets]\nD --> E[Sorted Output]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Tim Sort in algorithms?"},
+    {"from":"gpt","value":"Tim Sort is a hybrid sorting algorithm derived from merge sort and insertion sort. It is designed to perform efficiently on real-world data by exploiting existing order in the input. The algorithm divides the array into small segments called runs, which are sorted using insertion sort. These runs are then merged together using a merge sort strategy. Tim Sort is stable and has a worst-case time complexity of O(n log n). It is widely used in practice, including in Python’s built-in sorting functions."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Shell Sort."},
+    {"from":"gpt","value":"Shell Sort improves upon insertion sort by allowing comparisons and swaps of elements that are far apart. Instead of sorting adjacent elements immediately, it starts with a large gap between elements and gradually reduces this gap. During each pass, elements separated by the current gap are compared and rearranged. As the gap decreases, the array becomes increasingly sorted, making the final insertion sort step very efficient. Shell Sort's time complexity depends on the gap sequence but typically performs better than simple quadratic sorting algorithms."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Bitonic Sort work?"},
+    {"from":"gpt","value":"Bitonic Sort is a parallel sorting algorithm commonly used in hardware and parallel computing environments. It works by creating bitonic sequences—sequences that first increase and then decrease. These sequences are recursively merged to produce sorted sequences. The algorithm repeatedly compares and swaps elements in a structured pattern until the entire sequence becomes sorted. Bitonic Sort is particularly suitable for sorting networks and GPUs because of its predictable structure.\n\n```mermaid\ngraph TD\nA[Input Sequence] --> B[Create Bitonic Sequence]\nB --> C[Compare and Swap]\nC --> D[Recursive Merge]\nD --> E[Sorted Sequence]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Sorting Networks."},
+    {"from":"gpt","value":"Sorting Networks are fixed sequences of comparison and swap operations designed to sort a fixed number of inputs. Unlike traditional algorithms, the sequence of operations does not depend on the input values. Each comparator checks two elements and swaps them if needed. Because the pattern of comparisons is predetermined, sorting networks are ideal for parallel hardware implementations. They are commonly used in GPU computation and hardware circuits where predictable execution is important.\n\n```mermaid\ngraph LR\nA1 --> C1\nA2 --> C1\nC1 --> C2\nA3 --> C2\nC2 --> Sorted\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Stable vs Unstable Sorting."},
+    {"from":"gpt","value":"Stable sorting algorithms preserve the relative order of elements with equal values, while unstable sorting algorithms may change their order. For example, if two records have the same key, a stable sort keeps them in the same order as the original input. Algorithms like Merge Sort and Insertion Sort are stable, whereas Quick Sort and Heap Sort are typically unstable. Stability is important when sorting complex records by multiple fields, where earlier sorting decisions must remain intact."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What are In-Place Sorting Algorithms?"},
+    {"from":"gpt","value":"In-place sorting algorithms rearrange elements within the original data structure without requiring significant additional memory. They usually use only a small constant amount of extra space. Examples include Quick Sort, Heap Sort, and Insertion Sort. Because these algorithms modify the original array directly, they are memory-efficient and suitable for systems with limited storage. However, some in-place algorithms can be complex to implement and may trade off stability or simplicity for memory efficiency."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain External Sorting."},
+    {"from":"gpt","value":"External sorting is used when data is too large to fit entirely in main memory. The algorithm divides the dataset into smaller chunks that fit in memory, sorts each chunk individually, and writes them to disk. These sorted chunks are then merged using multi-way merge techniques to produce a fully sorted dataset. External sorting is commonly used in databases and big data systems when handling large files.\n\n```mermaid\ngraph TD\nA[Large Dataset on Disk] --> B[Split into Chunks]\nB --> C[Sort Each Chunk in Memory]\nC --> D[Write Sorted Chunks to Disk]\nD --> E[Merge Chunks]\nE --> F[Final Sorted Output]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Time Complexity Analysis."},
+    {"from":"gpt","value":"Time complexity analysis measures how the running time of an algorithm grows as the input size increases. Instead of measuring exact execution time, it focuses on the number of operations performed. By analyzing loops, recursion, and comparisons, we estimate how performance scales with input size n. This helps compare algorithms and choose efficient solutions. Common complexity classes include O(n), O(n log n), and O(n²). Time complexity provides an abstract understanding of algorithm efficiency independent of hardware."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Space Complexity Analysis."},
+    {"from":"gpt","value":"Space complexity analysis evaluates how much memory an algorithm uses relative to the input size. It considers both the memory required for the input data and additional memory used by variables, recursion stacks, or auxiliary structures. For example, merge sort requires extra arrays, while quicksort typically sorts in-place. Understanding space complexity is important when working with large datasets or memory-constrained systems. Efficient algorithms balance both time and memory usage to achieve optimal performance."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Big O Notation?"},{"from":"gpt","value":"Big O notation describes the upper bound of an algorithm’s growth rate as the input size increases. It focuses on the worst-case behavior and ignores constant factors and smaller terms. For example, if an algorithm performs roughly n² operations for input size n, it is described as O(n²). Big O notation allows developers to compare algorithm efficiency and understand how performance scales for large inputs. It is widely used in computer science to classify algorithms and predict scalability."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Big Omega Notation."},
+    {"from":"gpt","value":"Big Omega notation describes the lower bound of an algorithm’s running time. It represents the best-case growth rate, meaning the minimum time required for the algorithm as the input size increases. For instance, if an algorithm must perform at least n operations, its complexity can be expressed as Ω(n). Big Omega helps identify the theoretical minimum work required by an algorithm, providing insight into the most efficient possible scenario."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Big Theta Notation."},
+    {"from":"gpt","value":"Big Theta notation describes the tight bound of an algorithm’s time complexity. It indicates that the running time grows at the same rate in both the upper and lower bounds. If an algorithm consistently performs proportional to n log n operations for large inputs, it can be described as Θ(n log n). Big Theta provides a more precise measurement than Big O or Big Omega when both bounds match, showing the exact asymptotic growth rate."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Amortized Analysis."},
+    {"from":"gpt","value":"Amortized analysis evaluates the average cost of operations over a sequence of operations rather than analyzing each operation individually. Some operations may be expensive, but they occur rarely. By spreading the cost of these expensive operations across many inexpensive ones, we obtain the amortized cost per operation. A classic example is dynamic array resizing, where occasional costly expansions are balanced by many cheap insertions. This analysis helps understand the real-world efficiency of algorithms that have occasional spikes in cost."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Dynamic Programming."},
+    {"from":"gpt","value":"Dynamic programming is a problem-solving technique used when a problem can be broken into overlapping subproblems with optimal substructure. Instead of solving the same subproblem repeatedly, dynamic programming stores previously computed results and reuses them. This greatly reduces computation time. Solutions are typically built either recursively with memoization or iteratively using tables. Dynamic programming is commonly used in optimization problems such as shortest paths or sequence alignment.\n\n```mermaid\ngraph TD\nA[Problem] --> B[Break into Subproblems]\nB --> C[Store Solutions]\nC --> D[Reuse Stored Results]\nD --> E[Build Final Solution]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Memoization?"},{"from":"gpt","value":"Memoization is an optimization technique used in recursive algorithms where the results of expensive function calls are stored and reused when the same inputs occur again. Instead of recalculating the result for a subproblem, the algorithm checks if the result has already been computed and stored. This reduces redundant computation and significantly improves efficiency for problems with overlapping subproblems. Memoization is commonly used in dynamic programming solutions implemented with recursion."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Tabulation in Dynamic Programming."},
+    {"from":"gpt","value":"Tabulation is a bottom-up dynamic programming technique where solutions to smaller subproblems are computed first and stored in a table. The algorithm iteratively fills the table until the final solution is obtained. Unlike memoization, which uses recursion, tabulation avoids recursion and builds the solution step by step. This approach often improves performance and avoids recursion overhead.\n\n```mermaid\ngraph TD\nA[Start with Base Cases] --> B[Fill Table Iteratively]\nB --> C[Use Previous Values]\nC --> D[Compute Final Answer]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Longest Common Subsequence algorithm."},
+    {"from":"gpt","value":"The Longest Common Subsequence (LCS) algorithm finds the longest sequence that appears in the same order in two strings, though not necessarily contiguously. It uses dynamic programming to build a matrix where each cell represents the LCS length for prefixes of the two strings. If characters match, the value increases; otherwise, the maximum of neighboring values is taken. The final cell contains the length of the longest common subsequence.\n\n```mermaid\ngraph TD\nA[Two Strings] --> B[Create DP Table]\nB --> C[Compare Characters]\nC --> D[Update Table]\nD --> E[LCS Length]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Longest Increasing Subsequence."},
+    {"from":"gpt","value":"The Longest Increasing Subsequence (LIS) problem finds the longest subsequence of numbers where each element is greater than the previous one. Dynamic programming is commonly used to solve it by storing the LIS length ending at each index. The algorithm updates values based on earlier elements that are smaller. More advanced solutions use binary search to improve efficiency to O(n log n).\n\n```mermaid\ngraph TD\nA[Input Sequence] --> B[Check Previous Elements]\nB --> C[Update LIS Length]\nC --> D[Track Maximum]\nD --> E[Longest Increasing Subsequence]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Edit Distance algorithm."},
+    {"from":"gpt","value":"The Edit Distance algorithm calculates the minimum number of operations required to convert one string into another. The allowed operations are insertion, deletion, and substitution. Using dynamic programming, a matrix is built where each cell represents the minimum edits needed to transform prefixes of the strings. By filling the table step by step, the algorithm determines the optimal sequence of edits. Edit distance is widely used in spell checking and natural language processing.\n\n```mermaid\ngraph TD\nA[String A] --> B[Build DP Matrix]\nB --> C[Insert/Delete/Replace]\nC --> D[Update Costs]\nD --> E[Minimum Edit Distance]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the 0/1 Knapsack Problem."},
+    {"from":"gpt","value":"The 0/1 Knapsack problem involves selecting items with given weights and values to maximize total value without exceeding a weight limit. Each item can be either taken or not taken. Dynamic programming is used to build a table where rows represent items and columns represent weight capacity. The algorithm decides whether including an item increases the total value. The final table entry gives the optimal solution.\n\n```mermaid\ngraph TD\nA[Items with Weight and Value] --> B[DP Table]\nB --> C[Include Item]\nB --> D[Exclude Item]\nC --> E[Update Value]\nD --> E\nE --> F[Optimal Knapsack Value]\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Unbounded Knapsack Problem."},
+    {"from":"gpt","value":"The Unbounded Knapsack problem is similar to the 0/1 knapsack but allows unlimited copies of each item. The goal is still to maximize total value while staying within a weight limit. Dynamic programming solves this by iteratively computing the best value for each possible weight. When evaluating a weight, the algorithm considers adding any item again since repetition is allowed. This makes the problem suitable for optimization scenarios like resource allocation.\n\n```mermaid\ngraph TD\nA[Items Available] --> B[Check Weight Capacity]\nB --> C[Reuse Item Multiple Times]\nC --> D[Update DP Table]\nD --> E[Maximum Value]\n```"}
+    ]
+    }
+    ]

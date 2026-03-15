@@ -1,0 +1,92 @@
+[
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain OSI Model."},
+    {"from":"gpt","value":"The OSI (Open Systems Interconnection) Model is a conceptual framework used to understand how data moves across a network. It divides communication into seven layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application. Each layer performs a specific role, such as transmitting bits, routing packets, or managing sessions. By separating responsibilities, the OSI model helps engineers design interoperable networking systems and troubleshoot issues. Data moves down the layers at the sender, travels across the network, and moves up the layers at the receiver.\n\n```mermaid\ngraph TD\nApplication --> Presentation\nPresentation --> Session\nSession --> Transport\nTransport --> Network\nNetwork --> DataLink\nDataLink --> Physical\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is TCP/IP Model in networking?"},
+    {"from":"gpt","value":"The TCP/IP Model describes how internet communication works by organizing networking functions into four layers: Application, Transport, Internet, and Network Access. The Application layer handles user-facing protocols like HTTP and DNS. The Transport layer manages communication between hosts using TCP or UDP. The Internet layer routes packets using IP, while the Network Access layer deals with physical data transmission. Data flows from the application down through the layers, gets transmitted across the network, and is reconstructed on the receiving system.\n\n```mermaid\ngraph TD\nApplication --> Transport\nTransport --> Internet\nInternet --> NetworkAccess\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does TCP Three-Way Handshake work?"},
+    {"from":"gpt","value":"The TCP Three-Way Handshake establishes a reliable connection between a client and server before data transfer begins. First, the client sends a SYN (synchronize) message to request a connection. The server replies with SYN-ACK, acknowledging the request and indicating readiness. Finally, the client sends an ACK message confirming the connection. After this three-step exchange, both sides agree on sequence numbers and communication can begin reliably. This process ensures both systems are synchronized and ready for data transmission.\n\n```mermaid\ngraph LR\nClient -->|SYN| Server\nServer -->|SYN-ACK| Client\nClient -->|ACK| Server\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about TCP Connection Termination."},
+    {"from":"gpt","value":"TCP Connection Termination closes an established TCP connection using a four-step process. When a client finishes sending data, it sends a FIN (finish) message. The server acknowledges with ACK. When the server is also ready to close the connection, it sends its own FIN message. Finally, the client sends an ACK confirming the closure. This orderly shutdown ensures that all remaining data is delivered before the connection ends and prevents abrupt disconnections.\n\n```mermaid\ngraph LR\nClient -->|FIN| Server\nServer -->|ACK| Client\nServer -->|FIN| Client\nClient -->|ACK| Server\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain UDP Communication Model."},
+    {"from":"gpt","value":"UDP (User Datagram Protocol) is a lightweight transport protocol that sends messages called datagrams without establishing a connection. Unlike TCP, UDP does not guarantee delivery, ordering, or duplication protection. This makes it faster and useful for real-time applications like video streaming, gaming, and voice calls where speed is more important than reliability. The sender simply transmits packets directly to the receiver without performing handshakes or acknowledgments.\n\n```mermaid\ngraph LR\nSender --> Datagram1\nSender --> Datagram2\nSender --> Datagram3\nDatagram1 --> Receiver\nDatagram2 --> Receiver\nDatagram3 --> Receiver\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Client-Server Architecture?"},{"from":"gpt","value":"Client-Server Architecture is a computing model where multiple clients request services from a centralized server. The client sends requests such as fetching data or performing actions, and the server processes these requests and returns responses. This architecture allows centralized management of data and resources. Web applications commonly use this model where browsers act as clients and web servers handle requests, database queries, and business logic.\n\n```mermaid\ngraph LR\nClient1 --> Server\nClient2 --> Server\nClient3 --> Server\nServer --> Database\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Peer-to-Peer Architecture."},
+    {"from":"gpt","value":"Peer-to-Peer (P2P) Architecture is a distributed networking model where each node acts as both a client and a server. Instead of relying on a central server, peers communicate directly with each other to share data or services. This approach improves scalability and fault tolerance because workloads are distributed across many nodes. P2P networks are commonly used in file-sharing systems and blockchain networks where participants exchange information directly.\n\n```mermaid\ngraph LR\nPeer1 <--> Peer2\nPeer2 <--> Peer3\nPeer3 <--> Peer1\nPeer1 <--> Peer4\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Load Balancing work?"},{"from":"gpt","value":"Load balancing distributes incoming network traffic across multiple servers to improve performance and reliability. A load balancer sits between clients and backend servers. When a request arrives, the load balancer forwards it to one of several available servers using algorithms such as round robin or least connections. This prevents any single server from becoming overloaded and ensures high availability. If one server fails, traffic can be redirected to others.\n\n```mermaid\ngraph LR\nClient --> LoadBalancer\nLoadBalancer --> Server1\nLoadBalancer --> Server2\nLoadBalancer --> Server3\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does DNS Resolution Process work?"},{"from":"gpt","value":"The DNS Resolution Process converts human-readable domain names into IP addresses. When a user enters a website URL, the browser sends a query to a DNS resolver. If the address is not cached, the resolver queries root servers, then top-level domain servers, and finally authoritative DNS servers. The authoritative server returns the correct IP address. The resolver sends this address back to the client, allowing the browser to connect to the correct web server.\n\n```mermaid\ngraph LR\nClient --> Resolver\nResolver --> RootDNS\nRootDNS --> TLDServer\nTLDServer --> AuthoritativeDNS\nAuthoritativeDNS --> Resolver\nResolver --> Client\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the DHCP Lease Process."},{"from":"gpt","value":"The DHCP Lease Process automatically assigns IP addresses to devices joining a network. It follows a four-step process called DORA: Discover, Offer, Request, and Acknowledge. First, the client broadcasts a DHCP Discover message to find available servers. The server responds with a DHCP Offer containing an IP address. The client sends a Request to accept the offer, and the server replies with an Acknowledge confirming the lease. The device can then use the assigned IP address for communication.\n\n```mermaid\ngraph LR\nClient -->|Discover| DHCPServer\nDHCPServer -->|Offer| Client\nClient -->|Request| DHCPServer\nDHCPServer -->|Acknowledge| Client\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain ARP Resolution."},{"from":"gpt","value":"ARP (Address Resolution Protocol) maps an IP address to a device's MAC address within a local network. When a device wants to communicate with another device on the same network, it sends an ARP broadcast asking which device owns a specific IP address. The device with that IP responds with its MAC address. The sender stores this mapping in an ARP cache and uses the MAC address to deliver Ethernet frames on the local network.\n\n```mermaid\ngraph LR\nHostA -->|ARP Request: Who has IP?| Broadcast\nHostB -->|ARP Reply: My MAC| HostA\n```\n"}
+    ]
+    },
+    {
+    "category": "networking",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is NAT (Network Address Translation)?"},{"from":"gpt","value":"Network Address Translation (NAT) allows multiple devices in a private network to share a single public IP address when accessing the internet. A router performing NAT replaces the private source IP address of outgoing packets with its public IP address and tracks the mapping in a translation table. When responses return, the router uses the table to forward packets to the correct internal device. NAT helps conserve public IP addresses and adds a basic layer of network isolation.\n\n```mermaid\ngraph LR\nDevice1 --> RouterNAT\nDevice2 --> RouterNAT\nRouterNAT --> Internet\nInternet --> RouterNAT\nRouterNAT --> Device1\n```\n"}
+    ]
+    }
+    ]

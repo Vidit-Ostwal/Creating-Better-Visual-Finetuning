@@ -1,0 +1,202 @@
+[
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Coin Change Problem."},
+    {"from":"gpt","value":"The Coin Change Problem asks how to make a target amount using the fewest coins from given denominations. It is commonly solved using dynamic programming. We build a table where each entry represents the minimum coins needed for a value. For each coin, we check if using it improves the solution for a smaller amount. By iterating from smaller amounts to larger ones, we gradually compute the optimal result. The diagram shows how the solution expands by evaluating combinations of coins until the target amount is reached.\n\n```mermaid\ngraph TD\nStart --> Amount1\nAmount1 --> Amount2\nAmount2 --> Amount3\nAmount3 --> TargetAmount\nTargetAmount --> MinCoins\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Matrix Chain Multiplication work?"},
+    {"from":"gpt","value":"Matrix Chain Multiplication determines the most efficient order to multiply a sequence of matrices. Although matrix multiplication is associative, different parenthesizations require different numbers of scalar multiplications. Dynamic programming solves this by computing the minimum cost for multiplying subchains of matrices. A table stores optimal results for smaller matrix groups and builds up to the full chain. The algorithm avoids redundant calculations and ensures minimal multiplication cost. The diagram shows how matrices are split into subproblems and combined to form the optimal multiplication order.\n\n```mermaid\ngraph TD\nA1 --> Split\nSplit --> A1A2\nSplit --> A3A4\nA1A2 --> Combine\nA3A4 --> Combine\nCombine --> OptimalCost\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Optimal Binary Search Trees."},
+    {"from":"gpt","value":"An Optimal Binary Search Tree (OBST) is a binary search tree designed to minimize the expected search cost when keys have different search probabilities. Some keys may be searched more frequently than others, so placing frequently accessed keys near the root reduces average search time. Dynamic programming computes the best root for each subtree based on probabilities of successful and unsuccessful searches. The algorithm evaluates possible roots and chooses the one that minimizes the total weighted path cost. The diagram illustrates how probabilities influence the tree structure.\n\n```mermaid\ngraph TD\nRoot --> LeftSubtree\nRoot --> RightSubtree\nLeftSubtree --> Key1\nLeftSubtree --> Key2\nRightSubtree --> Key3\nRightSubtree --> Key4\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What are Catalan Numbers in tree counting?"},
+    {"from":"gpt","value":"Catalan numbers frequently appear in combinatorics and computer science, especially when counting possible tree structures. In algorithms, they count the number of distinct binary search trees that can be formed using n keys. The idea is that each key can become the root, splitting the remaining keys into left and right subtrees. The total number of trees equals the sum of combinations of left and right subtree possibilities. This recursive structure produces the Catalan sequence: 1, 1, 2, 5, 14, and so on. Catalan numbers also appear in counting balanced parentheses and polygon triangulations."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Greedy Algorithms."},
+    {"from":"gpt","value":"Greedy algorithms solve optimization problems by making the best immediate choice at each step. Instead of exploring all possibilities, the algorithm selects the option that looks optimal locally and continues forward. This works when a problem has the greedy-choice property and optimal substructure, meaning local decisions lead to a global optimum. Examples include interval scheduling, Huffman coding, and fractional knapsack. Greedy algorithms are typically simple and efficient because they avoid complex recursion or dynamic programming. However, they only work for problems where local optimal decisions guarantee a globally optimal solution."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does the Activity Selection Problem work?"},
+    {"from":"gpt","value":"The Activity Selection Problem chooses the maximum number of non-overlapping activities from a set with start and finish times. A greedy approach solves it efficiently by always selecting the activity that finishes earliest. After choosing one activity, the algorithm discards all activities that overlap with it and repeats the process with the remaining ones. This strategy works because finishing early leaves more room for future activities. The diagram shows how activities are filtered based on finish time to maximize the total number selected.\n\n```mermaid\ngraph LR\nStart --> SortByFinish\nSortByFinish --> PickFirstActivity\nPickFirstActivity --> RemoveOverlapping\nRemoveOverlapping --> PickNext\nPickNext --> Result\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Huffman Coding."},
+    {"from":"gpt","value":"Huffman coding is a greedy algorithm used for lossless data compression. It assigns shorter binary codes to frequently occurring characters and longer codes to less frequent ones. The algorithm repeatedly merges the two nodes with the smallest frequencies to form a new internal node. This process builds a binary tree where each leaf represents a character. Traversing the tree from root to leaf produces the character’s binary code. The resulting encoding minimizes the total number of bits required to represent the data.\n\n```mermaid\ngraph TD\nRoot --> NodeA\nRoot --> NodeB\nNodeA --> Char1\nNodeA --> Char2\nNodeB --> Char3\nNodeB --> Char4\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is the Fractional Knapsack algorithm?"},
+    {"from":"gpt","value":"The Fractional Knapsack problem involves selecting items with weights and values to maximize total value without exceeding the knapsack capacity. Unlike the 0/1 knapsack problem, items can be divided. A greedy strategy works by selecting items in decreasing order of value-to-weight ratio. The algorithm takes as much as possible of the item with the highest ratio, then moves to the next item until the capacity is filled. If only part of an item fits, a fraction is taken. This approach guarantees an optimal solution because the value gained per unit weight is always maximized."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Job Scheduling with Deadlines."},
+    {"from":"gpt","value":"Job Scheduling with Deadlines is a greedy algorithm problem where each job has a deadline and profit. The goal is to schedule jobs within available time slots to maximize total profit. Jobs are first sorted by decreasing profit. Each job is placed in the latest available time slot before its deadline. If no slot is available, the job is skipped. This strategy ensures that the most valuable jobs are prioritized while still respecting deadlines. The diagram shows how jobs compete for limited time slots during scheduling.\n\n```mermaid\ngraph TD\nStart --> SortByProfit\nSortByProfit --> CheckDeadline\nCheckDeadline --> AssignSlot\nAssignSlot --> NextJob\nNextJob --> FinalSchedule\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Interval Scheduling."},
+    {"from":"gpt","value":"Interval scheduling focuses on selecting the maximum number of non-overlapping intervals from a set of time intervals. Each interval has a start and finish time. The optimal greedy strategy is to sort intervals by their finish time and repeatedly select the earliest finishing interval that does not conflict with previously chosen ones. This works because choosing the earliest finishing interval leaves the maximum remaining time for future intervals. The algorithm is efficient and runs in O(n log n) time due to sorting, making it practical for scheduling tasks or resource allocation problems."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Minimum Coin Change using a greedy approach?"},
+    {"from":"gpt","value":"The Minimum Coin Change greedy approach tries to make a target amount using the largest possible coin denomination first. The algorithm repeatedly selects the biggest coin that does not exceed the remaining amount, subtracts it, and continues until the amount becomes zero. This method works correctly for some coin systems, such as standard currency denominations, because they are designed to support greedy solutions. However, for arbitrary coin sets, greedy methods may fail to produce the minimum number of coins. In such cases, dynamic programming provides a guaranteed optimal solution."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does the Sliding Window Technique work?"},
+    {"from":"gpt","value":"The sliding window technique efficiently processes subarrays or substrings of fixed or variable length within a sequence. Instead of recomputing values for every window, the algorithm maintains a moving window that expands and shrinks as needed. When the window moves forward, new elements are added and old ones are removed. This allows calculations like sums or counts to update incrementally. The approach reduces time complexity from O(n²) to O(n) in many problems. The diagram illustrates how the window moves across the array.\n\n```mermaid\ngraph LR\nStart --> Window1\nWindow1 --> SlideRight\nSlideRight --> Window2\nWindow2 --> SlideRight\nSlideRight --> Window3\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Two Pointer Technique."},
+    {"from":"gpt","value":"The two pointer technique uses two indices that move through a data structure, often an array or string, to efficiently solve problems. One pointer may start at the beginning and the other at the end, or both may move in the same direction. The pointers adjust based on conditions such as sums, ordering, or comparisons. This approach reduces nested loops and often improves time complexity to O(n). It is widely used in problems like pair sums in sorted arrays or removing duplicates. The diagram shows how two pointers move toward each other.\n\n```mermaid\ngraph LR\nStart --> LeftPointer\nStart --> RightPointer\nLeftPointer --> MoveRight\nRightPointer --> MoveLeft\nMoveRight --> CheckCondition\nMoveLeft --> CheckCondition\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What are Prefix Sum Arrays?"},
+    {"from":"gpt","value":"A prefix sum array stores cumulative sums of elements in an array. Each position contains the sum of all previous elements including itself. Once built, it allows fast range sum queries. To compute the sum between indices l and r, subtract the prefix value at l−1 from the prefix value at r. Building the prefix array takes O(n) time, and each query can then be answered in constant time. This technique is widely used in competitive programming and algorithm design for efficiently processing repeated range queries."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Difference Arrays."},
+    {"from":"gpt","value":"A difference array is a technique used to efficiently apply multiple range updates to an array. Instead of updating every element within a range, the algorithm modifies only the boundaries. When adding a value to a range [l, r], the value is added at index l and subtracted at index r+1. After all updates are recorded, a prefix sum operation reconstructs the final array values. This approach reduces the complexity of repeated range updates from O(n) per operation to O(1), making it especially useful in scenarios with many modifications."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Kadane’s Algorithm?"},
+    {"from":"gpt","value":"Kadane’s Algorithm efficiently finds the maximum sum subarray in a one-dimensional array. The algorithm iterates through the array while maintaining two variables: the current subarray sum and the maximum sum found so far. At each element, the algorithm decides whether to extend the existing subarray or start a new one at the current position. If the running sum becomes negative, it is reset because continuing would only reduce future sums. This dynamic programming approach runs in O(n) time and is widely used in optimization problems involving contiguous subarrays."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about the Sweep Line Algorithm."},
+    {"from":"gpt","value":"The sweep line algorithm processes geometric events by imagining a vertical line moving across a plane. As the line sweeps from left to right, events such as segment starts, ends, or intersections are processed in sorted order. Data structures like priority queues or balanced trees help maintain active elements during the sweep. This technique is used in problems such as detecting line segment intersections, computing skyline silhouettes, or interval overlaps. The diagram illustrates the sweep line moving across events.\n\n```mermaid\ngraph LR\nLeftEvents --> SweepLine\nSweepLine --> ProcessEvent\nProcessEvent --> UpdateStructure\nUpdateStructure --> NextEvent\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Bit Manipulation Techniques."},
+    {"from":"gpt","value":"Bit manipulation techniques involve operating directly on binary representations of numbers using bitwise operators such as AND, OR, XOR, and shifts. These operations are extremely fast because they work at the hardware level. Common uses include checking if a number is even, toggling bits, setting flags, or compressing data structures. Algorithms often use bit manipulation to optimize performance, especially in competitive programming. For example, XOR can swap two numbers without extra memory, and bit shifts can quickly multiply or divide numbers by powers of two."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What are Bit Masks?"},
+    {"from":"gpt","value":"A bit mask is a binary pattern used to manipulate specific bits in a number. By applying bitwise operations with the mask, programs can set, clear, toggle, or check certain bits efficiently. For example, using an AND operation with a mask helps test whether a particular bit is set. Bit masks are widely used in systems programming, permissions management, and subset enumeration problems. Because multiple boolean states can be stored within a single integer, bit masks provide a compact and fast way to represent sets or flags in algorithms."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain subset generation using bitmasking."},
+    {"from":"gpt","value":"Subset generation using bitmasking treats each subset as a binary number where each bit represents whether an element is included. For a set with n elements, there are 2ⁿ possible subsets. By iterating from 0 to 2ⁿ−1 and examining the bits of each number, we can determine which elements belong to that subset. If the i-th bit is set, the i-th element is included. This technique efficiently generates all subsets and is commonly used in combinatorial search problems and dynamic programming on subsets."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about Gray Code Generation."},
+    {"from":"gpt","value":"Gray code is a sequence of binary numbers where consecutive values differ by only one bit. This property reduces errors in digital systems and is used in hardware encoders and algorithmic generation problems. Gray codes can be generated recursively or using the formula: G(n) = n XOR (n >> 1). This ensures that each successive number changes exactly one bit from the previous value. In algorithms, Gray codes are useful for generating combinations while minimizing changes between successive states."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Fast Exponentiation (Binary Exponentiation)?"},
+    {"from":"gpt","value":"Fast exponentiation computes powers such as aⁿ efficiently using repeated squaring. Instead of multiplying a by itself n times, the algorithm repeatedly squares the base and halves the exponent. If the exponent is even, the base is squared and the exponent is divided by two. If it is odd, the result is multiplied by the base once and the exponent decreases. This reduces time complexity from O(n) to O(log n). Binary exponentiation is widely used in modular arithmetic and cryptographic algorithms."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain the Euclidean Algorithm for GCD."},
+    {"from":"gpt","value":"The Euclidean Algorithm efficiently computes the greatest common divisor (GCD) of two integers. It relies on the principle that the GCD of two numbers also divides their difference. Instead of repeatedly subtracting numbers, the modern version uses the remainder operation. Given two numbers a and b, the algorithm repeatedly replaces a with b and b with a mod b until b becomes zero. At that point, a is the GCD. This algorithm is extremely efficient and runs in logarithmic time."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"How does the Extended Euclidean Algorithm work?"},
+    {"from":"gpt","value":"The Extended Euclidean Algorithm not only computes the greatest common divisor of two integers but also finds coefficients that express the GCD as a linear combination of the numbers. Specifically, it finds integers x and y such that ax + by = gcd(a, b). This information is extremely useful in number theory and cryptography, especially when computing modular inverses. The algorithm follows the same recursive steps as the standard Euclidean algorithm while tracking the coefficients during backtracking."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Modular Arithmetic."},
+    {"from":"gpt","value":"Modular arithmetic works with numbers under a fixed modulus, meaning results wrap around after reaching the modulus value. It is often described as arithmetic on a clock. For example, in modulo 7 arithmetic, the result of 10 mod 7 is 3. Operations such as addition, subtraction, and multiplication follow consistent rules under modulus. Modular arithmetic is widely used in cryptography, hashing, and algorithm design. Techniques like modular exponentiation help handle very large numbers efficiently without overflow."}
+    ]
+    }
+    ]

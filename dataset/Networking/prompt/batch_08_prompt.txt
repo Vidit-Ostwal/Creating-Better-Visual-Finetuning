@@ -1,0 +1,110 @@
+You are generating high-quality supervised fine-tuning data for training an AI model that produces clear educational explanations with optional diagrams.
+
+The domain for this batch is **Networking and Distributed Systems**.
+
+Your task is to generate one dataset entry for each concept provided.
+
+---
+
+DATASET OBJECTIVE
+
+Train the model to:
+
+* explain networking concepts clearly
+* use diagrams to illustrate communication flows and system architecture
+
+---
+
+OUTPUT FORMAT
+
+{
+"category": "networking",
+"has_diagram": true/false,
+"conversations": [
+{"from":"human","value":"<question>"},
+{"from":"gpt","value":"<explanation + optional diagram>"}
+]
+}
+
+Return a JSON array containing one entry per concept.
+
+---
+
+EXPLANATION RULES
+
+* 80-120 words
+* Beginner-friendly
+* Focus on system interactions
+
+---
+
+DIAGRAM RULES
+
+Include diagrams for:
+
+* communication flows
+* protocol interactions
+* layered architectures
+* distributed coordination
+
+Use Mermaid diagrams such as:
+
+graph LR
+graph TD
+
+Example:
+
+```mermaid
+graph LR
+Client --> Request
+Request --> Server
+Server --> Response
+Response --> Client
+```
+
+---
+
+PROMPT VARIATION
+
+Use varied prompts:
+
+Explain <concept>
+How does <concept> work?
+Teach me about <concept>.
+What is <concept> in networking?
+
+---
+
+CONCEPTS
+
+Generate one entry for each of the following:
+
+Distributed Task Coordination
+Cluster Heartbeat Monitoring
+Quorum-Based Leader Election
+Split-Brain Problem in Distributed Systems
+Network Partition Handling
+Self-Healing Distributed Systems
+Auto-Scaling Architecture
+Horizontal vs Vertical Scaling
+Distributed Failover Mechanisms
+Active-Active Replication
+Active-Passive Failover
+Disaster Recovery Architecture
+Blue-Green Deployment Architecture
+Canary Deployment Strategy
+Rolling Deployment Strategy
+Distributed Feature Flag Systems
+Edge Caching Architecture
+Hierarchical Caching Systems
+Network Packet Encapsulation
+Tunneling Protocol Architecture
+Overlay Routing
+Distributed Authentication Architecture
+OAuth Authorization Flow
+Single Sign-On (SSO) Architecture
+Federated Identity Architecture
+
+---
+
+Return only the JSON array.

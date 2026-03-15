@@ -1,0 +1,2802 @@
+[
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Arrays."
+      },
+      {
+        "from": "gpt",
+        "value": "An array is a fundamental data structure that stores elements in a contiguous block of memory. Each element can be accessed using an index, typically starting at 0. This allows constant-time access, meaning retrieving any element takes the same amount of time regardless of its position. Arrays are commonly used to store collections of items such as numbers, characters, or objects. However, inserting or deleting elements in the middle of an array can be inefficient because elements must be shifted to maintain order. Arrays are widely used because they are simple, efficient for indexing, and form the basis of many other data structures."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How do Linked Lists work?"
+      },
+      {
+        "from": "gpt",
+        "value": "A linked list is a dynamic data structure where elements are stored in nodes. Each node contains data and a reference (or pointer) to the next node in the sequence. Unlike arrays, linked lists do not require contiguous memory, allowing efficient insertions and deletions without shifting elements. The first node is called the head, and traversal occurs by following pointers from one node to the next. However, accessing a specific element requires sequential traversal from the head, making random access slower than arrays. Linked lists are useful when frequent insertions and deletions are required.\n\n```mermaid\ngraph LR\nHead --> Node1\nNode1 --> Node2\nNode2 --> Node3\nNode3 --> Null\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Doubly Linked Lists."
+      },
+      {
+        "from": "gpt",
+        "value": "A doubly linked list extends a regular linked list by allowing traversal in both directions. Each node contains three components: the data, a pointer to the next node, and a pointer to the previous node. This structure makes operations like deleting a node or traversing backward more efficient compared to singly linked lists. Because each node keeps track of its predecessor and successor, algorithms can easily move forward or backward through the list. However, the extra pointer increases memory usage slightly. Doubly linked lists are often used in navigation systems, undo operations, and cache implementations.\n\n```mermaid\ngraph LR\nNode1 <--> Node2\nNode2 <--> Node3\nNode3 <--> Node4\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Circular Linked Lists."
+      },
+      {
+        "from": "gpt",
+        "value": "A circular linked list is a variation of a linked list where the last node points back to the first node instead of pointing to null. This creates a circular structure that allows traversal to continue indefinitely. Because there is no terminal node, algorithms can start at any node and eventually visit every element. Circular lists are often used in applications that require continuous cycling through elements, such as scheduling tasks in operating systems or implementing round-robin algorithms. The circular structure simplifies repeated traversal without restarting from the beginning.\n\n```mermaid\ngraph LR\nNode1 --> Node2\nNode2 --> Node3\nNode3 --> Node4\nNode4 --> Node1\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Stack in algorithms?"
+      },
+      {
+        "from": "gpt",
+        "value": "A stack is a linear data structure that follows the Last In, First Out (LIFO) principle. This means the most recently added element is the first one removed. Two primary operations define stacks: push (adding an element) and pop (removing the top element). Stacks are widely used in algorithms for tasks such as expression evaluation, function call management in recursion, and undo operations in software. Since elements are only inserted or removed from the top, stacks provide simple and efficient control over order.\n\n```mermaid\ngraph TD\nPush --> Top\nTop --> Pop\nPop --> Next\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does a Queue work?"
+      },
+      {
+        "from": "gpt",
+        "value": "A queue is a linear data structure that follows the First In, First Out (FIFO) principle. Elements are inserted at the rear (enqueue) and removed from the front (dequeue). This behavior is similar to people waiting in line\u2014those who arrive first are served first. Queues are commonly used in scheduling systems, breadth-first search algorithms, and buffering tasks such as printer queues. Because insertion and removal occur at opposite ends, queues maintain an ordered processing flow that ensures fairness in many computational tasks.\n\n```mermaid\ngraph LR\nEnqueue --> Item1 --> Item2 --> Item3 --> Dequeue\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Deques."
+      },
+      {
+        "from": "gpt",
+        "value": "A deque (double-ended queue) is a flexible data structure that allows insertion and deletion from both ends. Unlike a regular queue, elements can be added to the front or rear and removed from either side. This makes deques useful for applications that require symmetrical operations, such as sliding window algorithms or palindrome checking. Deques can function as both stacks and queues depending on how operations are used. Many programming libraries provide efficient implementations using linked lists or dynamic arrays.\n\n```mermaid\ngraph LR\nFront <-- Item1 <-- Item2 --> Item3 --> Rear\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Priority Queue?"
+      },
+      {
+        "from": "gpt",
+        "value": "A priority queue is a data structure where each element is assigned a priority, and elements with higher priority are processed before lower-priority ones. Unlike regular queues that follow FIFO order, priority queues reorder elements based on priority values. They are often implemented using heaps for efficient insertion and removal operations. Priority queues are commonly used in algorithms such as Dijkstra\u2019s shortest path, scheduling systems, and event simulations. The structure ensures that the most important task is always retrieved first.\n\n```mermaid\ngraph TD\nInsert --> PriorityCheck\nPriorityCheck --> Reorder\nReorder --> ExtractMax\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Binary Trees."
+      },
+      {
+        "from": "gpt",
+        "value": "A binary tree is a hierarchical data structure where each node can have at most two children, typically called the left child and right child. The top node is known as the root, and nodes without children are called leaves. Binary trees are widely used to represent hierarchical relationships such as file systems, expression parsing, and search structures. Traversal algorithms such as inorder, preorder, and postorder allow systematic visiting of nodes. Their structure enables efficient representation of recursive relationships.\n\n```mermaid\ngraph TD\nRoot --> Left\nRoot --> Right\nLeft --> LL\nLeft --> LR\nRight --> RL\nRight --> RR\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does a Binary Search Tree work?"
+      },
+      {
+        "from": "gpt",
+        "value": "A binary search tree (BST) is a special type of binary tree that maintains a sorted structure. For every node, all values in the left subtree are smaller than the node\u2019s value, while all values in the right subtree are larger. This property allows efficient searching, insertion, and deletion operations, typically in logarithmic time when the tree is balanced. BSTs are commonly used for implementing dynamic sets and lookup tables. By following comparisons during traversal, algorithms can quickly locate elements.\n\n```mermaid\ngraph TD\n8 --> 3\n8 --> 10\n3 --> 1\n3 --> 6\n10 --> 14\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about AVL Trees."
+      },
+      {
+        "from": "gpt",
+        "value": "An AVL tree is a self-balancing binary search tree that maintains height balance after every insertion or deletion. For each node, the difference between the heights of its left and right subtrees (called the balance factor) must be at most one. If an operation violates this condition, the tree performs rotations to restore balance. These rotations ensure that the tree remains approximately balanced, guaranteeing efficient O(log n) search, insertion, and deletion. AVL trees are useful in systems that require consistently fast lookup operations.\n\n```mermaid\ngraph TD\nRotate --> Balance\nBalance --> Insert\nBalance --> Delete\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Red-Black Trees."
+      },
+      {
+        "from": "gpt",
+        "value": "A red-black tree is a self-balancing binary search tree where each node is assigned a color: red or black. The coloring rules ensure that the tree remains approximately balanced during insertions and deletions. For example, no two red nodes can appear consecutively, and every path from the root to a leaf must contain the same number of black nodes. These constraints limit the tree\u2019s height, allowing operations such as search, insertion, and deletion to run efficiently in logarithmic time. Red-black trees are widely used in standard library implementations of ordered maps and sets.\n\n```mermaid\ngraph TD\nRoot((Black)) --> Red1((Red))\nRoot --> Red2((Red))\nRed1 --> Black1((Black))\nRed2 --> Black2((Black))\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are B-Trees in computer science?"
+      },
+      {
+        "from": "gpt",
+        "value": "A B-tree is a self-balancing tree structure designed to store large amounts of data efficiently on disk. Unlike binary trees, each node in a B-tree can contain multiple keys and multiple children. This reduces the height of the tree and minimizes disk reads, which is crucial for databases and file systems. When nodes become too full, they split to maintain balance. Searching involves comparing keys within nodes and following the appropriate child pointer. Because of their efficiency with block storage, B-trees are widely used in database indexing.\n\n```mermaid\ngraph TD\nNode1 --> Node2\nNode1 --> Node3\nNode1 --> Node4\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain B+ Trees."
+      },
+      {
+        "from": "gpt",
+        "value": "A B+ tree is a variation of the B-tree optimized for database and file system indexing. In a B+ tree, internal nodes store only keys used for navigation, while all actual data records are stored in leaf nodes. The leaf nodes are linked together sequentially, allowing efficient range queries and ordered traversal. This design improves disk performance because internal nodes remain small and fast to search. B+ trees are commonly used in database systems where large datasets must be retrieved efficiently.\n\n```mermaid\ngraph TD\nRoot --> Internal1\nRoot --> Internal2\nInternal1 --> Leaf1\nInternal1 --> Leaf2\nLeaf1 --> Leaf2\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Trie (Prefix Tree)?"
+      },
+      {
+        "from": "gpt",
+        "value": "A trie, also called a prefix tree, is a tree-based data structure used to store strings efficiently. Each node represents a character, and paths from the root form prefixes of stored words. This structure allows fast search, insertion, and prefix queries, making tries ideal for autocomplete systems, dictionaries, and spell checkers. Instead of storing full words repeatedly, shared prefixes are stored once, reducing redundancy. A word is recognized when traversal reaches a node marked as the end of a word.\n\n```mermaid\ngraph TD\nRoot --> a\nRoot --> b\na --> p\np --> p\np --> l\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Suffix Trees."
+      },
+      {
+        "from": "gpt",
+        "value": "A suffix tree is a compressed trie structure that stores all suffixes of a given string. Each path from the root represents a substring, and the leaves correspond to suffix positions in the original string. This structure enables extremely fast string operations such as substring search, longest repeated substring detection, and pattern matching. Many operations that normally take quadratic time can be solved in linear time using suffix trees. Although powerful, suffix trees require more memory and complex construction algorithms, which makes them less common in simple applications."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Suffix Array?"
+      },
+      {
+        "from": "gpt",
+        "value": "A suffix array is a space-efficient alternative to a suffix tree used for string processing tasks. It stores all suffixes of a string in sorted order, typically represented by their starting indices. By sorting these suffixes lexicographically, algorithms can quickly perform pattern searches using binary search. Suffix arrays are widely used in text indexing, genome sequencing, and information retrieval systems. Compared to suffix trees, they are simpler and require less memory while still enabling efficient substring queries when combined with additional structures like the longest common prefix (LCP) array."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Segment Trees."
+      },
+      {
+        "from": "gpt",
+        "value": "A segment tree is a binary tree data structure designed to efficiently handle range queries and updates on arrays. Each node represents a segment or interval of the array and stores aggregated information such as sum, minimum, or maximum values. By dividing the array into segments recursively, queries can be answered in logarithmic time. Segment trees are especially useful in competitive programming and real-time analytics where frequent range operations occur. The hierarchical structure allows quick recomputation when updates modify part of the array.\n\n```mermaid\ngraph TD\nRoot --> Left\nRoot --> Right\nLeft --> L1\nLeft --> L2\nRight --> R1\nRight --> R2\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Fenwick Trees (Binary Indexed Trees)."
+      },
+      {
+        "from": "gpt",
+        "value": "A Fenwick tree, also called a Binary Indexed Tree (BIT), is a data structure that efficiently supports prefix sum queries and updates on an array. Instead of storing full segments like a segment tree, it stores partial sums in a compact tree-like structure represented within an array. This design allows both updates and prefix sum queries to be performed in logarithmic time. Fenwick trees are widely used in algorithms involving cumulative frequency tables, inversion counting, and dynamic range queries because they are simpler and use less memory than segment trees.\n\n```mermaid\ngraph TD\nIndex1 --> Index2\nIndex2 --> Index4\nIndex3 --> Index4\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Heaps."
+      },
+      {
+        "from": "gpt",
+        "value": "A heap is a specialized tree-based data structure that satisfies the heap property. In a min heap, every parent node has a value less than or equal to its children, while in a max heap the parent is greater than or equal to its children. Heaps are typically implemented using arrays but logically represent a complete binary tree. They are widely used to implement priority queues and algorithms such as heapsort. Because of their structure, insertion and removal operations maintain the heap property using upward or downward adjustments.\n\n```mermaid\ngraph TD\nRoot --> Child1\nRoot --> Child2\nChild1 --> Leaf1\nChild1 --> Leaf2\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Min Heap?"
+      },
+      {
+        "from": "gpt",
+        "value": "A min heap is a binary heap where the value of each parent node is less than or equal to the values of its children. This property ensures that the smallest element is always stored at the root of the tree. Min heaps are commonly used in priority queues where the element with the lowest value must be processed first. Insertion places a new element at the bottom and moves it upward until the heap property is restored. Removal of the minimum element reorganizes the heap using a downward adjustment process."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Max Heaps."
+      },
+      {
+        "from": "gpt",
+        "value": "A max heap is a binary heap in which each parent node has a value greater than or equal to its children. This guarantees that the largest element is always located at the root. Max heaps are useful when algorithms need fast access to the maximum value, such as in scheduling or heapsort. When inserting elements, the value is placed at the end and moved upward until the heap property is restored. Removing the maximum element replaces the root with the last element and then reorders the heap downward."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Fibonacci Heaps."
+      },
+      {
+        "from": "gpt",
+        "value": "A Fibonacci heap is an advanced heap data structure designed to support extremely efficient priority queue operations. It consists of a collection of trees rather than a single strict binary structure. The key advantage is that certain operations, such as insertion and decrease-key, have very low amortized time complexity. This makes Fibonacci heaps particularly useful in graph algorithms like Dijkstra\u2019s shortest path and Prim\u2019s minimum spanning tree. Although theoretically efficient, Fibonacci heaps are complex to implement and are often replaced with simpler heaps in practical systems."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Pairing Heaps?"
+      },
+      {
+        "from": "gpt",
+        "value": "A pairing heap is a type of heap data structure designed to provide efficient priority queue operations with a relatively simple implementation. It is a multi-way tree where each node can have multiple children. When elements are inserted or removed, trees are combined through a process called pairing, where nodes are linked based on their key values. Pairing heaps offer good practical performance for operations like insertion, merging, and decrease-key. Because of their simplicity and efficiency, they are often considered a practical alternative to Fibonacci heaps."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Hash Tables."
+      },
+      {
+        "from": "gpt",
+        "value": "A hash table is a data structure that stores key-value pairs and allows very fast lookup, insertion, and deletion operations. It uses a hash function to convert a key into an index in an array where the value is stored. If two keys produce the same index, a collision occurs and must be resolved using techniques like chaining or open addressing. Because hashing distributes keys across memory locations, average operations take constant time. Hash tables are widely used in databases, caches, and dictionaries.\n\n```mermaid\ngraph TD\nKey --> HashFunction\nHashFunction --> Index\nIndex --> Bucket\nBucket --> Value\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Hash Functions."
+      },
+      {
+        "from": "gpt",
+        "value": "A hash function converts input data (called a key) into a fixed-size integer called a hash value. This value determines the index where the data is stored in a hash table. The main goal of a hash function is to distribute keys evenly across the table to allow fast insert, search, and delete operations. Ideally, the function should minimize collisions, where multiple keys map to the same index. A good hash function is deterministic, fast to compute, and spreads values uniformly across the available indices."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Collision Resolution using Chaining work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Collision resolution using chaining handles hash collisions by storing multiple elements at the same index using a linked list or similar structure. When two keys produce the same hash value, the new key is appended to the chain at that index instead of replacing the existing value. Searching involves hashing the key to locate the bucket, then scanning the chain for the exact key. This approach keeps the hash table flexible and prevents overwriting existing entries.\n\n```mermaid\ngraph TD\nIndex0 --> A\nIndex1 --> B --> C --> D\nIndex2 --> E\nIndex3 --> F\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Collision Resolution using Open Addressing?"
+      },
+      {
+        "from": "gpt",
+        "value": "Open addressing resolves hash collisions by finding another empty slot within the hash table instead of storing multiple values at the same index. When a collision occurs, the algorithm probes other indices according to a defined sequence until an empty slot is found. All elements remain stored directly inside the table, so searching must follow the same probing sequence used during insertion. This approach avoids additional memory structures but requires careful probing strategies to maintain efficiency.\n\n```mermaid\ngraph LR\nHashIndex --> Collision\nCollision --> Probe1\nProbe1 --> Probe2\nProbe2 --> EmptySlot\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Linear Probing."
+      },
+      {
+        "from": "gpt",
+        "value": "Linear probing is a collision resolution strategy used in open addressing hash tables. When a collision occurs, the algorithm checks the next sequential slot in the table until an empty position is found. The probing continues in a linear sequence such as index+1, index+2, and so on. While simple to implement, linear probing can lead to clustering, where groups of filled slots form and increase search time. Searches follow the same probing pattern used during insertion.\n\n```mermaid\ngraph LR\nHashIndex --> Check1\nCheck1 --> Check2\nCheck2 --> Check3\nCheck3 --> Insert\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Quadratic Probing."
+      },
+      {
+        "from": "gpt",
+        "value": "Quadratic probing is an open addressing method used to resolve collisions in hash tables. Instead of checking consecutive slots like linear probing, it uses a quadratic function to determine the next position. If a collision occurs at index h, the algorithm checks h+1\u00b2, h+2\u00b2, h+3\u00b2, and so on. This spreads entries more evenly across the table and reduces clustering compared to linear probing. However, careful table sizing is needed to ensure all slots can eventually be reached.\n\n```mermaid\ngraph LR\nHashIndex --> hPlus1Sq\nhPlus1Sq --> hPlus4\nhPlus4 --> hPlus9\nhPlus9 --> Insert\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Double Hashing?"
+      },
+      {
+        "from": "gpt",
+        "value": "Double hashing is a collision resolution technique in open addressing that uses a second hash function to determine the probing step size. When a collision occurs at index h1(key), the algorithm computes another value using h2(key) to determine how far to move for the next probe. The next index becomes h1(key) + i * h2(key). This reduces clustering and distributes elements more uniformly compared to linear or quadratic probing.\n\n```mermaid\ngraph LR\nHash1 --> Collision\nCollision --> Hash2Step\nHash2Step --> NextProbe\nNextProbe --> Insert\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Dynamic Arrays."
+      },
+      {
+        "from": "gpt",
+        "value": "A dynamic array is an array that automatically resizes when it becomes full. Unlike fixed-size arrays, it can grow by allocating a new larger block of memory and copying existing elements into it. Most implementations double the capacity when resizing to maintain efficient performance. This allows dynamic arrays to support fast random access like normal arrays while still handling growing datasets. Operations such as appending elements are usually constant time on average, though resizing occasionally makes individual insertions more expensive."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Sparse Array in computer science?"
+      },
+      {
+        "from": "gpt",
+        "value": "A sparse array is a data structure used when most elements of an array are empty or contain zero values. Instead of storing every position, sparse arrays store only the non-zero or meaningful elements along with their indices. This saves memory and improves efficiency when working with very large datasets that contain mostly empty entries. Sparse arrays are commonly implemented using hash maps, dictionaries, or lists of index-value pairs, allowing quick lookup and reduced storage requirements."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Adjacency Matrix Representation."
+      },
+      {
+        "from": "gpt",
+        "value": "An adjacency matrix represents a graph using a two-dimensional matrix where rows and columns correspond to vertices. If an edge exists between two vertices, the matrix cell contains 1 (or the weight of the edge). Otherwise, it contains 0. This structure allows constant-time edge lookup but can consume large amounts of memory for sparse graphs because all possible vertex pairs must be stored.\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nC --> D\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Adjacency List Representation."
+      },
+      {
+        "from": "gpt",
+        "value": "An adjacency list represents a graph by storing a list of neighbors for each vertex. Instead of using a full matrix, each node keeps a list containing the vertices it connects to. This approach is memory-efficient for sparse graphs because it only stores existing edges. Traversal algorithms such as BFS and DFS work efficiently with adjacency lists since they can quickly iterate through each node\u2019s neighbors.\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nC --> E\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Directed Graph?"
+      },
+      {
+        "from": "gpt",
+        "value": "A directed graph, also called a digraph, is a graph where edges have a specific direction. This means a connection from node A to node B does not imply a connection from B to A. Directed graphs are used to represent relationships such as web links, task dependencies, or data flow. Algorithms often treat incoming and outgoing edges separately when processing directed graphs.\n\n```mermaid\ngraph LR\nA --> B\nB --> C\nC --> D\nD --> B\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Undirected Graphs."
+      },
+      {
+        "from": "gpt",
+        "value": "An undirected graph is a graph where edges have no direction. If vertex A is connected to vertex B, the connection automatically works both ways. These graphs are commonly used to represent mutual relationships such as friendships, road networks, or communication links. Traversal algorithms treat edges symmetrically since movement between connected vertices is possible in either direction.\n\n```mermaid\ngraph LR\nA --- B\nA --- C\nB --- D\nC --- D\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Weighted Graphs."
+      },
+      {
+        "from": "gpt",
+        "value": "A weighted graph is a graph where edges carry numerical values called weights. These weights may represent distances, costs, or travel times between nodes. Algorithms such as Dijkstra\u2019s or Bellman-Ford use these weights to compute optimal paths. Weighted graphs are widely used in navigation systems, network routing, and resource optimization problems.\n\n```mermaid\ngraph LR\nA --5--> B\nA --2--> C\nC --4--> D\nB --3--> D\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Graph Traversal?"
+      },
+      {
+        "from": "gpt",
+        "value": "Graph traversal refers to the process of visiting all vertices in a graph in a systematic way. Since graphs can contain cycles and complex connections, traversal algorithms ensure each vertex is processed without repetition. Two of the most common traversal methods are Breadth First Search (BFS) and Depth First Search (DFS). Traversal is useful for tasks such as path finding, connectivity analysis, and graph exploration. Efficient traversal requires tracking visited nodes to avoid infinite loops in cyclic graphs."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Breadth First Search."
+      },
+      {
+        "from": "gpt",
+        "value": "Breadth First Search (BFS) explores a graph level by level starting from a source node. It first visits all immediate neighbors of the start node before moving to the next level. BFS uses a queue to maintain the order of nodes to visit. This approach guarantees the shortest path in an unweighted graph. BFS is commonly used in pathfinding, social network analysis, and shortest path discovery.\n\n```mermaid\ngraph TD\nStart --> A\nStart --> B\nA --> C\nB --> D\nC --> E\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Depth First Search."
+      },
+      {
+        "from": "gpt",
+        "value": "Depth First Search (DFS) explores a graph by moving as deep as possible along each branch before backtracking. Starting from a source node, the algorithm visits a neighbor, then continues exploring deeper nodes recursively or using a stack. DFS is useful for tasks such as cycle detection, path discovery, and topological sorting. It processes nodes in a depth-oriented manner rather than level by level.\n\n```mermaid\ngraph TD\nStart --> A\nA --> B\nB --> C\nC --> D\nStart --> E\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Topological Sorting."
+      },
+      {
+        "from": "gpt",
+        "value": "Topological sorting orders the vertices of a directed acyclic graph (DAG) so that every directed edge goes from an earlier vertex to a later one. This ordering is useful for scheduling tasks with dependencies. For example, a task must be completed before another can begin. Algorithms like Kahn\u2019s algorithm or DFS-based approaches can compute this ordering efficiently.\n\n```mermaid\ngraph LR\nA --> C\nB --> C\nC --> D\nD --> E\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Strongly Connected Components."
+      },
+      {
+        "from": "gpt",
+        "value": "Strongly connected components (SCCs) are groups of vertices in a directed graph where every vertex can reach every other vertex in the same group. In other words, there exists a path from each node to every other node within the component. Identifying SCCs helps simplify complex graphs and is useful in compiler design, dependency analysis, and network connectivity studies. Algorithms such as Kosaraju\u2019s and Tarjan\u2019s efficiently compute SCCs."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Kosaraju\u2019s Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "Kosaraju\u2019s algorithm finds strongly connected components in a directed graph using two depth-first searches. First, DFS is performed on the original graph to compute a finishing order of vertices. Next, all edges of the graph are reversed to create a transposed graph. Finally, DFS is run again in the order of decreasing finishing times. Each DFS tree formed in this second pass represents one strongly connected component."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Tarjan\u2019s Algorithm?"
+      },
+      {
+        "from": "gpt",
+        "value": "Tarjan\u2019s algorithm identifies strongly connected components in a directed graph using a single depth-first search. It assigns each vertex a discovery index and tracks the smallest reachable index using a low-link value. Vertices are stored on a stack during exploration. When a vertex\u2019s discovery index equals its low-link value, it indicates the root of a strongly connected component, and nodes are popped from the stack to form that component."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Dijkstra\u2019s Shortest Path Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "Dijkstra\u2019s algorithm finds the shortest path from a source node to all other nodes in a weighted graph with non-negative edge weights. It maintains a priority queue of nodes based on their current shortest distance from the source. The algorithm repeatedly selects the closest unvisited node and updates distances to its neighbors. Over time, the shortest paths to all reachable nodes are finalized. Dijkstra\u2019s algorithm is widely used in routing, navigation systems, and network optimization."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Bellman-Ford Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "The Bellman-Ford algorithm computes shortest paths from a single source node in a weighted graph. Unlike Dijkstra\u2019s algorithm, it can handle negative edge weights. The algorithm repeatedly relaxes all edges in the graph, updating distance estimates until no shorter paths are found. If a distance can still be reduced after V-1 iterations, a negative cycle exists in the graph. Bellman-Ford is useful in routing protocols and networks where negative weights may appear."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Floyd-Warshall Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "The Floyd-Warshall algorithm computes shortest paths between every pair of vertices in a weighted graph. It uses dynamic programming to progressively improve distance estimates by considering intermediate vertices. For each pair of nodes (i, j), the algorithm checks whether passing through another vertex k provides a shorter path. This method works for graphs with positive or negative weights but not negative cycles. Floyd-Warshall is commonly used in network routing and distance matrix calculations."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain A* Search Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "A* search is a pathfinding algorithm used to find the shortest path between nodes while guiding the search toward the goal. It combines the actual distance traveled so far with a heuristic estimate of the remaining distance. The algorithm selects nodes with the smallest estimated total cost. By using heuristics, A* explores fewer nodes than uninformed algorithms like Dijkstra\u2019s. It is widely used in robotics, navigation systems, and game AI for efficient pathfinding."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Minimum Spanning Trees?"
+      },
+      {
+        "from": "gpt",
+        "value": "A minimum spanning tree (MST) is a subset of edges in a connected weighted graph that connects all vertices with the smallest possible total edge weight. The resulting structure forms a tree, meaning it contains no cycles. Algorithms such as Kruskal\u2019s and Prim\u2019s are commonly used to compute MSTs. These trees are useful for designing efficient networks like communication lines or electrical grids.\n\n```mermaid\ngraph LR\nA --1--> B\nA --3--> C\nB --2--> D\nC --4--> D\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Kruskal\u2019s Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "Kruskal\u2019s Algorithm finds a Minimum Spanning Tree (MST) of a weighted graph. It works by sorting all edges in increasing order of weight and adding them one by one to the tree, ensuring that no cycles are formed. A Disjoint Set (Union-Find) structure is commonly used to efficiently check whether two vertices already belong to the same component. If adding an edge would form a cycle, it is skipped. The algorithm stops when the MST contains V-1 edges, where V is the number of vertices.\n\n```mermaid\ngraph TD\nSortEdges --> PickSmallestEdge\nPickSmallestEdge --> CheckCycle\nCheckCycle -->|No Cycle| AddEdge\nCheckCycle -->|Cycle| SkipEdge\nAddEdge --> Repeat\nRepeat --> MSTComplete\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Prim\u2019s Algorithm work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Prim\u2019s Algorithm constructs a Minimum Spanning Tree by starting from an arbitrary node and repeatedly adding the smallest edge that connects a visited node to an unvisited node. Unlike Kruskal\u2019s algorithm, it grows the tree from a single starting vertex. A priority queue is usually used to select the minimum edge efficiently. The process continues until all vertices are included in the spanning tree. This algorithm is particularly efficient for dense graphs.\n\n```mermaid\ngraph TD\nStartNode --> SelectMinEdge\nSelectMinEdge --> AddVertex\nAddVertex --> UpdateEdges\nUpdateEdges --> SelectMinEdge\nSelectMinEdge --> TreeComplete\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Disjoint Set (Union-Find)."
+      },
+      {
+        "from": "gpt",
+        "value": "A Disjoint Set, also called Union-Find, is a data structure used to track elements partitioned into separate sets. It supports two main operations: Find, which determines the representative of a set, and Union, which merges two sets together. This structure is widely used in graph algorithms such as Kruskal\u2019s Minimum Spanning Tree algorithm. Each element initially forms its own set, and unions gradually combine them as relationships are discovered.\n\n```mermaid\ngraph TD\nA --> B\nC --> D\nE --> F\nUnion --> MergeSets\nFind --> IdentifyRoot\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Path Compression in Union-Find?"
+      },
+      {
+        "from": "gpt",
+        "value": "Path Compression is an optimization used in the Union-Find data structure to make the Find operation faster. When finding the root of a node, the algorithm updates every node along the path to point directly to the root. This flattens the tree structure and greatly reduces the depth of the structure for future operations. Over time, repeated path compressions make the structure nearly flat, improving performance significantly. When combined with Union by Rank, it achieves almost constant time complexity for operations."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Union by Rank."
+      },
+      {
+        "from": "gpt",
+        "value": "Union by Rank is an optimization technique used in the Union-Find data structure. When combining two sets, the root with the smaller rank (or tree height) is attached under the root with the larger rank. This prevents the tree from becoming too tall. If both sets have the same rank, one becomes the parent and its rank increases by one. By keeping trees shallow, Union by Rank improves the efficiency of Find operations, especially when used together with Path Compression."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does cycle detection in graphs work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Cycle detection determines whether a graph contains a path that starts and ends at the same vertex without repeating edges. In undirected graphs, Union-Find can detect cycles by checking if two vertices belong to the same set before adding an edge. In directed graphs, depth-first search (DFS) is often used to track recursion stacks. If a node is encountered that is already in the current DFS stack, a cycle exists.\n\n```mermaid\ngraph TD\nStart --> DFS\nDFS --> VisitNode\nVisitNode --> CheckNeighbor\nCheckNeighbor -->|BackEdgeFound| CycleDetected\nCheckNeighbor --> Continue\nContinue --> DFS\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain bipartite graph checking."
+      },
+      {
+        "from": "gpt",
+        "value": "A graph is bipartite if its vertices can be divided into two sets such that no two vertices within the same set share an edge. One way to check this is by coloring nodes using two colors during a BFS or DFS traversal. If a conflict occurs where adjacent nodes require the same color, the graph is not bipartite. Bipartite graphs are useful in matching problems such as job assignments or scheduling.\n\n```mermaid\ngraph LR\nA --> B\nA --> D\nC --> B\nC --> D\nSet1[A,C]\nSet2[B,D]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about graph coloring."
+      },
+      {
+        "from": "gpt",
+        "value": "Graph coloring is the process of assigning colors to vertices of a graph so that no two adjacent vertices share the same color. The goal is often to minimize the number of colors used, known as the chromatic number. This problem appears in scheduling, register allocation in compilers, and map coloring. Many algorithms solve it heuristically, while exact solutions often rely on backtracking. The difficulty grows rapidly with graph size because the problem is computationally complex."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Kahn\u2019s Algorithm for Topological Sort."
+      },
+      {
+        "from": "gpt",
+        "value": "Kahn\u2019s Algorithm is a method for performing topological sorting on a directed acyclic graph (DAG). It repeatedly removes nodes with zero incoming edges (in-degree 0) and adds them to the sorted order. After removing a node, the in-degree of its neighbors is reduced. If new nodes reach zero in-degree, they are added to the processing queue. The process continues until all nodes are processed or a cycle is detected.\n\n```mermaid\ngraph TD\nFindZeroIndegree --> RemoveNode\nRemoveNode --> AddToOrder\nAddToOrder --> ReduceNeighbors\nReduceNeighbors --> FindZeroIndegree\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Eulerian paths and circuits?"
+      },
+      {
+        "from": "gpt",
+        "value": "An Eulerian path is a path in a graph that visits every edge exactly once. If the path starts and ends at the same vertex, it is called an Eulerian circuit. In undirected graphs, an Eulerian circuit exists if every vertex has an even degree. An Eulerian path exists if exactly two vertices have odd degrees. These concepts are used in route planning and network traversal problems where every connection must be visited exactly once."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Hamiltonian paths."
+      },
+      {
+        "from": "gpt",
+        "value": "A Hamiltonian path is a path in a graph that visits every vertex exactly once. If the path begins and ends at the same vertex, it forms a Hamiltonian cycle. Unlike Eulerian paths, which focus on edges, Hamiltonian paths focus on visiting all vertices. Determining whether such a path exists is computationally difficult and is considered an NP-complete problem. Many practical solutions use heuristics or backtracking techniques to explore possible paths in smaller graphs."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the backtracking algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "Backtracking is a problem-solving technique that builds solutions step by step and abandons a path as soon as it determines the path cannot lead to a valid solution. It is commonly used in constraint problems such as Sudoku, N-Queens, and permutations. The algorithm explores possibilities recursively and \u201cbacks up\u201d whenever a constraint fails. This reduces unnecessary computation by pruning invalid branches early.\n\n```mermaid\ngraph TD\nStart --> ChooseOption\nChooseOption --> Valid?\nValid? -->|Yes| Continue\nValid? -->|No| Backtrack\nContinue --> Solution\nBacktrack --> ChooseOption\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about recursion trees."
+      },
+      {
+        "from": "gpt",
+        "value": "A recursion tree is a visual representation used to analyze recursive algorithms. Each node represents a recursive call, and its children represent further calls generated by it. By expanding the tree, we can see how the problem size reduces and estimate the total work performed. Recursion trees are often used to analyze divide-and-conquer algorithms such as merge sort by summing the work at each level.\n\n```mermaid\ngraph TD\nCallN --> CallN2A\nCallN --> CallN2B\nCallN2A --> CallN4A\nCallN2A --> CallN4B\nCallN2B --> CallN4C\nCallN2B --> CallN4D\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the divide and conquer strategy?"
+      },
+      {
+        "from": "gpt",
+        "value": "Divide and Conquer is an algorithm design strategy that solves a problem by breaking it into smaller subproblems, solving each subproblem recursively, and then combining their results. This approach works well when the subproblems are similar to the original problem. Famous algorithms such as Merge Sort and Quick Sort use this strategy. The idea is that smaller problems are easier to solve, and combining them yields the final result efficiently.\n\n```mermaid\ngraph TD\nProblem --> Divide\nDivide --> Subproblem1\nDivide --> Subproblem2\nSubproblem1 --> Solve\nSubproblem2 --> Solve\nSolve --> Combine\nCombine --> Solution\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the binary search algorithm work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Binary Search is an efficient algorithm used to find a target value in a sorted array. It works by repeatedly dividing the search interval in half. First, the algorithm compares the target with the middle element. If the target is smaller, the search continues in the left half; if larger, in the right half. This process repeats until the element is found or the interval becomes empty. Because the search space halves each step, the time complexity is O(log n), making it much faster than linear search for large datasets."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain ternary search."
+      },
+      {
+        "from": "gpt",
+        "value": "Ternary Search is a searching algorithm used on sorted arrays or unimodal functions. Instead of dividing the search range into two parts like binary search, it divides it into three sections using two midpoints. The algorithm compares the target value with these midpoints and eliminates one-third of the range each step. This process continues recursively until the value is found or the interval becomes very small. Ternary search is especially useful for optimizing unimodal functions where a single peak or minimum exists."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is interpolation search?"
+      },
+      {
+        "from": "gpt",
+        "value": "Interpolation Search is an improved searching technique for uniformly distributed sorted arrays. Instead of always checking the middle element like binary search, it estimates the likely position of the target using the values at the ends of the array. This estimation works similarly to how one searches for a name in a phone book. When the data is evenly distributed, interpolation search can achieve O(log log n) time complexity, making it faster than binary search in favorable conditions."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain linear search."
+      },
+      {
+        "from": "gpt",
+        "value": "Linear Search is the simplest searching algorithm. It scans elements of a list sequentially from the beginning until the target value is found or the list ends. Unlike binary search, it does not require the data to be sorted. Because every element may need to be checked, the worst-case time complexity is O(n). Despite being slower for large datasets, linear search is useful for small or unsorted collections where the overhead of more complex algorithms is unnecessary."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is jump search?"
+      },
+      {
+        "from": "gpt",
+        "value": "Jump Search is a searching technique designed for sorted arrays. Instead of checking every element, it jumps ahead by fixed steps, typically the square root of the array size. Once a block is found where the target might exist, a linear search is performed within that block. This reduces the number of comparisons compared to linear search while keeping the algorithm simple. The overall time complexity is approximately O(\u221an)."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain exponential search."
+      },
+      {
+        "from": "gpt",
+        "value": "Exponential Search is useful for searching in sorted arrays where the size may be unknown or very large. The algorithm first finds a range where the target could exist by doubling the search index (1, 2, 4, 8, ...). Once the range containing the target is identified, a binary search is performed within that range. This approach quickly narrows down the search area, making it efficient with a time complexity of O(log n)."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain selection sort."
+      },
+      {
+        "from": "gpt",
+        "value": "Selection Sort is a simple comparison-based sorting algorithm. It works by repeatedly selecting the smallest element from the unsorted portion of the array and placing it at the beginning. The sorted portion of the array grows one element at a time while the unsorted portion shrinks. Although the algorithm is easy to understand and implement, it always performs O(n\u00b2) comparisons regardless of the initial order of elements."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does bubble sort work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Bubble Sort repeatedly steps through the array, comparing adjacent elements and swapping them if they are in the wrong order. After each pass, the largest unsorted element \u201cbubbles up\u201d to its correct position at the end of the list. This process continues until a complete pass occurs without any swaps. While easy to understand, Bubble Sort is inefficient for large datasets because its average and worst-case time complexity is O(n\u00b2)."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain insertion sort."
+      },
+      {
+        "from": "gpt",
+        "value": "Insertion Sort builds the sorted list one element at a time. It starts with the second element and compares it with elements before it, shifting larger elements to the right until the correct position for the current element is found. This process repeats for each element in the list. Insertion Sort is efficient for small datasets or nearly sorted arrays, with a best-case time complexity of O(n) but a worst-case complexity of O(n\u00b2)."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about merge sort."
+      },
+      {
+        "from": "gpt",
+        "value": "Merge Sort is a divide-and-conquer sorting algorithm. It splits the array into two halves, recursively sorts each half, and then merges the sorted halves into a final sorted array. The merging step compares elements from each half and places them in order. Because the array is repeatedly divided, the depth of recursion is logarithmic. Merge Sort guarantees O(n log n) time complexity and is widely used when stable sorting is required.\n\n```mermaid\ngraph TD\nArray --> Split\nSplit --> LeftHalf\nSplit --> RightHalf\nLeftHalf --> SortLeft\nRightHalf --> SortRight\nSortLeft --> Merge\nSortRight --> Merge\nMerge --> SortedArray\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain quick sort."
+      },
+      {
+        "from": "gpt",
+        "value": "Quick Sort is a divide-and-conquer sorting algorithm that selects a pivot element and partitions the array so that smaller elements appear before the pivot and larger elements appear after it. The algorithm then recursively sorts the two partitions. When the pivot divides the array evenly, Quick Sort achieves O(n log n) time complexity. However, poor pivot choices can lead to O(n\u00b2) performance. Despite this, it is widely used due to its excellent average performance.\n\n```mermaid\ngraph TD\nArray --> ChoosePivot\nChoosePivot --> Partition\nPartition --> LeftPartition\nPartition --> RightPartition\nLeftPartition --> QuickSort\nRightPartition --> QuickSort\nQuickSort --> SortedArray\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Heap Sort."
+      },
+      {
+        "from": "gpt",
+        "value": "Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure. First, the input array is converted into a max heap where the largest element is always at the root. The algorithm repeatedly swaps the root with the last element of the heap and reduces the heap size. After each swap, the heap property is restored using heapify. This continues until all elements are sorted. Heap Sort runs in O(n log n) time and sorts in-place without requiring extra memory.\n\n```mermaid\ngraph TD\nA[Build Max Heap] --> B[Swap Root with Last Element]\nB --> C[Reduce Heap Size]\nC --> D[Heapify Root]\nD --> B\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Counting Sort work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Counting Sort is a non-comparison sorting algorithm that works well when the range of input values is limited. Instead of comparing elements, it counts how many times each value appears. A counting array stores these frequencies. Then cumulative counts are calculated to determine the correct position of each element in the sorted output. Finally, elements are placed in their correct positions based on these counts. Counting Sort runs in O(n + k) time, where k is the range of values, and it is commonly used as a subroutine in other algorithms like Radix Sort."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Radix Sort."
+      },
+      {
+        "from": "gpt",
+        "value": "Radix Sort is a non-comparison sorting algorithm that sorts numbers digit by digit, starting from the least significant digit or most significant digit. It uses a stable sorting method such as Counting Sort for each digit position. The algorithm groups numbers based on the current digit and processes all digits sequentially until the entire number is sorted. Radix Sort works efficiently when numbers have a fixed number of digits and runs in O(d(n + k)) time, where d is the number of digits.\n\n```mermaid\ngraph TD\nA[Input Numbers] --> B[Sort by Units Digit]\nB --> C[Sort by Tens Digit]\nC --> D[Sort by Hundreds Digit]\nD --> E[Sorted Output]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Bucket Sort."
+      },
+      {
+        "from": "gpt",
+        "value": "Bucket Sort distributes elements into several buckets based on their value ranges. Each bucket holds values that fall within a specific interval. After distribution, each bucket is sorted individually, usually using another algorithm such as insertion sort. Finally, the sorted buckets are concatenated to produce the final sorted list. Bucket Sort performs well when the input values are uniformly distributed and can achieve near O(n) average complexity.\n\n```mermaid\ngraph TD\nA[Input Array] --> B[Distribute into Buckets]\nB --> C[Sort Each Bucket]\nC --> D[Merge Buckets]\nD --> E[Sorted Output]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Tim Sort in algorithms?"
+      },
+      {
+        "from": "gpt",
+        "value": "Tim Sort is a hybrid sorting algorithm derived from merge sort and insertion sort. It is designed to perform efficiently on real-world data by exploiting existing order in the input. The algorithm divides the array into small segments called runs, which are sorted using insertion sort. These runs are then merged together using a merge sort strategy. Tim Sort is stable and has a worst-case time complexity of O(n log n). It is widely used in practice, including in Python\u2019s built-in sorting functions."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Shell Sort."
+      },
+      {
+        "from": "gpt",
+        "value": "Shell Sort improves upon insertion sort by allowing comparisons and swaps of elements that are far apart. Instead of sorting adjacent elements immediately, it starts with a large gap between elements and gradually reduces this gap. During each pass, elements separated by the current gap are compared and rearranged. As the gap decreases, the array becomes increasingly sorted, making the final insertion sort step very efficient. Shell Sort's time complexity depends on the gap sequence but typically performs better than simple quadratic sorting algorithms."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Bitonic Sort work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Bitonic Sort is a parallel sorting algorithm commonly used in hardware and parallel computing environments. It works by creating bitonic sequences\u2014sequences that first increase and then decrease. These sequences are recursively merged to produce sorted sequences. The algorithm repeatedly compares and swaps elements in a structured pattern until the entire sequence becomes sorted. Bitonic Sort is particularly suitable for sorting networks and GPUs because of its predictable structure.\n\n```mermaid\ngraph TD\nA[Input Sequence] --> B[Create Bitonic Sequence]\nB --> C[Compare and Swap]\nC --> D[Recursive Merge]\nD --> E[Sorted Sequence]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Sorting Networks."
+      },
+      {
+        "from": "gpt",
+        "value": "Sorting Networks are fixed sequences of comparison and swap operations designed to sort a fixed number of inputs. Unlike traditional algorithms, the sequence of operations does not depend on the input values. Each comparator checks two elements and swaps them if needed. Because the pattern of comparisons is predetermined, sorting networks are ideal for parallel hardware implementations. They are commonly used in GPU computation and hardware circuits where predictable execution is important.\n\n```mermaid\ngraph LR\nA1 --> C1\nA2 --> C1\nC1 --> C2\nA3 --> C2\nC2 --> Sorted\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Stable vs Unstable Sorting."
+      },
+      {
+        "from": "gpt",
+        "value": "Stable sorting algorithms preserve the relative order of elements with equal values, while unstable sorting algorithms may change their order. For example, if two records have the same key, a stable sort keeps them in the same order as the original input. Algorithms like Merge Sort and Insertion Sort are stable, whereas Quick Sort and Heap Sort are typically unstable. Stability is important when sorting complex records by multiple fields, where earlier sorting decisions must remain intact."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are In-Place Sorting Algorithms?"
+      },
+      {
+        "from": "gpt",
+        "value": "In-place sorting algorithms rearrange elements within the original data structure without requiring significant additional memory. They usually use only a small constant amount of extra space. Examples include Quick Sort, Heap Sort, and Insertion Sort. Because these algorithms modify the original array directly, they are memory-efficient and suitable for systems with limited storage. However, some in-place algorithms can be complex to implement and may trade off stability or simplicity for memory efficiency."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain External Sorting."
+      },
+      {
+        "from": "gpt",
+        "value": "External sorting is used when data is too large to fit entirely in main memory. The algorithm divides the dataset into smaller chunks that fit in memory, sorts each chunk individually, and writes them to disk. These sorted chunks are then merged using multi-way merge techniques to produce a fully sorted dataset. External sorting is commonly used in databases and big data systems when handling large files.\n\n```mermaid\ngraph TD\nA[Large Dataset on Disk] --> B[Split into Chunks]\nB --> C[Sort Each Chunk in Memory]\nC --> D[Write Sorted Chunks to Disk]\nD --> E[Merge Chunks]\nE --> F[Final Sorted Output]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Time Complexity Analysis."
+      },
+      {
+        "from": "gpt",
+        "value": "Time complexity analysis measures how the running time of an algorithm grows as the input size increases. Instead of measuring exact execution time, it focuses on the number of operations performed. By analyzing loops, recursion, and comparisons, we estimate how performance scales with input size n. This helps compare algorithms and choose efficient solutions. Common complexity classes include O(n), O(n log n), and O(n\u00b2). Time complexity provides an abstract understanding of algorithm efficiency independent of hardware."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Space Complexity Analysis."
+      },
+      {
+        "from": "gpt",
+        "value": "Space complexity analysis evaluates how much memory an algorithm uses relative to the input size. It considers both the memory required for the input data and additional memory used by variables, recursion stacks, or auxiliary structures. For example, merge sort requires extra arrays, while quicksort typically sorts in-place. Understanding space complexity is important when working with large datasets or memory-constrained systems. Efficient algorithms balance both time and memory usage to achieve optimal performance."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Big O Notation?"
+      },
+      {
+        "from": "gpt",
+        "value": "Big O notation describes the upper bound of an algorithm\u2019s growth rate as the input size increases. It focuses on the worst-case behavior and ignores constant factors and smaller terms. For example, if an algorithm performs roughly n\u00b2 operations for input size n, it is described as O(n\u00b2). Big O notation allows developers to compare algorithm efficiency and understand how performance scales for large inputs. It is widely used in computer science to classify algorithms and predict scalability."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Big Omega Notation."
+      },
+      {
+        "from": "gpt",
+        "value": "Big Omega notation describes the lower bound of an algorithm\u2019s running time. It represents the best-case growth rate, meaning the minimum time required for the algorithm as the input size increases. For instance, if an algorithm must perform at least n operations, its complexity can be expressed as \u03a9(n). Big Omega helps identify the theoretical minimum work required by an algorithm, providing insight into the most efficient possible scenario."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Big Theta Notation."
+      },
+      {
+        "from": "gpt",
+        "value": "Big Theta notation describes the tight bound of an algorithm\u2019s time complexity. It indicates that the running time grows at the same rate in both the upper and lower bounds. If an algorithm consistently performs proportional to n log n operations for large inputs, it can be described as \u0398(n log n). Big Theta provides a more precise measurement than Big O or Big Omega when both bounds match, showing the exact asymptotic growth rate."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Amortized Analysis."
+      },
+      {
+        "from": "gpt",
+        "value": "Amortized analysis evaluates the average cost of operations over a sequence of operations rather than analyzing each operation individually. Some operations may be expensive, but they occur rarely. By spreading the cost of these expensive operations across many inexpensive ones, we obtain the amortized cost per operation. A classic example is dynamic array resizing, where occasional costly expansions are balanced by many cheap insertions. This analysis helps understand the real-world efficiency of algorithms that have occasional spikes in cost."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Dynamic Programming."
+      },
+      {
+        "from": "gpt",
+        "value": "Dynamic programming is a problem-solving technique used when a problem can be broken into overlapping subproblems with optimal substructure. Instead of solving the same subproblem repeatedly, dynamic programming stores previously computed results and reuses them. This greatly reduces computation time. Solutions are typically built either recursively with memoization or iteratively using tables. Dynamic programming is commonly used in optimization problems such as shortest paths or sequence alignment.\n\n```mermaid\ngraph TD\nA[Problem] --> B[Break into Subproblems]\nB --> C[Store Solutions]\nC --> D[Reuse Stored Results]\nD --> E[Build Final Solution]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Memoization?"
+      },
+      {
+        "from": "gpt",
+        "value": "Memoization is an optimization technique used in recursive algorithms where the results of expensive function calls are stored and reused when the same inputs occur again. Instead of recalculating the result for a subproblem, the algorithm checks if the result has already been computed and stored. This reduces redundant computation and significantly improves efficiency for problems with overlapping subproblems. Memoization is commonly used in dynamic programming solutions implemented with recursion."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Tabulation in Dynamic Programming."
+      },
+      {
+        "from": "gpt",
+        "value": "Tabulation is a bottom-up dynamic programming technique where solutions to smaller subproblems are computed first and stored in a table. The algorithm iteratively fills the table until the final solution is obtained. Unlike memoization, which uses recursion, tabulation avoids recursion and builds the solution step by step. This approach often improves performance and avoids recursion overhead.\n\n```mermaid\ngraph TD\nA[Start with Base Cases] --> B[Fill Table Iteratively]\nB --> C[Use Previous Values]\nC --> D[Compute Final Answer]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Longest Common Subsequence algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "The Longest Common Subsequence (LCS) algorithm finds the longest sequence that appears in the same order in two strings, though not necessarily contiguously. It uses dynamic programming to build a matrix where each cell represents the LCS length for prefixes of the two strings. If characters match, the value increases; otherwise, the maximum of neighboring values is taken. The final cell contains the length of the longest common subsequence.\n\n```mermaid\ngraph TD\nA[Two Strings] --> B[Create DP Table]\nB --> C[Compare Characters]\nC --> D[Update Table]\nD --> E[LCS Length]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Longest Increasing Subsequence."
+      },
+      {
+        "from": "gpt",
+        "value": "The Longest Increasing Subsequence (LIS) problem finds the longest subsequence of numbers where each element is greater than the previous one. Dynamic programming is commonly used to solve it by storing the LIS length ending at each index. The algorithm updates values based on earlier elements that are smaller. More advanced solutions use binary search to improve efficiency to O(n log n).\n\n```mermaid\ngraph TD\nA[Input Sequence] --> B[Check Previous Elements]\nB --> C[Update LIS Length]\nC --> D[Track Maximum]\nD --> E[Longest Increasing Subsequence]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Edit Distance algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "The Edit Distance algorithm calculates the minimum number of operations required to convert one string into another. The allowed operations are insertion, deletion, and substitution. Using dynamic programming, a matrix is built where each cell represents the minimum edits needed to transform prefixes of the strings. By filling the table step by step, the algorithm determines the optimal sequence of edits. Edit distance is widely used in spell checking and natural language processing.\n\n```mermaid\ngraph TD\nA[String A] --> B[Build DP Matrix]\nB --> C[Insert/Delete/Replace]\nC --> D[Update Costs]\nD --> E[Minimum Edit Distance]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the 0/1 Knapsack Problem."
+      },
+      {
+        "from": "gpt",
+        "value": "The 0/1 Knapsack problem involves selecting items with given weights and values to maximize total value without exceeding a weight limit. Each item can be either taken or not taken. Dynamic programming is used to build a table where rows represent items and columns represent weight capacity. The algorithm decides whether including an item increases the total value. The final table entry gives the optimal solution.\n\n```mermaid\ngraph TD\nA[Items with Weight and Value] --> B[DP Table]\nB --> C[Include Item]\nB --> D[Exclude Item]\nC --> E[Update Value]\nD --> E\nE --> F[Optimal Knapsack Value]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Unbounded Knapsack Problem."
+      },
+      {
+        "from": "gpt",
+        "value": "The Unbounded Knapsack problem is similar to the 0/1 knapsack but allows unlimited copies of each item. The goal is still to maximize total value while staying within a weight limit. Dynamic programming solves this by iteratively computing the best value for each possible weight. When evaluating a weight, the algorithm considers adding any item again since repetition is allowed. This makes the problem suitable for optimization scenarios like resource allocation.\n\n```mermaid\ngraph TD\nA[Items Available] --> B[Check Weight Capacity]\nB --> C[Reuse Item Multiple Times]\nC --> D[Update DP Table]\nD --> E[Maximum Value]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Coin Change Problem."
+      },
+      {
+        "from": "gpt",
+        "value": "The Coin Change Problem asks how to make a target amount using the fewest coins from given denominations. It is commonly solved using dynamic programming. We build a table where each entry represents the minimum coins needed for a value. For each coin, we check if using it improves the solution for a smaller amount. By iterating from smaller amounts to larger ones, we gradually compute the optimal result. The diagram shows how the solution expands by evaluating combinations of coins until the target amount is reached.\n\n```mermaid\ngraph TD\nStart --> Amount1\nAmount1 --> Amount2\nAmount2 --> Amount3\nAmount3 --> TargetAmount\nTargetAmount --> MinCoins\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Matrix Chain Multiplication work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Matrix Chain Multiplication determines the most efficient order to multiply a sequence of matrices. Although matrix multiplication is associative, different parenthesizations require different numbers of scalar multiplications. Dynamic programming solves this by computing the minimum cost for multiplying subchains of matrices. A table stores optimal results for smaller matrix groups and builds up to the full chain. The algorithm avoids redundant calculations and ensures minimal multiplication cost. The diagram shows how matrices are split into subproblems and combined to form the optimal multiplication order.\n\n```mermaid\ngraph TD\nA1 --> Split\nSplit --> A1A2\nSplit --> A3A4\nA1A2 --> Combine\nA3A4 --> Combine\nCombine --> OptimalCost\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Optimal Binary Search Trees."
+      },
+      {
+        "from": "gpt",
+        "value": "An Optimal Binary Search Tree (OBST) is a binary search tree designed to minimize the expected search cost when keys have different search probabilities. Some keys may be searched more frequently than others, so placing frequently accessed keys near the root reduces average search time. Dynamic programming computes the best root for each subtree based on probabilities of successful and unsuccessful searches. The algorithm evaluates possible roots and chooses the one that minimizes the total weighted path cost. The diagram illustrates how probabilities influence the tree structure.\n\n```mermaid\ngraph TD\nRoot --> LeftSubtree\nRoot --> RightSubtree\nLeftSubtree --> Key1\nLeftSubtree --> Key2\nRightSubtree --> Key3\nRightSubtree --> Key4\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Catalan Numbers in tree counting?"
+      },
+      {
+        "from": "gpt",
+        "value": "Catalan numbers frequently appear in combinatorics and computer science, especially when counting possible tree structures. In algorithms, they count the number of distinct binary search trees that can be formed using n keys. The idea is that each key can become the root, splitting the remaining keys into left and right subtrees. The total number of trees equals the sum of combinations of left and right subtree possibilities. This recursive structure produces the Catalan sequence: 1, 1, 2, 5, 14, and so on. Catalan numbers also appear in counting balanced parentheses and polygon triangulations."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Greedy Algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "Greedy algorithms solve optimization problems by making the best immediate choice at each step. Instead of exploring all possibilities, the algorithm selects the option that looks optimal locally and continues forward. This works when a problem has the greedy-choice property and optimal substructure, meaning local decisions lead to a global optimum. Examples include interval scheduling, Huffman coding, and fractional knapsack. Greedy algorithms are typically simple and efficient because they avoid complex recursion or dynamic programming. However, they only work for problems where local optimal decisions guarantee a globally optimal solution."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Activity Selection Problem work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Activity Selection Problem chooses the maximum number of non-overlapping activities from a set with start and finish times. A greedy approach solves it efficiently by always selecting the activity that finishes earliest. After choosing one activity, the algorithm discards all activities that overlap with it and repeats the process with the remaining ones. This strategy works because finishing early leaves more room for future activities. The diagram shows how activities are filtered based on finish time to maximize the total number selected.\n\n```mermaid\ngraph LR\nStart --> SortByFinish\nSortByFinish --> PickFirstActivity\nPickFirstActivity --> RemoveOverlapping\nRemoveOverlapping --> PickNext\nPickNext --> Result\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Huffman Coding."
+      },
+      {
+        "from": "gpt",
+        "value": "Huffman coding is a greedy algorithm used for lossless data compression. It assigns shorter binary codes to frequently occurring characters and longer codes to less frequent ones. The algorithm repeatedly merges the two nodes with the smallest frequencies to form a new internal node. This process builds a binary tree where each leaf represents a character. Traversing the tree from root to leaf produces the character\u2019s binary code. The resulting encoding minimizes the total number of bits required to represent the data.\n\n```mermaid\ngraph TD\nRoot --> NodeA\nRoot --> NodeB\nNodeA --> Char1\nNodeA --> Char2\nNodeB --> Char3\nNodeB --> Char4\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Fractional Knapsack algorithm?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Fractional Knapsack problem involves selecting items with weights and values to maximize total value without exceeding the knapsack capacity. Unlike the 0/1 knapsack problem, items can be divided. A greedy strategy works by selecting items in decreasing order of value-to-weight ratio. The algorithm takes as much as possible of the item with the highest ratio, then moves to the next item until the capacity is filled. If only part of an item fits, a fraction is taken. This approach guarantees an optimal solution because the value gained per unit weight is always maximized."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Job Scheduling with Deadlines."
+      },
+      {
+        "from": "gpt",
+        "value": "Job Scheduling with Deadlines is a greedy algorithm problem where each job has a deadline and profit. The goal is to schedule jobs within available time slots to maximize total profit. Jobs are first sorted by decreasing profit. Each job is placed in the latest available time slot before its deadline. If no slot is available, the job is skipped. This strategy ensures that the most valuable jobs are prioritized while still respecting deadlines. The diagram shows how jobs compete for limited time slots during scheduling.\n\n```mermaid\ngraph TD\nStart --> SortByProfit\nSortByProfit --> CheckDeadline\nCheckDeadline --> AssignSlot\nAssignSlot --> NextJob\nNextJob --> FinalSchedule\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Interval Scheduling."
+      },
+      {
+        "from": "gpt",
+        "value": "Interval scheduling focuses on selecting the maximum number of non-overlapping intervals from a set of time intervals. Each interval has a start and finish time. The optimal greedy strategy is to sort intervals by their finish time and repeatedly select the earliest finishing interval that does not conflict with previously chosen ones. This works because choosing the earliest finishing interval leaves the maximum remaining time for future intervals. The algorithm is efficient and runs in O(n log n) time due to sorting, making it practical for scheduling tasks or resource allocation problems."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Minimum Coin Change using a greedy approach?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Minimum Coin Change greedy approach tries to make a target amount using the largest possible coin denomination first. The algorithm repeatedly selects the biggest coin that does not exceed the remaining amount, subtracts it, and continues until the amount becomes zero. This method works correctly for some coin systems, such as standard currency denominations, because they are designed to support greedy solutions. However, for arbitrary coin sets, greedy methods may fail to produce the minimum number of coins. In such cases, dynamic programming provides a guaranteed optimal solution."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Sliding Window Technique work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The sliding window technique efficiently processes subarrays or substrings of fixed or variable length within a sequence. Instead of recomputing values for every window, the algorithm maintains a moving window that expands and shrinks as needed. When the window moves forward, new elements are added and old ones are removed. This allows calculations like sums or counts to update incrementally. The approach reduces time complexity from O(n\u00b2) to O(n) in many problems. The diagram illustrates how the window moves across the array.\n\n```mermaid\ngraph LR\nStart --> Window1\nWindow1 --> SlideRight\nSlideRight --> Window2\nWindow2 --> SlideRight\nSlideRight --> Window3\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Two Pointer Technique."
+      },
+      {
+        "from": "gpt",
+        "value": "The two pointer technique uses two indices that move through a data structure, often an array or string, to efficiently solve problems. One pointer may start at the beginning and the other at the end, or both may move in the same direction. The pointers adjust based on conditions such as sums, ordering, or comparisons. This approach reduces nested loops and often improves time complexity to O(n). It is widely used in problems like pair sums in sorted arrays or removing duplicates. The diagram shows how two pointers move toward each other.\n\n```mermaid\ngraph LR\nStart --> LeftPointer\nStart --> RightPointer\nLeftPointer --> MoveRight\nRightPointer --> MoveLeft\nMoveRight --> CheckCondition\nMoveLeft --> CheckCondition\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Prefix Sum Arrays?"
+      },
+      {
+        "from": "gpt",
+        "value": "A prefix sum array stores cumulative sums of elements in an array. Each position contains the sum of all previous elements including itself. Once built, it allows fast range sum queries. To compute the sum between indices l and r, subtract the prefix value at l\u22121 from the prefix value at r. Building the prefix array takes O(n) time, and each query can then be answered in constant time. This technique is widely used in competitive programming and algorithm design for efficiently processing repeated range queries."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Difference Arrays."
+      },
+      {
+        "from": "gpt",
+        "value": "A difference array is a technique used to efficiently apply multiple range updates to an array. Instead of updating every element within a range, the algorithm modifies only the boundaries. When adding a value to a range [l, r], the value is added at index l and subtracted at index r+1. After all updates are recorded, a prefix sum operation reconstructs the final array values. This approach reduces the complexity of repeated range updates from O(n) per operation to O(1), making it especially useful in scenarios with many modifications."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Kadane\u2019s Algorithm?"
+      },
+      {
+        "from": "gpt",
+        "value": "Kadane\u2019s Algorithm efficiently finds the maximum sum subarray in a one-dimensional array. The algorithm iterates through the array while maintaining two variables: the current subarray sum and the maximum sum found so far. At each element, the algorithm decides whether to extend the existing subarray or start a new one at the current position. If the running sum becomes negative, it is reset because continuing would only reduce future sums. This dynamic programming approach runs in O(n) time and is widely used in optimization problems involving contiguous subarrays."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about the Sweep Line Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "The sweep line algorithm processes geometric events by imagining a vertical line moving across a plane. As the line sweeps from left to right, events such as segment starts, ends, or intersections are processed in sorted order. Data structures like priority queues or balanced trees help maintain active elements during the sweep. This technique is used in problems such as detecting line segment intersections, computing skyline silhouettes, or interval overlaps. The diagram illustrates the sweep line moving across events.\n\n```mermaid\ngraph LR\nLeftEvents --> SweepLine\nSweepLine --> ProcessEvent\nProcessEvent --> UpdateStructure\nUpdateStructure --> NextEvent\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Bit Manipulation Techniques."
+      },
+      {
+        "from": "gpt",
+        "value": "Bit manipulation techniques involve operating directly on binary representations of numbers using bitwise operators such as AND, OR, XOR, and shifts. These operations are extremely fast because they work at the hardware level. Common uses include checking if a number is even, toggling bits, setting flags, or compressing data structures. Algorithms often use bit manipulation to optimize performance, especially in competitive programming. For example, XOR can swap two numbers without extra memory, and bit shifts can quickly multiply or divide numbers by powers of two."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Bit Masks?"
+      },
+      {
+        "from": "gpt",
+        "value": "A bit mask is a binary pattern used to manipulate specific bits in a number. By applying bitwise operations with the mask, programs can set, clear, toggle, or check certain bits efficiently. For example, using an AND operation with a mask helps test whether a particular bit is set. Bit masks are widely used in systems programming, permissions management, and subset enumeration problems. Because multiple boolean states can be stored within a single integer, bit masks provide a compact and fast way to represent sets or flags in algorithms."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain subset generation using bitmasking."
+      },
+      {
+        "from": "gpt",
+        "value": "Subset generation using bitmasking treats each subset as a binary number where each bit represents whether an element is included. For a set with n elements, there are 2\u207f possible subsets. By iterating from 0 to 2\u207f\u22121 and examining the bits of each number, we can determine which elements belong to that subset. If the i-th bit is set, the i-th element is included. This technique efficiently generates all subsets and is commonly used in combinatorial search problems and dynamic programming on subsets."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Gray Code Generation."
+      },
+      {
+        "from": "gpt",
+        "value": "Gray code is a sequence of binary numbers where consecutive values differ by only one bit. This property reduces errors in digital systems and is used in hardware encoders and algorithmic generation problems. Gray codes can be generated recursively or using the formula: G(n) = n XOR (n >> 1). This ensures that each successive number changes exactly one bit from the previous value. In algorithms, Gray codes are useful for generating combinations while minimizing changes between successive states."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Fast Exponentiation (Binary Exponentiation)?"
+      },
+      {
+        "from": "gpt",
+        "value": "Fast exponentiation computes powers such as a\u207f efficiently using repeated squaring. Instead of multiplying a by itself n times, the algorithm repeatedly squares the base and halves the exponent. If the exponent is even, the base is squared and the exponent is divided by two. If it is odd, the result is multiplied by the base once and the exponent decreases. This reduces time complexity from O(n) to O(log n). Binary exponentiation is widely used in modular arithmetic and cryptographic algorithms."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Euclidean Algorithm for GCD."
+      },
+      {
+        "from": "gpt",
+        "value": "The Euclidean Algorithm efficiently computes the greatest common divisor (GCD) of two integers. It relies on the principle that the GCD of two numbers also divides their difference. Instead of repeatedly subtracting numbers, the modern version uses the remainder operation. Given two numbers a and b, the algorithm repeatedly replaces a with b and b with a mod b until b becomes zero. At that point, a is the GCD. This algorithm is extremely efficient and runs in logarithmic time."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Extended Euclidean Algorithm work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Extended Euclidean Algorithm not only computes the greatest common divisor of two integers but also finds coefficients that express the GCD as a linear combination of the numbers. Specifically, it finds integers x and y such that ax + by = gcd(a, b). This information is extremely useful in number theory and cryptography, especially when computing modular inverses. The algorithm follows the same recursive steps as the standard Euclidean algorithm while tracking the coefficients during backtracking."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Modular Arithmetic."
+      },
+      {
+        "from": "gpt",
+        "value": "Modular arithmetic works with numbers under a fixed modulus, meaning results wrap around after reaching the modulus value. It is often described as arithmetic on a clock. For example, in modulo 7 arithmetic, the result of 10 mod 7 is 3. Operations such as addition, subtraction, and multiplication follow consistent rules under modulus. Modular arithmetic is widely used in cryptography, hashing, and algorithm design. Techniques like modular exponentiation help handle very large numbers efficiently without overflow."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Modular Exponentiation."
+      },
+      {
+        "from": "gpt",
+        "value": "Modular exponentiation computes \\(a^b \\mod m\\) efficiently without calculating the large value \\(a^b\\) directly. The common technique is **Exponentiation by Squaring**. Instead of multiplying \\(a\\) repeatedly, the exponent is halved each step. If the exponent is even, square the base; if odd, multiply the result by the base once. After every multiplication the modulus is applied to keep numbers small. This reduces the time complexity from O(b) to O(log b). Modular exponentiation is widely used in cryptography algorithms such as RSA, where handling extremely large powers efficiently is essential."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Sieve of Eratosthenes work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The **Sieve of Eratosthenes** efficiently finds all prime numbers up to a given limit N. It works by iteratively marking multiples of each prime number as composite. First, assume all numbers from 2 to N are prime. Start with 2 and mark all its multiples as non-prime. Move to the next unmarked number (which must be prime) and repeat. Continue until the square root of N. The remaining unmarked numbers are primes. This algorithm runs in roughly O(n log log n) time and is widely used for generating primes in number theory problems.\n\n```mermaid\ngraph TD\nStart[Numbers 2..N] --> PickPrime\nPickPrime --> MarkMultiples\nMarkMultiples --> NextUnmarked\nNextUnmarked --> PickPrime\nPickPrime --> Done[Remaining numbers are prime]\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Prime Factorization Algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "Prime factorization algorithms break a number into its prime components. The simplest method is **trial division**, which repeatedly divides the number by primes starting from 2. More advanced methods include **Pollard\u2019s Rho** and **Fermat\u2019s factorization**, which work efficiently for large numbers. The idea is to identify smaller divisors until the remaining quotient is prime. For example, factoring 84 yields 2 \u00d7 2 \u00d7 3 \u00d7 7. Efficient factorization is important in cryptography and computational number theory because the difficulty of factoring very large integers forms the basis of several encryption systems."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Rolling Hash."
+      },
+      {
+        "from": "gpt",
+        "value": "A **rolling hash** is a hashing technique where the hash value of a sequence can be updated efficiently when the window moves forward. Instead of recomputing the entire hash, the algorithm subtracts the contribution of the outgoing character and adds the new character\u2019s contribution. This allows updates in constant time. Rolling hashes are commonly used in string algorithms such as Rabin-Karp pattern matching and plagiarism detection. Because hash values represent substrings compactly, comparisons between large strings can be performed quickly using integer operations rather than character-by-character comparisons."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Rabin-Karp string matching?"
+      },
+      {
+        "from": "gpt",
+        "value": "The **Rabin-Karp algorithm** searches for a pattern within a text using hashing. It computes a hash for the pattern and for each substring of the text with the same length. Using a rolling hash, the hash value is updated as the window moves forward. If the pattern hash matches the substring hash, a direct string comparison confirms the match. This approach makes average-case matching efficient, especially when searching for multiple patterns or performing plagiarism detection.\n\n```mermaid\ngraph LR\nTextWindow --> ComputeHash\nComputeHash --> CompareHash\nCompareHash -->|Match| Verify\nCompareHash -->|No Match| SlideWindow\nSlideWindow --> ComputeHash\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Knuth-Morris-Pratt (KMP) algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "The **Knuth-Morris-Pratt (KMP)** algorithm finds a pattern in a text without rechecking characters unnecessarily. It preprocesses the pattern to create a **Longest Prefix Suffix (LPS)** array. This array indicates where to continue matching after a mismatch. When characters differ, KMP shifts the pattern based on the LPS value instead of restarting from the beginning. This avoids redundant comparisons and guarantees O(n) time complexity for searching.\n\n```mermaid\ngraph TD\nBuildLPS --> StartMatching\nStartMatching --> MatchCharacters\nMatchCharacters -->|Mismatch| UseLPS\nUseLPS --> ContinueMatch\nContinueMatch --> MatchCharacters\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about the Z Algorithm for pattern matching."
+      },
+      {
+        "from": "gpt",
+        "value": "The **Z algorithm** is used in string matching to find occurrences of a pattern within a text. It constructs a Z-array where each value represents the length of the longest substring starting at that position that matches the prefix of the string. To search for a pattern, the algorithm concatenates the pattern, a separator, and the text. The Z-array is then computed. Whenever a Z value equals the pattern length, a match is found. The algorithm runs in linear time O(n) and avoids redundant comparisons by maintaining a sliding window of matched segments."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Boyer-Moore string search."
+      },
+      {
+        "from": "gpt",
+        "value": "The **Boyer-Moore algorithm** is a highly efficient string searching method that compares the pattern to the text from right to left. When a mismatch occurs, it uses heuristic rules such as the **bad character rule** and **good suffix rule** to skip large sections of the text. Instead of shifting by one character each time, the algorithm can jump multiple positions ahead. This makes it extremely fast for long patterns in large texts. In practice, Boyer-Moore often performs sublinear time searches because many characters are skipped during comparisons."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Aho-Corasick algorithm?"
+      },
+      {
+        "from": "gpt",
+        "value": "The **Aho-Corasick algorithm** searches for multiple patterns simultaneously in a text. It builds a trie from all patterns and augments it with failure links, similar to the KMP idea. While scanning the text, the algorithm transitions through trie nodes and follows failure links when mismatches occur. This allows detection of all patterns in linear time relative to the text length.\n\n```mermaid\ngraph TD\nBuildTrie --> AddFailureLinks\nAddFailureLinks --> ScanText\nScanText --> MatchFound\nScanText --> FollowFailure\nFollowFailure --> ScanText\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain what a Suffix Automaton is."
+      },
+      {
+        "from": "gpt",
+        "value": "A **suffix automaton** is a compressed automaton that represents all substrings of a given string. It is built incrementally as characters are processed, creating states that correspond to sets of substrings with the same end positions. Each transition represents extending substrings by a character. The structure is compact, containing at most 2n\u22121 states for a string of length n. Suffix automata are powerful for solving problems like counting distinct substrings, finding longest common substrings, or performing substring queries efficiently in linear time."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Manacher\u2019s Algorithm find the longest palindromic substring?"
+      },
+      {
+        "from": "gpt",
+        "value": "**Manacher\u2019s Algorithm** finds the longest palindromic substring in linear time O(n). The string is transformed by inserting separators between characters to treat odd and even length palindromes uniformly. The algorithm maintains a center and right boundary of the current palindrome. Using symmetry around the center, it avoids rechecking characters that are already known to match. Each position stores the radius of the palindrome centered there. By expanding around centers only when necessary, the algorithm efficiently computes the longest palindromic substring without repeated comparisons."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Trie-based autocomplete?"
+      },
+      {
+        "from": "gpt",
+        "value": "A **Trie-based autocomplete system** uses a prefix tree (trie) to store words character by character. Each node represents a prefix and may mark the end of a valid word. When a user types a prefix, the system navigates the trie to that prefix node and then explores its subtree to suggest possible completions. Because each character corresponds to one tree level, searching by prefix takes O(length of prefix) time. This structure is widely used in search engines and keyboards.\n\n```mermaid\ngraph TD\nRoot --> c\nc --> a\nc --> o\na --> t\nc --> r\nr --> e\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain string hashing."
+      },
+      {
+        "from": "gpt",
+        "value": "**String hashing** converts a string into a numerical value using a deterministic formula. Each character contributes to the hash using positional weights, typically powers of a base number. This allows quick comparison between strings: if two hashes differ, the strings are definitely different. Hashing is commonly used in substring comparison, duplicate detection, and pattern matching algorithms. Because collisions are possible, large mod values are often used to reduce the chance that two different strings produce the same hash value."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Polynomial Rolling Hash?"
+      },
+      {
+        "from": "gpt",
+        "value": "A **polynomial rolling hash** represents a string as a polynomial where each character is multiplied by a power of a chosen base. For example, the hash may be computed as the sum of character values multiplied by increasing powers of a base modulo a large number. This structure allows efficient substring hashing because prefix hashes can be reused. With precomputed powers, substring hashes can be calculated in constant time. Polynomial rolling hashes are commonly used in algorithms like Rabin-Karp and in competitive programming for fast substring comparisons."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain how an LRU Cache implementation works."
+      },
+      {
+        "from": "gpt",
+        "value": "An **LRU (Least Recently Used) cache** stores recently accessed items while discarding the least recently used ones when capacity is exceeded. A typical implementation combines a **hash map** for fast lookups and a **doubly linked list** to track usage order. When an item is accessed, it moves to the front of the list. When the cache is full, the item at the tail (least recently used) is removed.\n\n```mermaid\ngraph LR\nAccessItem --> MoveToFront\nMoveToFront --> CacheUpdated\nCacheFull --> EvictTail\nEvictTail --> InsertNew\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does an LFU Cache implementation work?"
+      },
+      {
+        "from": "gpt",
+        "value": "An **LFU (Least Frequently Used) cache** removes the item that has been accessed the fewest times. Each cache entry tracks a frequency counter that increases whenever the item is used. When the cache reaches capacity, the entry with the lowest frequency is evicted. Efficient implementations use hash maps combined with frequency-based linked lists to update counts and maintain order quickly. LFU caches are useful when frequently accessed items should remain in memory for long periods, even if they were not recently accessed."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about cache replacement algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "Cache replacement algorithms determine which data should be removed when the cache is full. Common strategies include **LRU (Least Recently Used)**, **LFU (Least Frequently Used)**, and **FIFO (First In First Out)**. Each strategy balances memory efficiency and performance differently. LRU removes items that haven't been used recently, assuming they are less likely to be needed again. LFU focuses on access frequency, while FIFO removes the oldest entries regardless of usage. These algorithms are widely used in operating systems, databases, and web caching systems."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain memory stack vs heap allocation."
+      },
+      {
+        "from": "gpt",
+        "value": "Programs use two main memory regions: **stack** and **heap**. The stack stores function calls, local variables, and return addresses in a last-in-first-out order. Memory is automatically managed when functions start and end. The heap stores dynamically allocated memory that persists until explicitly freed or garbage collected. Heap allocation is more flexible but slower than stack allocation. Understanding the difference helps developers manage memory efficiently and avoid leaks.\n\n```mermaid\ngraph TD\nProgramMemory --> Stack\nProgramMemory --> Heap\nStack --> LocalVariables\nStack --> FunctionCalls\nHeap --> DynamicObjects\nHeap --> LongLivedData\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the call stack in recursion?"
+      },
+      {
+        "from": "gpt",
+        "value": "The **call stack** tracks active function calls during program execution. In recursion, each function call pushes a new stack frame containing parameters, local variables, and the return address. When the function finishes, its frame is popped from the stack and control returns to the previous call. This structure allows recursive algorithms such as factorial or tree traversal to work correctly. However, deep recursion can cause stack overflow if too many frames accumulate.\n\n```mermaid\ngraph TD\nCall1 --> Call2\nCall2 --> Call3\nCall3 --> Return3\nReturn3 --> Return2\nReturn2 --> Return1\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain garbage collection algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "Garbage collection algorithms automatically reclaim memory that is no longer in use by a program. Instead of manually freeing memory, the runtime system identifies objects that cannot be reached from active references. These unreachable objects are considered garbage and are removed to free space. Different strategies exist, such as reference counting and mark-and-sweep. Garbage collection helps prevent memory leaks and dangling pointers but can introduce overhead during program execution."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is reference counting in garbage collection?"
+      },
+      {
+        "from": "gpt",
+        "value": "**Reference counting** is a garbage collection technique where each object tracks how many references point to it. When a new reference is created, the count increases; when a reference is removed, the count decreases. If the count reaches zero, the object is no longer reachable and can be safely deallocated. This method is simple and provides immediate memory reclamation. However, it struggles with cyclic references, where two objects reference each other and never reach zero even though they are no longer used."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Mark-and-Sweep garbage collection algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "The **mark-and-sweep** garbage collection algorithm identifies unused objects in two phases. In the **mark phase**, the system starts from root references and marks all reachable objects. In the **sweep phase**, memory is scanned and any unmarked objects are deleted. This approach effectively handles cyclic references and reclaims unused memory automatically.\n\n```mermaid\ngraph TD\nStart --> MarkReachable\nMarkReachable --> TraverseObjects\nTraverseObjects --> SweepPhase\nSweepPhase --> FreeUnmarked\nFreeUnmarked --> MemoryReclaimed\n```"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about generational garbage collection."
+      },
+      {
+        "from": "gpt",
+        "value": "**Generational garbage collection** is based on the observation that most objects die young. Memory is divided into generations, typically a young generation and an old generation. New objects are allocated in the young generation, where garbage collection runs frequently and quickly. Objects that survive multiple cycles are promoted to the old generation. Since long-lived objects are less likely to become garbage, the system scans them less often. This design significantly improves performance in languages like Java and Python."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain page replacement algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "Page replacement algorithms decide which memory page should be removed when physical memory is full and a new page must be loaded from disk. Common strategies include **FIFO**, **LRU**, and **Optimal replacement**. FIFO removes the oldest page, LRU removes the least recently used page, and the optimal algorithm removes the page that will not be used for the longest time in the future. These algorithms help operating systems manage virtual memory efficiently and reduce costly disk accesses."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Least Recently Used (LRU) in operating systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "**Least Recently Used (LRU)** is a page replacement strategy that removes the page that has not been accessed for the longest time. The idea is that recently used pages are more likely to be used again soon. Operating systems track page usage order using timestamps or data structures like stacks and linked lists. When memory becomes full, the page that was used least recently is evicted. LRU approximates optimal page replacement in many practical workloads and is widely used in caching and memory management systems."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Least Frequently Used (LFU) caching."
+      },
+      {
+        "from": "gpt",
+        "value": "Least Frequently Used (LFU) is a cache eviction strategy that removes the item with the lowest access frequency when the cache becomes full. Each item maintains a counter that increases whenever it is accessed. When a new item must be inserted and the cache is full, the item with the smallest frequency count is evicted. LFU works well for workloads where frequently accessed data should remain cached for long periods. However, it requires additional bookkeeping to track frequencies efficiently.\n\n```mermaid\ngraph LR\nRequest1 --> UpdateFrequency\nUpdateFrequency --> Cache\nCache -->|Least Frequency| Evict\nEvict --> InsertNewItem\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does First-In-First-Out (FIFO) page replacement work?"
+      },
+      {
+        "from": "gpt",
+        "value": "FIFO page replacement removes the oldest page in memory when a new page must be loaded and memory is full. The operating system maintains a queue of pages in the order they were loaded. When a page fault occurs and memory is full, the page at the front of the queue is evicted. The new page is then added to the back of the queue. FIFO is simple to implement but may remove heavily used pages, sometimes leading to poor performance.\n\n```mermaid\ngraph LR\nPageLoaded1 --> PageLoaded2\nPageLoaded2 --> PageLoaded3\nPageLoaded3 --> EvictOldest\nEvictOldest --> InsertNewPage\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Optimal Page Replacement in operating systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Optimal Page Replacement is a theoretical page replacement algorithm that always removes the page whose next use will occur farthest in the future. When a page fault occurs, the operating system examines future memory references and selects the page that will not be used for the longest time. This guarantees the lowest possible number of page faults for a given reference string. However, because it requires knowledge of future memory accesses, it cannot be implemented in practice and is mainly used as a benchmark to evaluate other page replacement algorithms."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Deadlock Detection Algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "Deadlock detection algorithms identify whether a system has entered a deadlock state, where processes are waiting indefinitely for resources held by each other. In systems with single instances of resources, a wait-for graph is commonly used. Nodes represent processes, and edges indicate that one process is waiting for another. If a cycle exists in this graph, a deadlock is present. For systems with multiple resource instances, algorithms track allocation and request matrices to detect circular wait conditions and determine which processes are involved in the deadlock."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Banker\u2019s Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "Banker\u2019s Algorithm is a deadlock avoidance algorithm used in operating systems to ensure that resource allocation remains in a safe state. Each process declares its maximum resource requirements beforehand. The system tracks available resources, current allocations, and remaining needs. Before granting a request, the algorithm simulates the allocation to check whether the system would still be able to complete all processes without entering a deadlock. If the system remains in a safe sequence, the request is granted; otherwise, it is postponed."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Process Scheduling Algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "Process scheduling algorithms determine which process the CPU should execute at a given time. The scheduler chooses among ready processes based on policies designed to optimize metrics such as CPU utilization, waiting time, and response time. Common strategies include First-Come First-Serve, Shortest Job First, and Round Robin. These algorithms organize processes in a queue and decide the order of execution. The goal is to keep the CPU busy while ensuring fairness among processes.\n\n```mermaid\ngraph LR\nReadyQueue --> Scheduler\nScheduler --> CPU\nCPU --> Completed\nCPU --> ReadyQueue\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Round Robin scheduling work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Round Robin scheduling is a preemptive CPU scheduling algorithm designed for time-sharing systems. Each process receives a fixed time slice called a time quantum. The scheduler cycles through the ready queue and assigns the CPU to each process for one quantum. If the process finishes before the quantum expires, it leaves the queue. Otherwise, it is moved to the end of the queue to wait for another turn. This approach ensures fairness and prevents any single process from monopolizing the CPU.\n\n```mermaid\ngraph LR\nP1 --> P2\nP2 --> P3\nP3 --> P1\nP1 --> CPU\nCPU --> NextProcess\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Shortest Job First scheduling?"
+      },
+      {
+        "from": "gpt",
+        "value": "Shortest Job First (SJF) scheduling selects the process with the smallest execution time from the ready queue. By prioritizing shorter tasks, the algorithm minimizes the average waiting time for processes. SJF can be implemented as non-preemptive, where a process runs until completion, or preemptive (Shortest Remaining Time First), where a newly arriving process with a shorter remaining time can interrupt the current one. Although SJF provides optimal average waiting time, it requires estimating process burst times accurately."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Priority Scheduling."
+      },
+      {
+        "from": "gpt",
+        "value": "Priority scheduling assigns a priority value to each process and executes the process with the highest priority first. Priorities may be determined by system requirements, user input, or dynamic factors like waiting time. The algorithm can be either preemptive or non-preemptive. In preemptive priority scheduling, a higher priority process can interrupt a running process. A major challenge is starvation, where low-priority processes wait indefinitely. To address this, systems often implement aging, which gradually increases the priority of waiting processes."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Multilevel Queue Scheduling."
+      },
+      {
+        "from": "gpt",
+        "value": "Multilevel Queue Scheduling divides processes into multiple separate queues based on characteristics such as priority or type of task. For example, system processes, interactive processes, and batch processes may each have their own queue. Each queue can use a different scheduling algorithm, such as Round Robin or FIFO. The scheduler selects processes either by fixed priority between queues or by allocating time slices to each queue. This design allows different types of workloads to be managed efficiently.\n\n```mermaid\ngraph TD\nSystemQueue --> CPU\nInteractiveQueue --> CPU\nBatchQueue --> CPU\nCPU --> Completed\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Multilevel Feedback Queue Scheduling."
+      },
+      {
+        "from": "gpt",
+        "value": "Multilevel Feedback Queue (MLFQ) scheduling extends multilevel queues by allowing processes to move between queues. Processes that use too much CPU time may be moved to lower-priority queues, while those that wait too long may move upward. Higher-priority queues typically have shorter time slices and run first. This dynamic adjustment helps balance responsiveness for short interactive tasks while still allowing long-running tasks to complete.\n\n```mermaid\ngraph TD\nHighPriority --> MediumPriority\nMediumPriority --> LowPriority\nLowPriority --> CPU\nCPU --> Feedback\nFeedback --> HighPriority\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Producer-Consumer Problem."
+      },
+      {
+        "from": "gpt",
+        "value": "The Producer-Consumer problem describes synchronization between processes that share a buffer. Producers generate data and place it into the buffer, while consumers remove and process the data. If the buffer is full, producers must wait; if it is empty, consumers must wait. Synchronization primitives such as semaphores or mutex locks ensure that only one process accesses the buffer at a time and prevent race conditions. This problem demonstrates the importance of coordination in concurrent systems.\n\n```mermaid\ngraph LR\nProducer --> Buffer\nBuffer --> Consumer\nProducer -->|Wait if full| Buffer\nConsumer -->|Wait if empty| Buffer\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about the Dining Philosophers Problem."
+      },
+      {
+        "from": "gpt",
+        "value": "The Dining Philosophers Problem illustrates synchronization challenges in concurrent systems. Several philosophers sit around a table with a fork between each pair. To eat, a philosopher must acquire both adjacent forks. If all philosophers pick up one fork simultaneously, none can obtain the second fork, resulting in deadlock. Solutions involve resource ordering, limiting concurrent access, or using monitors and semaphores to control fork allocation. The problem highlights issues of deadlock, starvation, and resource sharing.\n\n```mermaid\ngraph LR\nP1 --Fork--> P2\nP2 --Fork--> P3\nP3 --Fork--> P4\nP4 --Fork--> P5\nP5 --Fork--> P1\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Mutual Exclusion Algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "Mutual exclusion algorithms ensure that only one process accesses a shared resource or critical section at a time. This prevents race conditions and inconsistent data. Techniques for achieving mutual exclusion include locks, semaphores, monitors, and specialized algorithms designed for concurrent systems. A process must request permission before entering the critical section and release it afterward. Effective mutual exclusion mechanisms guarantee correctness while minimizing waiting time and avoiding deadlocks or starvation."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Peterson\u2019s Algorithm?"
+      },
+      {
+        "from": "gpt",
+        "value": "Peterson\u2019s Algorithm is a classic software-based solution for achieving mutual exclusion between two processes. It uses two shared variables: a flag array to indicate a process\u2019s intent to enter the critical section and a turn variable to determine whose turn it is. Each process sets its flag and gives the turn to the other process before checking whether it can enter the critical section. This design ensures that only one process enters the critical section at a time while avoiding deadlock and guaranteeing progress."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Lamport\u2019s Bakery Algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "Lamport\u2019s Bakery Algorithm is a mutual exclusion algorithm designed for multiple processes. It works similarly to customers taking numbered tickets in a bakery. When a process wants to enter the critical section, it takes a number larger than all currently assigned numbers. Processes enter the critical section in order of increasing ticket numbers. If two processes receive the same number, their process IDs break the tie. This ensures fairness and prevents race conditions without relying on specialized hardware instructions."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the MapReduce computational model."
+      },
+      {
+        "from": "gpt",
+        "value": "MapReduce is a distributed computing model used to process large datasets across clusters of machines. The computation is divided into two main stages. In the Map phase, input data is split into chunks and processed independently to generate intermediate key-value pairs. In the Reduce phase, all values associated with the same key are aggregated to produce final results. This model enables parallel processing and fault tolerance for large-scale data analysis.\n\n```mermaid\ngraph LR\nInputData --> Map\nMap --> IntermediateKeyValue\nIntermediateKeyValue --> Reduce\nReduce --> Output\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Parallel Prefix Sum (Scan Algorithm) work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Parallel Prefix Sum, also called the scan algorithm, computes cumulative sums across an array in parallel. Instead of computing values sequentially, the algorithm performs two phases. In the up-sweep phase, partial sums are computed in a tree-like structure. In the down-sweep phase, these partial sums propagate back to generate final prefix sums for each element. This approach significantly reduces computation time on parallel hardware like GPUs or multi-core processors.\n\n```mermaid\ngraph TD\nInput --> UpSweep\nUpSweep --> TreeSums\nTreeSums --> DownSweep\nDownSweep --> PrefixResults\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Work Stealing Scheduling."
+      },
+      {
+        "from": "gpt",
+        "value": "Work stealing is a scheduling technique used in parallel computing systems. Each processor maintains its own queue of tasks. When a processor finishes its work and becomes idle, it attempts to steal tasks from the queues of other processors. This dynamic load balancing helps keep all processors busy without centralized coordination. Work stealing is widely used in parallel runtime systems and task schedulers because it adapts efficiently to irregular workloads and improves overall throughput."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Load Balancing Algorithms in distributed systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Load balancing algorithms distribute tasks or requests across multiple servers or processors to ensure efficient resource utilization. The goal is to prevent any single node from becoming overloaded while others remain idle. Strategies include round-robin, least connections, and resource-based scheduling. Some algorithms are static, assigning work based on predefined rules, while others dynamically adjust based on system load. Effective load balancing improves system responsiveness, scalability, and fault tolerance in distributed computing environments."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Consistent Hashing."
+      },
+      {
+        "from": "gpt",
+        "value": "Consistent hashing is a technique used in distributed systems to distribute keys across nodes while minimizing data movement when nodes join or leave. Both nodes and keys are mapped onto positions on a hash ring. A key is assigned to the first node encountered while moving clockwise on the ring. When a new node is added, only a small subset of keys need to be reassigned. This approach is commonly used in distributed caches and databases.\n\n```mermaid\ngraph LR\nNodeA --> NodeB\nNodeB --> NodeC\nNodeC --> NodeA\nKey1 --> NodeB\nKey2 --> NodeC\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Bloom Filter?"
+      },
+      {
+        "from": "gpt",
+        "value": "A Bloom filter is a space-efficient probabilistic data structure used to test whether an element might be in a set. It uses a bit array and multiple hash functions. When an element is inserted, each hash function sets a corresponding bit in the array. To check membership, the same hash functions are applied; if any corresponding bit is zero, the element is definitely not present. If all bits are set, the element may be present, allowing false positives but no false negatives.\n\n```mermaid\ngraph LR\nElement --> Hash1\nElement --> Hash2\nHash1 --> BitArray\nHash2 --> BitArray\nBitArray --> QueryCheck\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Counting Bloom Filters."
+      },
+      {
+        "from": "gpt",
+        "value": "Counting Bloom Filters extend standard Bloom filters by replacing each bit with a small counter. Instead of simply setting bits, inserting an element increments counters at positions determined by hash functions. Deleting an element decrements those counters. This allows the structure to support removal operations, which traditional Bloom filters cannot handle. Counting Bloom Filters maintain the same probabilistic membership checks while enabling dynamic updates to the stored set."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about the HyperLogLog algorithm."
+      },
+      {
+        "from": "gpt",
+        "value": "HyperLogLog is a probabilistic algorithm used to estimate the number of unique elements in a large dataset with very little memory. Instead of storing every element, it hashes each item and tracks the position of the leftmost set bit in the hash value. Multiple registers record these observations, and statistical techniques combine them to estimate cardinality. HyperLogLog is widely used in large-scale analytics systems because it provides near-accurate distinct counts while using only a small amount of memory."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Skip Lists."
+      },
+      {
+        "from": "gpt",
+        "value": "A skip list is a probabilistic data structure that allows fast search, insertion, and deletion in sorted data. It consists of multiple levels of linked lists. The bottom level contains all elements, while higher levels contain fewer elements that act as shortcuts for faster traversal. When searching for a value, the algorithm moves horizontally until it overshoots the target, then drops down a level. This layered structure enables average logarithmic time complexity.\n\n```mermaid\ngraph TD\nLevel3 --> 20\nLevel2 --> 10 --> 20 --> 30\nLevel1 --> 5 --> 10 --> 15 --> 20 --> 25 --> 30\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Treaps in algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "A Treap is a randomized balanced binary search tree that combines properties of a binary search tree (BST) and a heap. Each node has a key (for BST ordering) and a random priority (for heap ordering). The tree maintains BST order on keys and heap order on priorities. Insertions first follow BST placement and then perform rotations to restore heap order. Because priorities are random, the tree remains balanced on average, giving O(log n) time for insert, delete, and search operations. Treaps are simple to implement compared to other balanced trees.\n\n```mermaid\ngraph TD\nA((50,p=20)) --> B((30,p=15))\nA --> C((70,p=10))\nB --> D((20,p=5))\nB --> E((40,p=7))\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does an Order Statistic Tree work?"
+      },
+      {
+        "from": "gpt",
+        "value": "An Order Statistic Tree is a balanced binary search tree augmented with subtree sizes. Each node stores the number of nodes in its subtree, allowing efficient rank and selection queries. For example, you can find the k-th smallest element or determine the rank of a value in O(log n) time. During insertions and deletions, subtree sizes are updated as the tree structure changes. This structure is commonly implemented using Red-Black trees or AVL trees with additional size fields.\n\n```mermaid\ngraph TD\n50[50 size=5]\n50 --> 30[30 size=2]\n50 --> 70[70 size=2]\n30 --> 20[20 size=1]\n70 --> 80[80 size=1]\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Range Minimum Query (RMQ)."
+      },
+      {
+        "from": "gpt",
+        "value": "Range Minimum Query (RMQ) is a problem where we preprocess an array to quickly answer queries asking for the minimum element between two indices. A naive approach scans the range in O(n) time. Efficient methods preprocess the array so queries can be answered faster, often in O(1) or O(log n). RMQ is used in algorithms like Lowest Common Ancestor and segment tree problems. Techniques like segment trees or sparse tables are commonly used to implement RMQ.\n\n```mermaid\ngraph LR\nArray --> Preprocessing\nPreprocessing --> Query\nQuery --> MinimumValue\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Sparse Table data structure?"
+      },
+      {
+        "from": "gpt",
+        "value": "A Sparse Table is a data structure used to answer range queries such as minimum, maximum, or gcd efficiently on static arrays. It preprocesses the array into overlapping intervals of size powers of two. Each entry stores the answer for a range starting at index i with length 2^k. Using this structure, queries can be answered in O(1) time by combining results from two precomputed intervals. However, updates are not supported efficiently, making sparse tables suitable for immutable datasets.\n\n```mermaid\ngraph TD\nArray --> BuildIntervals\nBuildIntervals --> Table[\"Ranges of size 2^k\"]\nTable --> Query\nQuery --> Answer\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Heavy-Light Decomposition."
+      },
+      {
+        "from": "gpt",
+        "value": "Heavy-Light Decomposition (HLD) is a technique used on trees to efficiently answer path queries. The idea is to split the tree into heavy and light edges. A heavy edge connects a node to its largest subtree child, while other edges are light. This decomposition breaks the tree into chains, allowing path queries to be reduced to a few segment queries on arrays. Data structures like segment trees are often combined with HLD to answer path queries such as sum or minimum in O(log\u00b2 n) time.\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nB --> E\nC --> F\nD --> G\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Centroid Decomposition work in trees?"
+      },
+      {
+        "from": "gpt",
+        "value": "Centroid Decomposition is a technique that recursively divides a tree into smaller components using centroid nodes. A centroid is a node whose removal splits the tree into subtrees each having at most half the original size. The algorithm finds the centroid, processes it, removes it, and then recursively decomposes the resulting subtrees. This forms a centroid tree that helps solve complex tree problems such as distance queries efficiently, often reducing time complexity to O(n log n).\n\n```mermaid\ngraph TD\nCentroid --> Subtree1\nCentroid --> Subtree2\nCentroid --> Subtree3\nSubtree1 --> Smaller1\nSubtree2 --> Smaller2\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Binary Lifting technique."
+      },
+      {
+        "from": "gpt",
+        "value": "Binary Lifting is a technique used to quickly compute ancestors of nodes in a tree. It precomputes a table where each entry stores the 2^k-th ancestor of a node. Using this table, we can jump upward in powers of two instead of moving one step at a time. This allows operations like finding ancestors or Lowest Common Ancestors in O(log n) time. The preprocessing step builds the table using dynamic programming.\n\n```mermaid\ngraph TD\nNode --> Parent\nParent --> Grandparent\nGrandparent --> HigherAncestor\nNode --> Jump2\nNode --> Jump4\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Lowest Common Ancestor (LCA) in trees?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Lowest Common Ancestor (LCA) of two nodes in a tree is the deepest node that is an ancestor of both. It is useful in many problems involving hierarchical relationships, such as file systems or genealogy trees. Efficient algorithms preprocess the tree so LCA queries can be answered quickly. Methods include binary lifting, Euler tour with RMQ, or segment trees. With preprocessing, each query can often be answered in O(log n) or even O(1).\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nB --> E\nC --> F\nD --> G\nE --> H\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Euler Tour Technique in trees."
+      },
+      {
+        "from": "gpt",
+        "value": "The Euler Tour Technique converts a tree into a linear sequence by recording nodes as they are visited during a depth-first traversal. Each time we enter or exit a node, we record it in the sequence. This representation allows tree problems to be transformed into array problems. For example, LCA queries can be solved using RMQ on the Euler tour array. The technique is widely used with segment trees and sparse tables.\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nB --> E\nTraversal --> EulerSequence\nEulerSequence --> ArrayRepresentation\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Preorder tree traversal?"
+      },
+      {
+        "from": "gpt",
+        "value": "Preorder traversal is a tree traversal method where nodes are processed before their children. The order followed is: visit the root, traverse the left subtree, then traverse the right subtree. This traversal is useful for copying trees or generating prefix expressions from expression trees. Preorder traversal is commonly implemented using recursion or a stack. The process ensures that each node is visited once.\n\n```mermaid\ngraph TD\nVisitRoot --> LeftSubtree\nLeftSubtree --> RightSubtree\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Inorder tree traversal."
+      },
+      {
+        "from": "gpt",
+        "value": "Inorder traversal visits nodes in the order: left subtree, root, then right subtree. In binary search trees, this traversal produces nodes in sorted order. The algorithm recursively traverses the left child, processes the current node, and then traverses the right child. Because of its sorted property, inorder traversal is frequently used when retrieving sorted values from BSTs.\n\n```mermaid\ngraph TD\nLeftSubtree --> VisitRoot\nVisitRoot --> RightSubtree\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Postorder tree traversal."
+      },
+      {
+        "from": "gpt",
+        "value": "Postorder traversal processes nodes after visiting their children. The order is: traverse the left subtree, traverse the right subtree, then visit the root. This traversal is useful when deleting trees or evaluating expression trees where operands must be processed before operators. Like other traversals, it can be implemented recursively or using a stack.\n\n```mermaid\ngraph TD\nLeftSubtree --> RightSubtree\nRightSubtree --> VisitRoot\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Level Order Traversal in trees?"
+      },
+      {
+        "from": "gpt",
+        "value": "Level Order Traversal visits tree nodes level by level starting from the root. It uses a queue to process nodes in breadth-first order. First the root is visited, then all nodes at the next level, and so on. This traversal is useful when we need to process nodes based on their depth or find the shortest path in unweighted trees.\n\n```mermaid\ngraph TD\nRoot --> Level1\nLevel1 --> Level2\nLevel2 --> Level3\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Threaded Binary Trees."
+      },
+      {
+        "from": "gpt",
+        "value": "A Threaded Binary Tree is a variation of a binary tree where null pointers are replaced with references to inorder predecessor or successor nodes. These special pointers are called threads. The goal is to make tree traversal more efficient by avoiding recursion or stacks. In a threaded tree, inorder traversal can move directly to the next node using these threads. This reduces memory overhead and simplifies traversal algorithms while maintaining the original tree structure."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Expression Trees in algorithms?"
+      },
+      {
+        "from": "gpt",
+        "value": "An Expression Tree is a binary tree used to represent arithmetic expressions. Internal nodes represent operators such as + or *, while leaf nodes represent operands like numbers or variables. Evaluating the expression corresponds to traversing the tree. For example, postorder traversal can compute the expression by evaluating operands first and applying operators afterward. Expression trees are widely used in compilers and calculators.\n\n```mermaid\ngraph TD\nPlus --> A\nPlus --> Multiply\nMultiply --> B\nMultiply --> C\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Abstract Syntax Trees."
+      },
+      {
+        "from": "gpt",
+        "value": "An Abstract Syntax Tree (AST) represents the syntactic structure of source code in a hierarchical tree form. Each node corresponds to constructs like operators, variables, or statements. Unlike parse trees, ASTs remove unnecessary grammar details and focus on program structure. Compilers use ASTs during semantic analysis, optimization, and code generation. The tree structure helps analyze expressions and program logic efficiently.\n\n```mermaid\ngraph TD\nAssignment --> Variable\nAssignment --> Expression\nExpression --> Operator\nOperator --> Operand1\nOperator --> Operand2\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Finite State Machines."
+      },
+      {
+        "from": "gpt",
+        "value": "A Finite State Machine (FSM) is a computational model consisting of a finite number of states and transitions between them. The machine changes state based on input symbols. FSMs are widely used in parsing, control systems, and protocol design. Each transition represents how the system moves from one state to another given an input. FSMs are simple yet powerful models for representing sequential logic.\n\n```mermaid\ngraph LR\nStart --> State1\nState1 --> State2\nState2 --> State3\nState3 --> State1\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Deterministic Finite Automaton (DFA)?"
+      },
+      {
+        "from": "gpt",
+        "value": "A Deterministic Finite Automaton (DFA) is a finite state machine where each state has exactly one transition for every input symbol. This means the machine always has a single predictable path for any input string. DFAs are widely used in pattern matching, lexical analysis, and compiler design. They process input symbols sequentially and accept or reject strings based on whether the final state is an accepting state.\n\n```mermaid\ngraph LR\nStart --> A\nA -->|0| A\nA -->|1| B\nB -->|0| A\nB -->|1| B\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Nondeterministic Finite Automata."
+      },
+      {
+        "from": "gpt",
+        "value": "A Nondeterministic Finite Automaton (NFA) is a computational model where multiple transitions for the same input symbol may exist from a state. The machine can explore many possible paths simultaneously. If any path leads to an accepting state, the input string is accepted. NFAs are easier to construct than DFAs and are widely used in regex engines and theoretical computer science.\n\n```mermaid\ngraph LR\nStart --> A\nA -->|a| B\nA -->|a| C\nB --> D\nC --> D\n```\n"
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Pushdown Automaton?"
+      },
+      {
+        "from": "gpt",
+        "value": "A Pushdown Automaton (PDA) is a computational model similar to a finite automaton but with an additional stack memory. The stack allows the machine to store and retrieve symbols, enabling it to recognize context-free languages such as balanced parentheses. The automaton reads input symbols, performs stack operations like push and pop, and transitions between states. PDAs are important in compiler design, particularly for parsing programming languages."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Turing Machines."
+      },
+      {
+        "from": "gpt",
+        "value": "A Turing Machine is a theoretical model of computation capable of simulating any algorithm. It consists of an infinite tape for memory, a tape head that reads and writes symbols, and a set of states controlling the machine\u2019s behavior. At each step, the machine reads a symbol, writes a new symbol, moves the head left or right, and changes state. Turing machines form the foundation of modern computational theory and help define what problems are computable."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Register Machines."
+      },
+      {
+        "from": "gpt",
+        "value": "A Register Machine is a theoretical computational model that uses a small number of registers to store integers. Instructions operate on these registers using operations like increment, decrement, or conditional jumps. Programs consist of sequences of simple instructions manipulating register values. Register machines are equivalent in computational power to Turing machines but often easier to analyze mathematically. They are commonly used in theoretical computer science to study algorithmic processes and computational complexity."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are computational complexity classes like P vs NP?"
+      },
+      {
+        "from": "gpt",
+        "value": "Computational complexity classes categorize problems based on how efficiently they can be solved. Class P contains problems that can be solved in polynomial time using deterministic algorithms. Class NP includes problems whose solutions can be verified in polynomial time. The famous P vs NP question asks whether every problem whose solution can be verified quickly can also be solved quickly. This remains one of the most important open problems in computer science."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Reduction Between Problems in algorithms."
+      },
+      {
+        "from": "gpt",
+        "value": "Reduction between problems is a technique used to show relationships between computational problems. A problem A is reduced to problem B if a solution to B can be used to solve A efficiently. Reductions help prove problem hardness, especially in NP-completeness theory. If a known hard problem reduces to another problem, the second problem is at least as hard. This concept is widely used in complexity theory and algorithm design."
+      }
+    ]
+  },
+  {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Branch and Bound algorithm work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Branch and Bound is an optimization technique used to solve problems like the Traveling Salesman Problem. It systematically explores possible solutions by branching into smaller subproblems. Bounds are used to estimate the best possible solution within a branch. If a branch cannot produce a better result than the current best solution, it is pruned. This greatly reduces the search space while guaranteeing an optimal solution.\n\n```mermaid\ngraph TD\nStart --> Branch1\nStart --> Branch2\nBranch1 --> BoundCheck\nBranch2 --> BoundCheck\nBoundCheck --> BestSolution\n```\n"
+      }
+    ]
+  }
+]

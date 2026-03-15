@@ -1,0 +1,2606 @@
+[
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Newton's First Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Newton's First Law, often called the law of inertia, states that an object will remain at rest or continue moving at a constant velocity unless acted upon by a net external force. This means objects resist changes to their motion. For example, a book resting on a table stays still unless someone pushes it. Similarly, a hockey puck sliding on ice continues moving until friction or another force slows it down. The concept highlights inertia, which is the tendency of matter to resist changes in motion.\n\n```mermaid\ngraph LR\nNo_Force --> Constant_Motion\nConstant_Motion --> Inertia\nExternal_Force --> Change_in_Motion\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Newton's Second Law work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Newton's Second Law explains how forces affect motion. It states that the acceleration of an object depends on the net force applied and the object's mass. Mathematically it is written as F = ma, where force equals mass times acceleration. A stronger force causes greater acceleration, while a larger mass makes it harder to accelerate the object. For example, pushing an empty cart makes it speed up quickly, but a full cart accelerates more slowly because its mass is larger.\n\n```mermaid\ngraph LR\nForce --> Acceleration\nMass --> Resistance\nAcceleration --> Change_in_Velocity\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Newton's Third Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Newton's Third Law states that for every action force, there is an equal and opposite reaction force. When one object pushes on another, the second object pushes back with the same magnitude but in the opposite direction. For example, when you jump off the ground, your feet push downward on the ground and the ground pushes upward on you, propelling you into the air. These force pairs act on different objects but occur simultaneously, which is why motion occurs in many physical systems.\n\n```mermaid\ngraph LR\nObject_A -- Action_Force --> Object_B\nObject_B -- Reaction_Force --> Object_A\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Free Body Diagrams in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "A free body diagram is a simple drawing used to analyze the forces acting on an object. The object is represented as a point or box, and arrows show each force acting on it, such as gravity, normal force, tension, or friction. This helps break down complex situations and apply Newton's laws. By identifying all forces and their directions, physicists can determine the object's acceleration or motion. Free body diagrams are especially useful in mechanics problems involving multiple interacting forces.\n\n```mermaid\ngraph TD\nObject --> Gravity\nObject --> Normal\nObject --> Friction\nObject --> Applied_Force\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain types of forces in physics."
+      },
+      {
+        "from": "gpt",
+        "value": "Forces are interactions that can change an object's motion. They can be broadly classified into contact forces and non-contact forces. Contact forces occur when objects physically touch, such as friction, tension, or the normal force from a surface. Non-contact forces act at a distance, such as gravitational, electric, or magnetic forces. Each force has a direction and magnitude, and together they determine how an object moves according to Newton's laws. Understanding the types of forces helps analyze physical systems and predict motion.\n\n```mermaid\ngraph LR\nForces --> Contact_Forces\nForces --> NonContact_Forces\nContact_Forces --> Friction\nContact_Forces --> Tension\nNonContact_Forces --> Gravity\nNonContact_Forces --> Magnetism\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is friction force?"
+      },
+      {
+        "from": "gpt",
+        "value": "Friction is a force that opposes the motion of two surfaces in contact. It occurs because microscopic irregularities on surfaces interact and resist sliding. When you push a box across the floor, friction acts in the opposite direction of motion and slows it down. Friction can be useful, such as allowing tires to grip the road, but it can also waste energy as heat. The strength of friction depends on the surfaces involved and the force pressing them together.\n\n```mermaid\ngraph LR\nMotion --> Friction\nSurface_Contact --> Friction\nFriction --> Opposes_Motion\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain static vs kinetic friction."
+      },
+      {
+        "from": "gpt",
+        "value": "Static friction acts when two surfaces are in contact but not sliding relative to each other. It prevents motion from starting, such as when a heavy box resists being pushed. Once the object begins to move, kinetic friction takes over. Kinetic friction acts between surfaces that are sliding and is usually smaller than the maximum static friction. This is why objects often require more force to start moving than to keep moving. Both types arise from surface interactions but differ depending on whether motion has begun.\n\n```mermaid\ngraph LR\nSurface_Contact --> Static_Friction\nMotion_Start --> Kinetic_Friction\nStatic_Friction --> Prevents_Motion\nKinetic_Friction --> Opposes_Sliding\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does tension in a rope work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Tension is the pulling force transmitted through a rope, cable, or string when it is pulled tight. When an object hangs from a rope, gravity pulls it downward while the rope pulls upward with tension. The force is transmitted along the length of the rope, so both ends experience the same pulling interaction. Tension always acts along the rope and away from the object it is attached to. It plays an important role in systems like elevators, cranes, and suspended bridges.\n\n```mermaid\ngraph LR\nObject -->|Weight| Downward\nRope -->|Tension| Upward\nTension --> Balance_Force\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is normal force in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "The normal force is the support force exerted by a surface on an object resting on it. It acts perpendicular to the surface and prevents the object from passing through it. For example, when a book sits on a table, gravity pulls it downward, but the table pushes upward with an equal normal force, keeping it stationary. The normal force adjusts depending on the object's weight and other forces. It is an example of a contact force generated by interactions between surfaces.\n\n```mermaid\ngraph TD\nGravity --> Object\nSurface --> Normal_Force\nNormal_Force --> Upward_Support\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain gravitational force."
+      },
+      {
+        "from": "gpt",
+        "value": "Gravitational force is the attractive force between objects with mass. Every mass pulls on every other mass, but the effect becomes noticeable when at least one object is very large, like Earth. Near Earth's surface, gravity pulls objects downward toward the planet's center. This force gives objects weight and causes phenomena such as falling objects and planetary orbits. Gravitational force depends on the masses involved and the distance between them, becoming weaker as objects move farther apart.\n\n```mermaid\ngraph LR\nEarth --> Gravitational_Force\nGravitational_Force --> Object\nObject --> Downward_Acceleration\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Universal Law of Gravitation?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Universal Law of Gravitation states that every object with mass attracts every other object with a force. The strength of this force depends on two factors: the masses of the objects and the distance between them. Larger masses produce stronger gravitational attraction, while increasing distance weakens the force. This law explains why planets orbit the Sun and why objects fall toward Earth. It shows that gravity is a universal interaction acting throughout the universe, influencing the motion of celestial bodies and everyday objects alike."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about gravitational field."
+      },
+      {
+        "from": "gpt",
+        "value": "A gravitational field describes the region around a mass where other objects experience gravitational force. Instead of thinking of gravity as a direct pull between objects, the mass creates a field in the surrounding space. Any object placed in that field feels a force toward the mass creating it. For example, Earth produces a gravitational field that pulls objects toward its center. The strength of the field decreases with distance, which is why gravity becomes weaker as you move farther away from a planet or star."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain weight vs mass."
+      },
+      {
+        "from": "gpt",
+        "value": "Mass is the amount of matter in an object and does not change regardless of location. Weight, however, is the force of gravity acting on that mass. Because weight depends on gravity, it can vary depending on where the object is located. For example, a person has the same mass on Earth and on the Moon, but their weight is smaller on the Moon because gravity there is weaker. Mass is measured in kilograms, while weight is measured as a force in newtons."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is projectile motion in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "Projectile motion describes the motion of an object launched into the air and moving under the influence of gravity alone. The object follows a curved path called a parabola. Horizontally, the velocity remains constant because no horizontal force acts on the object. Vertically, gravity continuously accelerates the object downward. Examples include a thrown ball or a cannonball in flight. The combination of constant horizontal motion and vertical acceleration produces the characteristic curved trajectory.\n\n```mermaid\ngraph LR\nLaunch --> Upward_Motion\nUpward_Motion --> Peak\nPeak --> Downward_Motion\nGravity --> Vertical_Acceleration\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain horizontal projectile motion."
+      },
+      {
+        "from": "gpt",
+        "value": "Horizontal projectile motion occurs when an object is launched horizontally from a height. The horizontal velocity remains constant because there is no horizontal acceleration. However, gravity pulls the object downward, causing it to accelerate vertically. As a result, the object follows a curved path while moving forward. A common example is a ball rolling off a table. Even though it starts moving horizontally, gravity immediately begins pulling it downward, creating a parabolic trajectory.\n\n```mermaid\ngraph LR\nHorizontal_Velocity --> Constant_Motion\nGravity --> Downward_Acceleration\nCombined --> Curved_Path\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is circular motion?"
+      },
+      {
+        "from": "gpt",
+        "value": "Circular motion occurs when an object moves along a circular path around a central point. Even if the object's speed stays constant, its direction is continuously changing, which means it is accelerating. This acceleration points toward the center of the circle and is called centripetal acceleration. Examples include a car moving around a curved track or a satellite orbiting Earth. Circular motion requires a force directed toward the center to keep the object moving along the circular path.\n\n```mermaid\ngraph LR\nObject --> Circular_Path\nCircular_Path --> Direction_Change\nCenter_Force --> Centripetal_Acceleration\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain centripetal force."
+      },
+      {
+        "from": "gpt",
+        "value": "Centripetal force is the inward force that keeps an object moving in a circular path. Without this force, the object would move in a straight line due to inertia. The force always points toward the center of the circle and can be provided by different interactions, such as tension in a string, gravity, or friction. For example, when a ball is tied to a string and swung in a circle, the tension in the string provides the centripetal force.\n\n```mermaid\ngraph LR\nObject --> Circular_Motion\nCenter --> Centripetal_Force\nCentripetal_Force --> Keeps_Path\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the centrifugal effect?"
+      },
+      {
+        "from": "gpt",
+        "value": "The centrifugal effect is the sensation that pushes objects outward when they move in a circular path. It is often experienced in rotating systems, such as when a passenger feels pushed outward in a turning car. In reality, this effect arises because objects tend to move in a straight line due to inertia. When the system rotates, the object resists the inward centripetal force and appears to move outward relative to the rotating frame of reference."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain momentum in physics."
+      },
+      {
+        "from": "gpt",
+        "value": "Momentum describes the quantity of motion an object has. It depends on both the mass of the object and its velocity. A heavy object moving quickly has more momentum than a light object moving slowly. Momentum is important because it helps describe how objects interact during collisions. When forces act over time, they change an object's momentum. In everyday life, a fast-moving truck is harder to stop than a bicycle because the truck has much greater momentum."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is conservation of momentum?"
+      },
+      {
+        "from": "gpt",
+        "value": "The conservation of momentum states that the total momentum of a closed system remains constant if no external forces act on it. This means that during interactions like collisions or explosions, momentum can transfer between objects but the total amount stays the same. For example, when two ice skaters push off each other, they move in opposite directions, but the combined momentum of the system remains unchanged. This principle is widely used to analyze collisions and motion in physics."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about elastic collisions."
+      },
+      {
+        "from": "gpt",
+        "value": "An elastic collision is a type of collision where both momentum and kinetic energy are conserved. This means that the objects bounce off each other without losing energy to heat, sound, or deformation. Elastic collisions often occur between particles or in idealized systems such as billiard balls. During the interaction, energy transfers between objects but the total kinetic energy remains the same before and after the collision."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are inelastic collisions?"
+      },
+      {
+        "from": "gpt",
+        "value": "In an inelastic collision, momentum is conserved but kinetic energy is not fully conserved. Some of the kinetic energy is transformed into other forms such as heat, sound, or deformation. In the most extreme case, called a perfectly inelastic collision, the objects stick together after colliding and move as one combined object. Car crashes and clay balls colliding are common examples where energy is lost during the interaction."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain impulse in physics."
+      },
+      {
+        "from": "gpt",
+        "value": "Impulse describes the change in momentum that occurs when a force acts on an object for a period of time. It depends on both the magnitude of the force and how long the force is applied. A larger force or a longer time produces a greater change in momentum. For example, when catching a ball, moving your hands backward increases the time of impact, reducing the force experienced. This principle is used in safety designs like airbags and padding."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is work done by a force?"
+      },
+      {
+        "from": "gpt",
+        "value": "Work is done when a force causes an object to move in the direction of the force. It represents the transfer of energy through motion. For example, lifting a box requires work because a force is applied upward while the box moves upward. If a force acts but the object does not move, no work is done. Work depends on both the magnitude of the force and the distance the object moves in that direction."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain kinetic energy."
+      },
+      {
+        "from": "gpt",
+        "value": "Kinetic energy is the energy an object possesses due to its motion. Any moving object, from a rolling ball to a speeding car, has kinetic energy. The amount of kinetic energy depends on both the object's mass and its velocity. Increasing either the mass or the speed increases the kinetic energy. Because velocity is squared in the relationship, speed has a strong effect on kinetic energy. This energy can transfer to other objects during collisions or transform into other forms such as heat."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Gravitational Potential Energy."
+      },
+      {
+        "from": "gpt",
+        "value": "Gravitational potential energy is the energy an object possesses because of its position in a gravitational field. The higher an object is lifted above the ground, the more energy it stores. This energy can later be converted into kinetic energy when the object falls. For example, a book placed on a high shelf has gravitational potential energy because gravity can pull it downward. The amount of this energy depends on the object's mass, the strength of gravity, and its height above a reference level.\n\n```mermaid\ngraph LR\nGround --> Lifted_Object\nLifted_Object --> Stored_Energy\nStored_Energy --> Falling_Object\nFalling_Object --> Kinetic_Energy\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Elastic Potential Energy work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Elastic potential energy is the energy stored in objects when they are stretched or compressed. Materials like springs and rubber bands can store this energy because they resist deformation and try to return to their original shape. The more the object is stretched or compressed, the more energy it stores. When released, the stored energy converts into motion or kinetic energy. This principle is used in many devices, such as bows, trampolines, and mechanical springs.\n\n```mermaid\ngraph LR\nSpring_Stretch --> Stored_Energy\nStored_Energy --> Release\nRelease --> Motion\nMotion --> Kinetic_Energy\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Conservation of Energy."
+      },
+      {
+        "from": "gpt",
+        "value": "The conservation of energy states that energy cannot be created or destroyed, only transformed from one form to another. In a closed system, the total amount of energy remains constant. For example, when a ball falls, its gravitational potential energy gradually converts into kinetic energy as it speeds up. When it hits the ground, some of that energy becomes sound or heat. This principle is fundamental in physics and helps scientists analyze how energy moves through mechanical, electrical, or thermal systems.\n\n```mermaid\ngraph LR\nPotential_Energy --> Kinetic_Energy\nKinetic_Energy --> Heat\nKinetic_Energy --> Sound\nHeat --> Total_Energy_Conserved\nSound --> Total_Energy_Conserved\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Power in Mechanical Systems?"
+      },
+      {
+        "from": "gpt",
+        "value": "Power in mechanical systems describes how quickly work is done or energy is transferred. It measures the rate at which energy changes from one form to another. For example, two machines might lift the same object to the same height, but the one that does it faster produces more power. Power depends on both the amount of work done and the time taken. Engines, electric motors, and turbines are often rated by their power output, showing how efficiently they can perform mechanical tasks."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Mechanical Advantage."
+      },
+      {
+        "from": "gpt",
+        "value": "Mechanical advantage describes how a machine makes work easier by multiplying the applied force. Simple machines like levers, pulleys, and inclined planes allow a smaller input force to move a larger load. The trade-off is usually that the input force must act over a longer distance. Mechanical advantage helps engineers design tools and machines that reduce the effort needed to perform tasks, such as lifting heavy objects or moving loads efficiently."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What are Simple Machines in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "Simple machines are basic mechanical devices that help people do work more easily by changing the direction or magnitude of a force. Examples include levers, pulleys, inclined planes, screws, wedges, and wheels with axles. These machines do not reduce the total amount of work but make tasks easier by spreading the effort over a greater distance or redirecting the force. Simple machines are the building blocks of more complex mechanical systems used in everyday tools and industrial machines.\n\n```mermaid\ngraph TD\nSimple_Machines --> Lever\nSimple_Machines --> Pulley\nSimple_Machines --> Inclined_Plane\nSimple_Machines --> Wheel_and_Axle\nSimple_Machines --> Screw\nSimple_Machines --> Wedge\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Lever Systems."
+      },
+      {
+        "from": "gpt",
+        "value": "A lever is a simple machine that uses a rigid bar rotating around a fixed point called a fulcrum. When a force is applied on one side of the lever, it produces motion or lifts a load on the other side. By placing the fulcrum closer to the load, a smaller input force can lift a heavier object. Levers are commonly used in tools such as crowbars, scissors, and seesaws. They help increase force or change the direction of motion.\n\n```mermaid\ngraph LR\nInput_Force --> Lever_Arm\nLever_Arm --> Fulcrum\nFulcrum --> Load\nLoad --> Lifted_Object\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How do Pulley Systems work?"
+      },
+      {
+        "from": "gpt",
+        "value": "A pulley system uses wheels and ropes to lift or move heavy loads with less effort. When a rope passes over a pulley wheel, it changes the direction of the applied force. Multiple pulleys working together can reduce the amount of force needed to lift an object by distributing the load across several supporting ropes. This system is commonly used in cranes, elevators, and construction equipment. Pulleys allow heavy objects to be lifted more easily by mechanical advantage.\n\n```mermaid\ngraph LR\nPulling_Force --> Rope\nRope --> Pulley\nPulley --> Load\nLoad --> Lifted_Object\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Inclined Plane Mechanics."
+      },
+      {
+        "from": "gpt",
+        "value": "An inclined plane is a flat surface tilted at an angle that helps lift objects with less effort than lifting them straight up. Instead of applying a large upward force, a smaller force can move the object along the slope over a longer distance. The inclined plane reduces the force needed but increases the distance traveled. This principle is used in ramps, slides, and mountain roads. It is a simple machine that makes lifting heavy objects more manageable.\n\n```mermaid\ngraph LR\nPush_Force --> Ramp\nRamp --> Object_Moves_Up\nObject_Moves_Up --> Increased_Height\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Center of Mass."
+      },
+      {
+        "from": "gpt",
+        "value": "The center of mass is the point in an object or system where all its mass can be considered to be concentrated for motion analysis. It represents the average position of the mass distribution. When forces act on an object, the motion of the entire object can be described by how its center of mass moves. For symmetrical objects, the center of mass is usually at the geometric center, but irregular objects may have it in a different location. Understanding this concept helps explain balance, motion, and stability."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Torque in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "Torque is a measure of how strongly a force causes an object to rotate around an axis or pivot point. It depends on both the magnitude of the force and the distance from the pivot where the force is applied. The farther the force acts from the pivot, the greater the torque produced. Torque is commonly seen when using tools like wrenches or opening doors. It explains how rotational motion begins when forces act at different distances from an axis.\n\n```mermaid\ngraph LR\nForce --> Lever_Arm\nLever_Arm --> Pivot\nPivot --> Rotation\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Rotational Motion."
+      },
+      {
+        "from": "gpt",
+        "value": "Rotational motion occurs when an object spins around a central axis. Instead of moving in a straight line, every point in the object travels in a circular path around the axis of rotation. Examples include a spinning wheel, a rotating fan, or Earth's rotation. In rotational motion, quantities such as angular velocity and torque describe how fast the object rotates and how forces cause the rotation. Understanding rotational motion helps explain many natural and mechanical systems."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Angular Velocity?"
+      },
+      {
+        "from": "gpt",
+        "value": "Angular velocity describes how quickly an object rotates around an axis. Instead of measuring linear distance over time, it measures the rate of change of angular position. It tells us how many radians or degrees an object rotates in a given time. For example, a spinning wheel or rotating planet has angular velocity that describes how fast it turns. Higher angular velocity means the object completes rotations more quickly."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Angular Acceleration."
+      },
+      {
+        "from": "gpt",
+        "value": "Angular acceleration measures how quickly the angular velocity of a rotating object changes over time. If a spinning object speeds up or slows down, it experiences angular acceleration. For example, when a fan starts from rest and gradually spins faster, its angular velocity increases due to angular acceleration. Similarly, when brakes are applied to a rotating wheel, the angular velocity decreases. This concept helps explain how rotational motion begins, changes, or stops."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Moment of Inertia."
+      },
+      {
+        "from": "gpt",
+        "value": "The moment of inertia describes how resistant an object is to changes in its rotational motion. It depends on both the mass of the object and how that mass is distributed relative to the axis of rotation. Objects with mass farther from the axis have a larger moment of inertia and are harder to spin or stop. This concept is similar to mass in linear motion but applied to rotation. Engineers use moment of inertia to design rotating machines and mechanical systems."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Rolling Motion."
+      },
+      {
+        "from": "gpt",
+        "value": "Rolling motion occurs when an object both rotates and moves forward at the same time. A wheel rolling along the ground is a common example. As the wheel rotates around its center, its center also moves forward in a straight line. This motion combines rotational and translational movement. Rolling motion reduces friction compared to sliding, which is why wheels are used in vehicles and machinery."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Rotational Kinetic Energy?"
+      },
+      {
+        "from": "gpt",
+        "value": "Rotational kinetic energy is the energy possessed by an object due to its rotation. When an object spins around an axis, each part of the object moves in a circular path and contributes to the total kinetic energy. The faster the object rotates and the greater its moment of inertia, the more rotational kinetic energy it has. Examples include spinning wheels, rotating turbines, and planets in rotation. This energy is an important part of understanding rotating mechanical systems."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Equilibrium of Forces."
+      },
+      {
+        "from": "gpt",
+        "value": "Equilibrium of forces occurs when all forces acting on an object balance each other. In this condition, the net force on the object is zero. As a result, the object either remains at rest or continues moving at constant velocity. For example, a book resting on a table experiences gravity pulling downward while the table exerts an equal upward normal force. Because these forces balance, the object stays stationary.\n\n```mermaid\ngraph LR\nGravity_Down --> Object\nNormal_Force_Up --> Object\nObject --> Balanced_Forces\nBalanced_Forces --> No_Acceleration\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Translational Equilibrium?"
+      },
+      {
+        "from": "gpt",
+        "value": "Translational equilibrium occurs when the total force acting on an object in all directions equals zero. When this happens, the object does not accelerate and either stays at rest or moves with constant velocity. This condition means that forces pushing or pulling in different directions cancel each other out. Translational equilibrium is important when analyzing structures, vehicles, or objects that must remain stable under different forces."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Rotational Equilibrium."
+      },
+      {
+        "from": "gpt",
+        "value": "Rotational equilibrium occurs when the sum of all torques acting on an object is zero. In this condition, the object does not start rotating or change its rotational motion. For example, a balanced seesaw stays level when the torques produced by weights on both sides are equal. Engineers use this principle when designing stable structures, bridges, and machines to ensure that rotational forces do not cause unwanted motion."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Stability and Balance."
+      },
+      {
+        "from": "gpt",
+        "value": "Stability and balance describe how objects maintain equilibrium and resist tipping over. An object is stable when its center of mass stays above its base of support. If the center of mass moves outside this base, the object may topple. Objects with a wide base and low center of mass are generally more stable. This concept explains why wide furniture, vehicles with low centers of gravity, and balanced structures are less likely to fall."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Hooke's Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Hooke's Law describes how springs and elastic materials behave when stretched or compressed. It states that the force needed to stretch or compress a spring is proportional to the distance it is displaced from its natural length. As the spring stretches more, the restoring force pulling it back increases. This relationship holds as long as the material remains within its elastic limit. Hooke's Law is widely used to understand springs, shock absorbers, and many mechanical systems.\n\n```mermaid\ngraph LR\nApplied_Force --> Spring_Stretch\nSpring_Stretch --> Restoring_Force\nRestoring_Force --> Return_to_Equilibrium\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Simple Harmonic Motion work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Simple harmonic motion is a type of periodic motion where an object oscillates back and forth around an equilibrium position. The restoring force acting on the object is proportional to its displacement from the center. Examples include vibrating springs and swinging pendulums. As the object moves away from equilibrium, the restoring force pulls it back toward the center, causing continuous oscillation. Energy constantly transfers between potential and kinetic energy during the motion.\n\n```mermaid\ngraph LR\nEquilibrium --> Displacement\nDisplacement --> Restoring_Force\nRestoring_Force --> Motion_Back\nMotion_Back --> Equilibrium\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Mass-Spring Oscillator."
+      },
+      {
+        "from": "gpt",
+        "value": "A mass-spring oscillator is a system where a mass attached to a spring moves back and forth when displaced from equilibrium. When the mass is pulled or pushed, the spring exerts a restoring force that pulls the mass toward the equilibrium position. As the mass moves, energy alternates between elastic potential energy in the spring and kinetic energy of the moving mass. This repeating motion creates oscillations that are an example of simple harmonic motion.\n\n```mermaid\ngraph LR\nMass_Displaced --> Spring_Force\nSpring_Force --> Motion\nMotion --> Kinetic_Energy\nKinetic_Energy --> Return_to_Equilibrium\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Pendulum Motion."
+      },
+      {
+        "from": "gpt",
+        "value": "Pendulum motion occurs when a mass suspended from a string swings back and forth under the influence of gravity. When the pendulum is pulled to one side and released, gravity acts as a restoring force that pulls it back toward its lowest point. The motion continues as the pendulum swings to the other side and returns again. Energy continuously converts between gravitational potential energy at the highest points and kinetic energy at the lowest point.\n\n```mermaid\ngraph LR\nLifted_Pendulum --> Potential_Energy\nPotential_Energy --> Swing_Down\nSwing_Down --> Kinetic_Energy\nKinetic_Energy --> Swing_Up\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Damped Oscillations."
+      },
+      {
+        "from": "gpt",
+        "value": "Damped oscillations occur when an oscillating system gradually loses energy due to resistive forces such as friction or air resistance. As the system continues to move back and forth, these forces remove energy from the system, causing the amplitude of oscillation to decrease over time. Eventually the motion stops completely. This behavior is common in real-world systems like a swinging pendulum in air or a vibrating spring with friction. The damping force opposes motion and converts mechanical energy into heat, reducing the system's energy with each cycle.\n\n```mermaid\ngraph LR\nInitialEnergy --> Oscillation\nOscillation --> Friction\nFriction --> EnergyLoss\nEnergyLoss --> DecreasingAmplitude\nDecreasingAmplitude --> MotionStops\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Resonance work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Resonance occurs when a system is driven by an external force at a frequency that matches its natural frequency. When this happens, the system absorbs energy very efficiently, causing the amplitude of oscillation to grow significantly. A common example is pushing a swing: if pushes are timed with the swing's natural motion, the swing moves higher and higher. Resonance plays an important role in musical instruments, bridges, and electronic circuits. However, excessive resonance can cause structural damage if vibrations become too strong.\n\n```mermaid\ngraph LR\nExternalForce --> DrivingFrequency\nDrivingFrequency --> NaturalFrequencyMatch\nNaturalFrequencyMatch --> EnergyTransfer\nEnergyTransfer --> LargeAmplitude\nLargeAmplitude --> Resonance\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Wave Motion."
+      },
+      {
+        "from": "gpt",
+        "value": "Wave motion is the transfer of energy through a medium or space without the permanent movement of matter. In a wave, particles of the medium oscillate around their equilibrium position while the disturbance travels forward. For example, when a stone is dropped in water, ripples move outward even though the water itself mainly moves up and down. Waves can carry energy over long distances and appear in many forms such as sound waves, water waves, and light waves. The key idea is that energy propagates while the medium only vibrates locally.\n\n```mermaid\ngraph LR\nEnergySource --> Disturbance\nDisturbance --> ParticleOscillation\nParticleOscillation --> EnergyTransfer\nEnergyTransfer --> WavePropagation\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Transverse Waves in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "A transverse wave is a type of wave in which the particles of the medium move perpendicular to the direction the wave travels. This means if the wave moves horizontally, the particles oscillate up and down. Examples include waves on a stretched rope or electromagnetic waves such as light. Transverse waves have distinctive features called crests (highest points) and troughs (lowest points). These waves are important in many physical systems because they help transport energy while the medium's particles only vibrate around their resting positions."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Longitudinal Waves."
+      },
+      {
+        "from": "gpt",
+        "value": "Longitudinal waves are waves in which the particles of the medium move parallel to the direction the wave travels. Instead of moving up and down, the particles compress and expand along the same line as the wave propagation. These alternating regions of compression and rarefaction carry energy through the medium. Sound waves in air are a common example of longitudinal waves. As sound travels, air molecules vibrate back and forth, transferring energy to neighboring molecules and allowing the sound to move through the air."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Wave Speed."
+      },
+      {
+        "from": "gpt",
+        "value": "Wave speed describes how fast a wave travels through a medium. It depends on properties of the medium such as tension, density, or elasticity. For example, sound waves travel faster in solids than in gases because particles in solids are more closely packed and transfer vibrations more quickly. Wave speed is related to wavelength and frequency. If the frequency increases, the wavelength decreases so that the speed remains constant in the same medium. Understanding wave speed helps explain how signals, sound, and energy move through different materials.\n\n```mermaid\ngraph LR\nMediumProperties --> WaveSpeed\nWaveSpeed --> Wavelength\nWaveSpeed --> Frequency\nWavelength --> WaveMotion\nFrequency --> WaveMotion\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Wavelength and Frequency in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "Wavelength and frequency are two fundamental properties of waves. Wavelength is the distance between two repeating points of a wave, such as consecutive crests or compressions. Frequency describes how many wave cycles pass a point in one second. These two quantities are closely related: when frequency increases, the wavelength becomes shorter if the wave speed remains constant. Together they determine the characteristics of waves such as sound pitch or light color. Understanding wavelength and frequency helps scientists describe and compare different types of waves."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Wave Reflection work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Wave reflection occurs when a wave encounters a boundary or obstacle and bounces back into the original medium. This happens because the wave cannot pass fully through the boundary. For example, when light strikes a mirror, it reflects back at an angle equal to the angle of incidence. Reflection also occurs with sound waves, which is why echoes can be heard in large spaces. During reflection, the energy of the wave changes direction but continues traveling through the medium.\n\n```mermaid\ngraph LR\nIncomingWave --> Boundary\nBoundary --> Reflection\nReflection --> OutgoingWave\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Wave Refraction."
+      },
+      {
+        "from": "gpt",
+        "value": "Wave refraction occurs when a wave changes direction as it passes from one medium to another. This happens because the wave speed changes in the new medium. For example, when light moves from air into water, it slows down and bends toward the normal line. Refraction explains why objects underwater appear shifted from their actual position. The bending occurs because different parts of the wave change speed at different times as they enter the new medium.\n\n```mermaid\ngraph LR\nWaveInMedium1 --> Boundary\nBoundary --> SpeedChange\nSpeedChange --> DirectionChange\nDirectionChange --> RefractedWave\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Wave Diffraction."
+      },
+      {
+        "from": "gpt",
+        "value": "Wave diffraction is the bending or spreading of waves when they pass through a small opening or around an obstacle. Instead of continuing in a straight line, the wave spreads out into the region beyond the barrier. This effect is more noticeable when the size of the opening is similar to the wavelength of the wave. Diffraction occurs with sound, water, and light waves. It helps explain why sound can be heard around corners and why waves spread after passing through narrow gaps.\n\n```mermaid\ngraph LR\nWave --> NarrowOpening\nNarrowOpening --> SpreadingWave\nSpreadingWave --> Diffraction\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Wave Interference."
+      },
+      {
+        "from": "gpt",
+        "value": "Wave interference occurs when two or more waves meet and combine with each other. When this happens, their displacements add together to form a new pattern of waves. The resulting wave can be stronger or weaker depending on how the individual waves interact. Interference is commonly seen in water waves, sound waves, and light waves. It helps explain many natural phenomena such as noise patterns, diffraction patterns, and the colorful patterns seen in thin films like soap bubbles.\n\n```mermaid\ngraph LR\nWave1 --> Combination\nWave2 --> Combination\nCombination --> ResultingWave\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Constructive Interference?"
+      },
+      {
+        "from": "gpt",
+        "value": "Constructive interference occurs when two waves meet in such a way that their crests align with crests and troughs align with troughs. When this happens, the amplitudes of the waves add together, producing a wave with a larger amplitude. This results in a stronger signal or brighter light intensity depending on the type of wave. Constructive interference is commonly observed in sound waves and light waves and is responsible for many wave patterns seen in experiments."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Destructive Interference."
+      },
+      {
+        "from": "gpt",
+        "value": "Destructive interference happens when two waves meet in opposite phases. In this case, the crest of one wave aligns with the trough of another. When their displacements combine, they partially or completely cancel each other out. This reduces the overall amplitude of the resulting wave and may even produce no visible wave at certain points. Destructive interference is important in noise-canceling technology and in wave experiments where patterns of bright and dark regions appear due to wave cancellation."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Standing Waves."
+      },
+      {
+        "from": "gpt",
+        "value": "Standing waves form when two waves with the same frequency and amplitude travel in opposite directions and interfere with each other. Instead of moving through the medium, the wave pattern appears stationary. Certain points remain fixed while others oscillate strongly. These waves commonly occur in vibrating strings, air columns in musical instruments, and microwave cavities. Standing waves result from repeated reflection and interference of waves within a confined space.\n\n```mermaid\ngraph LR\nWaveRight --> Interference\nWaveLeft --> Interference\nInterference --> StandingWave\nStandingWave --> Nodes\nStandingWave --> Antinodes\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Nodes and Antinodes."
+      },
+      {
+        "from": "gpt",
+        "value": "Nodes and antinodes are features of standing waves. A node is a point along the wave that remains stationary because destructive interference occurs there, causing zero displacement. An antinode is a point where the wave oscillates with maximum amplitude due to constructive interference. These points appear in fixed positions along the medium, such as a vibrating string or air column in a musical instrument. The pattern of nodes and antinodes helps determine the frequency and harmonics of the standing wave."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Sound Waves."
+      },
+      {
+        "from": "gpt",
+        "value": "Sound waves are mechanical waves that travel through a medium such as air, water, or solids. They are produced when an object vibrates and causes nearby particles to move back and forth. These vibrations create alternating regions of compression and rarefaction that move through the medium. Because sound requires particles to transfer energy, it cannot travel through empty space. The speed and behavior of sound depend on properties of the medium, including temperature and density."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Speed of Sound."
+      },
+      {
+        "from": "gpt",
+        "value": "The speed of sound is the rate at which sound waves travel through a medium. It depends mainly on the medium's elasticity and density. In general, sound travels faster in solids, slower in liquids, and slowest in gases. In air at room temperature, sound travels at about 343 meters per second. Temperature also affects the speed because warmer air allows particles to vibrate and transfer energy more quickly. Understanding the speed of sound is important for acoustics, communication, and studying wave behavior."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Doppler Effect work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Doppler Effect occurs when the source of a wave or the observer moves relative to each other. This motion changes the observed frequency of the wave. When the source moves toward the observer, the waves are compressed, increasing the observed frequency. When it moves away, the waves spread out and the frequency decreases. A common example is the change in pitch of a passing ambulance siren. The effect occurs with sound waves, light waves, and other types of waves.\n\n```mermaid\ngraph LR\nMovingSource --> WaveCompression\nWaveCompression --> HigherFrequency\nMovingAway --> WaveStretching\nWaveStretching --> LowerFrequency\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Beats in Sound Waves."
+      },
+      {
+        "from": "gpt",
+        "value": "Beats occur when two sound waves with slightly different frequencies interfere with each other. As the waves combine, they alternately reinforce and cancel each other. This causes the sound to vary in loudness over time, producing a pulsating effect known as beats. The beat frequency equals the difference between the two original frequencies. Musicians often use beats when tuning instruments because the beats disappear when the frequencies become equal."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Loudness and Intensity of Sound?"
+      },
+      {
+        "from": "gpt",
+        "value": "Loudness and intensity describe how strong a sound appears. Intensity is the physical measure of sound energy passing through an area per unit time. It depends on the amplitude of the sound wave. Loudness, on the other hand, is the human perception of that intensity. Our ears interpret stronger sound waves as louder sounds. Loudness is measured in decibels and can vary depending on both the intensity and the sensitivity of human hearing."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Pitch and Frequency."
+      },
+      {
+        "from": "gpt",
+        "value": "Pitch is the perception of how high or low a sound seems to the human ear, and it is closely related to the frequency of the sound wave. Frequency measures how many vibrations occur each second. Higher frequency sound waves produce higher pitch, while lower frequency waves produce deeper sounds. For example, a whistle produces high-frequency vibrations, while a drum produces lower-frequency vibrations. Pitch is an important property in music and acoustics because it allows us to distinguish different musical notes."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Echo and Reverberation."
+      },
+      {
+        "from": "gpt",
+        "value": "Echo and reverberation occur when sound waves reflect from surfaces such as walls or mountains. An echo is a distinct repetition of a sound caused by reflection from a distant surface. Reverberation happens when multiple reflections occur in quick succession, causing the sound to persist for a short time after the source stops. These effects are important in acoustics and influence how sound behaves in large halls, rooms, and open environments.\n\n```mermaid\ngraph LR\nSoundSource --> ReflectionSurface\nReflectionSurface --> Echo\nReflectionSurface --> MultipleReflections\nMultipleReflections --> Reverberation\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Light as an Electromagnetic Wave."
+      },
+      {
+        "from": "gpt",
+        "value": "Light is a form of electromagnetic wave that can travel through empty space without needing a medium. It consists of oscillating electric and magnetic fields that move perpendicular to each other and to the direction of travel. These waves carry energy and can move at the speed of light in a vacuum. Light behaves both as a wave and as particles called photons. This dual nature allows light to explain many phenomena such as reflection, refraction, and interference."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about the Electromagnetic Spectrum."
+      },
+      {
+        "from": "gpt",
+        "value": "The electromagnetic spectrum is the full range of electromagnetic waves arranged according to their wavelengths or frequencies. It includes radio waves, microwaves, infrared radiation, visible light, ultraviolet radiation, X-rays, and gamma rays. Although these waves differ in energy and frequency, they all travel at the speed of light in a vacuum. Each region of the spectrum has different applications, such as communication, medical imaging, and astronomy. Visible light is only a small portion of the entire spectrum that human eyes can detect."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Reflection of Light."
+      },
+      {
+        "from": "gpt",
+        "value": "Reflection of light occurs when light rays strike a surface and bounce back into the same medium. The law of reflection states that the angle of incidence equals the angle of reflection. Smooth surfaces such as mirrors produce clear reflections, while rough surfaces scatter light in many directions. Reflection helps us see objects and is used in devices like mirrors, periscopes, and optical instruments. The direction change happens because light interacts with the surface of the material.\n\n```mermaid\ngraph LR\nIncidentLight --> Surface\nSurface --> ReflectedLight\nIncidentLight --> AngleOfIncidence\nReflectedLight --> AngleOfReflection\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Law of Reflection."
+      },
+      {
+        "from": "gpt",
+        "value": "The law of reflection describes how light behaves when it hits a reflective surface like a mirror. It states that the angle of incidence (the angle between the incoming ray and the normal line) is equal to the angle of reflection (the angle between the reflected ray and the normal). This happens because light follows the path that preserves energy and symmetry at the surface. The normal line is an imaginary line drawn perpendicular to the surface at the point of contact. This law explains how mirrors produce clear images and why light bounces predictably from smooth surfaces.\n\n```mermaid\ngraph LR\nIncidentRay --> Surface\nSurface --> ReflectedRay\nNormalLine --> Surface\nIncidentRay --> NormalLine\nReflectedRay --> NormalLine\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does refraction of light work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Refraction is the bending of light when it travels from one medium to another, such as from air into water or glass. This bending occurs because light changes speed when it enters a different material. If light moves into a denser medium, it slows down and bends toward the normal. If it moves into a less dense medium, it speeds up and bends away from the normal. Refraction explains why objects underwater appear shifted from their true position and how lenses focus light in optical devices like cameras and microscopes.\n\n```mermaid\ngraph LR\nAir --> Boundary\nBoundary --> Glass\nIncidentRay --> Boundary\nBoundary --> RefractedRay\nRefractedRay --> Medium2\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Snell's Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Snell's Law describes how light bends when passing between two materials with different refractive indices. It states that the ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media. This constant depends on the refractive indices of the materials. Physically, the law arises because light changes speed when it enters a new medium, causing its direction to adjust. Snell's Law is used to design lenses, optical instruments, and fiber-optic communication systems where controlling the path of light is essential.\n\n```mermaid\ngraph LR\nIncidentAngle --> Boundary\nBoundary --> RefractedAngle\nMedium1 --> Boundary\nBoundary --> Medium2\nMedium1 --> Speed1\nMedium2 --> Speed2\nSpeed1 --> Bending\nSpeed2 --> Bending\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Total Internal Reflection in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "Total internal reflection occurs when light traveling inside a denser medium, such as glass or water, strikes the boundary with a less dense medium at a large angle. If the angle of incidence is greater than a specific value called the critical angle, the light does not refract into the second medium. Instead, it reflects completely back into the original medium. This phenomenon occurs because light cannot bend enough to escape the denser material. Total internal reflection is used in technologies such as optical fibers, prisms in binoculars, and medical imaging tools.\n\n```mermaid\ngraph LR\nDenseMedium --> Boundary\nBoundary --> Reflection\nIncidentRay --> Boundary\nBoundary --> ReflectedRay\nCriticalAngle --> TotalReflection\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain optical fibers."
+      },
+      {
+        "from": "gpt",
+        "value": "Optical fibers are thin strands of glass or plastic used to transmit light signals over long distances. They work using the principle of total internal reflection. Light entering the fiber reflects repeatedly along the inner walls without escaping, allowing the signal to travel with very little loss. The fiber has a core surrounded by a cladding layer with a lower refractive index, which ensures the light remains trapped inside. Optical fibers are widely used in internet communication, medical imaging, and sensors because they can transmit large amounts of data quickly and efficiently.\n\n```mermaid\ngraph LR\nLightSource --> FiberCore\nFiberCore --> InternalReflection\nInternalReflection --> SignalTransmission\nCladding --> FiberCore\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain dispersion of light."
+      },
+      {
+        "from": "gpt",
+        "value": "Dispersion of light occurs when white light separates into its different colors while passing through a material such as a prism. Each color of light has a slightly different wavelength and therefore travels at a slightly different speed in the material. Because of this difference, each color bends by a different amount during refraction. Violet light bends the most, while red light bends the least. This spreading of colors creates a visible spectrum. Dispersion explains natural phenomena like rainbows and is also important in spectrometers used to analyze the composition of light sources.\n\n```mermaid\ngraph LR\nWhiteLight --> Prism\nPrism --> Red\nPrism --> Orange\nPrism --> Yellow\nPrism --> Green\nPrism --> Blue\nPrism --> Violet\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How are rainbows formed?"
+      },
+      {
+        "from": "gpt",
+        "value": "Rainbows form when sunlight interacts with water droplets in the atmosphere. When light enters a droplet, it first refracts, causing the light to bend and separate into different colors due to dispersion. The light then reflects off the inner surface of the droplet and exits through another refraction. Each color emerges at a slightly different angle, producing the circular arc of colors seen in the sky. The observer must stand with the Sun behind them and rain in front to see a rainbow. This combination of refraction, reflection, and dispersion creates the colorful spectrum.\n\n```mermaid\ngraph LR\nSunlight --> WaterDroplet\nWaterDroplet --> Refraction\nRefraction --> InternalReflection\nInternalReflection --> RefractionExit\nRefractionExit --> Spectrum\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is diffraction of light?"
+      },
+      {
+        "from": "gpt",
+        "value": "Diffraction of light is the bending and spreading of light waves when they pass through a small opening or around an obstacle. This occurs because light behaves like a wave. When the size of the opening or obstacle is comparable to the wavelength of light, the waves spread out instead of traveling in straight lines. This spreading creates patterns of bright and dark regions on a screen. Diffraction demonstrates the wave nature of light and is used in devices such as diffraction gratings to study wavelengths and analyze the composition of light sources.\n\n```mermaid\ngraph LR\nLightWave --> NarrowSlit\nNarrowSlit --> SpreadingWaves\nSpreadingWaves --> BrightFringes\nSpreadingWaves --> DarkFringes\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about interference of light."
+      },
+      {
+        "from": "gpt",
+        "value": "Interference occurs when two or more light waves overlap and combine with each other. Because light behaves like a wave, the peaks and troughs of different waves interact. When peaks meet peaks, the waves reinforce each other, producing bright regions called constructive interference. When peaks meet troughs, they cancel each other, producing dark regions called destructive interference. This pattern of alternating bright and dark bands is known as an interference pattern. Interference helps scientists understand the wave nature of light and is used in technologies such as interferometers and precision measurement tools.\n\n```mermaid\ngraph LR\nWave1 --> Overlap\nWave2 --> Overlap\nOverlap --> ConstructiveInterference\nOverlap --> DestructiveInterference\nConstructiveInterference --> BrightFringes\nDestructiveInterference --> DarkFringes\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Young's Double Slit Experiment."
+      },
+      {
+        "from": "gpt",
+        "value": "Young's Double Slit Experiment demonstrates the wave nature of light. In this experiment, light passes through two very narrow slits placed close together. Each slit acts as a new source of waves. These waves spread out and overlap on a screen behind the slits. When the waves meet, they produce interference patterns consisting of bright and dark fringes. Bright regions occur where waves reinforce each other, while dark regions occur where waves cancel each other. This experiment provided strong evidence that light behaves as a wave rather than purely as particles.\n\n```mermaid\ngraph LR\nLightSource --> DoubleSlits\nDoubleSlits --> Wave1\nDoubleSlits --> Wave2\nWave1 --> Screen\nWave2 --> Screen\nScreen --> InterferencePattern\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is polarization of light?"
+      },
+      {
+        "from": "gpt",
+        "value": "Polarization refers to the restriction of light waves so that they vibrate in only one direction. Normally, light waves vibrate in many directions perpendicular to their direction of travel. When light passes through a polarizing filter, only waves vibrating in one specific direction are allowed to pass through. This process produces polarized light. Polarization is useful in many technologies such as sunglasses, photography filters, and LCD screens. Polarized sunglasses reduce glare by blocking light reflected from flat surfaces like water or roads, improving visual comfort and clarity.\n\n```mermaid\ngraph LR\nUnpolarizedLight --> PolarizingFilter\nPolarizingFilter --> PolarizedLight\nPolarizedLight --> SingleDirectionVibration\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain defects of vision."
+      },
+      {
+        "from": "gpt",
+        "value": "Defects of vision occur when the eye cannot properly focus light on the retina. In a normal eye, the cornea and lens bend incoming light so that images form exactly on the retina. In myopia (nearsightedness), distant objects focus in front of the retina, making them blurry. In hypermetropia (farsightedness), images focus behind the retina, making nearby objects unclear. These defects occur due to changes in eyeball length or lens curvature. Corrective lenses adjust the path of light so the image again forms on the retina, restoring clear vision.\n\n```mermaid\ngraph LR\nLight --> Eye_Lens\nEye_Lens --> Focus\nFocus --> Retina\nRetina --> Clear_Image\nDefect --> Misfocused_Light\nMisfocused_Light --> Blurry_Image\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is electric charge in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "Electric charge is a fundamental property of matter that causes objects to experience electrical forces. There are two types of charge: positive and negative. Objects with the same type of charge repel each other, while opposite charges attract. Charge is carried by particles such as electrons (negative) and protons (positive). In everyday situations, electric charge becomes noticeable when electrons move from one object to another, creating static electricity or electric currents. Charge is conserved, meaning it cannot be created or destroyed, only transferred between objects.\n\n```mermaid\ngraph LR\nProtons --> Positive_Charge\nElectrons --> Negative_Charge\nPositive_Charge --> Attraction\nNegative_Charge --> Attraction\nSame_Charges --> Repulsion\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Coulomb's Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Coulomb's Law describes the force between two electric charges. It states that the force is directly proportional to the product of the charges and inversely proportional to the square of the distance between them. This means larger charges create stronger forces, while increasing the distance weakens the force quickly. The force acts along the line joining the two charges. Like charges repel each other and opposite charges attract. Coulomb's Law helps explain how charged particles interact in electric fields and forms the foundation of electrostatics.\n\n```mermaid\ngraph LR\nCharge1 --> Electric_Force\nCharge2 --> Electric_Force\nDistance --> Electric_Force\nElectric_Force --> Attraction_or_Repulsion\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does an electric field work?"
+      },
+      {
+        "from": "gpt",
+        "value": "An electric field describes the region around a charged object where other charges experience a force. Instead of thinking about forces acting at a distance instantly, physics uses electric fields to represent how charges influence space around them. When another charge enters this region, it feels a force due to the field. The direction of the electric field is defined as the direction a positive test charge would move. Stronger charges produce stronger electric fields, and the field becomes weaker as distance from the charge increases.\n\n```mermaid\ngraph LR\nCharge --> Electric_Field\nElectric_Field --> Test_Charge\nTest_Charge --> Electric_Force\nElectric_Force --> Motion\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about electric field lines."
+      },
+      {
+        "from": "gpt",
+        "value": "Electric field lines are visual tools used to represent electric fields around charges. They show both the direction and strength of the field. The lines point away from positive charges and toward negative charges, indicating the direction a positive test charge would move. The density of the lines represents field strength\u2014closer lines mean a stronger electric field. Field lines never cross each other and always start or end on charges. This visualization helps understand how charges interact and how forces act within an electric field.\n\n```mermaid\ngraph LR\nPositive_Charge --> Field_Lines\nField_Lines --> Space\nField_Lines --> Negative_Charge\nDense_Lines --> Strong_Field\nSparse_Lines --> Weak_Field\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is electric potential?"
+      },
+      {
+        "from": "gpt",
+        "value": "Electric potential is the amount of electric potential energy per unit charge at a point in an electric field. It tells us how much energy a charge would gain or lose if placed at that location. A region with higher electric potential means a positive charge would have more stored energy there. Charges naturally move from regions of higher potential to lower potential, similar to how objects roll downhill due to gravity. Electric potential helps explain how energy moves in circuits and fields, and it is measured in volts."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain electric potential energy."
+      },
+      {
+        "from": "gpt",
+        "value": "Electric potential energy is the energy stored in a system of charged particles due to their positions relative to each other. When two charges interact, work must be done to move them closer together or farther apart. This work becomes stored energy in the electric field between them. If the charges are released, this stored energy can convert into motion or other forms of energy. Electric potential energy plays an important role in electric circuits, atomic interactions, and energy storage devices such as capacitors.\n\n```mermaid\ngraph LR\nCharge_A --> Electric_Field\nCharge_B --> Electric_Field\nElectric_Field --> Stored_Energy\nStored_Energy --> Motion\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is potential difference in electricity?"
+      },
+      {
+        "from": "gpt",
+        "value": "Potential difference, commonly called voltage, is the difference in electric potential between two points in a circuit. It represents the amount of energy transferred per unit charge when charges move between those points. A battery creates a potential difference that pushes charges through a circuit, producing electric current. The greater the potential difference, the more energy each charge carries. Potential difference is measured in volts and is essential for powering electrical devices, because it drives the movement of electrons through conductors."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain capacitance."
+      },
+      {
+        "from": "gpt",
+        "value": "Capacitance is the ability of a system to store electric charge. It is most commonly associated with capacitors, which are devices designed to hold charge temporarily. When a voltage is applied across a capacitor, positive charge accumulates on one plate while negative charge gathers on the other. The electric field formed between the plates stores energy. Capacitance depends on the size of the plates, the distance between them, and the material between them. Capacitors are widely used in electronics for energy storage, filtering signals, and stabilizing power supplies.\n\n```mermaid\ngraph LR\nVoltage_Source --> Capacitor\nCapacitor --> Positive_Plate\nCapacitor --> Negative_Plate\nPositive_Plate --> Electric_Field\nNegative_Plate --> Electric_Field\nElectric_Field --> Stored_Energy\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does a parallel plate capacitor work?"
+      },
+      {
+        "from": "gpt",
+        "value": "A parallel plate capacitor consists of two flat conductive plates placed close together with an insulating material between them. When connected to a voltage source, electrons accumulate on one plate, creating a negative charge, while the other plate becomes positively charged. This separation of charge creates a strong electric field between the plates. The electric field stores energy that can later be released into a circuit. Increasing the plate area increases capacitance, while increasing the distance between plates decreases it.\n\n```mermaid\ngraph LR\nBattery --> Plate_Positive\nBattery --> Plate_Negative\nPlate_Positive --> Electric_Field\nPlate_Negative --> Electric_Field\nElectric_Field --> Stored_Energy\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain capacitors in series."
+      },
+      {
+        "from": "gpt",
+        "value": "When capacitors are connected in series, they are arranged one after another along the same path. In this configuration, the same charge flows through each capacitor, but the total voltage is divided among them. Because each capacitor shares the voltage, the overall capacitance becomes smaller than any individual capacitor. Series connections are useful when circuits need to handle higher voltages. The effective capacitance depends on the reciprocal sum of the individual capacitances.\n\n```mermaid\ngraph LR\nBattery --> C1\nC1 --> C2\nC2 --> C3\nC3 --> Circuit_Return\nVoltage --> Divided_Across_Capacitors\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about capacitors in parallel."
+      },
+      {
+        "from": "gpt",
+        "value": "Capacitors connected in parallel share the same two connection points in a circuit. In this arrangement, each capacitor experiences the same voltage. However, the total charge stored in the system increases because the charges stored by each capacitor add together. As a result, the equivalent capacitance becomes larger than any single capacitor in the group. Parallel connections are often used when circuits require greater energy storage capacity while maintaining the same voltage level.\n\n```mermaid\ngraph LR\nBattery --> C1\nBattery --> C2\nBattery --> C3\nC1 --> Return\nC2 --> Return\nC3 --> Return\nCharges --> Add_Together\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is electric current?"
+      },
+      {
+        "from": "gpt",
+        "value": "Electric current is the flow of electric charges through a conductor. In most electrical circuits, the moving charges are electrons traveling through a metal wire. When a voltage source like a battery creates a potential difference, electrons begin moving through the circuit. This movement of charge transfers energy that can power devices such as lights, motors, and electronics. Electric current is measured in amperes (amps), which represent the amount of charge flowing through a conductor per second.\n\n```mermaid\ngraph LR\nBattery --> Potential_Difference\nPotential_Difference --> Electron_Flow\nElectron_Flow --> Electric_Current\nElectric_Current --> Device\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain drift velocity of charges."
+      },
+      {
+        "from": "gpt",
+        "value": "Drift velocity refers to the average speed at which charged particles move through a conductor under the influence of an electric field. In a metal wire, electrons move randomly due to thermal motion, but when a voltage is applied, they gain a small net motion in one direction. This slow, steady movement is called drift velocity. Although individual electrons move slowly, the collective motion of many electrons produces an electric current that can deliver energy quickly through a circuit.\n\n```mermaid\ngraph LR\nElectric_Field --> Electrons\nElectrons --> Random_Motion\nElectric_Field --> Net_Drift\nNet_Drift --> Electric_Current\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Ohm's Law?"
+      },
+      {
+        "from": "gpt",
+        "value": "Ohm's Law describes the relationship between voltage, current, and resistance in an electrical circuit. It states that the current flowing through a conductor is directly proportional to the voltage applied across it and inversely proportional to its resistance. This means increasing voltage increases current, while increasing resistance decreases current. Ohm's Law is commonly expressed as V = IR, where V is voltage, I is current, and R is resistance. This law helps engineers design circuits and predict how electrical components behave under different conditions."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain resistance in conductors."
+      },
+      {
+        "from": "gpt",
+        "value": "Resistance is the property of a material that opposes the flow of electric current. In a conductor, electrons move through a lattice of atoms. As they travel, they frequently collide with atoms and impurities, which slows their movement and resists current flow. The amount of resistance depends on factors such as the length of the conductor, its cross-sectional area, and the material it is made of. Materials with low resistance, like copper, allow current to flow easily, while materials with high resistance restrict current flow."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is resistivity?"
+      },
+      {
+        "from": "gpt",
+        "value": "Resistivity is a material property that measures how strongly a substance resists the flow of electric current. Unlike resistance, which depends on the size and shape of an object, resistivity depends only on the type of material. Materials such as copper and silver have very low resistivity, making them good conductors. Insulators like rubber or glass have very high resistivity, preventing current flow. Resistivity helps scientists and engineers compare materials and choose the best conductors for electrical wires and electronic devices."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain temperature dependence of resistance."
+      },
+      {
+        "from": "gpt",
+        "value": "The resistance of most conductors changes with temperature. As temperature increases, atoms in the material vibrate more strongly. These vibrations cause more collisions with moving electrons, which increases resistance and reduces current flow. This effect is especially noticeable in metals. In contrast, some materials like semiconductors behave differently, where resistance decreases as temperature rises. Understanding temperature dependence is important for designing electronic devices and ensuring circuits work reliably under different environmental conditions."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is electrical power?"
+      },
+      {
+        "from": "gpt",
+        "value": "Electrical power is the rate at which electrical energy is transferred or used in a circuit. It describes how quickly energy flows from a source, such as a battery or power supply, to electrical devices. Electrical power depends on both voltage and current and is commonly expressed as P = VI. Higher voltage or current results in greater power delivered to the device. Electrical power is measured in watts and determines how much energy appliances consume while operating."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain electrical energy consumption."
+      },
+      {
+        "from": "gpt",
+        "value": "Electrical energy consumption refers to the total amount of electrical energy used by devices over time. It depends on both the electrical power of the device and how long it operates. Energy consumption is commonly measured in kilowatt-hours (kWh), which is the unit used in electricity bills. For example, a device that uses more power or runs for a longer time consumes more energy. Understanding energy consumption helps people manage electricity usage and design energy-efficient systems."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain series circuits."
+      },
+      {
+        "from": "gpt",
+        "value": "In a series circuit, electrical components are connected one after another in a single path. This means the same current flows through every component in the circuit. If one component stops working or the circuit breaks, current stops everywhere. The total resistance of the circuit is the sum of all individual resistances, which reduces the overall current. Series circuits are simple and commonly used in basic electronic systems where the same current must pass through multiple components.\n\n```mermaid\ngraph LR\nBattery --> R1\nR1 --> R2\nR2 --> R3\nR3 --> Battery_Return\nCurrent --> Same_Through_All\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about parallel circuits."
+      },
+      {
+        "from": "gpt",
+        "value": "In a parallel circuit, components are connected across the same two points, creating multiple paths for current to flow. Each branch receives the same voltage, but the current can divide between branches. If one branch fails, the others can continue working, making parallel circuits more reliable. Because current has multiple paths, the total resistance of a parallel circuit is lower than the resistance of any single branch. Most household electrical systems use parallel circuits so appliances can operate independently.\n\n```mermaid\ngraph LR\nBattery --> Branch1\nBattery --> Branch2\nBattery --> Branch3\nBranch1 --> Return\nBranch2 --> Return\nBranch3 --> Return\nCurrent --> Divides\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Kirchhoff's Current Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Kirchhoff's Current Law (KCL) states that the total current entering a junction in a circuit must equal the total current leaving the junction. This rule follows from the conservation of electric charge, meaning charge cannot accumulate at a node. If multiple wires meet at a point, the currents flowing into that point must balance with the currents flowing out. KCL is widely used to analyze complex electrical circuits and determine unknown currents in different branches.\n\n```mermaid\ngraph LR\nI1 --> Junction\nI2 --> Junction\nJunction --> I3\nJunction --> I4\nI1_plus_I2 --> Equals\nEquals --> I3_plus_I4\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Kirchhoff's Voltage Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Kirchhoff's Voltage Law (KVL) states that the total voltage around any closed loop in an electrical circuit must equal zero. In other words, the energy supplied by voltage sources is exactly balanced by the energy used by circuit components such as resistors. As charges move around the loop, they gain energy from batteries and lose energy in electrical devices. KVL helps engineers analyze circuits and calculate voltage drops across components.\n\n```mermaid\ngraph LR\nBattery --> Resistor1\nResistor1 --> Resistor2\nResistor2 --> Battery\nVoltage_Rise --> Battery\nVoltage_Drop --> Resistors\nTotal_Voltage --> Zero_Loop\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is a Wheatstone bridge?"
+      },
+      {
+        "from": "gpt",
+        "value": "A Wheatstone bridge is a circuit used to measure unknown electrical resistance with high precision. It consists of four resistors arranged in a diamond shape with a voltage source applied across the circuit and a galvanometer connected between the middle nodes. When the bridge is balanced, no current flows through the galvanometer. At this point, the ratios of the resistances in the two branches are equal, allowing the unknown resistance to be calculated accurately. Wheatstone bridges are widely used in sensors and measurement devices.\n\n```mermaid\ngraph LR\nR1 --> JunctionA\nR2 --> JunctionA\nR3 --> JunctionB\nRx --> JunctionB\nJunctionA --> Galvanometer\nJunctionB --> Galvanometer\nBattery --> Circuit\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Magnetic Fields."
+      },
+      {
+        "from": "gpt",
+        "value": "A magnetic field is the region around a magnet or a moving electric charge where magnetic forces can be detected. If you place another magnet or a moving charge inside this region, it experiences a force. Magnetic fields are invisible but can be represented using field lines that show the direction and strength of the field. The field is strongest near the poles of a magnet and weaker farther away. Magnetic fields play an important role in many technologies such as electric motors, generators, and magnetic storage devices.\n\n```mermaid\ngraph LR\nMagnet --> MagneticField\nMagneticField --> ForceOnCharges\nMagneticField --> ForceOnMagnets\nForceOnCharges --> Motion\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Magnetic Field Lines."
+      },
+      {
+        "from": "gpt",
+        "value": "Magnetic field lines are imaginary lines used to visualize the direction and strength of a magnetic field. They always emerge from the north pole of a magnet and enter the south pole. The closer the lines are to each other, the stronger the magnetic field in that region. These lines never intersect because the magnetic field has only one direction at any point. Magnetic field lines help us understand how magnetic forces act around magnets and electric currents, making invisible magnetic effects easier to study and predict.\n\n```mermaid\ngraph LR\nNorthPole --> FieldLines\nFieldLines --> SpaceAroundMagnet\nSpaceAroundMagnet --> SouthPole\nFieldLines --> FieldStrength\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Magnetic Field Around a Current-Carrying Wire work?"
+      },
+      {
+        "from": "gpt",
+        "value": "When an electric current flows through a wire, it produces a magnetic field around the wire. This happens because moving electric charges generate magnetic effects. The magnetic field forms circular loops around the wire. The direction of these loops can be determined using the right-hand thumb rule: if you point your thumb in the direction of the current, your fingers curl in the direction of the magnetic field lines. This phenomenon shows the connection between electricity and magnetism and is fundamental to devices like electromagnets and electric motors.\n\n```mermaid\ngraph LR\nElectricCurrent --> MovingCharges\nMovingCharges --> MagneticField\nMagneticField --> CircularFieldLines\nCircularFieldLines --> MagneticEffect\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Magnetic Field of a Solenoid in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "A solenoid is a long coil of wire through which electric current flows. When current passes through the coil, a magnetic field is produced that is very similar to the field of a bar magnet. Inside the solenoid, the magnetic field lines are nearly parallel and strong, while outside they spread out and become weaker. The ends of the solenoid behave like the north and south poles of a magnet. Because the magnetic field inside is uniform, solenoids are widely used in electromagnets, relays, and many electrical devices.\n\n```mermaid\ngraph LR\nCurrent --> Coil\nCoil --> Solenoid\nSolenoid --> MagneticField\nMagneticField --> NorthSouthPoles\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Magnetic Force on a Moving Charge."
+      },
+      {
+        "from": "gpt",
+        "value": "A moving electric charge experiences a magnetic force when it enters a magnetic field. The force acts perpendicular to both the direction of motion of the charge and the direction of the magnetic field. Because the force is sideways to the motion, it often causes the charge to move in a curved or circular path rather than speeding up or slowing down. This effect is important in devices like particle accelerators and mass spectrometers. The interaction between motion and magnetic fields shows how electricity and magnetism are deeply connected.\n\n```mermaid\ngraph LR\nMovingCharge --> MagneticField\nMagneticField --> MagneticForce\nMagneticForce --> CurvedMotion\nCurvedMotion --> CircularPath\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Lorentz Force."
+      },
+      {
+        "from": "gpt",
+        "value": "The Lorentz force describes the total force experienced by a charged particle moving in electric and magnetic fields. It combines two effects: the electric force caused by electric fields and the magnetic force caused by magnetic fields. When a charged particle moves through these fields, the electric field pushes or pulls the charge directly, while the magnetic field deflects its motion sideways. Together, these forces determine the particle's path. The Lorentz force is important in understanding plasma physics, particle accelerators, and many electromagnetic devices."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Force on a Current-Carrying Conductor work?"
+      },
+      {
+        "from": "gpt",
+        "value": "When a conductor carrying electric current is placed inside a magnetic field, it experiences a force. This happens because the moving charges inside the conductor interact with the magnetic field. The direction of the force can be predicted using Fleming's left-hand rule. If the current and magnetic field are perpendicular, the conductor moves in a direction perpendicular to both. This principle is the basis of many devices such as electric motors, where electrical energy is converted into mechanical motion through magnetic forces acting on wires.\n\n```mermaid\ngraph LR\nElectricCurrent --> Conductor\nConductor --> MagneticField\nMagneticField --> MagneticForce\nMagneticForce --> Motion\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain the Electric Motor Principle."
+      },
+      {
+        "from": "gpt",
+        "value": "The electric motor principle states that a current-carrying conductor placed in a magnetic field experiences a force that can produce motion. In an electric motor, coils of wire carry current while placed between magnetic poles. The magnetic field interacts with the current in the wires, generating forces that cause the coil to rotate. This rotation converts electrical energy into mechanical energy. Electric motors are widely used in everyday devices such as fans, washing machines, and electric vehicles.\n\n```mermaid\ngraph LR\nElectricEnergy --> CurrentInCoil\nCurrentInCoil --> MagneticField\nMagneticField --> ForceOnCoil\nForceOnCoil --> Rotation\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Electromagnetic Induction."
+      },
+      {
+        "from": "gpt",
+        "value": "Electromagnetic induction is the process by which an electric current is generated in a conductor when the magnetic field around it changes. This can happen if a magnet moves near a coil of wire or if the magnetic field through the coil varies. The changing magnetic field pushes charges inside the conductor, producing an induced current. This principle is fundamental to the operation of generators and transformers, which convert mechanical energy or changing currents into electrical energy.\n\n```mermaid\ngraph LR\nChangingMagneticField --> InducedVoltage\nInducedVoltage --> Current\nCurrent --> ElectricalEnergy\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Faraday's Law of Induction?"
+      },
+      {
+        "from": "gpt",
+        "value": "Faraday's Law of Induction states that a changing magnetic field through a closed loop induces an electric voltage in that loop. The faster the magnetic field changes, the larger the induced voltage. This means that moving a magnet quickly through a coil produces a stronger current than moving it slowly. The law explains how generators produce electricity and how transformers change voltage levels in power systems. It shows that electricity can be generated directly from changing magnetic environments."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Lenz's Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Lenz's Law explains the direction of the current induced during electromagnetic induction. It states that the induced current always flows in a direction that opposes the change in magnetic field that produced it. This opposition follows the principle of energy conservation, preventing energy from appearing without effort. For example, when a magnet moves toward a coil, the induced current creates a magnetic field that pushes against the magnet. Lenz's Law ensures that energy must be supplied to create induced currents."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Induced Current?"
+      },
+      {
+        "from": "gpt",
+        "value": "Induced current is an electric current that is produced in a conductor when the magnetic field around it changes. Unlike normal current that comes from a battery, induced current arises due to electromagnetic induction. When a magnet moves near a coil of wire or when the magnetic field through the coil varies, charges inside the conductor begin to move, creating current. This effect is used in many technologies such as electric generators, induction cooktops, and wireless charging systems."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain how an AC Generator works."
+      },
+      {
+        "from": "gpt",
+        "value": "An AC generator converts mechanical energy into electrical energy using electromagnetic induction. In this device, a coil of wire rotates inside a magnetic field. As the coil turns, the magnetic field through it changes continuously. According to Faraday's Law, this changing magnetic field induces an electric current in the coil. Because the coil keeps rotating, the direction of current reverses periodically, producing alternating current (AC). AC generators are widely used in power plants to produce electricity for homes and industries.\n\n```mermaid\ngraph LR\nMechanicalRotation --> RotatingCoil\nRotatingCoil --> ChangingMagneticField\nChangingMagneticField --> InducedCurrent\nInducedCurrent --> AlternatingCurrent\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Transformer Principle."
+      },
+      {
+        "from": "gpt",
+        "value": "A transformer works on the principle of electromagnetic induction. It consists of two coils of wire called the primary and secondary coils, placed near each other. When alternating current flows through the primary coil, it produces a changing magnetic field. This changing field induces a voltage in the secondary coil. By adjusting the number of turns in each coil, the transformer can increase or decrease the voltage. Transformers are essential in power distribution systems because they help transmit electricity efficiently over long distances."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Alternating Current?"
+      },
+      {
+        "from": "gpt",
+        "value": "Alternating current (AC) is an electric current that periodically reverses its direction. Unlike direct current, which flows steadily in one direction, AC changes direction many times per second. This happens because the voltage source, such as a generator, produces a changing voltage. AC is widely used for power distribution because it can easily be transformed to higher or lower voltages using transformers. This makes it efficient for transmitting electricity over long distances."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about RMS Voltage and Current."
+      },
+      {
+        "from": "gpt",
+        "value": "RMS (root mean square) voltage and current are measures used to describe the effective value of alternating current. Since AC continuously changes direction and magnitude, its average value over time becomes zero. RMS values provide a way to compare AC with direct current by indicating the equivalent amount of power delivered. For example, household electricity is often described using RMS voltage because it reflects the actual heating or power effect of the alternating current."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Heating Effect of Current."
+      },
+      {
+        "from": "gpt",
+        "value": "The heating effect of electric current occurs when electric current passes through a conductor and produces heat. As electrons move through the material, they collide with atoms of the conductor. These collisions transfer energy to the atoms, increasing their vibrations and generating heat. This effect is used in many everyday devices such as electric heaters, irons, and toasters. The amount of heat produced depends on the current flowing through the conductor, its resistance, and the time the current flows."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Joule's Law of Heating?"
+      },
+      {
+        "from": "gpt",
+        "value": "Joule's Law of Heating states that the heat produced in a conductor by an electric current is proportional to the square of the current, the resistance of the conductor, and the time for which the current flows. This means that increasing the current significantly increases the heat produced. The law explains why wires heat up when large currents pass through them. It is important in designing electrical appliances and preventing overheating in electrical circuits."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Thermal Expansion."
+      },
+      {
+        "from": "gpt",
+        "value": "Thermal expansion is the tendency of materials to increase in size when their temperature rises. When a substance is heated, its particles gain energy and vibrate more strongly. This increased motion causes the particles to move slightly farther apart, resulting in an expansion of the material. Thermal expansion occurs in solids, liquids, and gases, although the amount of expansion differs for each. Engineers must consider this effect when designing bridges, railway tracks, and pipelines to prevent damage caused by temperature changes."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Linear Expansion of Solids?"
+      },
+      {
+        "from": "gpt",
+        "value": "Linear expansion refers to the increase in length of a solid when its temperature rises. As the solid heats up, the atoms vibrate more and move slightly farther apart, causing the object to expand along its length. Although the change is usually very small, it becomes important in large structures such as railway tracks or bridges. Engineers include small gaps between metal sections so that expansion during hot weather does not cause bending or structural damage."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Expansion of Liquids."
+      },
+      {
+        "from": "gpt",
+        "value": "Liquids expand when their temperature increases because the molecules gain energy and move farther apart. Since liquids do not have a fixed shape, their expansion is usually observed as an increase in volume. This principle is used in thermometers, where liquids such as mercury or alcohol rise in a narrow tube when heated. Liquid expansion is generally greater than that of solids because the molecules in liquids are less tightly bound together."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Expansion of Gases."
+      },
+      {
+        "from": "gpt",
+        "value": "Gases expand significantly when their temperature increases. In gases, particles move freely and are already far apart compared to solids and liquids. When heated, these particles move faster and spread out even more, increasing the volume of the gas. If the gas is confined in a container, the increased motion instead raises the pressure. This behavior of gases is important in engines, weather systems, and many industrial processes involving compressed gases."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Temperature and Heat in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "Temperature and heat are related but different concepts. Temperature measures how hot or cold an object is, which depends on the average kinetic energy of its particles. Heat, on the other hand, is the transfer of energy from one object to another due to a temperature difference. When heat flows into an object, its particles move faster, often increasing its temperature. Understanding the difference between heat and temperature helps explain many everyday processes such as cooking, melting, and climate changes."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Heat Transfer by Conduction."
+      },
+      {
+        "from": "gpt",
+        "value": "Conduction is the transfer of heat through a material without the movement of the material itself. It occurs mainly in solids where particles are closely packed. When one end of a material is heated, the particles vibrate faster and pass energy to neighboring particles through collisions. This process gradually transfers heat through the object. Metals are good conductors because their particles and free electrons transfer energy efficiently.\n\n```mermaid\ngraph LR\nHotRegion --> ParticleVibration\nParticleVibration --> EnergyTransfer\nEnergyTransfer --> NeighborParticles\nNeighborParticles --> HeatFlow\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Heat Transfer by Convection work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Convection is the transfer of heat through the movement of fluids such as liquids or gases. When a part of the fluid is heated, it becomes less dense and rises, while cooler, denser fluid sinks. This creates circulating currents that carry heat from one region to another. Convection is responsible for many natural processes, including ocean currents and atmospheric circulation. It also explains how boiling water circulates heat throughout a pot.\n\n```mermaid\ngraph LR\nHeating --> WarmFluid\nWarmFluid --> RisingMotion\nRisingMotion --> Circulation\nCirculation --> HeatDistribution\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Heat Transfer by Radiation."
+      },
+      {
+        "from": "gpt",
+        "value": "Heat transfer by radiation is the process where energy travels as electromagnetic waves, usually infrared radiation. Unlike conduction or convection, radiation does not require a medium, so heat from the Sun can travel through empty space to Earth. All objects emit thermal radiation depending on their temperature. Hotter objects emit more energy. When radiation reaches another object, the energy can be absorbed, increasing its temperature. This process explains why sunlight warms your skin or why a hot stove radiates heat even without touching it.\n\n```mermaid\ngraph LR\nHot_Object -->|Radiation| Energy_Waves\nEnergy_Waves --> Cooler_Object\nCooler_Object --> Temperature_Increase\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Specific Heat Capacity in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "Specific heat capacity describes how much heat energy is required to raise the temperature of a substance. It is defined as the amount of heat needed to increase the temperature of one kilogram of a material by one degree Celsius. Different materials store heat differently. For example, water has a high specific heat capacity, meaning it requires a lot of energy to heat up. This property helps regulate Earth's climate because oceans absorb large amounts of heat without drastic temperature changes. Materials with low specific heat capacity heat up and cool down much faster."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Latent Heat."
+      },
+      {
+        "from": "gpt",
+        "value": "Latent heat is the energy absorbed or released by a substance during a phase change without changing its temperature. When a solid melts or a liquid boils, energy is used to break the bonds between molecules rather than increasing their kinetic energy. For example, when ice melts into water, it absorbs latent heat of fusion while the temperature stays at 0\u00b0C until melting finishes. Similarly, boiling water absorbs latent heat of vaporization. This energy goes into changing the arrangement of molecules, allowing the substance to change its state while maintaining constant temperature."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How do Phase Changes of Matter work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Phase changes occur when matter transitions between solid, liquid, and gas states due to changes in energy. When heat is added, molecules gain energy and move more freely, causing melting or evaporation. When heat is removed, molecules slow down and form stronger bonds, leading to freezing or condensation. The temperature may remain constant during these changes because energy is used to break or form molecular bonds. Phase changes are common in nature, such as water freezing into ice or evaporating into vapor.\n\n```mermaid\ngraph LR\nSolid -->|Melting| Liquid\nLiquid -->|Evaporation| Gas\nGas -->|Condensation| Liquid\nLiquid -->|Freezing| Solid\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Melting and Freezing."
+      },
+      {
+        "from": "gpt",
+        "value": "Melting and freezing are opposite phase changes between solid and liquid states. Melting occurs when heat is added to a solid, giving molecules enough energy to break out of their fixed positions and move more freely as a liquid. Freezing happens when heat is removed from a liquid, causing molecules to slow down and arrange themselves into an ordered structure. During both processes, the temperature remains constant until the phase change is complete because energy is used to rearrange molecular bonds rather than increase temperature.\n\n```mermaid\ngraph LR\nSolid -->|Add Heat| Melting\nMelting --> Liquid\nLiquid -->|Remove Heat| Freezing\nFreezing --> Solid\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Evaporation and Boiling work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Evaporation and boiling are processes where liquids turn into gases. Evaporation occurs at the surface of a liquid when some molecules gain enough energy to escape into the air. It can happen at any temperature. Boiling occurs throughout the liquid when it reaches its boiling point, forming bubbles of vapor inside the liquid. Both processes involve molecules gaining enough energy to overcome the forces holding them together in liquid form.\n\n```mermaid\ngraph LR\nLiquid -->|Energy Added| Fast_Molecules\nFast_Molecules --> Evaporation\nLiquid -->|Boiling Point| Vapor_Bubbles\nVapor_Bubbles --> Gas\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Gas Laws."
+      },
+      {
+        "from": "gpt",
+        "value": "Gas laws describe how pressure, volume, temperature, and amount of gas are related. These laws help explain how gases behave under different conditions. For example, when gas is compressed, its pressure increases, and when temperature rises, gas particles move faster and expand. Scientists use relationships such as Boyle's law, Charles's law, and the ideal gas law to predict gas behavior. These laws are important in many applications, including engines, weather systems, and breathing. They all rely on the idea that gas particles move freely and collide with the walls of their container."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Boyle's Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Boyle's Law describes the relationship between pressure and volume of a gas when temperature is constant. It states that pressure is inversely proportional to volume. When the volume of a gas decreases, its pressure increases because gas particles collide with the container walls more frequently. When the volume increases, pressure decreases. A common example is compressing air in a syringe. As the plunger pushes inward, the air volume decreases and pressure rises.\n\n```mermaid\ngraph LR\nDecrease_Volume --> Increase_Collisions\nIncrease_Collisions --> Increase_Pressure\nIncrease_Volume --> Fewer_Collisions\nFewer_Collisions --> Decrease_Pressure\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Charles's Law."
+      },
+      {
+        "from": "gpt",
+        "value": "Charles's Law states that the volume of a gas is directly proportional to its temperature when pressure is constant. As temperature increases, gas particles gain kinetic energy and move faster. This increased motion causes the gas to expand, increasing its volume. When temperature decreases, particles slow down and the gas contracts. A simple example is a hot air balloon. Heating the air inside causes the gas to expand, making the balloon rise.\n\n```mermaid\ngraph LR\nIncrease_Temperature --> Faster_Molecules\nFaster_Molecules --> Gas_Expansion\nGas_Expansion --> Increase_Volume\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is the Ideal Gas Law?"
+      },
+      {
+        "from": "gpt",
+        "value": "The ideal gas law combines several gas laws into one equation that describes how gases behave. It relates pressure, volume, temperature, and the amount of gas using the equation PV = nRT. Here, P is pressure, V is volume, T is temperature, n is the amount of gas, and R is a constant. The law assumes gas particles have negligible size and do not attract each other. Although real gases may deviate under extreme conditions, the ideal gas law provides a useful approximation for predicting gas behavior in many scientific and engineering situations."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Kinetic Theory of Gases work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The kinetic theory of gases explains gas behavior by considering the motion of tiny particles. It assumes gas particles are in constant random motion and frequently collide with each other and with the walls of their container. These collisions create pressure. The theory also states that temperature is related to the average kinetic energy of the particles. When temperature increases, particles move faster, causing greater pressure or expansion. This microscopic view helps explain gas laws and why gases fill their containers uniformly."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Pressure in Fluids."
+      },
+      {
+        "from": "gpt",
+        "value": "Pressure in fluids refers to the force exerted by a liquid or gas per unit area. In liquids, pressure increases with depth because the weight of the fluid above pushes downward. This means objects deeper underwater experience greater pressure. Fluid pressure acts equally in all directions, which is why submerged objects feel pressure from every side. Divers must be careful because pressure rises quickly as they descend deeper in water.\n\n```mermaid\ngraph TD\nSurface --> Shallow_Pressure\nShallow_Pressure --> Deeper_Water\nDeeper_Water --> Higher_Pressure\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Pascal's Principle?"
+      },
+      {
+        "from": "gpt",
+        "value": "Pascal's principle states that pressure applied to a confined fluid is transmitted equally in all directions throughout the fluid. This means if you push on one part of the fluid, the pressure change spreads evenly everywhere. This principle allows small forces to produce large forces in hydraulic systems. For example, car brakes and hydraulic lifts use this principle to multiply force efficiently.\n\n```mermaid\ngraph LR\nInput_Force --> Small_Piston\nSmall_Piston --> Fluid_Pressure\nFluid_Pressure --> Large_Piston\nLarge_Piston --> Large_Force\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Hydraulic Machines."
+      },
+      {
+        "from": "gpt",
+        "value": "Hydraulic machines use fluids to transmit and multiply force. They operate based on Pascal's principle, where pressure applied to a confined liquid spreads evenly throughout the system. A small force applied to a small piston creates pressure in the fluid, which then pushes on a larger piston. Because the larger piston has greater area, it produces a larger output force. Hydraulic systems are commonly used in car brakes, construction equipment, and lifts.\n\n```mermaid\ngraph LR\nSmall_Piston --> Fluid\nFluid --> Pressure_Transmission\nPressure_Transmission --> Large_Piston\nLarge_Piston --> Lift_Load\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Archimedes' Principle."
+      },
+      {
+        "from": "gpt",
+        "value": "Archimedes' principle states that an object submerged in a fluid experiences an upward force equal to the weight of the fluid it displaces. This upward force is called buoyant force. If the buoyant force is greater than the object's weight, it floats. If it is smaller, the object sinks. This principle explains why ships made of heavy metal can float if they displace enough water.\n\n```mermaid\ngraph LR\nObject --> Displaces_Fluid\nDisplaces_Fluid --> Buoyant_Force\nBuoyant_Force --> Upward_Push\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Buoyancy."
+      },
+      {
+        "from": "gpt",
+        "value": "Buoyancy is the upward force exerted by a fluid on an object placed within it. This force occurs because fluid pressure increases with depth, creating a stronger push on the bottom of the object than on the top. If the buoyant force equals or exceeds the object's weight, the object floats. If the weight is greater, it sinks. Buoyancy explains why boats float, why balloons rise in air, and how submarines control their depth by adjusting their density relative to water."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Fluid Flow."
+      },
+      {
+        "from": "gpt",
+        "value": "Fluid flow describes how liquids or gases move through space or within pipes and channels. The motion depends on pressure differences, gravity, and resistance from surfaces. Fluids move from regions of higher pressure to lower pressure. The speed of flow can change depending on the shape of the channel or pipe. Smooth, steady flow is called laminar flow, while chaotic movement is called turbulent flow. Understanding fluid flow is important in engineering, aerodynamics, and blood circulation.\n\n```mermaid\ngraph LR\nHigh_Pressure --> Fluid_Motion\nFluid_Motion --> Low_Pressure\nLow_Pressure --> Flow_Direction\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Bernoulli's Principle work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Bernoulli's principle states that when the speed of a fluid increases, its pressure decreases. This happens because energy in a flowing fluid must remain constant. If the fluid moves faster, more energy is in motion, leaving less energy as pressure. This principle explains how airplane wings generate lift and how perfume atomizers work. Faster airflow above a wing creates lower pressure compared to the slower air below it, producing an upward force.\n\n```mermaid\ngraph LR\nFast_Fluid --> Lower_Pressure\nSlow_Fluid --> Higher_Pressure\nPressure_Difference --> Lift\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Streamlines in Fluid Flow."
+      },
+      {
+        "from": "gpt",
+        "value": "Streamlines are imaginary lines that show the direction of fluid flow at every point in a moving fluid. They help visualize how fluids move around objects or through pipes. In steady flow, streamlines never cross because fluid particles cannot occupy the same space. The closer the lines are to each other, the faster the fluid is moving in that region. Engineers use streamlines to study airflow around airplanes and water flow around ships.\n\n```mermaid\ngraph LR\nStart --> Streamline_Path\nStreamline_Path --> Flow_Direction\nFlow_Direction --> Continuous_Path\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Surface Tension?"
+      },
+      {
+        "from": "gpt",
+        "value": "Surface tension is the tendency of a liquid's surface to behave like a stretched elastic sheet. It occurs because molecules at the surface experience stronger attraction from neighboring molecules within the liquid than from the air above. This creates a pulling effect that minimizes the surface area. Surface tension allows small insects to walk on water and causes droplets to form spherical shapes. It also explains why water beads on waxy surfaces rather than spreading out."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Capillary Action."
+      },
+      {
+        "from": "gpt",
+        "value": "Capillary action is the movement of liquid through narrow spaces without the help of external forces like gravity. It occurs due to two forces: adhesion between the liquid and the surface of a tube, and cohesion between liquid molecules. When adhesion is stronger, the liquid climbs up the walls of the tube. This effect helps plants draw water from roots to leaves and allows paper towels to absorb liquids.\n\n```mermaid\ngraph LR\nAdhesion --> Upward_Pull\nCohesion --> Molecule_Link\nUpward_Pull --> Liquid_Rises\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Blackbody Radiation."
+      },
+      {
+        "from": "gpt",
+        "value": "Blackbody radiation refers to the electromagnetic radiation emitted by an object that absorbs all incoming radiation. Such an object is called a blackbody. The radiation it emits depends only on its temperature. As temperature increases, the intensity of radiation increases and the peak wavelength shifts toward shorter wavelengths. This phenomenon explains why heated objects glow red, then white as they get hotter. Blackbody radiation played a crucial role in the development of quantum physics when classical physics failed to explain its spectrum accurately."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Photoelectric Effect work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The photoelectric effect occurs when light shining on a metal surface causes electrons to be ejected. Light behaves like particles called photons, each carrying energy. If a photon has enough energy, it transfers that energy to an electron, allowing the electron to escape from the metal. Increasing light intensity increases the number of emitted electrons, while increasing frequency increases their energy. This experiment showed that light has particle-like properties.\n\n```mermaid\ngraph LR\nLight_Photons --> Metal_Surface\nMetal_Surface --> Energy_Transfer\nEnergy_Transfer --> Electron_Ejection\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Wave-Particle Duality?"
+      },
+      {
+        "from": "gpt",
+        "value": "Wave-particle duality is the idea that light and matter can behave both as waves and as particles depending on how they are observed. For example, light can form interference patterns like waves, but it can also transfer energy in discrete packets called photons. Similarly, electrons can behave like particles in collisions but show wave-like behavior in experiments such as electron diffraction. This concept is a key principle of quantum mechanics and shows that microscopic objects do not always follow classical physics rules."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Atomic Models."
+      },
+      {
+        "from": "gpt",
+        "value": "Atomic models describe how scientists understand the structure of atoms. Early models imagined atoms as solid spheres, but later discoveries revealed internal structure. The Rutherford model introduced a dense nucleus surrounded by electrons. Later, the Bohr model proposed electrons orbiting in specific energy levels. Modern quantum models describe electrons as probability clouds rather than fixed paths. These models help explain chemical behavior, light emission, and atomic stability.\n\n```mermaid\ngraph TD\nNucleus --> Proton\nNucleus --> Neutron\nElectron_Cloud --> Surrounds_Nucleus\nElectron_Cloud --> Energy_Levels\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Rutherford Scattering Experiment."
+      },
+      {
+        "from": "gpt",
+        "value": "The Rutherford scattering experiment revealed the internal structure of atoms. Ernest Rutherford fired alpha particles at a very thin sheet of gold foil. Most particles passed straight through, but a few were deflected sharply and some even bounced back. This showed that atoms are mostly empty space with a small, dense, positively charged nucleus at the center. The electrons occupy the surrounding space. The unexpected deflections occurred because alpha particles occasionally came close to the nucleus and experienced strong electrostatic repulsion.\n\n```mermaid\ngraph LR\nAlphaParticles --> GoldFoil\nGoldFoil --> MostlyStraight\nGoldFoil --> DeflectedParticles\nDeflectedParticles --> AtomicNucleus\nAtomicNucleus --> DenseCenter\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does the Bohr Model of the Atom work?"
+      },
+      {
+        "from": "gpt",
+        "value": "The Bohr model describes atoms as having electrons that move in fixed circular orbits around the nucleus. Each orbit corresponds to a specific energy level. Electrons cannot exist between these levels. When an electron absorbs energy, it jumps to a higher orbit. When it loses energy, it falls to a lower orbit and emits light. This model explained why atoms produce specific spectral lines. Although later replaced by quantum mechanics, the Bohr model was important for showing that atomic energy is quantized rather than continuous.\n\n```mermaid\ngraph TD\nNucleus --> Orbit1\nOrbit1 --> Orbit2\nOrbit2 --> Orbit3\nElectronJump --> EnergyAbsorption\nEnergyRelease --> PhotonEmission\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Teach me about Energy Levels in Atoms."
+      },
+      {
+        "from": "gpt",
+        "value": "Energy levels in atoms are specific amounts of energy that electrons can have while orbiting the nucleus. Electrons cannot possess arbitrary energies; instead, they exist only in discrete levels. The lowest energy level is called the ground state, while higher ones are excited states. When electrons absorb energy, they move to higher levels. When they return to lower levels, they release energy as photons. The difference between these energy levels determines the wavelength of the emitted light. This concept explains atomic spectra and is fundamental to quantum mechanics and modern atomic physics."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Emission Spectra in physics?"
+      },
+      {
+        "from": "gpt",
+        "value": "Emission spectra occur when excited atoms release energy in the form of light. When electrons jump from higher energy levels to lower ones, they emit photons with specific wavelengths. Each element has unique energy level differences, so it produces a distinct pattern of spectral lines. These patterns act like fingerprints for identifying elements in laboratories and even in distant stars. Scientists analyze emission spectra to understand atomic structure and the composition of astronomical objects.\n\n```mermaid\ngraph TD\nExcitedElectron --> HigherEnergyLevel\nHigherEnergyLevel --> ElectronDrop\nElectronDrop --> PhotonEmission\nPhotonEmission --> SpectralLines\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Absorption Spectra."
+      },
+      {
+        "from": "gpt",
+        "value": "Absorption spectra occur when atoms absorb specific wavelengths of light. When white light passes through a cool gas, atoms absorb photons whose energies match the gaps between their energy levels. Electrons use this energy to jump to higher levels. The absorbed wavelengths appear as dark lines in the spectrum. Each element absorbs a unique set of wavelengths, allowing scientists to identify elements in stars and gases. Absorption spectra provide strong evidence for quantized energy levels in atoms.\n\n```mermaid\ngraph LR\nWhiteLight --> GasAtoms\nGasAtoms --> ElectronExcitation\nElectronExcitation --> AbsorbedWavelengths\nAbsorbedWavelengths --> DarkLines\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Nuclear Structure."
+      },
+      {
+        "from": "gpt",
+        "value": "Nuclear structure describes how protons and neutrons are arranged inside an atomic nucleus. Protons carry positive charge, while neutrons have no charge but contribute mass and stability. These particles are held together by the strong nuclear force, which is much stronger than electromagnetic repulsion between protons. The balance between these forces determines whether a nucleus is stable or radioactive. Different combinations of protons and neutrons create different isotopes of an element. Understanding nuclear structure helps explain radioactive decay, nuclear reactions, and the energy released in nuclear processes."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Radioactive Decay work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Radioactive decay is the process by which unstable atomic nuclei transform into more stable forms by emitting particles or energy. A nucleus with too many protons or neutrons becomes unstable. To reach stability, it releases particles such as alpha particles, beta particles, or gamma radiation. This process happens randomly for individual atoms but follows predictable statistical patterns for large numbers of atoms. Radioactive decay is important in nuclear physics, medical imaging, and dating ancient materials.\n\n```mermaid\ngraph LR\nUnstableNucleus --> ParticleEmission\nParticleEmission --> Alpha\nParticleEmission --> Beta\nParticleEmission --> Gamma\nAlpha --> MoreStableNucleus\nBeta --> MoreStableNucleus\nGamma --> EnergyRelease\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Alpha Decay."
+      },
+      {
+        "from": "gpt",
+        "value": "Alpha decay occurs when a heavy, unstable nucleus emits an alpha particle, which consists of two protons and two neutrons. This particle is essentially the nucleus of a helium atom. When the alpha particle leaves the nucleus, the atomic number decreases by two and the mass number decreases by four. Alpha decay typically occurs in very heavy elements like uranium or radium. Because alpha particles are relatively large and charged, they lose energy quickly and cannot travel far through matter.\n\n```mermaid\ngraph LR\nHeavyNucleus --> AlphaEmission\nAlphaEmission --> AlphaParticle\nAlphaParticle --> HeliumNucleus\nRemainingNucleus --> MoreStableAtom\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Beta Decay?"
+      },
+      {
+        "from": "gpt",
+        "value": "Beta decay happens when a neutron inside a nucleus converts into a proton, an electron, and a neutrino. The electron is emitted from the nucleus and is called a beta particle. This process increases the atomic number by one but leaves the mass number nearly unchanged. Beta decay helps unstable nuclei reach a more stable balance between protons and neutrons. It plays a major role in nuclear physics and in natural radioactive processes occurring in the Earth and in stars.\n\n```mermaid\ngraph TD\nNeutron --> Proton\nNeutron --> Electron\nNeutron --> Neutrino\nElectron --> BetaParticleEmission\nBetaParticleEmission --> NuclearTransformation\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Gamma Radiation."
+      },
+      {
+        "from": "gpt",
+        "value": "Gamma radiation is high-energy electromagnetic radiation emitted from atomic nuclei. Unlike alpha or beta decay, gamma radiation does not involve the emission of particles. Instead, the nucleus releases excess energy in the form of gamma photons after undergoing another type of decay. Gamma rays have very short wavelengths and extremely high frequencies, making them highly penetrating. Thick materials like lead or concrete are needed to block them effectively. Gamma radiation is widely used in medical imaging, cancer treatment, and sterilization processes.\n\n```mermaid\ngraph LR\nExcitedNucleus --> EnergyRelease\nEnergyRelease --> GammaPhoton\nGammaPhoton --> ElectromagneticWave\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Half-Life of Radioactive Materials."
+      },
+      {
+        "from": "gpt",
+        "value": "The half-life of a radioactive material is the time required for half of the atoms in a sample to decay. Because radioactive decay is random, scientists cannot predict when a single atom will decay. However, in a large sample, the decay follows a predictable pattern. After one half-life, half the atoms remain. After two half-lives, one quarter remain, and so on. This concept is useful for dating ancient objects using radioactive isotopes and for understanding how radioactive substances decrease over time."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "How does Nuclear Fission work?"
+      },
+      {
+        "from": "gpt",
+        "value": "Nuclear fission occurs when a heavy atomic nucleus splits into two smaller nuclei after absorbing a neutron. This process releases a large amount of energy along with additional neutrons. These neutrons can trigger further fission events, creating a chain reaction. Controlled fission reactions are used in nuclear power plants to generate electricity, while uncontrolled chain reactions occur in nuclear weapons. The large energy release comes from the conversion of a small amount of mass into energy.\n\n```mermaid\ngraph LR\nHeavyNucleus --> NeutronAbsorption\nNeutronAbsorption --> NuclearSplit\nNuclearSplit --> EnergyRelease\nNuclearSplit --> MoreNeutrons\nMoreNeutrons --> ChainReaction\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Nuclear Fusion."
+      },
+      {
+        "from": "gpt",
+        "value": "Nuclear fusion occurs when two light atomic nuclei combine to form a heavier nucleus. This process releases enormous amounts of energy because the mass of the resulting nucleus is slightly less than the total mass of the original nuclei. The missing mass is converted into energy. Fusion powers stars like the Sun, where hydrogen nuclei fuse into helium at extremely high temperatures and pressures. Scientists are researching controlled fusion as a future energy source because it could produce large amounts of clean energy.\n\n```mermaid\ngraph LR\nHydrogenNuclei --> ExtremeTemperature\nExtremeTemperature --> FusionReaction\nFusionReaction --> HeliumNucleus\nFusionReaction --> EnergyRelease\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Mass-Energy Equivalence?"
+      },
+      {
+        "from": "gpt",
+        "value": "Mass-energy equivalence is the principle that mass and energy are two forms of the same physical quantity. Albert Einstein expressed this idea with the famous equation E = mc\u00b2, where energy equals mass multiplied by the speed of light squared. Because the speed of light is extremely large, even a small amount of mass can produce enormous energy. This principle explains the energy released in nuclear reactions such as fission and fusion, where tiny amounts of mass are converted into energy."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Particle Accelerators."
+      },
+      {
+        "from": "gpt",
+        "value": "Particle accelerators are machines that use electric fields to speed up charged particles such as electrons or protons to extremely high velocities. Magnetic fields then guide and focus the particles along a controlled path. Scientists use these high-energy particles to collide with other particles or targets, allowing them to study the fundamental structure of matter. Particle accelerators have helped discover many subatomic particles and provide insights into the forces that govern the universe.\n\n```mermaid\ngraph LR\nElectricFields --> ParticleAcceleration\nParticleAcceleration --> MagneticGuidance\nMagneticGuidance --> ParticleCollision\nParticleCollision --> ParticleDiscovery\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Cosmic Rays."
+      },
+      {
+        "from": "gpt",
+        "value": "Cosmic rays are high-energy particles that travel through space and occasionally strike the Earth's atmosphere. Most cosmic rays are protons, though some include heavier atomic nuclei. They originate from energetic events such as supernova explosions, active galaxies, or processes in the Sun. When cosmic rays collide with molecules in the Earth's atmosphere, they create cascades of secondary particles. Scientists study these interactions to understand high-energy processes in the universe and the nature of fundamental particles."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Conservation of Charge?"
+      },
+      {
+        "from": "gpt",
+        "value": "The conservation of charge states that the total electric charge in an isolated system remains constant. Charge cannot be created or destroyed; it can only be transferred from one object to another. For example, when electrons move between materials during static electricity, one object becomes negatively charged while the other becomes positively charged. However, the total charge of the system remains the same. This principle is fundamental to understanding electric circuits, electromagnetic interactions, and many processes in physics."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Conservation of Mass-Energy."
+      },
+      {
+        "from": "gpt",
+        "value": "The conservation of mass-energy states that the total amount of mass and energy in an isolated system remains constant. While mass can be converted into energy and energy into mass, the total combined quantity never changes. This principle extends the classical conservation of mass and conservation of energy into a single concept. In nuclear reactions, small amounts of mass can transform into energy according to Einstein's equation. The principle helps explain processes in nuclear physics, astrophysics, and particle physics."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Electromagnetic Waves in Vacuum."
+      },
+      {
+        "from": "gpt",
+        "value": "Electromagnetic waves are waves of electric and magnetic fields that travel through space. In a vacuum, they move at the speed of light. The electric field and magnetic field oscillate perpendicular to each other and to the direction of wave propagation. Examples include visible light, radio waves, X-rays, and gamma rays. Unlike mechanical waves, electromagnetic waves do not require a medium to travel, which is why sunlight can reach Earth through empty space.\n\n```mermaid\ngraph LR\nElectricField --> Oscillation\nMagneticField --> Oscillation\nOscillation --> WavePropagation\nWavePropagation --> LightTravel\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "What is Polarization by Reflection?"
+      },
+      {
+        "from": "gpt",
+        "value": "Polarization by reflection occurs when light reflects off a surface such as water or glass. During reflection, the reflected light waves tend to vibrate mostly in one plane. This happens because certain orientations of the electric field are absorbed or transmitted more easily by the surface. The result is partially polarized light. Polarizing sunglasses use this principle to reduce glare by blocking horizontally polarized light reflected from surfaces like roads or water.\n\n```mermaid\ngraph LR\nUnpolarizedLight --> SurfaceReflection\nSurfaceReflection --> PreferredVibration\nPreferredVibration --> PolarizedLight\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Total Internal Reflection in Prisms."
+      },
+      {
+        "from": "gpt",
+        "value": "Total internal reflection occurs when light traveling in a denser medium reaches the boundary with a less dense medium at an angle greater than the critical angle. Instead of passing through the boundary, the light reflects entirely back into the medium. Prisms often use this effect to redirect light efficiently. Because almost no light energy is lost, total internal reflection is very useful in optical instruments and fiber optics.\n\n```mermaid\ngraph LR\nLightRay --> PrismSurface\nPrismSurface --> CriticalAngle\nCriticalAngle --> TotalReflection\nTotalReflection --> InternalLightPath\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": false,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Laser Light."
+      },
+      {
+        "from": "gpt",
+        "value": "Laser light is a special type of light produced through stimulated emission. In a laser, atoms are excited to higher energy levels. When these atoms release energy, they emit photons that stimulate other atoms to emit identical photons. This produces light that is highly coherent, meaning the waves have the same phase and direction. Laser light is also very narrow and intense. These properties make lasers useful in medical surgery, communication systems, scientific measurements, and industrial cutting."
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Fiber Optic Communication."
+      },
+      {
+        "from": "gpt",
+        "value": "Fiber optic communication transmits information using pulses of light through thin strands of glass or plastic fibers. Light signals travel along the fiber by repeated total internal reflection, which keeps the light trapped inside the cable. Because light can travel long distances with very little loss, fiber optics allow extremely fast and reliable data transmission. This technology forms the backbone of modern internet infrastructure and long-distance communication networks.\n\n```mermaid\ngraph LR\nLightSignal --> FiberCable\nFiberCable --> TotalInternalReflection\nTotalInternalReflection --> LongDistanceTransmission\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Geostationary Satellites."
+      },
+      {
+        "from": "gpt",
+        "value": "A geostationary satellite orbits Earth at a specific altitude where its orbital period matches Earth's rotation. As a result, the satellite appears stationary relative to the surface of the planet. These satellites orbit above the equator at about 35,786 kilometers. Because they remain above the same location, they are ideal for communication, weather monitoring, and television broadcasting. Ground antennas can stay pointed at one fixed position in the sky to maintain continuous communication.\n\n```mermaid\ngraph LR\nEarthRotation --> SatelliteOrbit\nSatelliteOrbit --> SameAngularSpeed\nSameAngularSpeed --> FixedPositionAboveEarth\n```"
+      }
+    ]
+  },
+  {
+    "category": "physics",
+    "has_diagram": true,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Explain Orbital Motion of Satellites."
+      },
+      {
+        "from": "gpt",
+        "value": "Satellites remain in orbit because of the balance between gravity and their forward motion. Earth's gravity pulls the satellite toward the planet, while the satellite's velocity causes it to move sideways. Instead of falling directly to Earth, the satellite continuously falls around it, creating an orbit. This motion is an example of circular or elliptical motion under gravitational force. Different orbital speeds and altitudes produce different satellite paths used for navigation, communication, and Earth observation.\n\n```mermaid\ngraph LR\nGravity --> Satellite\nSatellite --> ForwardVelocity\nForwardVelocity --> CurvedPath\nCurvedPath --> StableOrbit\n```"
+      }
+    ]
+  }
+]

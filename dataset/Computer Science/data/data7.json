@@ -1,0 +1,202 @@
+[
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Least Frequently Used (LFU) caching."},
+    {"from":"gpt","value":"Least Frequently Used (LFU) is a cache eviction strategy that removes the item with the lowest access frequency when the cache becomes full. Each item maintains a counter that increases whenever it is accessed. When a new item must be inserted and the cache is full, the item with the smallest frequency count is evicted. LFU works well for workloads where frequently accessed data should remain cached for long periods. However, it requires additional bookkeeping to track frequencies efficiently.\n\n```mermaid\ngraph LR\nRequest1 --> UpdateFrequency\nUpdateFrequency --> Cache\nCache -->|Least Frequency| Evict\nEvict --> InsertNewItem\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does First-In-First-Out (FIFO) page replacement work?"}, 
+    {"from":"gpt","value":"FIFO page replacement removes the oldest page in memory when a new page must be loaded and memory is full. The operating system maintains a queue of pages in the order they were loaded. When a page fault occurs and memory is full, the page at the front of the queue is evicted. The new page is then added to the back of the queue. FIFO is simple to implement but may remove heavily used pages, sometimes leading to poor performance.\n\n```mermaid\ngraph LR\nPageLoaded1 --> PageLoaded2\nPageLoaded2 --> PageLoaded3\nPageLoaded3 --> EvictOldest\nEvictOldest --> InsertNewPage\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Optimal Page Replacement in operating systems?"}, 
+    {"from":"gpt","value":"Optimal Page Replacement is a theoretical page replacement algorithm that always removes the page whose next use will occur farthest in the future. When a page fault occurs, the operating system examines future memory references and selects the page that will not be used for the longest time. This guarantees the lowest possible number of page faults for a given reference string. However, because it requires knowledge of future memory accesses, it cannot be implemented in practice and is mainly used as a benchmark to evaluate other page replacement algorithms."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about Deadlock Detection Algorithms."}, 
+    {"from":"gpt","value":"Deadlock detection algorithms identify whether a system has entered a deadlock state, where processes are waiting indefinitely for resources held by each other. In systems with single instances of resources, a wait-for graph is commonly used. Nodes represent processes, and edges indicate that one process is waiting for another. If a cycle exists in this graph, a deadlock is present. For systems with multiple resource instances, algorithms track allocation and request matrices to detect circular wait conditions and determine which processes are involved in the deadlock."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Banker’s Algorithm."}, 
+    {"from":"gpt","value":"Banker’s Algorithm is a deadlock avoidance algorithm used in operating systems to ensure that resource allocation remains in a safe state. Each process declares its maximum resource requirements beforehand. The system tracks available resources, current allocations, and remaining needs. Before granting a request, the algorithm simulates the allocation to check whether the system would still be able to complete all processes without entering a deadlock. If the system remains in a safe sequence, the request is granted; otherwise, it is postponed."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Process Scheduling Algorithms."},
+    {"from":"gpt","value":"Process scheduling algorithms determine which process the CPU should execute at a given time. The scheduler chooses among ready processes based on policies designed to optimize metrics such as CPU utilization, waiting time, and response time. Common strategies include First-Come First-Serve, Shortest Job First, and Round Robin. These algorithms organize processes in a queue and decide the order of execution. The goal is to keep the CPU busy while ensuring fairness among processes.\n\n```mermaid\ngraph LR\nReadyQueue --> Scheduler\nScheduler --> CPU\nCPU --> Completed\nCPU --> ReadyQueue\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Round Robin scheduling work?"}, 
+    {"from":"gpt","value":"Round Robin scheduling is a preemptive CPU scheduling algorithm designed for time-sharing systems. Each process receives a fixed time slice called a time quantum. The scheduler cycles through the ready queue and assigns the CPU to each process for one quantum. If the process finishes before the quantum expires, it leaves the queue. Otherwise, it is moved to the end of the queue to wait for another turn. This approach ensures fairness and prevents any single process from monopolizing the CPU.\n\n```mermaid\ngraph LR\nP1 --> P2\nP2 --> P3\nP3 --> P1\nP1 --> CPU\nCPU --> NextProcess\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Shortest Job First scheduling?"}, 
+    {"from":"gpt","value":"Shortest Job First (SJF) scheduling selects the process with the smallest execution time from the ready queue. By prioritizing shorter tasks, the algorithm minimizes the average waiting time for processes. SJF can be implemented as non-preemptive, where a process runs until completion, or preemptive (Shortest Remaining Time First), where a newly arriving process with a shorter remaining time can interrupt the current one. Although SJF provides optimal average waiting time, it requires estimating process burst times accurately."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Priority Scheduling."}, 
+    {"from":"gpt","value":"Priority scheduling assigns a priority value to each process and executes the process with the highest priority first. Priorities may be determined by system requirements, user input, or dynamic factors like waiting time. The algorithm can be either preemptive or non-preemptive. In preemptive priority scheduling, a higher priority process can interrupt a running process. A major challenge is starvation, where low-priority processes wait indefinitely. To address this, systems often implement aging, which gradually increases the priority of waiting processes."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Multilevel Queue Scheduling."}, 
+    {"from":"gpt","value":"Multilevel Queue Scheduling divides processes into multiple separate queues based on characteristics such as priority or type of task. For example, system processes, interactive processes, and batch processes may each have their own queue. Each queue can use a different scheduling algorithm, such as Round Robin or FIFO. The scheduler selects processes either by fixed priority between queues or by allocating time slices to each queue. This design allows different types of workloads to be managed efficiently.\n\n```mermaid\ngraph TD\nSystemQueue --> CPU\nInteractiveQueue --> CPU\nBatchQueue --> CPU\nCPU --> Completed\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Multilevel Feedback Queue Scheduling."}, 
+    {"from":"gpt","value":"Multilevel Feedback Queue (MLFQ) scheduling extends multilevel queues by allowing processes to move between queues. Processes that use too much CPU time may be moved to lower-priority queues, while those that wait too long may move upward. Higher-priority queues typically have shorter time slices and run first. This dynamic adjustment helps balance responsiveness for short interactive tasks while still allowing long-running tasks to complete.\n\n```mermaid\ngraph TD\nHighPriority --> MediumPriority\nMediumPriority --> LowPriority\nLowPriority --> CPU\nCPU --> Feedback\nFeedback --> HighPriority\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Producer-Consumer Problem."}, 
+    {"from":"gpt","value":"The Producer-Consumer problem describes synchronization between processes that share a buffer. Producers generate data and place it into the buffer, while consumers remove and process the data. If the buffer is full, producers must wait; if it is empty, consumers must wait. Synchronization primitives such as semaphores or mutex locks ensure that only one process accesses the buffer at a time and prevent race conditions. This problem demonstrates the importance of coordination in concurrent systems.\n\n```mermaid\ngraph LR\nProducer --> Buffer\nBuffer --> Consumer\nProducer -->|Wait if full| Buffer\nConsumer -->|Wait if empty| Buffer\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about the Dining Philosophers Problem."}, 
+    {"from":"gpt","value":"The Dining Philosophers Problem illustrates synchronization challenges in concurrent systems. Several philosophers sit around a table with a fork between each pair. To eat, a philosopher must acquire both adjacent forks. If all philosophers pick up one fork simultaneously, none can obtain the second fork, resulting in deadlock. Solutions involve resource ordering, limiting concurrent access, or using monitors and semaphores to control fork allocation. The problem highlights issues of deadlock, starvation, and resource sharing.\n\n```mermaid\ngraph LR\nP1 --Fork--> P2\nP2 --Fork--> P3\nP3 --Fork--> P4\nP4 --Fork--> P5\nP5 --Fork--> P1\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Mutual Exclusion Algorithms."}, 
+    {"from":"gpt","value":"Mutual exclusion algorithms ensure that only one process accesses a shared resource or critical section at a time. This prevents race conditions and inconsistent data. Techniques for achieving mutual exclusion include locks, semaphores, monitors, and specialized algorithms designed for concurrent systems. A process must request permission before entering the critical section and release it afterward. Effective mutual exclusion mechanisms guarantee correctness while minimizing waiting time and avoiding deadlocks or starvation."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is Peterson’s Algorithm?"}, 
+    {"from":"gpt","value":"Peterson’s Algorithm is a classic software-based solution for achieving mutual exclusion between two processes. It uses two shared variables: a flag array to indicate a process’s intent to enter the critical section and a turn variable to determine whose turn it is. Each process sets its flag and gives the turn to the other process before checking whether it can enter the critical section. This design ensures that only one process enters the critical section at a time while avoiding deadlock and guaranteeing progress."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about Lamport’s Bakery Algorithm."}, 
+    {"from":"gpt","value":"Lamport’s Bakery Algorithm is a mutual exclusion algorithm designed for multiple processes. It works similarly to customers taking numbered tickets in a bakery. When a process wants to enter the critical section, it takes a number larger than all currently assigned numbers. Processes enter the critical section in order of increasing ticket numbers. If two processes receive the same number, their process IDs break the tie. This ensures fairness and prevents race conditions without relying on specialized hardware instructions."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the MapReduce computational model."}, 
+    {"from":"gpt","value":"MapReduce is a distributed computing model used to process large datasets across clusters of machines. The computation is divided into two main stages. In the Map phase, input data is split into chunks and processed independently to generate intermediate key-value pairs. In the Reduce phase, all values associated with the same key are aggregated to produce final results. This model enables parallel processing and fault tolerance for large-scale data analysis.\n\n```mermaid\ngraph LR\nInputData --> Map\nMap --> IntermediateKeyValue\nIntermediateKeyValue --> Reduce\nReduce --> Output\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does the Parallel Prefix Sum (Scan Algorithm) work?"}, 
+    {"from":"gpt","value":"The Parallel Prefix Sum, also called the scan algorithm, computes cumulative sums across an array in parallel. Instead of computing values sequentially, the algorithm performs two phases. In the up-sweep phase, partial sums are computed in a tree-like structure. In the down-sweep phase, these partial sums propagate back to generate final prefix sums for each element. This approach significantly reduces computation time on parallel hardware like GPUs or multi-core processors.\n\n```mermaid\ngraph TD\nInput --> UpSweep\nUpSweep --> TreeSums\nTreeSums --> DownSweep\nDownSweep --> PrefixResults\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Work Stealing Scheduling."}, 
+    {"from":"gpt","value":"Work stealing is a scheduling technique used in parallel computing systems. Each processor maintains its own queue of tasks. When a processor finishes its work and becomes idle, it attempts to steal tasks from the queues of other processors. This dynamic load balancing helps keep all processors busy without centralized coordination. Work stealing is widely used in parallel runtime systems and task schedulers because it adapts efficiently to irregular workloads and improves overall throughput."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What are Load Balancing Algorithms in distributed systems?"}, 
+    {"from":"gpt","value":"Load balancing algorithms distribute tasks or requests across multiple servers or processors to ensure efficient resource utilization. The goal is to prevent any single node from becoming overloaded while others remain idle. Strategies include round-robin, least connections, and resource-based scheduling. Some algorithms are static, assigning work based on predefined rules, while others dynamically adjust based on system load. Effective load balancing improves system responsiveness, scalability, and fault tolerance in distributed computing environments."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Consistent Hashing."}, 
+    {"from":"gpt","value":"Consistent hashing is a technique used in distributed systems to distribute keys across nodes while minimizing data movement when nodes join or leave. Both nodes and keys are mapped onto positions on a hash ring. A key is assigned to the first node encountered while moving clockwise on the ring. When a new node is added, only a small subset of keys need to be reassigned. This approach is commonly used in distributed caches and databases.\n\n```mermaid\ngraph LR\nNodeA --> NodeB\nNodeB --> NodeC\nNodeC --> NodeA\nKey1 --> NodeB\nKey2 --> NodeC\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is a Bloom Filter?"}, 
+    {"from":"gpt","value":"A Bloom filter is a space-efficient probabilistic data structure used to test whether an element might be in a set. It uses a bit array and multiple hash functions. When an element is inserted, each hash function sets a corresponding bit in the array. To check membership, the same hash functions are applied; if any corresponding bit is zero, the element is definitely not present. If all bits are set, the element may be present, allowing false positives but no false negatives.\n\n```mermaid\ngraph LR\nElement --> Hash1\nElement --> Hash2\nHash1 --> BitArray\nHash2 --> BitArray\nBitArray --> QueryCheck\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Counting Bloom Filters."}, 
+    {"from":"gpt","value":"Counting Bloom Filters extend standard Bloom filters by replacing each bit with a small counter. Instead of simply setting bits, inserting an element increments counters at positions determined by hash functions. Deleting an element decrements those counters. This allows the structure to support removal operations, which traditional Bloom filters cannot handle. Counting Bloom Filters maintain the same probabilistic membership checks while enabling dynamic updates to the stored set."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about the HyperLogLog algorithm."}, 
+    {"from":"gpt","value":"HyperLogLog is a probabilistic algorithm used to estimate the number of unique elements in a large dataset with very little memory. Instead of storing every element, it hashes each item and tracks the position of the leftmost set bit in the hash value. Multiple registers record these observations, and statistical techniques combine them to estimate cardinality. HyperLogLog is widely used in large-scale analytics systems because it provides near-accurate distinct counts while using only a small amount of memory."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Skip Lists."}, 
+    {"from":"gpt","value":"A skip list is a probabilistic data structure that allows fast search, insertion, and deletion in sorted data. It consists of multiple levels of linked lists. The bottom level contains all elements, while higher levels contain fewer elements that act as shortcuts for faster traversal. When searching for a value, the algorithm moves horizontally until it overshoots the target, then drops down a level. This layered structure enables average logarithmic time complexity.\n\n```mermaid\ngraph TD\nLevel3 --> 20\nLevel2 --> 10 --> 20 --> 30\nLevel1 --> 5 --> 10 --> 15 --> 20 --> 25 --> 30\n```\n"}
+    ]
+    }
+    ]

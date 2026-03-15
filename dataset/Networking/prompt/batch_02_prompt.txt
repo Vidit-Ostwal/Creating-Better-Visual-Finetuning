@@ -1,0 +1,110 @@
+You are generating high-quality supervised fine-tuning data for training an AI model that produces clear educational explanations with optional diagrams.
+
+The domain for this batch is **Networking and Distributed Systems**.
+
+Your task is to generate one dataset entry for each concept provided.
+
+---
+
+DATASET OBJECTIVE
+
+Train the model to:
+
+* explain networking concepts clearly
+* use diagrams to illustrate communication flows and system architecture
+
+---
+
+OUTPUT FORMAT
+
+{
+"category": "networking",
+"has_diagram": true/false,
+"conversations": [
+{"from":"human","value":"<question>"},
+{"from":"gpt","value":"<explanation + optional diagram>"}
+]
+}
+
+Return a JSON array containing one entry per concept.
+
+---
+
+EXPLANATION RULES
+
+* 80-120 words
+* Beginner-friendly
+* Focus on system interactions
+
+---
+
+DIAGRAM RULES
+
+Include diagrams for:
+
+* communication flows
+* protocol interactions
+* layered architectures
+* distributed coordination
+
+Use Mermaid diagrams such as:
+
+graph LR
+graph TD
+
+Example:
+
+```mermaid
+graph LR
+Client --> Request
+Request --> Server
+Server --> Response
+Response --> Client
+```
+
+---
+
+PROMPT VARIATION
+
+Use varied prompts:
+
+Explain <concept>
+How does <concept> work?
+Teach me about <concept>.
+What is <concept> in networking?
+
+---
+
+CONCEPTS
+
+Generate one entry for each of the following:
+
+Fat-Tree Data Center Topology
+Spine-Leaf Network Architecture
+Packet Switching
+Circuit Switching
+Network Routing Process
+Distance Vector Routing
+Link State Routing
+OSPF Routing Process
+BGP Route Propagation
+TCP Congestion Control
+Sliding Window Protocol
+Selective Repeat ARQ
+Go-Back-N Protocol
+Reliable Data Transfer Protocol
+Network Flow Control
+Distributed Consensus
+Paxos Consensus Algorithm
+Raft Consensus Algorithm
+Leader Election in Distributed Systems
+Distributed Locking
+Distributed Transactions
+Two-Phase Commit Protocol
+Three-Phase Commit Protocol
+CAP Theorem
+Eventual Consistency
+
+---
+
+Return only the JSON array.

@@ -1,0 +1,202 @@
+[
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Treaps in algorithms."},
+    {"from":"gpt","value":"A Treap is a randomized balanced binary search tree that combines properties of a binary search tree (BST) and a heap. Each node has a key (for BST ordering) and a random priority (for heap ordering). The tree maintains BST order on keys and heap order on priorities. Insertions first follow BST placement and then perform rotations to restore heap order. Because priorities are random, the tree remains balanced on average, giving O(log n) time for insert, delete, and search operations. Treaps are simple to implement compared to other balanced trees.\n\n```mermaid\ngraph TD\nA((50,p=20)) --> B((30,p=15))\nA --> C((70,p=10))\nB --> D((20,p=5))\nB --> E((40,p=7))\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does an Order Statistic Tree work?"},
+    {"from":"gpt","value":"An Order Statistic Tree is a balanced binary search tree augmented with subtree sizes. Each node stores the number of nodes in its subtree, allowing efficient rank and selection queries. For example, you can find the k-th smallest element or determine the rank of a value in O(log n) time. During insertions and deletions, subtree sizes are updated as the tree structure changes. This structure is commonly implemented using Red-Black trees or AVL trees with additional size fields.\n\n```mermaid\ngraph TD\n50[50 size=5]\n50 --> 30[30 size=2]\n50 --> 70[70 size=2]\n30 --> 20[20 size=1]\n70 --> 80[80 size=1]\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Range Minimum Query (RMQ)."},
+    {"from":"gpt","value":"Range Minimum Query (RMQ) is a problem where we preprocess an array to quickly answer queries asking for the minimum element between two indices. A naive approach scans the range in O(n) time. Efficient methods preprocess the array so queries can be answered faster, often in O(1) or O(log n). RMQ is used in algorithms like Lowest Common Ancestor and segment tree problems. Techniques like segment trees or sparse tables are commonly used to implement RMQ.\n\n```mermaid\ngraph LR\nArray --> Preprocessing\nPreprocessing --> Query\nQuery --> MinimumValue\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is the Sparse Table data structure?"}, 
+    {"from":"gpt","value":"A Sparse Table is a data structure used to answer range queries such as minimum, maximum, or gcd efficiently on static arrays. It preprocesses the array into overlapping intervals of size powers of two. Each entry stores the answer for a range starting at index i with length 2^k. Using this structure, queries can be answered in O(1) time by combining results from two precomputed intervals. However, updates are not supported efficiently, making sparse tables suitable for immutable datasets.\n\n```mermaid\ngraph TD\nArray --> BuildIntervals\nBuildIntervals --> Table[\"Ranges of size 2^k\"]\nTable --> Query\nQuery --> Answer\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Heavy-Light Decomposition."},
+    {"from":"gpt","value":"Heavy-Light Decomposition (HLD) is a technique used on trees to efficiently answer path queries. The idea is to split the tree into heavy and light edges. A heavy edge connects a node to its largest subtree child, while other edges are light. This decomposition breaks the tree into chains, allowing path queries to be reduced to a few segment queries on arrays. Data structures like segment trees are often combined with HLD to answer path queries such as sum or minimum in O(log² n) time.\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nB --> E\nC --> F\nD --> G\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does Centroid Decomposition work in trees?"},
+    {"from":"gpt","value":"Centroid Decomposition is a technique that recursively divides a tree into smaller components using centroid nodes. A centroid is a node whose removal splits the tree into subtrees each having at most half the original size. The algorithm finds the centroid, processes it, removes it, and then recursively decomposes the resulting subtrees. This forms a centroid tree that helps solve complex tree problems such as distance queries efficiently, often reducing time complexity to O(n log n).\n\n```mermaid\ngraph TD\nCentroid --> Subtree1\nCentroid --> Subtree2\nCentroid --> Subtree3\nSubtree1 --> Smaller1\nSubtree2 --> Smaller2\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Binary Lifting technique."},
+    {"from":"gpt","value":"Binary Lifting is a technique used to quickly compute ancestors of nodes in a tree. It precomputes a table where each entry stores the 2^k-th ancestor of a node. Using this table, we can jump upward in powers of two instead of moving one step at a time. This allows operations like finding ancestors or Lowest Common Ancestors in O(log n) time. The preprocessing step builds the table using dynamic programming.\n\n```mermaid\ngraph TD\nNode --> Parent\nParent --> Grandparent\nGrandparent --> HigherAncestor\nNode --> Jump2\nNode --> Jump4\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Lowest Common Ancestor (LCA) in trees?"},
+    {"from":"gpt","value":"The Lowest Common Ancestor (LCA) of two nodes in a tree is the deepest node that is an ancestor of both. It is useful in many problems involving hierarchical relationships, such as file systems or genealogy trees. Efficient algorithms preprocess the tree so LCA queries can be answered quickly. Methods include binary lifting, Euler tour with RMQ, or segment trees. With preprocessing, each query can often be answered in O(log n) or even O(1).\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nB --> E\nC --> F\nD --> G\nE --> H\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain the Euler Tour Technique in trees."},
+    {"from":"gpt","value":"The Euler Tour Technique converts a tree into a linear sequence by recording nodes as they are visited during a depth-first traversal. Each time we enter or exit a node, we record it in the sequence. This representation allows tree problems to be transformed into array problems. For example, LCA queries can be solved using RMQ on the Euler tour array. The technique is widely used with segment trees and sparse tables.\n\n```mermaid\ngraph TD\nA --> B\nA --> C\nB --> D\nB --> E\nTraversal --> EulerSequence\nEulerSequence --> ArrayRepresentation\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Preorder tree traversal?"},
+    {"from":"gpt","value":"Preorder traversal is a tree traversal method where nodes are processed before their children. The order followed is: visit the root, traverse the left subtree, then traverse the right subtree. This traversal is useful for copying trees or generating prefix expressions from expression trees. Preorder traversal is commonly implemented using recursion or a stack. The process ensures that each node is visited once.\n\n```mermaid\ngraph TD\nVisitRoot --> LeftSubtree\nLeftSubtree --> RightSubtree\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Inorder tree traversal."},
+    {"from":"gpt","value":"Inorder traversal visits nodes in the order: left subtree, root, then right subtree. In binary search trees, this traversal produces nodes in sorted order. The algorithm recursively traverses the left child, processes the current node, and then traverses the right child. Because of its sorted property, inorder traversal is frequently used when retrieving sorted values from BSTs.\n\n```mermaid\ngraph TD\nLeftSubtree --> VisitRoot\nVisitRoot --> RightSubtree\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Postorder tree traversal."},
+    {"from":"gpt","value":"Postorder traversal processes nodes after visiting their children. The order is: traverse the left subtree, traverse the right subtree, then visit the root. This traversal is useful when deleting trees or evaluating expression trees where operands must be processed before operators. Like other traversals, it can be implemented recursively or using a stack.\n\n```mermaid\ngraph TD\nLeftSubtree --> RightSubtree\nRightSubtree --> VisitRoot\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is Level Order Traversal in trees?"},
+    {"from":"gpt","value":"Level Order Traversal visits tree nodes level by level starting from the root. It uses a queue to process nodes in breadth-first order. First the root is visited, then all nodes at the next level, and so on. This traversal is useful when we need to process nodes based on their depth or find the shortest path in unweighted trees.\n\n```mermaid\ngraph TD\nRoot --> Level1\nLevel1 --> Level2\nLevel2 --> Level3\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Threaded Binary Trees."},
+    {"from":"gpt","value":"A Threaded Binary Tree is a variation of a binary tree where null pointers are replaced with references to inorder predecessor or successor nodes. These special pointers are called threads. The goal is to make tree traversal more efficient by avoiding recursion or stacks. In a threaded tree, inorder traversal can move directly to the next node using these threads. This reduces memory overhead and simplifies traversal algorithms while maintaining the original tree structure."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What are Expression Trees in algorithms?"},
+    {"from":"gpt","value":"An Expression Tree is a binary tree used to represent arithmetic expressions. Internal nodes represent operators such as + or *, while leaf nodes represent operands like numbers or variables. Evaluating the expression corresponds to traversing the tree. For example, postorder traversal can compute the expression by evaluating operands first and applying operators afterward. Expression trees are widely used in compilers and calculators.\n\n```mermaid\ngraph TD\nPlus --> A\nPlus --> Multiply\nMultiply --> B\nMultiply --> C\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Abstract Syntax Trees."},
+    {"from":"gpt","value":"An Abstract Syntax Tree (AST) represents the syntactic structure of source code in a hierarchical tree form. Each node corresponds to constructs like operators, variables, or statements. Unlike parse trees, ASTs remove unnecessary grammar details and focus on program structure. Compilers use ASTs during semantic analysis, optimization, and code generation. The tree structure helps analyze expressions and program logic efficiently.\n\n```mermaid\ngraph TD\nAssignment --> Variable\nAssignment --> Expression\nExpression --> Operator\nOperator --> Operand1\nOperator --> Operand2\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Finite State Machines."},
+    {"from":"gpt","value":"A Finite State Machine (FSM) is a computational model consisting of a finite number of states and transitions between them. The machine changes state based on input symbols. FSMs are widely used in parsing, control systems, and protocol design. Each transition represents how the system moves from one state to another given an input. FSMs are simple yet powerful models for representing sequential logic.\n\n```mermaid\ngraph LR\nStart --> State1\nState1 --> State2\nState2 --> State3\nState3 --> State1\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is a Deterministic Finite Automaton (DFA)?"},
+    {"from":"gpt","value":"A Deterministic Finite Automaton (DFA) is a finite state machine where each state has exactly one transition for every input symbol. This means the machine always has a single predictable path for any input string. DFAs are widely used in pattern matching, lexical analysis, and compiler design. They process input symbols sequentially and accept or reject strings based on whether the final state is an accepting state.\n\n```mermaid\ngraph LR\nStart --> A\nA -->|0| A\nA -->|1| B\nB -->|0| A\nB -->|1| B\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Nondeterministic Finite Automata."},
+    {"from":"gpt","value":"A Nondeterministic Finite Automaton (NFA) is a computational model where multiple transitions for the same input symbol may exist from a state. The machine can explore many possible paths simultaneously. If any path leads to an accepting state, the input string is accepted. NFAs are easier to construct than DFAs and are widely used in regex engines and theoretical computer science.\n\n```mermaid\ngraph LR\nStart --> A\nA -->|a| B\nA -->|a| C\nB --> D\nC --> D\n```\n"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is a Pushdown Automaton?"}, 
+    {"from":"gpt","value":"A Pushdown Automaton (PDA) is a computational model similar to a finite automaton but with an additional stack memory. The stack allows the machine to store and retrieve symbols, enabling it to recognize context-free languages such as balanced parentheses. The automaton reads input symbols, performs stack operations like push and pop, and transitions between states. PDAs are important in compiler design, particularly for parsing programming languages."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about Turing Machines."},
+    {"from":"gpt","value":"A Turing Machine is a theoretical model of computation capable of simulating any algorithm. It consists of an infinite tape for memory, a tape head that reads and writes symbols, and a set of states controlling the machine’s behavior. At each step, the machine reads a symbol, writes a new symbol, moves the head left or right, and changes state. Turing machines form the foundation of modern computational theory and help define what problems are computable."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Register Machines."},
+    {"from":"gpt","value":"A Register Machine is a theoretical computational model that uses a small number of registers to store integers. Instructions operate on these registers using operations like increment, decrement, or conditional jumps. Programs consist of sequences of simple instructions manipulating register values. Register machines are equivalent in computational power to Turing machines but often easier to analyze mathematically. They are commonly used in theoretical computer science to study algorithmic processes and computational complexity."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What are computational complexity classes like P vs NP?"}, 
+    {"from":"gpt","value":"Computational complexity classes categorize problems based on how efficiently they can be solved. Class P contains problems that can be solved in polynomial time using deterministic algorithms. Class NP includes problems whose solutions can be verified in polynomial time. The famous P vs NP question asks whether every problem whose solution can be verified quickly can also be solved quickly. This remains one of the most important open problems in computer science."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Reduction Between Problems in algorithms."},
+    {"from":"gpt","value":"Reduction between problems is a technique used to show relationships between computational problems. A problem A is reduced to problem B if a solution to B can be used to solve A efficiently. Reductions help prove problem hardness, especially in NP-completeness theory. If a known hard problem reduces to another problem, the second problem is at least as hard. This concept is widely used in complexity theory and algorithm design."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does the Branch and Bound algorithm work?"}, 
+    {"from":"gpt","value":"Branch and Bound is an optimization technique used to solve problems like the Traveling Salesman Problem. It systematically explores possible solutions by branching into smaller subproblems. Bounds are used to estimate the best possible solution within a branch. If a branch cannot produce a better result than the current best solution, it is pruned. This greatly reduces the search space while guaranteeing an optimal solution.\n\n```mermaid\ngraph TD\nStart --> Branch1\nStart --> Branch2\nBranch1 --> BoundCheck\nBranch2 --> BoundCheck\nBoundCheck --> BestSolution\n```\n"}
+    ]
+    }
+    ]

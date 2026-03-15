@@ -1,0 +1,202 @@
+[
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"Explain Kruskal’s Algorithm."},
+    {"from":"gpt","value":"Kruskal’s Algorithm finds a Minimum Spanning Tree (MST) of a weighted graph. It works by sorting all edges in increasing order of weight and adding them one by one to the tree, ensuring that no cycles are formed. A Disjoint Set (Union-Find) structure is commonly used to efficiently check whether two vertices already belong to the same component. If adding an edge would form a cycle, it is skipped. The algorithm stops when the MST contains V-1 edges, where V is the number of vertices.\n\n```mermaid\ngraph TD\nSortEdges --> PickSmallestEdge\nPickSmallestEdge --> CheckCycle\nCheckCycle -->|No Cycle| AddEdge\nCheckCycle -->|Cycle| SkipEdge\nAddEdge --> Repeat\nRepeat --> MSTComplete\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"How does Prim’s Algorithm work?"},
+    {"from":"gpt","value":"Prim’s Algorithm constructs a Minimum Spanning Tree by starting from an arbitrary node and repeatedly adding the smallest edge that connects a visited node to an unvisited node. Unlike Kruskal’s algorithm, it grows the tree from a single starting vertex. A priority queue is usually used to select the minimum edge efficiently. The process continues until all vertices are included in the spanning tree. This algorithm is particularly efficient for dense graphs.\n\n```mermaid\ngraph TD\nStartNode --> SelectMinEdge\nSelectMinEdge --> AddVertex\nAddVertex --> UpdateEdges\nUpdateEdges --> SelectMinEdge\nSelectMinEdge --> TreeComplete\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"Teach me about Disjoint Set (Union-Find)."},
+    {"from":"gpt","value":"A Disjoint Set, also called Union-Find, is a data structure used to track elements partitioned into separate sets. It supports two main operations: Find, which determines the representative of a set, and Union, which merges two sets together. This structure is widely used in graph algorithms such as Kruskal’s Minimum Spanning Tree algorithm. Each element initially forms its own set, and unions gradually combine them as relationships are discovered.\n\n```mermaid\ngraph TD\nA --> B\nC --> D\nE --> F\nUnion --> MergeSets\nFind --> IdentifyRoot\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"What is Path Compression in Union-Find?"},
+    {"from":"gpt","value":"Path Compression is an optimization used in the Union-Find data structure to make the Find operation faster. When finding the root of a node, the algorithm updates every node along the path to point directly to the root. This flattens the tree structure and greatly reduces the depth of the structure for future operations. Over time, repeated path compressions make the structure nearly flat, improving performance significantly. When combined with Union by Rank, it achieves almost constant time complexity for operations."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"Explain Union by Rank."},
+    {"from":"gpt","value":"Union by Rank is an optimization technique used in the Union-Find data structure. When combining two sets, the root with the smaller rank (or tree height) is attached under the root with the larger rank. This prevents the tree from becoming too tall. If both sets have the same rank, one becomes the parent and its rank increases by one. By keeping trees shallow, Union by Rank improves the efficiency of Find operations, especially when used together with Path Compression."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"How does cycle detection in graphs work?"},
+    {"from":"gpt","value":"Cycle detection determines whether a graph contains a path that starts and ends at the same vertex without repeating edges. In undirected graphs, Union-Find can detect cycles by checking if two vertices belong to the same set before adding an edge. In directed graphs, depth-first search (DFS) is often used to track recursion stacks. If a node is encountered that is already in the current DFS stack, a cycle exists.\n\n```mermaid\ngraph TD\nStart --> DFS\nDFS --> VisitNode\nVisitNode --> CheckNeighbor\nCheckNeighbor -->|BackEdgeFound| CycleDetected\nCheckNeighbor --> Continue\nContinue --> DFS\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"Explain bipartite graph checking."},
+    {"from":"gpt","value":"A graph is bipartite if its vertices can be divided into two sets such that no two vertices within the same set share an edge. One way to check this is by coloring nodes using two colors during a BFS or DFS traversal. If a conflict occurs where adjacent nodes require the same color, the graph is not bipartite. Bipartite graphs are useful in matching problems such as job assignments or scheduling.\n\n```mermaid\ngraph LR\nA --> B\nA --> D\nC --> B\nC --> D\nSet1[A,C]\nSet2[B,D]\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"Teach me about graph coloring."},
+    {"from":"gpt","value":"Graph coloring is the process of assigning colors to vertices of a graph so that no two adjacent vertices share the same color. The goal is often to minimize the number of colors used, known as the chromatic number. This problem appears in scheduling, register allocation in compilers, and map coloring. Many algorithms solve it heuristically, while exact solutions often rely on backtracking. The difficulty grows rapidly with graph size because the problem is computationally complex."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"Explain Kahn’s Algorithm for Topological Sort."},
+    {"from":"gpt","value":"Kahn’s Algorithm is a method for performing topological sorting on a directed acyclic graph (DAG). It repeatedly removes nodes with zero incoming edges (in-degree 0) and adds them to the sorted order. After removing a node, the in-degree of its neighbors is reduced. If new nodes reach zero in-degree, they are added to the processing queue. The process continues until all nodes are processed or a cycle is detected.\n\n```mermaid\ngraph TD\nFindZeroIndegree --> RemoveNode\nRemoveNode --> AddToOrder\nAddToOrder --> ReduceNeighbors\nReduceNeighbors --> FindZeroIndegree\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"What are Eulerian paths and circuits?"},
+    {"from":"gpt","value":"An Eulerian path is a path in a graph that visits every edge exactly once. If the path starts and ends at the same vertex, it is called an Eulerian circuit. In undirected graphs, an Eulerian circuit exists if every vertex has an even degree. An Eulerian path exists if exactly two vertices have odd degrees. These concepts are used in route planning and network traversal problems where every connection must be visited exactly once."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"Explain Hamiltonian paths."},
+    {"from":"gpt","value":"A Hamiltonian path is a path in a graph that visits every vertex exactly once. If the path begins and ends at the same vertex, it forms a Hamiltonian cycle. Unlike Eulerian paths, which focus on edges, Hamiltonian paths focus on visiting all vertices. Determining whether such a path exists is computationally difficult and is considered an NP-complete problem. Many practical solutions use heuristics or backtracking techniques to explore possible paths in smaller graphs."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"Explain the backtracking algorithm."},
+    {"from":"gpt","value":"Backtracking is a problem-solving technique that builds solutions step by step and abandons a path as soon as it determines the path cannot lead to a valid solution. It is commonly used in constraint problems such as Sudoku, N-Queens, and permutations. The algorithm explores possibilities recursively and “backs up” whenever a constraint fails. This reduces unnecessary computation by pruning invalid branches early.\n\n```mermaid\ngraph TD\nStart --> ChooseOption\nChooseOption --> Valid?\nValid? -->|Yes| Continue\nValid? -->|No| Backtrack\nContinue --> Solution\nBacktrack --> ChooseOption\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"Teach me about recursion trees."},
+    {"from":"gpt","value":"A recursion tree is a visual representation used to analyze recursive algorithms. Each node represents a recursive call, and its children represent further calls generated by it. By expanding the tree, we can see how the problem size reduces and estimate the total work performed. Recursion trees are often used to analyze divide-and-conquer algorithms such as merge sort by summing the work at each level.\n\n```mermaid\ngraph TD\nCallN --> CallN2A\nCallN --> CallN2B\nCallN2A --> CallN4A\nCallN2A --> CallN4B\nCallN2B --> CallN4C\nCallN2B --> CallN4D\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"What is the divide and conquer strategy?"},
+    {"from":"gpt","value":"Divide and Conquer is an algorithm design strategy that solves a problem by breaking it into smaller subproblems, solving each subproblem recursively, and then combining their results. This approach works well when the subproblems are similar to the original problem. Famous algorithms such as Merge Sort and Quick Sort use this strategy. The idea is that smaller problems are easier to solve, and combining them yields the final result efficiently.\n\n```mermaid\ngraph TD\nProblem --> Divide\nDivide --> Subproblem1\nDivide --> Subproblem2\nSubproblem1 --> Solve\nSubproblem2 --> Solve\nSolve --> Combine\nCombine --> Solution\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"How does the binary search algorithm work?"},
+    {"from":"gpt","value":"Binary Search is an efficient algorithm used to find a target value in a sorted array. It works by repeatedly dividing the search interval in half. First, the algorithm compares the target with the middle element. If the target is smaller, the search continues in the left half; if larger, in the right half. This process repeats until the element is found or the interval becomes empty. Because the search space halves each step, the time complexity is O(log n), making it much faster than linear search for large datasets."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"Explain ternary search."},
+    {"from":"gpt","value":"Ternary Search is a searching algorithm used on sorted arrays or unimodal functions. Instead of dividing the search range into two parts like binary search, it divides it into three sections using two midpoints. The algorithm compares the target value with these midpoints and eliminates one-third of the range each step. This process continues recursively until the value is found or the interval becomes very small. Ternary search is especially useful for optimizing unimodal functions where a single peak or minimum exists."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"What is interpolation search?"},
+    {"from":"gpt","value":"Interpolation Search is an improved searching technique for uniformly distributed sorted arrays. Instead of always checking the middle element like binary search, it estimates the likely position of the target using the values at the ends of the array. This estimation works similarly to how one searches for a name in a phone book. When the data is evenly distributed, interpolation search can achieve O(log log n) time complexity, making it faster than binary search in favorable conditions."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"Explain linear search."},
+    {"from":"gpt","value":"Linear Search is the simplest searching algorithm. It scans elements of a list sequentially from the beginning until the target value is found or the list ends. Unlike binary search, it does not require the data to be sorted. Because every element may need to be checked, the worst-case time complexity is O(n). Despite being slower for large datasets, linear search is useful for small or unsorted collections where the overhead of more complex algorithms is unnecessary."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"What is jump search?"},
+    {"from":"gpt","value":"Jump Search is a searching technique designed for sorted arrays. Instead of checking every element, it jumps ahead by fixed steps, typically the square root of the array size. Once a block is found where the target might exist, a linear search is performed within that block. This reduces the number of comparisons compared to linear search while keeping the algorithm simple. The overall time complexity is approximately O(√n)." }
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"Explain exponential search."},
+    {"from":"gpt","value":"Exponential Search is useful for searching in sorted arrays where the size may be unknown or very large. The algorithm first finds a range where the target could exist by doubling the search index (1, 2, 4, 8, ...). Once the range containing the target is identified, a binary search is performed within that range. This approach quickly narrows down the search area, making it efficient with a time complexity of O(log n)." }
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"Explain selection sort."},
+    {"from":"gpt","value":"Selection Sort is a simple comparison-based sorting algorithm. It works by repeatedly selecting the smallest element from the unsorted portion of the array and placing it at the beginning. The sorted portion of the array grows one element at a time while the unsorted portion shrinks. Although the algorithm is easy to understand and implement, it always performs O(n²) comparisons regardless of the initial order of elements."}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"How does bubble sort work?"},
+    {"from":"gpt","value":"Bubble Sort repeatedly steps through the array, comparing adjacent elements and swapping them if they are in the wrong order. After each pass, the largest unsorted element “bubbles up” to its correct position at the end of the list. This process continues until a complete pass occurs without any swaps. While easy to understand, Bubble Sort is inefficient for large datasets because its average and worst-case time complexity is O(n²)." }
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":false,
+    "conversations":[
+    {"from":"human","value":"Explain insertion sort."},
+    {"from":"gpt","value":"Insertion Sort builds the sorted list one element at a time. It starts with the second element and compares it with elements before it, shifting larger elements to the right until the correct position for the current element is found. This process repeats for each element in the list. Insertion Sort is efficient for small datasets or nearly sorted arrays, with a best-case time complexity of O(n) but a worst-case complexity of O(n²)." }
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"Teach me about merge sort."},
+    {"from":"gpt","value":"Merge Sort is a divide-and-conquer sorting algorithm. It splits the array into two halves, recursively sorts each half, and then merges the sorted halves into a final sorted array. The merging step compares elements from each half and places them in order. Because the array is repeatedly divided, the depth of recursion is logarithmic. Merge Sort guarantees O(n log n) time complexity and is widely used when stable sorting is required.\n\n```mermaid\ngraph TD\nArray --> Split\nSplit --> LeftHalf\nSplit --> RightHalf\nLeftHalf --> SortLeft\nRightHalf --> SortRight\nSortLeft --> Merge\nSortRight --> Merge\nMerge --> SortedArray\n```"}
+    ]
+    },
+    {
+    "category":"computer_science",
+    "has_diagram":true,
+    "conversations":[
+    {"from":"human","value":"Explain quick sort."},
+    {"from":"gpt","value":"Quick Sort is a divide-and-conquer sorting algorithm that selects a pivot element and partitions the array so that smaller elements appear before the pivot and larger elements appear after it. The algorithm then recursively sorts the two partitions. When the pivot divides the array evenly, Quick Sort achieves O(n log n) time complexity. However, poor pivot choices can lead to O(n²) performance. Despite this, it is widely used due to its excellent average performance.\n\n```mermaid\ngraph TD\nArray --> ChoosePivot\nChoosePivot --> Partition\nPartition --> LeftPartition\nPartition --> RightPartition\nLeftPartition --> QuickSort\nRightPartition --> QuickSort\nQuickSort --> SortedArray\n```"}
+    ]
+    }
+    ]

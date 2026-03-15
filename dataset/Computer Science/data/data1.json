@@ -1,0 +1,202 @@
+[
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Arrays."},
+    {"from":"gpt","value":"An array is a fundamental data structure that stores elements in a contiguous block of memory. Each element can be accessed using an index, typically starting at 0. This allows constant-time access, meaning retrieving any element takes the same amount of time regardless of its position. Arrays are commonly used to store collections of items such as numbers, characters, or objects. However, inserting or deleting elements in the middle of an array can be inefficient because elements must be shifted to maintain order. Arrays are widely used because they are simple, efficient for indexing, and form the basis of many other data structures."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How do Linked Lists work?"},
+    {"from":"gpt","value":"A linked list is a dynamic data structure where elements are stored in nodes. Each node contains data and a reference (or pointer) to the next node in the sequence. Unlike arrays, linked lists do not require contiguous memory, allowing efficient insertions and deletions without shifting elements. The first node is called the head, and traversal occurs by following pointers from one node to the next. However, accessing a specific element requires sequential traversal from the head, making random access slower than arrays. Linked lists are useful when frequent insertions and deletions are required.\n\n```mermaid\ngraph LR\nHead --> Node1\nNode1 --> Node2\nNode2 --> Node3\nNode3 --> Null\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Doubly Linked Lists."},
+    {"from":"gpt","value":"A doubly linked list extends a regular linked list by allowing traversal in both directions. Each node contains three components: the data, a pointer to the next node, and a pointer to the previous node. This structure makes operations like deleting a node or traversing backward more efficient compared to singly linked lists. Because each node keeps track of its predecessor and successor, algorithms can easily move forward or backward through the list. However, the extra pointer increases memory usage slightly. Doubly linked lists are often used in navigation systems, undo operations, and cache implementations.\n\n```mermaid\ngraph LR\nNode1 <--> Node2\nNode2 <--> Node3\nNode3 <--> Node4\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Circular Linked Lists."},
+    {"from":"gpt","value":"A circular linked list is a variation of a linked list where the last node points back to the first node instead of pointing to null. This creates a circular structure that allows traversal to continue indefinitely. Because there is no terminal node, algorithms can start at any node and eventually visit every element. Circular lists are often used in applications that require continuous cycling through elements, such as scheduling tasks in operating systems or implementing round-robin algorithms. The circular structure simplifies repeated traversal without restarting from the beginning.\n\n```mermaid\ngraph LR\nNode1 --> Node2\nNode2 --> Node3\nNode3 --> Node4\nNode4 --> Node1\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is a Stack in algorithms?"},
+    {"from":"gpt","value":"A stack is a linear data structure that follows the Last In, First Out (LIFO) principle. This means the most recently added element is the first one removed. Two primary operations define stacks: push (adding an element) and pop (removing the top element). Stacks are widely used in algorithms for tasks such as expression evaluation, function call management in recursion, and undo operations in software. Since elements are only inserted or removed from the top, stacks provide simple and efficient control over order.\n\n```mermaid\ngraph TD\nPush --> Top\nTop --> Pop\nPop --> Next\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does a Queue work?"},
+    {"from":"gpt","value":"A queue is a linear data structure that follows the First In, First Out (FIFO) principle. Elements are inserted at the rear (enqueue) and removed from the front (dequeue). This behavior is similar to people waiting in line—those who arrive first are served first. Queues are commonly used in scheduling systems, breadth-first search algorithms, and buffering tasks such as printer queues. Because insertion and removal occur at opposite ends, queues maintain an ordered processing flow that ensures fairness in many computational tasks.\n\n```mermaid\ngraph LR\nEnqueue --> Item1 --> Item2 --> Item3 --> Dequeue\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Deques."},
+    {"from":"gpt","value":"A deque (double-ended queue) is a flexible data structure that allows insertion and deletion from both ends. Unlike a regular queue, elements can be added to the front or rear and removed from either side. This makes deques useful for applications that require symmetrical operations, such as sliding window algorithms or palindrome checking. Deques can function as both stacks and queues depending on how operations are used. Many programming libraries provide efficient implementations using linked lists or dynamic arrays.\n\n```mermaid\ngraph LR\nFront <-- Item1 <-- Item2 --> Item3 --> Rear\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is a Priority Queue?"},
+    {"from":"gpt","value":"A priority queue is a data structure where each element is assigned a priority, and elements with higher priority are processed before lower-priority ones. Unlike regular queues that follow FIFO order, priority queues reorder elements based on priority values. They are often implemented using heaps for efficient insertion and removal operations. Priority queues are commonly used in algorithms such as Dijkstra’s shortest path, scheduling systems, and event simulations. The structure ensures that the most important task is always retrieved first.\n\n```mermaid\ngraph TD\nInsert --> PriorityCheck\nPriorityCheck --> Reorder\nReorder --> ExtractMax\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Binary Trees."},
+    {"from":"gpt","value":"A binary tree is a hierarchical data structure where each node can have at most two children, typically called the left child and right child. The top node is known as the root, and nodes without children are called leaves. Binary trees are widely used to represent hierarchical relationships such as file systems, expression parsing, and search structures. Traversal algorithms such as inorder, preorder, and postorder allow systematic visiting of nodes. Their structure enables efficient representation of recursive relationships.\n\n```mermaid\ngraph TD\nRoot --> Left\nRoot --> Right\nLeft --> LL\nLeft --> LR\nRight --> RL\nRight --> RR\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"How does a Binary Search Tree work?"},
+    {"from":"gpt","value":"A binary search tree (BST) is a special type of binary tree that maintains a sorted structure. For every node, all values in the left subtree are smaller than the node’s value, while all values in the right subtree are larger. This property allows efficient searching, insertion, and deletion operations, typically in logarithmic time when the tree is balanced. BSTs are commonly used for implementing dynamic sets and lookup tables. By following comparisons during traversal, algorithms can quickly locate elements.\n\n```mermaid\ngraph TD\n8 --> 3\n8 --> 10\n3 --> 1\n3 --> 6\n10 --> 14\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about AVL Trees."},
+    {"from":"gpt","value":"An AVL tree is a self-balancing binary search tree that maintains height balance after every insertion or deletion. For each node, the difference between the heights of its left and right subtrees (called the balance factor) must be at most one. If an operation violates this condition, the tree performs rotations to restore balance. These rotations ensure that the tree remains approximately balanced, guaranteeing efficient O(log n) search, insertion, and deletion. AVL trees are useful in systems that require consistently fast lookup operations.\n\n```mermaid\ngraph TD\nRotate --> Balance\nBalance --> Insert\nBalance --> Delete\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Red-Black Trees."},
+    {"from":"gpt","value":"A red-black tree is a self-balancing binary search tree where each node is assigned a color: red or black. The coloring rules ensure that the tree remains approximately balanced during insertions and deletions. For example, no two red nodes can appear consecutively, and every path from the root to a leaf must contain the same number of black nodes. These constraints limit the tree’s height, allowing operations such as search, insertion, and deletion to run efficiently in logarithmic time. Red-black trees are widely used in standard library implementations of ordered maps and sets.\n\n```mermaid\ngraph TD\nRoot((Black)) --> Red1((Red))\nRoot --> Red2((Red))\nRed1 --> Black1((Black))\nRed2 --> Black2((Black))\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What are B-Trees in computer science?"},
+    {"from":"gpt","value":"A B-tree is a self-balancing tree structure designed to store large amounts of data efficiently on disk. Unlike binary trees, each node in a B-tree can contain multiple keys and multiple children. This reduces the height of the tree and minimizes disk reads, which is crucial for databases and file systems. When nodes become too full, they split to maintain balance. Searching involves comparing keys within nodes and following the appropriate child pointer. Because of their efficiency with block storage, B-trees are widely used in database indexing.\n\n```mermaid\ngraph TD\nNode1 --> Node2\nNode1 --> Node3\nNode1 --> Node4\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain B+ Trees."},
+    {"from":"gpt","value":"A B+ tree is a variation of the B-tree optimized for database and file system indexing. In a B+ tree, internal nodes store only keys used for navigation, while all actual data records are stored in leaf nodes. The leaf nodes are linked together sequentially, allowing efficient range queries and ordered traversal. This design improves disk performance because internal nodes remain small and fast to search. B+ trees are commonly used in database systems where large datasets must be retrieved efficiently.\n\n```mermaid\ngraph TD\nRoot --> Internal1\nRoot --> Internal2\nInternal1 --> Leaf1\nInternal1 --> Leaf2\nLeaf1 --> Leaf2\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"What is a Trie (Prefix Tree)?"},
+    {"from":"gpt","value":"A trie, also called a prefix tree, is a tree-based data structure used to store strings efficiently. Each node represents a character, and paths from the root form prefixes of stored words. This structure allows fast search, insertion, and prefix queries, making tries ideal for autocomplete systems, dictionaries, and spell checkers. Instead of storing full words repeatedly, shared prefixes are stored once, reducing redundancy. A word is recognized when traversal reaches a node marked as the end of a word.\n\n```mermaid\ngraph TD\nRoot --> a\nRoot --> b\na --> p\np --> p\np --> l\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Suffix Trees."},
+    {"from":"gpt","value":"A suffix tree is a compressed trie structure that stores all suffixes of a given string. Each path from the root represents a substring, and the leaves correspond to suffix positions in the original string. This structure enables extremely fast string operations such as substring search, longest repeated substring detection, and pattern matching. Many operations that normally take quadratic time can be solved in linear time using suffix trees. Although powerful, suffix trees require more memory and complex construction algorithms, which makes them less common in simple applications."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is a Suffix Array?"},
+    {"from":"gpt","value":"A suffix array is a space-efficient alternative to a suffix tree used for string processing tasks. It stores all suffixes of a string in sorted order, typically represented by their starting indices. By sorting these suffixes lexicographically, algorithms can quickly perform pattern searches using binary search. Suffix arrays are widely used in text indexing, genome sequencing, and information retrieval systems. Compared to suffix trees, they are simpler and require less memory while still enabling efficient substring queries when combined with additional structures like the longest common prefix (LCP) array."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Teach me about Segment Trees."},
+    {"from":"gpt","value":"A segment tree is a binary tree data structure designed to efficiently handle range queries and updates on arrays. Each node represents a segment or interval of the array and stores aggregated information such as sum, minimum, or maximum values. By dividing the array into segments recursively, queries can be answered in logarithmic time. Segment trees are especially useful in competitive programming and real-time analytics where frequent range operations occur. The hierarchical structure allows quick recomputation when updates modify part of the array.\n\n```mermaid\ngraph TD\nRoot --> Left\nRoot --> Right\nLeft --> L1\nLeft --> L2\nRight --> R1\nRight --> R2\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Fenwick Trees (Binary Indexed Trees)."},
+    {"from":"gpt","value":"A Fenwick tree, also called a Binary Indexed Tree (BIT), is a data structure that efficiently supports prefix sum queries and updates on an array. Instead of storing full segments like a segment tree, it stores partial sums in a compact tree-like structure represented within an array. This design allows both updates and prefix sum queries to be performed in logarithmic time. Fenwick trees are widely used in algorithms involving cumulative frequency tables, inversion counting, and dynamic range queries because they are simpler and use less memory than segment trees.\n\n```mermaid\ngraph TD\nIndex1 --> Index2\nIndex2 --> Index4\nIndex3 --> Index4\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Heaps."},
+    {"from":"gpt","value":"A heap is a specialized tree-based data structure that satisfies the heap property. In a min heap, every parent node has a value less than or equal to its children, while in a max heap the parent is greater than or equal to its children. Heaps are typically implemented using arrays but logically represent a complete binary tree. They are widely used to implement priority queues and algorithms such as heapsort. Because of their structure, insertion and removal operations maintain the heap property using upward or downward adjustments.\n\n```mermaid\ngraph TD\nRoot --> Child1\nRoot --> Child2\nChild1 --> Leaf1\nChild1 --> Leaf2\n```"}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What is a Min Heap?"},
+    {"from":"gpt","value":"A min heap is a binary heap where the value of each parent node is less than or equal to the values of its children. This property ensures that the smallest element is always stored at the root of the tree. Min heaps are commonly used in priority queues where the element with the lowest value must be processed first. Insertion places a new element at the bottom and moves it upward until the heap property is restored. Removal of the minimum element reorganizes the heap using a downward adjustment process."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Explain Max Heaps."},
+    {"from":"gpt","value":"A max heap is a binary heap in which each parent node has a value greater than or equal to its children. This guarantees that the largest element is always located at the root. Max heaps are useful when algorithms need fast access to the maximum value, such as in scheduling or heapsort. When inserting elements, the value is placed at the end and moved upward until the heap property is restored. Removing the maximum element replaces the root with the last element and then reorders the heap downward."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"Teach me about Fibonacci Heaps."},
+    {"from":"gpt","value":"A Fibonacci heap is an advanced heap data structure designed to support extremely efficient priority queue operations. It consists of a collection of trees rather than a single strict binary structure. The key advantage is that certain operations, such as insertion and decrease-key, have very low amortized time complexity. This makes Fibonacci heaps particularly useful in graph algorithms like Dijkstra’s shortest path and Prim’s minimum spanning tree. Although theoretically efficient, Fibonacci heaps are complex to implement and are often replaced with simpler heaps in practical systems."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": false,
+    "conversations": [
+    {"from":"human","value":"What are Pairing Heaps?"},
+    {"from":"gpt","value":"A pairing heap is a type of heap data structure designed to provide efficient priority queue operations with a relatively simple implementation. It is a multi-way tree where each node can have multiple children. When elements are inserted or removed, trees are combined through a process called pairing, where nodes are linked based on their key values. Pairing heaps offer good practical performance for operations like insertion, merging, and decrease-key. Because of their simplicity and efficiency, they are often considered a practical alternative to Fibonacci heaps."}
+    ]
+    },
+    {
+    "category": "computer_science",
+    "has_diagram": true,
+    "conversations": [
+    {"from":"human","value":"Explain Hash Tables."},
+    {"from":"gpt","value":"A hash table is a data structure that stores key-value pairs and allows very fast lookup, insertion, and deletion operations. It uses a hash function to convert a key into an index in an array where the value is stored. If two keys produce the same index, a collision occurs and must be resolved using techniques like chaining or open addressing. Because hashing distributes keys across memory locations, average operations take constant time. Hash tables are widely used in databases, caches, and dictionaries.\n\n```mermaid\ngraph TD\nKey --> HashFunction\nHashFunction --> Index\nIndex --> Bucket\nBucket --> Value\n```"}
+    ]
+    }
+    ]
