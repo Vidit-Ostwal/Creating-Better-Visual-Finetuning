@@ -1,0 +1,53 @@
+name: Deploy Frontend to Hugging Face Space
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend/**"
+      - ".github/workflows/deploy-hf-space.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate required secret
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "HF_TOKEN secret is missing."
+            exit 1
+          fi
+
+      - name: Prepare Space files
+        run: |
+          mkdir -p /tmp/hf-space
+          cp -R frontend/. /tmp/hf-space/
+
+      - name: Push frontend to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          SPACE_REPO: https://huggingface.co/spaces/ViditOstwal/Better-Visual-Model-Comparision
+        run: |
+          cd /tmp/hf-space
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b main
+          git add .
+
+          if git diff --cached --quiet; then
+            echo "No frontend files to deploy."
+            exit 0
+          fi
+
+          git commit -m "Deploy frontend from GitHub Actions"
+          git remote add origin "https://oauth2:${HF_TOKEN}@${SPACE_REPO#https://}"
+          git push --force origin main
