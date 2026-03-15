@@ -1,5 +1,6 @@
 import json
 import os
+import threading
 from pathlib import Path
 from typing import Any
 
@@ -11,6 +12,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 BASE_DIR = Path(__file__).resolve().parent
 CONFIG_PATH = BASE_DIR / "models.json"
 MODEL_CACHE: dict[str, tuple[AutoTokenizer, AutoModelForCausalLM]] = {}
+MODEL_STATUS: dict[str, dict[str, str]] = {}
+STATUS_LOCK = threading.Lock()
 
 
 def load_config() -> dict[str, Any]:
@@ -18,8 +21,48 @@ def load_config() -> dict[str, Any]:
         return json.load(file)
 
 
+def update_model_status(model_id: str, state: str, detail: str) -> None:
+    with STATUS_LOCK:
+        MODEL_STATUS[model_id] = {"state": state, "detail": detail}
+
+
+def get_device_label() -> str:
+    if torch.cuda.is_available():
+        return "GPU"
+    if hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+        return "Apple Silicon"
+    return "CPU"
+
+
+def are_models_ready(config: dict[str, Any]) -> bool:
+    model_ids = {model["id"] for model in config["models"]}
+    with STATUS_LOCK:
+        return all(MODEL_STATUS.get(model_id, {}).get("state") == "ready" for model_id in model_ids)
+
+
+def get_status_view():
+    config = load_config()
+    lines = [
+        "### Model status",
+        f"Runtime device: **{get_device_label()}**",
+        "",
+    ]
+
+    with STATUS_LOCK:
+        for model in config["models"]:
+            status = MODEL_STATUS.get(model["id"], {"state": "queued", "detail": "Waiting to start..."})
+            lines.append(
+                f"- **{model['label']}** (`{model['id']}`): `{status['state']}` - {status['detail']}"
+            )
+
+    ready = are_models_ready(config)
+    button_text = "Compare models" if ready else "Loading models into memory..."
+    return "\n".join(lines), gr.update(interactive=ready, value=button_text)
+
+
 def get_model_bundle(model_id: str) -> tuple[AutoTokenizer, AutoModelForCausalLM]:
     if model_id in MODEL_CACHE:
+        update_model_status(model_id, "ready", "Already loaded in memory.")
         return MODEL_CACHE[model_id]
 
     token = os.getenv("HF_TOKEN") or os.getenv("HUGGINGFACE_HUB_TOKEN")
@@ -32,14 +75,41 @@ def get_model_bundle(model_id: str) -> tuple[AutoTokenizer, AutoModelForCausalLM
     if torch.cuda.is_available():
         model_kwargs["device_map"] = "auto"
 
+    update_model_status(model_id, "downloading", "Fetching tokenizer and model weights...")
     tokenizer = AutoTokenizer.from_pretrained(model_id, token=token)
+    update_model_status(model_id, "loading", "Placing model weights into memory...")
     model = AutoModelForCausalLM.from_pretrained(model_id, **model_kwargs)
 
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
     MODEL_CACHE[model_id] = (tokenizer, model)
+    update_model_status(model_id, "ready", "Loaded in memory and ready for inference.")
     return tokenizer, model
+
+
+def preload_models() -> None:
+    config = load_config()
+    model_ids = []
+
+    for model in config["models"]:
+        if model["id"] not in model_ids:
+            model_ids.append(model["id"])
+
+    for model_id in model_ids:
+        try:
+            get_model_bundle(model_id)
+        except Exception as exc:
+            update_model_status(model_id, "error", str(exc))
+
+
+def start_preload_thread() -> None:
+    config = load_config()
+    with STATUS_LOCK:
+        for model in config["models"]:
+            MODEL_STATUS.setdefault(model["id"], {"state": "queued", "detail": "Waiting to start..."})
+
+    threading.Thread(target=preload_models, daemon=True).start()
 
 
 def call_model(
@@ -88,6 +158,9 @@ def compare_models(user_prompt: str, system_prompt: str, max_tokens: int, temper
         raise gr.Error("Enter a prompt before running the comparison.")
 
     config = load_config()
+    if not are_models_ready(config):
+        raise gr.Error("Models are still loading into memory. Wait until the status shows ready.")
+
     model_a = config["models"][0]
     model_b = config["models"][1]
     response_a = call_model(
@@ -187,9 +260,10 @@ def build_app() -> gr.Blocks:
                 )
 
             with gr.Row():
-                run_button = gr.Button("Compare models", variant="primary")
+                run_button = gr.Button("Loading models into memory...", variant="primary", interactive=False)
                 gr.ClearButton(value="Clear", components=[prompt, system_prompt])
 
+            status_markdown = gr.Markdown()
             model_info = gr.Markdown(
                 value=(
                     f"Model A: `{config['models'][0]['label']}` -> `{config['models'][0]['id']}`\n\n"
@@ -216,9 +290,13 @@ def build_app() -> gr.Blocks:
                 api_name="compare_models",
             )
 
+            demo.load(fn=get_status_view, outputs=[status_markdown, run_button])
+            gr.Timer(2).tick(fn=get_status_view, outputs=[status_markdown, run_button])
+
     return demo
 
 
+start_preload_thread()
 demo = build_app().queue(default_concurrency_limit=4)
 
 
