@@ -1,0 +1,21 @@
+{
+  "app": {
+    "title": "Dual Model Playground",
+    "description": "A simple Gradio frontend that sends the same prompt to two Hugging Face models and shows both responses side by side."
+  },
+  "models": [
+    {
+      "label": "Model A",
+      "id": "Qwen/Qwen2.5-7B-Instruct"
+    },
+    {
+      "label": "Model B",
+      "id": "Qwen/Qwen2.5-7B-Instruct"
+    }
+  ],
+  "defaults": {
+    "system_prompt": "You are a helpful assistant.",
+    "max_tokens": 512,
+    "temperature": 0.7
+  }
+}
