@@ -1,32 +1,24 @@
 # Dataset Workflow
 
-This folder contains the prompt-generation and dataset-merge workflow for all domains.
+This folder handles prompt generation, JSON merging, and Hugging Face upload.
 
-## Structure
-
-- `Machine Learning/`, `Chemistry/`, `Computer Science/`, `Networking/`, `Physics/`
-- Each domain folder contains:
-  - `concepts.txt`: one concept per line
-  - `prompt_template.txt`: reusable prompt template
-  - `prompt/`: 8 generated prompt batches
-  - `data/`: generated JSON outputs
-  - `merged_data.json`: merged domain dataset
-
-## Scripts
-
-- `generate_prompt.py`
-  - Splits each `concepts.txt` into 8 groups of 25
-  - Fills `prompt_template.txt`
-  - Writes prompt files into each domain's `prompt/` folder
-
-- `merge_json.py`
-  - Merges all JSON files inside each domain's `data/` folder
-  - Writes `merged_data.json` in each domain folder
-  - Creates `final_dataset.json` in `dataset/`
-
-## Run
+## Commands
 
 ```bash
 python3 dataset/generate_prompt.py
 python3 dataset/merge_json.py
+```
+
+## Upload
+
+```bash
+pip install datasets huggingface_hub
+export HF_TOKEN=your_huggingface_token
+python3 dataset/push_to_huggingface.py
+```
+
+`append` is the default mode. To replace the remote split:
+
+```bash
+python3 dataset/push_to_huggingface.py --mode overwrite
 ```
